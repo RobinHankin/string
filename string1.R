@@ -14,11 +14,11 @@ plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l')
 event_horizon()
 ## setup ends
 
-dist <- sort(c(
-    seq(from=1.01,to=1.1,by=0.01),
+dist <- sort(unique(c(
+    seq(from=1.01,to=1.2,by=0.01),
     seq(from=1.2,to=2.0,by=0.1),
     3:6
-))
+)))
 
 thetamax <- 0.1 + dist*0  # default value, (almost) always do-able
 
