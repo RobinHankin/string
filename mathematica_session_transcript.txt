@@ -1,0 +1,39 @@
+Following is a cut-and-paste from a mathematica session.  I've edited
+things here and there and annotated for clarity.  File
+'tight_string.mma' contains just the mathematica commands.
+
+
+
+
+rksh@AUTSCMS2013 ~ $ wolfram
+Wolfram Language (Raspberry Pi Pilot Release)
+Copyright 1988-2014 Wolfram Research
+Information & help: wolfram.com/raspi
+
+In[1]:= Needs["VariationalMethods`"]                                                                    
+
+
+
+## First, do a straight line in polar coordinates in flat space:
+In[2]:= EulerEquations[Sqrt[y[x]^2 + y'[x]^2],y[x],x]                                                   
+
+                  2          2
+        y[x] (y[x]  + 2 y'[x]  - y[x] y''[x])
+Out[2]= ------------------------------------- == 0
+                      2        2 3/2
+                 (y[x]  + y'[x] )
+
+In[3]:= DSolve[%2,y[x],x]                                                                               
+
+Out[3]= {{y[x] -> 0}, {y[x] -> C[2] Sec[x + C[1]]}}
+
+## mathematica solves this to give r = a sec(theta), as expected.  
+
+
+
+
+## Now try the Euler-Lagrange equation for the proper length of a path r=r(theta) but in Schwarzschild space.
+## Here y[x] -> r(theta).
+
+
+In[4]:= EulerEquations[Sqrt[y[x]^2 + y'[x]^2/(1-1/y[x])],y[x],x]
