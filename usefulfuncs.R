@@ -24,7 +24,6 @@ library("deSolve")   # ode()
   theta <- bh[,1]
 
   xy <- cbind(r*cos(theta),r*sin(theta))
-  print(initial_string_angle)
   return(xy)
 }
 
@@ -69,4 +68,9 @@ library("deSolve")   # ode()
   th <- seq(from=0,to=2*pi,len=300)
   polygon(cos(th),sin(th),lwd=0.1, col='black', ...)   # event horizon
   ## setup ends
+}
+
+
+fun <- function(cuts,vals){
+  return(function(x){vals[findInterval(x, c(-Inf, cuts))]})
 }
