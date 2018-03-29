@@ -38,27 +38,30 @@ theta_start <- 0
 theta_end1 <- rep(pi/2, length(start_angles))
 theta_end2 <- rep(pi/2-0.9, length(start_angles))
 
+jj <- matrix(c(
+    -0.73, pi/2  + 2.50,
+    -0.72, pi/2  + 2.42,
+    -0.71, pi/2  + 2.30,
+    -0.69, pi/2  + 2.20,
+    -0.67, pi/2  + 2.10,
+    -0.64, pi/2  + 1.90,
+    -0.60, pi/2  + 1.70,
+    -0.55, pi/2  + 1.50,
+    -0.50, pi/2  + 1.40,
+    -0.45, pi/2  + 1.20,
+    -0.40, pi/2  + 1.10,
+    -0.35, pi/2  + 1.00,
+    -0.30, pi/2  + 0.90,
+    -0.25, pi/2  + 0.70,
+    -0.20, pi/2  + 0.60,
+    -0.15, pi/2  + 0.50,
+    -0.10, pi/2  + 0.30,
+    +0.01, pi/2  + 0.00
+    )
+   ,ncol=2,byrow=TRUE)
 
-
-theta_end1[cont(start_angles, c(-0.73,-0.72))] <- pi/2  + 2.5
-theta_end1[cont(start_angles, c(-0.72,-0.71))] <- pi/2  + 2.42
-theta_end1[cont(start_angles, c(-0.71,-0.69))] <- pi/2  + 2.3
-theta_end1[cont(start_angles, c(-0.69,-0.67))] <- pi/2  + 2.2
-theta_end1[cont(start_angles, c(-0.67,-0.64))] <- pi/2  + 2.1
-theta_end1[cont(start_angles, c(-0.64,-0.60))] <- pi/2  + 1.9
-theta_end1[cont(start_angles, c(-0.60,-0.55))] <- pi/2  + 1.7
-theta_end1[cont(start_angles, c(-0.55,-0.50))] <- pi/2  + 1.5
-theta_end1[cont(start_angles, c(-0.50,-0.45))] <- pi/2  + 1.4
-theta_end1[cont(start_angles, c(-0.45,-0.30))] <- pi/2  + 1.2
-theta_end1[cont(start_angles, c(-0.40,-0.35))] <- pi/2  + 1.1
-theta_end1[cont(start_angles, c(-0.35,-0.30))] <- pi/2  + 1.0
-theta_end1[cont(start_angles, c(-0.30,-0.25))] <- pi/2  + 0.9
-theta_end1[cont(start_angles, c(-0.25,-0.20))] <- pi/2  + 0.7
-theta_end1[cont(start_angles, c(-0.20,-0.15))] <- pi/2  + 0.6
-theta_end1[cont(start_angles, c(-0.15,-0.10))] <- pi/2  + 0.5
-theta_end1[cont(start_angles, c(-0.10,-0.00))] <- pi/2  + 0.3
-
-
+colnames(jj) <- c("cuts","vals")
+f_upwards <- fun(jj[,1],jj[,2])
 
 for(i in seq_along(start_angles)){
 
@@ -67,7 +70,7 @@ for(i in seq_along(start_angles)){
     stringpoints(
         y_start = dist_from_hole,
         initial_string_angle = start_angles[i],
-        theta = seq(from=theta_start,to=theta_end1[i],len=1000)
+        theta = seq(from=theta_start,to=f_upwards(start_angles[i]),len=1000)
     )
   points(xy,type='l',col=cols[i],lwd=1)
 }
