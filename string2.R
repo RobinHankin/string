@@ -28,7 +28,7 @@ points(cos(th),sin(th),type='l')   # event horizon
 dist_from_hole <- 2
 
 ## define start_angles, specifying the angle that the string makes at (2,0) from a tangent:
-start_angles <- seq(from=-0.8,to=0.0,by=0.01) # one string per start angle, each one a different colour
+start_angles <- seq(from=-0.8,to=0.0,by=0.021) # one string per start angle, each one a different colour
 
 n <- length(start_angles)
 cols <- rainbow(n+round(n/7))
@@ -39,7 +39,10 @@ theta_end1 <- rep(pi/2, length(start_angles))
 theta_end2 <- rep(pi/2-0.9, length(start_angles))
 
 jj <- matrix(c(
-    -0.73, pi/2  + 2.50,
+    -9.83, pi/2  + 0.00,
+    -0.79, pi/2  + 3.20,
+    -0.78, pi/2  + 2.90,
+    -0.73, pi/2  + 2.60,
     -0.72, pi/2  + 2.42,
     -0.71, pi/2  + 2.30,
     -0.69, pi/2  + 2.20,
@@ -83,7 +86,7 @@ for(i in seq_along(start_angles)){
         theta = -seq(from=theta_start,to=theta_end2[i],len=100)
     )
 
-  points(xy,type='l',col=cols[i],lwd=2)
+  points(xy,type='l',col=cols[i],lwd=1)
 }
 points(dist_from_hole,0,pch=16)
 
