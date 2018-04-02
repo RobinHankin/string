@@ -1,92 +1,74 @@
-## Here are some lines indexed by distance from the singularity to the
-## point of inflection.
-
 rm(list=ls())
-pars <- c(eel=1)  # dummy
 
- 0.57721566490153286060 -> em  # Euler-Mascheroni
+
+pars <- c(eel=1)  # dummy
 
 source("usefulfuncs.R")
 
 ## setup:
-jj <- 6.1
+jj <- 3
 par(pty='s')
-plot(NULL,
-     asp = 1,  
-     xlim = c(-jj,jj),ylim=c(-jj,jj),
-     xlab = '2GM/c^2',ylab='2GM/c^2',
-     main = 'Light inextensible strings under tension
-in the Schwarzschild geometry')
+plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l')
+
+event_horizon()
 
 
-points(0,0,pch=16,cex=0.3)  # singularity
-th <- seq(from=0,to=2*pi,len=300)
-points(cos(th),sin(th),type='l',lwd=0.5)   # event horizon
 
-#points(2*cos(th),2*sin(th),type='l',lwd=0.1) 
-## setup ends
+dist_from_hole <- 3
 
-dist <- seq(from=1.8,to=5,len=17)
-mindist <- dist + NA  # minimal distances
 
-rdash <- sqrt(2*dist*(dist-1))
+start_angles <- c(seq(from=1.1,by=0.01,to=1.5) # one string per start angle, each one a different colour
+                  )
 
-critical_start_angle <- atan(rdash/dist)
-start_angles <- critical_start_angle # one string per start angle, each one a different colour
+
+start_angles <- rev(start_angles)
 
 n <- length(start_angles)
 cols <- rainbow(n+round(n/7))
 
 theta_start <- 0
 
-theta_end1 <- 0.5 + 0*start_angles
-theta_end2 <- 2.4 + 0*start_angles
+theta_end1 <- 0 + 0*start_angles ## upward/outward
+theta_end2 <- pi*0.45 + 0*start_angles  # downward/inward
 
-theta_end1[dist<2.3] <- 0.7
+theta_end2[cont(start_angles, c(0.10,0.50))] <-  pi/2
+theta_end2[cont(start_angles, c(0.50,1.00))] <-  pi/2 +0.3
+theta_end2[cont(start_angles, c(1.00,1.19))] <-  pi*1.1
+theta_end2[cont(start_angles, c(1.19,1.21))] <-  3*pi/2 
+theta_end2[cont(start_angles, c(1.21,1.27))] <-  pi
+theta_end2[cont(start_angles, c(1.27,1.29))] <-  pi*1
+theta_end2[cont(start_angles, c(1.29,1.32))] <-  pi*0.8
+theta_end2[cont(start_angles, c(1.32,1.34))] <-  pi*0.7
+theta_end2[cont(start_angles, c(1.34,1.35))] <-  pi*0.62
+theta_end2[cont(start_angles, c(1.35,1.36))] <-  pi*0.62
+theta_end2[cont(start_angles, c(1.36,1.42))] <-  pi*0.4
+theta_end2[cont(start_angles, c(1.42,1.44))] <-  pi*0.4
+theta_end2[cont(start_angles, c(1.44,1.51))] <-  pi*0.2
 
 
-theta_end2[cont(dist, c(1.6,1.9))] <- pi + 3.2
-theta_end2[cont(dist, c(1.9,2.1))] <- pi + 1.5
-theta_end2[cont(dist, c(2.1,2.3))] <- pi + 1.0
-theta_end2[cont(dist, c(2.3,2.5))] <- pi + 0.7
-theta_end2[cont(dist, c(2.5,2.7))] <- pi + 0.5
-theta_end2[cont(dist, c(2.7,3.0))] <- pi + 0.1
-theta_end2[cont(dist, c(3.0,3.5))] <- pi + 0.0
-theta_end2[cont(dist, c(3.5,9.9))] <- pi - 0.3
-for(i in seq_along(start_angles)){
+closest_approach <- start_angles + NA
 
-  ## First the upwards strings:
-  xy <-
-    stringpoints(
-        y_start = dist[i],
-        initial_string_angle = start_angles[i],
-        theta = seq(from=theta_start,to=theta_end1[i],len=100)
-    )
-  points(xy,type='l',col=cols[i],lwd=2)
-}
-
+## now the downward ones:
 for(i in seq_along(start_angles)){
   xy <-
     stringpoints(
-        y_start = dist[i],
+        y_start = dist_from_hole,
         initial_string_angle = -(pi-start_angles[i]),
         theta = -seq(from=theta_start,to=theta_end2[i],len=1000)
     )
+  rsq <- c(1+sum(xy[1,]^2),rowSums(xy^2))
+  inward <- diff(rsq)<0
 
-  points(xy,type='l',col=cols[i],lwd=2)
-  mindist[i] <- sqrt(min(rowSums(xy^2)))
-  points(dist[i],0,pch=16,cex=0.6)
+  xy_inward  <- xy[ inward,]
+  xy_outward <- xy[!inward,]
+
+  points(xy_inward ,type='l',col=cols[i])
+  points(xy_outward,type='l',col=cols[i],lty=1)
+
+
+closest_approach[i] <- sqrt(min(rowSums(xy^2)))-1
+  
 }
 
-legend("topright",
-       lty=c(1,1,NA,1),
-       pch=c(NA,NA,16,NA),
-       lwd=c(2,2,0,0.5),
-       legend = c(
-           'light inextensible',
-           'strings under tension',
-           'point of inflection',
-           'event horizon'
-       ),
-       col=c(cols[c(1,length(cols)-3)],"black")
-       )
+points(dist_from_hole,0,pch=16)
+polargrid()
