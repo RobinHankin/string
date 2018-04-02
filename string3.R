@@ -17,17 +17,11 @@ event_horizon()
 dist_from_hole <- 3
 
 
-start_angles <- c(seq(from=0.1,by=0.01,to=1.5) # one string per start angle, each one a different colour
+start_angles <- c(seq(from=1.2,by=0.01,to=1.5) # one string per start angle, each one a different colour
                   )
 
-start_angles <- unique(sort(c(start_angles
-                             
 
-#                             , seq(from=1.21,to=1.5,by=0.01)
-
-
-                              )))
-
+start_angles <- rev(start_angles)
 
 n <- length(start_angles)
 cols <- rainbow(n+round(n/7))
@@ -41,7 +35,7 @@ theta_end2[cont(start_angles, c(0.10,0.50))] <-  pi/2
 theta_end2[cont(start_angles, c(0.50,1.00))] <-  pi/2 +0.3
 theta_end2[cont(start_angles, c(1.00,1.19))] <-  pi*1.1
 theta_end2[cont(start_angles, c(1.19,1.21))] <-  3*pi/2 
-theta_end2[cont(start_angles, c(1.21,1.27))] <-  pi*0.8
+theta_end2[cont(start_angles, c(1.21,1.27))] <-  pi
 theta_end2[cont(start_angles, c(1.27,1.29))] <-  pi*1
 theta_end2[cont(start_angles, c(1.29,1.32))] <-  pi*0.8
 theta_end2[cont(start_angles, c(1.32,1.34))] <-  pi*0.7
@@ -80,6 +74,8 @@ for(i in seq_along(start_angles)){
   points(xy_inward ,type='l',col=cols[i])
   points(xy_outward,type='l',col=cols[i],lty=1)
 
+  print(sqrt(min(rowSums(xy^2)))-1)
+  
 }
 
 points(dist_from_hole,0,pch=16)
