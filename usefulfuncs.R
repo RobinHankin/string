@@ -74,3 +74,8 @@ library("deSolve")   # ode()
 fun <- function(cuts,vals){
   return(function(x){vals[findInterval(x, c(-Inf, cuts))]})
 }
+
+rotmat <- function(theta){
+    matrix(c(cos(theta),sin(theta),-sin(theta),cos(theta)),2,2)
+}
+    
