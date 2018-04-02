@@ -15,7 +15,7 @@ In[1]:= Needs["VariationalMethods`"]
 
 
 ## First, do a straight line in polar coordinates in flat space:
-In[2]:= EulerEquations[Sqrt[y[x]^2 + y'[x]^2],y[x],x]                                                   
+In[2]:= EulerEquations[Sqrt[y[x]^2 + y'[x]^2],y[x],x] 
 
                   2          2
         y[x] (y[x]  + 2 y'[x]  - y[x] y''[x])
@@ -27,8 +27,24 @@ In[3]:= DSolve[%2,y[x],x]
 
 Out[3]= {{y[x] -> 0}, {y[x] -> C[2] Sec[x + C[1]]}}
 
-## mathematica solves this to give r = a sec(theta), as expected.  
+## mathematica solves this to give r = a sec(theta), as expected.
+## Note that the two constants of integration correspond to
+## distance-of-nearest-approach-to-the-origin (C[2]), and
+## angle-of-line-to-vertical (C[1]).
 
+
+The differential equation is, explicitly:
+
+                      2          2
+                    y[x]  + 2 y'[x]
+Out[3]= {{y''[x] -> ----------------}}
+                          y[x]
+
+
+
+Or r'' = r + 2(r')^2/r
+
+(this is quite challenging to solve ab initio by hand)
 
 
 
