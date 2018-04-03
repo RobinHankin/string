@@ -12,8 +12,6 @@ plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='n',axes=F,xlab='',ylab='')
 
 event_horizon()
 
-
-
 dist_from_hole <- 3
 
 
