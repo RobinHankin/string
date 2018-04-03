@@ -14,6 +14,14 @@ pdf(file="f4.pdf")
 source("string4.R")
 dev.off()
 
-pdf(file="flamm.pdf")
+
 source("flamm.R")
+pdf(file="flamm_nostring.pdf")
+flamm(string=FALSE)
 dev.off()
+
+pdf(file="flamm_string.pdf")
+flamm(string=TRUE)
+dev.off()
+
+
