@@ -13,3 +13,7 @@ dev.off()
 pdf(file="f4.pdf")
 source("string4.R")
 dev.off()
+
+pdf(file="flamm.pdf")
+source("flamm.R")
+dev.off()
