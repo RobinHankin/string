@@ -49,7 +49,6 @@ flamm <- function(string=TRUE){
             add=TRUE,col='red')
   }
 
-
   ## Now draw a taut string:
   if(isTRUE(string)){
     dist_from_hole <- 1.4   # distance of closest approach
@@ -82,8 +81,6 @@ flamm <- function(string=TRUE){
             lwd=2, col='black',
             add=TRUE,ticktype='detailed'
             )
-
-  }
   legend("topright",
          legend = c(
              expression(paste("lines of constant ",r)),
@@ -93,5 +90,16 @@ flamm <- function(string=TRUE){
          lty = 1,
          lwd = c(0.1,0.1,2)
          )
+  } else {
+  legend("topright",
+         legend = c(
+             expression(paste("lines of constant ",r)),
+             expression(paste("lines of constant ",phi))
+         col = c("blue","red","black"),
+         lty = 1,
+         lwd = c(0.1,0.1)
+         )
+  }
+  
 }  # closes flamm <- function
 
