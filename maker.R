@@ -17,11 +17,11 @@ dev.off()
 
 source("flamm.R")
 pdf(file="flamm_nostring.pdf")
-flamm(string=FALSE)
+flamm(string=FALSE,phi=70)
 dev.off()
 
 pdf(file="flamm_string.pdf")
-flamm(string=TRUE)
+flamm(string=TRUE,phi=50,theta=50)
 dev.off()
 
 
