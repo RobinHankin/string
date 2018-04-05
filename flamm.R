@@ -1,4 +1,6 @@
-## plots Flamm's paraboloid; quite slow to plot on the screen, but fast to make a pdf.
+## plots Flamm's paraboloid; intended to be called by maker.R.
+
+## It is quite slow to plot on the screen, but fast to make a pdf.
 
 rm(list=ls())
 library(plot3D)
