@@ -9,7 +9,7 @@ source("usefulfuncs.R")
 pars <- c(eel=1) # dummy
 
 
-flamm <- function(string=TRUE){
+flamm <- function(string=TRUE, ...){
 
   ## values of r and theta to plot: use longer vectors to make the plot
   ## look better but this takes longer
@@ -20,8 +20,9 @@ flamm <- function(string=TRUE){
   ## set up the axis:
   scatter3D(x=1:2, y=1:2, z=1:2,   # dummy points
             bty=NULL,type='n',lwd=1,pch=NA,
-            phi=60,r=1000,box=FALSE,scale=FALSE,colkey=FALSE,
-            xlim=c(-10,10),ylim=c(-10,10),zlim=c(-32,0)
+            r=100000,box=FALSE,scale=FALSE,colkey=FALSE,
+            xlim=c(-10,10),ylim=c(-10,10),zlim=c(-32,0),
+            ...
             )
 
 
