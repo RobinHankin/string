@@ -94,7 +94,7 @@ flamm <- function(string=TRUE){
   legend("topright",
          legend = c(
              expression(paste("lines of constant ",r)),
-             expression(paste("lines of constant ",phi))
+             expression(paste("lines of constant ",phi))),
          col = c("blue","red","black"),
          lty = 1,
          lwd = c(0.1,0.1)
