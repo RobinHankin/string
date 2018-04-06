@@ -17,7 +17,7 @@ dev.off()
 
 source("flamm.R")
 pdf(file="flamm_nostring.pdf")
-flamm(string=FALSE,phi=70)
+flamm(string=FALSE,phi=50,theta=40)
 dev.off()
 
 pdf(file="flamm_string.pdf")
