@@ -6,12 +6,14 @@ source("usefulfuncs.R") # defines stringpoints()
 
 pars <- c(eel=1)  # dummy
 
-
 ## plot setup:
 jj <- 6
-plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l')
+par(xpd=TRUE)
+plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=FALSE,,xlab='',ylab='')
 
-event_horizon()
+
+
+polargrid(rlab=6.5)
 ## setup ends
 
 dist <- sort(unique(c(
@@ -41,11 +43,11 @@ for(i in seq_along(dist)){
   points(xy,type='l',col=fc(dist[i]))
 }
 
+# mask strings too far from the black hole:
+xy <- cbind(c(7,30,30,7),c(-0.5,-0.5,0.5,0.5))
+for (theta in seq(from=0,to=2*pi,len=100)){
+  jjxy <- xy %*% rotmat(theta)
+  polygon(jjxy[,1],jjxy[,2],col='white',border=NA)
+}
 
-
-
-
-
-
-
-
+event_horizon()
