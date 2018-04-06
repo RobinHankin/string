@@ -6,11 +6,12 @@ pars <- c(eel=1)  # dummy
 source("usefulfuncs.R")
 
 ## setup:
-jj <- 3
+jj <- 4.1
 par(pty='s')
 plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='n',axes=F,xlab='',ylab='')
+polargrid(1:4,rlab=3.5)
 
-event_horizon()
+
 
 dist_from_hole <- 3
 
@@ -46,7 +47,7 @@ theta_end2[cont(start_angles, c(1.44,1.51))] <-  pi*0.2
 
 closest_approach <- start_angles + NA
 
-## now the downward ones:
+
 for(i in seq_along(start_angles)){
   xy <-
     stringpoints(
@@ -54,7 +55,8 @@ for(i in seq_along(start_angles)){
         initial_string_angle = -(pi-start_angles[i]),
         theta = -seq(from=theta_start,to=theta_end2[i],len=1000)
     )
-  rsq <- c(1+sum(xy[1,]^2),rowSums(xy^2))
+  
+  rsq <- c(1+sum(xy[1,]^2),rowSums(xy^2))  # dist from singularity squared
   inward <- diff(rsq)<0
 
   xy_inward  <- xy[ inward,]
@@ -80,10 +82,12 @@ for(i in seq_along(start_angles)){
   rm <- rotmat(angle_of_closest_approach)
   
   points(xy_inward  %*% rm ,type='l',col=cols[i],lwd=2)
-  points(xy_outward %*% rm ,type='l',col=cols[i],lwd=0)
-
+  if(FALSE){
+    points(xy_outward %*% rm ,type='l',col=cols[i],lwd=5)
+  }
   
 }
+event_horizon()
+points(1,0,pch=16,cex=2,col='gray')
 
-points(dist_from_hole,0,pch=16)
-polargrid()
+
