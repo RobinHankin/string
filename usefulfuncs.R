@@ -33,7 +33,7 @@ library("deSolve")   # ode()
 `cont` <- function(x,interval){ (x-interval[1])*(x-interval[2]) <=0}
 
 
-`polargrid` <- function(r=1:7,n=12,labels=TRUE,...){
+`polargrid` <- function(r=1:7,n=12,rlab=max(r)/2, labels=TRUE,...){
   fish <- c(
       expression(pi/6),    # Note off-by-one error
       expression(pi/3),
@@ -57,7 +57,7 @@ library("deSolve")   # ode()
   for(a in seq_along(angs)){
     segments(x0=0,y0=0,x1=cos(angs[a])*max(r),y1=sin(angs[a])*max(r),lwd=0.3,lty=3, ...)
     if(labels){
-      text(cos(angs[a])*max(r)/2,sin(angs[a])*max(r)/2,fish[a])
+      text(cos(angs[a])*rlab,sin(angs[a])*rlab,fish[a])
     }
   }
 }
