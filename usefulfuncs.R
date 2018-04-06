@@ -52,10 +52,10 @@ library("deSolve")   # ode()
          
   jj <- seq(from=0,to=2*pi,len=100)
   xy <- cbind(cos(jj),sin(jj))
-  for(i in r){ points(xy*i,type='l',lty=3,lwd=0.3, ...) }
+  for(i in r){ points(xy*i,type='l',lty=3,lwd=0.1, col='gray', ...) }
   angs <- seq_len(n)*2*pi/n
   for(a in seq_along(angs)){
-    segments(x0=0,y0=0,x1=cos(angs[a])*max(r),y1=sin(angs[a])*max(r),lwd=0.3,lty=3, ...)
+    segments(x0=0,y0=0,x1=cos(angs[a])*max(r),y1=sin(angs[a])*max(r),lwd=0.1,lty=3, col='gray', ...)
     if(labels){
       text(cos(angs[a])*rlab,sin(angs[a])*rlab,fish[a])
     }
