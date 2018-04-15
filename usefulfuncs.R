@@ -1,4 +1,11 @@
-## Sets up the ODE for minimal length string (Euler-Lagrange formula)
+## Functions taut_string() and stringpoints() set up the ODE for
+## minimal length string (Euler-Lagrange formula)
+##
+
+## Function light() and stringlightpoints() set up the ODE for null
+## geodesics (light paths).
+
+
 
 library("deSolve")   # ode()
 
@@ -28,6 +35,27 @@ library("deSolve")   # ode()
 }
 
 
+
+`light` <- function(lambda, state, pars){
+    with(as.list(c(state,pars)),{
+        dr <- sqrt(E^2 - (1-1/r)*L^2/r^2)
+        dphi <- L/r^2
+        return(list(c(dr,dphi)))
+    })
+}
+
+#stringpoints <- function(y_start <- 9,theta_start <- -1.3)
+
+`stringlightpoints` <- function(r_start, phi_start, lambda){
+    yini <- c(r=r_start , phi=phi_start)
+    bh <- ode(yini, lambda, light, pars, rtol=1e-6)
+    
+    r <- bh[,2]
+    theta <- bh[,3]
+    
+    xy <- cbind(r*cos(theta),r*sin(theta))
+    return(xy)
+}
 
 ## function cont() returns TRUE if x is in the interval specified
 `cont` <- function(x,interval){ (x-interval[1])*(x-interval[2]) <=0}
@@ -79,3 +107,5 @@ rotmat <- function(theta){
     matrix(c(cos(theta),sin(theta),-sin(theta),cos(theta)),2,2)
 }
     
+
+
