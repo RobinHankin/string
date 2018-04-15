@@ -1,4 +1,4 @@
 *.Rout
 *.R~
 *.pdf
-.Rdata
+.RData
