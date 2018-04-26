@@ -25,8 +25,8 @@ dist <- sort(unique(c(
 thetamax <- 0.1 + dist*0  # default value, (almost) always do-able
 
 
-cuts <- c(        1,   1.06,  1.07, 1.08,   1.11,   1.21,    1.31,   1.51,    2.01,  5.00)
-vals <- c(  NA,      pi,    pi,   3.1,  2.97,      2.5,    2.3,     2.1,   1.9,   1.3,     1.0)
+cuts <- c(        1,   1.06,  1.07, 1.08,   1.11,    1.13,    1.15,     1.17,   1.21,    1.31,   1.51,    2.01,  5.00)
+vals <- c(  NA,      pi,    pi,   3.1,   2.97,   2.77,    2.71,     2.61,   2.51,  2.3,     2.1,   1.9,   1.4,     1.0)
 jj <- rainbow(length(vals))
 cols <- c(jj[1],jj)
 f <- fun(cuts,vals)
