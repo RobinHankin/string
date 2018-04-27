@@ -6,8 +6,8 @@ pdf(file="angle_at_r_equals_2.pdf")
 source("angle_at_r_equals_2.R")
 dev.off()
 
-pdf(file="f3.pdf")
-source("string3.R")
+pdf(file="one_free_end_r_equals_2.pdf")
+source("one_free_end_r_equals_2.R")
 dev.off()
 
 pdf(file="f4.pdf")
