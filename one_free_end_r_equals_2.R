@@ -1,27 +1,27 @@
 rm(list=ls())
 
 
-pars <- c(eel=1)  # dummy
+pars <- c(eel=1)  # dummy for the ODE solver
 
 source("usefulfuncs.R")
 
 ## setup:
-jj <- 2.5
+jj <- 2
 par(xpd=TRUE)
-#plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),axes=T,xlab='',ylab='') # full diagram
-plot(NULL,asp=1,xlim=c(-2,2),ylim=c(-2,2),axes=FALSE,xlab='',ylab='')  # close-up
+
+plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),axes=FALSE,xlab='',ylab='')  # close-up
 
 
 closest_approach <- matrix(0,0,2)  # used for debugging theta_end2 values
 colnames(closest_approach) <- c("start_angle","closest_approach")
 dist_from_hole <- 2
 
+## one string per start angle, each a different colour; start_angle =
+## pi/2 is a radial string:
 gap <- 0.06
 start_angles <-
-  c(seq(from=pi/2-gap,by= -gap,to=0.91))
+  c(seq(from=pi/2-gap, by= -gap, to=0.91))
 
-## one string per start angle, each a different colour; start_angle =
-## pi/2 is a radial string
              
 # start_angles <- seq(from=0.89,to=.91,len=10)  # use this in conjunction with plot(closest_approach) to see where the upper limit of 0.9 comes from
 
@@ -59,7 +59,7 @@ theta_end2[cont(start_angles, c(1.58,1.59))] <-  pi/30000
 
 
 for(i in seq_along(start_angles)){
-
+    if(FALSE){
   ## First the upwards strings:
   xy <-
     stringpoints(
@@ -67,7 +67,9 @@ for(i in seq_along(start_angles)){
         initial_string_angle = start_angles[i],
         theta = seq(from=theta_start,to=theta_end1[i],len=100)
     )
-if(FALSE){points(xy,type='l',col=cols[i],lwd=1)}
+
+        points(xy,type='l',col=cols[i],lwd=1)
+    }
 }
 ## now the downward ones:
 for(i in seq_along(start_angles)){
@@ -77,23 +79,22 @@ for(i in seq_along(start_angles)){
         initial_string_angle = -(pi-start_angles[i]),
         theta = -seq(from=theta_start,to=theta_end2[i],len=1000)
     )
-  rsq <- c(1+sum(xy[1,]^2),rowSums(xy^2))
-  inward <- diff(rsq)<0
+  rsq <- c(1+sum(xy[1,]^2),rowSums(xy^2)) # rsq == r-squared
+  inward <- diff(rsq)<0           # TRUE if the string is moving inward
 
   xy_inward  <- xy[ inward,]
   xy_outward <- xy[!inward,]
 
   points(xy_inward ,type='l',col=cols[i],lwd=1)
-if(FALSE){  points(xy_outward,type='l',col=cols[i],lwd=0)}
+  if(FALSE){  points(xy_outward,type='l',col=cols[i],lwd=0)}
 
   closest_approach <- rbind(
       closest_approach,
       c(start_angles[i],sqrt(min(rowSums(xy^2)))-1)
   )
-  
 }
 
-points(dist_from_hole,0,pch=16)
 polargrid(rlab=1.8)
 segments(1,0,2,0,col='red')  # radial string
+points(dist_from_hole,0,pch=16)
 event_horizon(fill=FALSE)
