@@ -10,7 +10,7 @@ pars <- c(eel=1)  # dummy
 source("usefulfuncs.R")
 
 ## setup:
-jj <- 6
+jj <- 6.5
 par(pty='s')
 plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',xlab='',ylab='',axes=FALSE)
 polargrid(rlab=6.5)
