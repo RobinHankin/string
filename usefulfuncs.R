@@ -91,10 +91,13 @@ library("deSolve")   # ode()
 }
 
 
-`event_horizon` <- function(...){
+`event_horizon` <- function(fill=TRUE, ...){
   points(0,0,pch=16,cex=0.3)  # singularity
   th <- seq(from=0,to=2*pi,len=300)
-  polygon(cos(th),sin(th),lwd=0.1, col='black', ...)   # event horizon
+  if(fill){
+    polygon(cos(th),sin(th),lwd=0.1, col='black', ...)   # black!
+  } else
+    points(cos(th),sin(th),type='l', lwd=1,  ...)   # event horizon
   ## setup ends
 }
 
