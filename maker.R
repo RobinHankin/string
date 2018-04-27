@@ -2,8 +2,8 @@ pdf(file="closest_approach.pdf")
 source("closest_approach.R")
 dev.off()
 
-pdf(file="f2.pdf")
-source("string2.R")
+pdf(file="angle_at_r_equals_2.pdf")
+source("angle_at_r_equals_2.R")
 dev.off()
 
 pdf(file="f3.pdf")
