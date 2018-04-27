@@ -1,5 +1,5 @@
-pdf(file="f1.pdf")
-source("string1.R")
+pdf(file="closest_approach.pdf")
+source("closest_approach.R")
 dev.off()
 
 pdf(file="f2.pdf")
