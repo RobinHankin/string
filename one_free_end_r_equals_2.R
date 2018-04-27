@@ -8,15 +8,15 @@ source("usefulfuncs.R")
 ## setup:
 jj <- 2.5
 par(xpd=TRUE)
-plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),axes=T,xlab='',ylab='') # for production
-plot(NULL,asp=1,xlim=c(-1,2),ylim=c(-2,0),axes=FALSE,xlab='',ylab='')  # for testing
+#plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),axes=T,xlab='',ylab='') # full diagram
+plot(NULL,asp=1,xlim=c(-2,2),ylim=c(-2,2),axes=FALSE,xlab='',ylab='')  # close-up
 
 
 closest_approach <- matrix(0,0,2)  # used for debugging theta_end2 values
 colnames(closest_approach) <- c("start_angle","closest_approach")
 dist_from_hole <- 2
 
-gap <- 0.006
+gap <- 0.06
 start_angles <-
   c(seq(from=pi/2-gap,by= -gap,to=0.91))
 
@@ -67,7 +67,7 @@ for(i in seq_along(start_angles)){
         initial_string_angle = start_angles[i],
         theta = seq(from=theta_start,to=theta_end1[i],len=100)
     )
-  points(xy,type='l',col=cols[i],lwd=0)
+if(FALSE){points(xy,type='l',col=cols[i],lwd=1)}
 }
 ## now the downward ones:
 for(i in seq_along(start_angles)){
@@ -84,7 +84,7 @@ for(i in seq_along(start_angles)){
   xy_outward <- xy[!inward,]
 
   points(xy_inward ,type='l',col=cols[i],lwd=1)
-  points(xy_outward,type='l',col=cols[i],lwd=0)
+if(FALSE){  points(xy_outward,type='l',col=cols[i],lwd=0)}
 
   closest_approach <- rbind(
       closest_approach,
@@ -95,5 +95,5 @@ for(i in seq_along(start_angles)){
 
 points(dist_from_hole,0,pch=16)
 polargrid(rlab=1.8)
-segments(0,0,1,2)  # radial string
-event_horizon()
+segments(1,0,2,0,col='red')  # radial string
+event_horizon(fill=FALSE)
