@@ -1,4 +1,6 @@
-## lots of rainbow coloured strings all passing through the same point at different angles.
+## lots of rainbow coloured strings all passing through the same point
+## at different angles.  For production PDF image, source maker.R,
+## which creates the best PDF.
 
 rm(list=ls())
 
