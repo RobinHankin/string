@@ -30,17 +30,17 @@ vals <- c(  NA,      pi,    pi,   3.1,   2.97,   2.77,    2.71,     2.61,   2.51
 jj <- rainbow(length(vals))
 cols <- c(jj[1],jj)
 f <- fun(cuts,vals)
-fc <- fun(cuts,cols)
+
 
 ## Thus f(1.03) = pi, f(1.12) = 2.5
 
 for(i in seq_along(dist)){
   tseq <- seq(from=0,to=f(dist[i]),len=100)
   xy <- stringpoints(y_start=dist[i],initial_string_angle = 0,theta=tseq)
-  points(xy,type='l',col=fc(dist[i]))
+  points(xy,type='l',col=rainbow(length(dist))[i])
   
   xy <- stringpoints(y_start=dist[i],initial_string_angle = 0, theta=-tseq)
-  points(xy,type='l',col=fc(dist[i]))
+  points(xy,type='l',col=rainbow(length(dist))[i])
 }
 
 # mask strings too far from the black hole:
