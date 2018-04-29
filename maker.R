@@ -10,8 +10,8 @@ pdf(file="one_free_end_r_equals_2.pdf")
 source("one_free_end_r_equals_2.R")
 dev.off()
 
-pdf(file="f4.pdf")
-source("string4.R")
+pdf(file="one_free_end_fixed_EH_intersection.pdf")
+source("one_free_end_fixed_EH_intersection.R")
 dev.off()
 
 
