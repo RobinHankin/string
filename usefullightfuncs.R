@@ -21,3 +21,12 @@ library("deSolve")   # ode()
     return(xy)
 }
 
+
+## function lightu() deals with u=1/r
+`light` <- function(lambda, state, pars){
+  with(as.list(c(state,pars)),{
+      du = 55;
+      ddu = 33;
+      return(list(c(du,ddu)))
+    })
+}
