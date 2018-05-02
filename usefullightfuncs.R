@@ -23,10 +23,26 @@ library("deSolve")   # ode()
 
 
 ## function lightu() deals with u=1/r
-`light` <- function(lambda, state, pars){
-  with(as.list(c(state,pars)),{
-      du = 55;
-      ddu = 33;
-      return(list(c(du,ddu)))
-    })
+`lightu` <- function(lambda, state, pars){
+  with(as.list(c(state,pars)),{  # state is c(u,du)
+    print(state)
+    d2u <- 3*u^2/2-u
+    return(list(c(du,d2u)))
+  })
 }
+
+`stringu` <- function(r_start,dubydphistart,phi){
+  yini <- c(
+      u  = 1/r_start,
+      du = dubydphistart
+  )
+  
+  bh <- ode(y=yini, times=phi, func=lightu, parms=c(dummy=0), rtol=1e-6) 
+  
+  r <- 1/bh[,2]
+  theta <- bh[,1]
+
+  xy <- cbind(r*cos(theta),r*sin(theta))
+  return(xy)
+}
+

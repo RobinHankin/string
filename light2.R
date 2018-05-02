@@ -4,6 +4,7 @@
 
 rm(list=ls())
 
+source("usefulfuncs.R") # defines polargrid() etc
 source("usefullightfuncs.R") # defines lightstringpoints()
 
 ## plot setup:
@@ -11,11 +12,15 @@ jj <- 6
 par(xpd=TRUE)
 plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=FALSE,,xlab='',ylab='')
 
-r_start <- 3.00001
+dummypars <- c(eel=3) # dummy
 
-
-pars <- c(b=1/sqrt(1/r_start^2-1/r_start^3))
-xy <- stringlightpoints(r_start=r_start, phi_start=0 , lambda=seq(from=0,to=7,len=100))
+phi <- seq(from=0,to=1)
+xy <-
+  stringu(
+      r_start=3/2,
+      dubydphistart=0,
+      phi=seq(from=0,to=2,len=10)
+  )
 
 points(xy,col='red',type='l')
 
