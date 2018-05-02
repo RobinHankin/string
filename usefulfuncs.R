@@ -35,16 +35,13 @@ library("deSolve")   # ode()
 }
 
 
-
 `light` <- function(lambda, state, pars){
-    with(as.list(c(state,pars)),{
-        dr <- sqrt(E^2 - (1-1/r)*L^2/r^2)
-        dphi <- L/r^2
+  with(as.list(c(state,pars)),{
+        dr <- (1-1/r)*sqrt(1-b^2*(1/r^2-1/r^3))
+        dphi <- b*(1/r^2-1/r^3)
         return(list(c(dr,dphi)))
     })
 }
-
-#stringpoints <- function(y_start <- 9,theta_start <- -1.3)
 
 `stringlightpoints` <- function(r_start, phi_start, lambda){
     yini <- c(r=r_start , phi=phi_start)
