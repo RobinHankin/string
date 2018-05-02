@@ -17,7 +17,7 @@ dummypars <- c(eel=3) # dummy
 phi <- seq(from=0,to=1)
 xy <-
   stringu(
-      r_start=3/2,
+      r_start=3/2,  # r=3/2 is a circular (but unstable) orbit
       dubydphistart=0,
       phi=seq(from=0,to=2,len=10)
   )
