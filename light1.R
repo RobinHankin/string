@@ -2,7 +2,7 @@
 
 rm(list=ls())
 
-source("usefulfuncs.R") # defines lightstringpoints()
+source("usefullightfuncs.R") # defines lightstringpoints()
 
 
 ## plot setup:
