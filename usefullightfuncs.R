@@ -38,8 +38,9 @@ library("deSolve")   # ode()
   
   bh <- ode(y=yini, times=phi, func=lightu, parms=c(dummy=0), rtol=1e-6) 
   
-  r <- 1/bh[,2]
-  phi <- bh[,1]
+  phi <- bh[,1]  # column heading is "time" for some reason
+  r <- 1/bh[,2]  # r=1/u is the dependent variable
+  ## NB: bh[,3] is du/phi
   
   xy <- cbind(r*cos(phi),r*sin(phi))
   return(xy)
