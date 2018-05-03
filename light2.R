@@ -14,15 +14,26 @@ plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=FALSE,,xlab='',ylab=
 
 dummypars <- c(eel=3) # dummy
 
-phi <- seq(from=0,to=1)
-xy <-
+
+xy1 <-
   stringu(
-      r_start=3/2,  # r=3/2 is a circular (but unstable) orbit
+      r_start=3/2-0.01,  # r=3/2 is a circular (but unstable) orbit
       dubydphistart=0,
-      phi=seq(from=0,to=2,len=10)
+      phi=seq(from=0,to=6,len=100)
   )
 
-points(xy,col='red',type='l')
+points(xy1,col='red',type='l')
+
+xy2 <-
+  stringu(
+      r_start=3/2+0.01,  # r=3/2 is a circular (but unstable) orbit
+      dubydphistart=0,
+      phi=seq(from=0,to=6,len=100)
+  )
+
+points(xy2,col='red',type='l')
+
+
 
 polargrid()
 event_horizon()
