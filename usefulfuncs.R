@@ -20,15 +20,18 @@ library("deSolve")   # ode()
   })
 }
 
-#stringpoints <- function(y_start <- 9,theta_start <- -1.3)
-
-`stringpoints` <- function(y_start,initial_string_angle, theta=seq(from=0, to=pi, len=100)){
+`stringpoints` <- function(y_start,initial_string_angle, theta=seq(from=0, to=pi, len=100),give=FALSE){
+  ## use-case: 
+  ## pars <- c(eel=1) # [dummy]
+  ## stringpoints(2,0,theta=seq(from=0,to=pi/2,len=100))
   yini <- c(y=y_start, ydash=y_start*tan(initial_string_angle))
 
   bh <- ode(yini,theta,taut_string,pars,rtol=1e-6)
 
+  if(give){return(bh)}
   r <- bh[,2]
   theta <- bh[,1]
+
 
   xy <- cbind(r*cos(theta),r*sin(theta))
   return(xy)
