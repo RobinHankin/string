@@ -14,6 +14,9 @@ pdf(file="one_free_end_fixed_EH_intersection.pdf")
 source("one_free_end_fixed_EH_intersection.R")
 dev.off()
 
+pdf(file="curvature_switch.pdf")
+source("radius_of_curvature_switch.R")
+dev.off()
 
 source("flamm.R")
 pdf(file="flamm_nostring.pdf")
