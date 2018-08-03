@@ -2,7 +2,7 @@
 
 ## ODE is d^2u/d phi^2 = 3u^2/2-u  
 
-rm(list=ls())
+
 
 source("usefulfuncs.R") # defines polargrid() etc
 source("usefullightfuncs.R") # defines lightstringpoints()

@@ -1,14 +1,14 @@
 ## plots Flamm's paraboloid; quite slow to plot on the screen, but fast to make a pdf.
 
-rm(list=ls())
-library(plot3D)
-library(onion)
+
+library("plot3D")
+library("onion")
 options(use.R = TRUE)  #needed to handle NA values
 source("usefulfuncs.R")
 source("flammfuncs.R")
 
 
-pdf(file="~/f.pdf")
+
 pars <- c(eel=1) # dummy
 
 thetavals <- seq(from=0,to=2*pi,len=100)
@@ -80,4 +80,4 @@ legend("topright",
        lwd = c(0.1,0.1,2)
        )
 
-dev.off()
+

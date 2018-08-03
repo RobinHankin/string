@@ -1,6 +1,5 @@
 ## light paths near a black hole
 
-rm(list=ls())
 
 source("usefullightfuncs.R") # defines lightstringpoints()
 

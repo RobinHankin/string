@@ -2,7 +2,11 @@
 ## at different angles.  For production PDF image, source maker.R,
 ## which creates the best PDF.
 
-rm(list=ls())
+
+## This script runs standalone but is designed to be called from
+## maker.R [cf Makefile], which creates the pdf file
+## "angle_at_r_equals_2.pdf".
+
 
 pars <- c(eel=1)  # dummy
 

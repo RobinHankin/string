@@ -1,3 +1,6 @@
+## this script runs standalone but is designed to be called from
+## maker.R [cf Makefile], which creates the pdf file
+## "one_free_end_fixed_EH_intersection.pdf".
 
 pars <- c(eel=1)  # dummy
 

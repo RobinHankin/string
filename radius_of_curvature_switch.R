@@ -1,6 +1,9 @@
 ## lots of blue strings with varying closest approach distances.
 
-rm(list=ls())
+## This script runs standalone but is designed to be called from
+## maker.R [cf Makefile], which creates the pdf file
+## "curvature_switch.pdf"
+
 
 source("usefulfuncs.R") # defines stringpoints()
 

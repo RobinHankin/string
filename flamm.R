@@ -1,9 +1,12 @@
 ## plots Flamm's paraboloid; intended to be called by maker.R.
-
 ## It is quite slow to plot on the screen, but fast to make a pdf.
 
-rm(list=ls())
-library(plot3D)
+## This script runs standalone but is designed to be called from
+## maker.R [cf Makefile], which creates the pdf files
+## "flamm_string.pdf" and "flamm_nostring.pdf"
+
+
+library("plot3D")
 source("usefulfuncs.R")
 
 pars <- c(eel=1) # dummy
