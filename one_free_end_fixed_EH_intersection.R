@@ -1,5 +1,3 @@
-rm(list=ls())
-
 
 pars <- c(eel=1)  # dummy
 
