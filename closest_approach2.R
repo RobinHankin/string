@@ -20,18 +20,26 @@ polargrid(rlab=6.5)
 ## setup ends
 
 dist <- exp(seq(from=log(1.01), to=log(1.076109317),len=300))
-
+dist <- exp(seq(from=log(1.005), to=log(1.076109317),len=3000))[1:200]
 
 thetamax <- 0.1 + dist*0  # default value, (almost) always do-able
 
 cutoffmatrix <- matrix(c(
     1.000, pi + 0.00  ,
+    1.004, pi + 1.70  ,
+    1.005, pi + 1.70  ,
+    1.006, pi + 1.69  ,
+    1.007, pi + 1.55  ,
+    1.008, pi + 1.45  ,
+    1.009, pi + 1.35  ,
+    1.010, pi + 1.27  ,
     1.011, pi + 1.20  ,
+    1.012, pi + 1.20  ,
     1.013, pi + 1.15  ,
     1.015, pi + 1.05  ,
     1.017, pi + 0.91  ,
     1.020, pi + 0.83  ,
-    1.025, pi + 0.72  ,
+    1.025, pi + 0.71  ,
     1.030, pi + 0.57  ,
     1.035, pi + 0.44  ,
     1.040, pi + 0.40  ,
