@@ -16,9 +16,8 @@ polargrid(1:4,rlab=3.5)
 
 dist_from_hole <- 3
 
-
-start_angles <- c(seq(from=1.18,by=0.01,to=1.5) # one string per start angle, each one a different colour
-                  )
+## One string per start angle, each one a different colour:
+start_angles <- c(seq(from=1.18,by=0.01,to=1.5))
 
 
 start_angles <- rev(start_angles)

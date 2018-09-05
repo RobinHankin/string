@@ -5,9 +5,7 @@
 ## Function light() and stringlightpoints() set up the ODE for null
 ## geodesics (light paths).
 
-
-
-library("deSolve")   # ode()
+library("deSolve")   # needed for ode()
 
 `taut_string` <- function(theta, state, pars){
   with(as.list(c(state,pars)),{
@@ -40,7 +38,6 @@ library("deSolve")   # ode()
 ## function cont() returns TRUE if x is in the interval specified
 `cont` <- function(x,interval){ (x-interval[1])*(x-interval[2]) <=0}
 
-
 `polargrid` <- function(r=1:7,n=12,rlab=max(r)/2, labels=TRUE,...){
   fish <- c(
       expression(pi/6),    # Note off-by-one error
@@ -63,13 +60,15 @@ library("deSolve")   # ode()
   for(i in r){ points(xy*i,type='l',lty=3,lwd=0.5, col='gray', ...) }
   angs <- seq_len(n)*2*pi/n
   for(a in seq_along(angs)){
-    segments(x0=0,y0=0,x1=cos(angs[a])*max(r),y1=sin(angs[a])*max(r),lwd=0.5,lty=3, col='gray', ...)
+      segments(
+          x0=0, y0=0,
+          x1=cos(angs[a])*max(r),y1=sin(angs[a])*max(r),
+          lwd=0.5,lty=3, col='gray', ...)
     if(labels){
       text(cos(angs[a])*rlab,sin(angs[a])*rlab,fish[a])
     }
   }
 }
-
 
 `event_horizon` <- function(fill=TRUE, ...){
   points(0,0,pch=16,cex=0.3)  # singularity
@@ -80,7 +79,6 @@ library("deSolve")   # ode()
     points(cos(th),sin(th),type='l', lwd=1,  ...)   # event horizon
   ## setup ends
 }
-
 
 fun <- function(cuts,vals){
   return(function(x){vals[findInterval(x, c(-Inf, cuts))]})

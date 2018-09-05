@@ -37,6 +37,8 @@ theta_start <- 0
 theta_end1 <- 0 + 0*start_angles ## upward/outward
 theta_end2 <- pi*0.05 + 0*start_angles  # downward/inward
 
+
+
 theta_end2[cont(start_angles, c(0.10,0.50))] <-  pi
 theta_end2[cont(start_angles, c(0.50,1.00))] <-  pi
 theta_end2[cont(start_angles, c(1.00,1.10))] <-  pi/2 + 0.1
@@ -57,6 +59,8 @@ theta_end2[cont(start_angles, c(1.55,1.56))] <-  pi/60
 theta_end2[cont(start_angles, c(1.56,1.57))] <-  pi/120
 theta_end2[cont(start_angles, c(1.57,1.58))] <-  pi/600
 theta_end2[cont(start_angles, c(1.58,1.59))] <-  pi/30000
+## cont() is defined in usefulfuncs.R
+
 
 ## now the downward ones:
 for(i in seq_along(start_angles)){

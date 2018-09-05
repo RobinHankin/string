@@ -1,7 +1,6 @@
-## lots of rainbow coloured strings all passing through the same point
-## at different angles.  For production PDF image, source maker.R,
-## which creates the best PDF.
-
+## Lots of rainbow coloured strings all passing through the same point
+## at different angles.  For production PDF image, source file
+## "maker.R", which creates the best PDF.
 
 ## This script runs standalone but is designed to be called from
 ## maker.R [cf Makefile], which creates the pdf file
@@ -20,16 +19,14 @@ plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',xlab='',ylab='',axes=FALS
 polargrid(rlab=6.5)
 
 
-##xy <- stringpoints(y_start=9,initial_string_angle = -(pi-pi*1.42),theta=seq(from=0,to=-(pi+0.4),len=100))
-#points(xy,type='l',col='red')
-
-##xy <- stringpoints(y_start=9,initial_string_angle = -pi*1.42,theta=seq(from=0,to=pi+0.4,len=100))
-#points(xy,type='l',col='red')
-
 dist_from_hole <- 2
 
-## define start_angles, specifying the angle that the string makes at (2,0) from a tangent:
-start_angles <- seq(from=-0.8,to=0.0,by=0.021) # one string per start angle, each one a different colour
+## Define start_angles, specifying the angle that the string makes at
+## (2,0) from a tangent:
+
+
+## One string per start angle, each one a different colour:
+start_angles <- seq(from=-0.8,to=0.0,by=0.021) 
 
 n <- length(start_angles)
 cols <- rainbow(n+round(n/7))
@@ -87,22 +84,22 @@ for(i in seq_along(start_angles)){
 
 ## Now the downward strings:
 if(FALSE){
-for(i in seq_along(start_angles)){
-  xy <-
-    stringpoints(
-        y_start = dist_from_hole,
-        initial_string_angle = -(pi-start_angles[i]),
-        theta = -seq(from=theta_start,to=theta_end2[i],len=100)
-    )
-
-  points(xy,type='l',col=cols[i],lwd=5)
-}
-
+    for(i in seq_along(start_angles)){
+        xy <-
+            stringpoints(
+                y_start = dist_from_hole,
+                initial_string_angle = -(pi-start_angles[i]),
+                theta = -seq(from=theta_start,to=theta_end2[i],len=100)
+            )
+        
+        points(xy,type='l',col=cols[i],lwd=5)
+    }
+    
 }
 points(dist_from_hole,0,pch=16)
 
 
-# mask strings too far from the black hole:
+## Mask strings too far from the black hole:
 xy <- cbind(c(7,30,30,7),c(-0.5,-0.5,0.5,0.5))
 howmany <- 100  # 100 for production, 10 for testing
 for (theta in seq(from=0,to=2*pi,len=howmany)){
