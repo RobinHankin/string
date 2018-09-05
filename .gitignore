@@ -2,3 +2,8 @@
 *.R~
 *.pdf
 .RData
+string.aux
+string.bbl
+string.blg
+string.log
+stringNotes.bib
