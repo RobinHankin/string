@@ -9,8 +9,10 @@
 
 pars <- c(eel=1)  # dummy
 
-
 source("usefulfuncs.R")
+
+
+mask <- TRUE    # set to FALSE to see entire string
 
 ## setup:
 jj <- 6.5
@@ -100,13 +102,14 @@ points(dist_from_hole,0,pch=16)
 
 
 ## Mask strings too far from the black hole:
-xy <- cbind(c(7,30,30,7),c(-0.5,-0.5,0.5,0.5))
-howmany <- 100  # 100 for production, 10 for testing
-for (theta in seq(from=0,to=2*pi,len=howmany)){
-  jjxy <- xy %*% rotmat(theta)
-  polygon(jjxy[,1],jjxy[,2],col='white',border=NA) # white for production
+if(mask){
+  xy <- cbind(c(7,30,30,7),c(-0.5,-0.5,0.5,0.5))
+  howmany <- 100  # 100 for production, 10 for testing
+  for (theta in seq(from=0,to=2*pi,len=howmany)){
+    jjxy <- xy %*% rotmat(theta)
+    polygon(jjxy[,1],jjxy[,2],col='white',border=NA) # white for production
+  }
 }
-
 
 
 
