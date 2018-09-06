@@ -1,11 +1,13 @@
 ## lots of blue strings with varying closest approach distances.  The
-## emphasis here is on self-intersecting strings.
+## emphasis here is on self-intersecting strings with two free ends.
+## For a self-intersecting string, the closest approach to the black
+## hole must be less than about 1.076109317.
 
 ## This script runs standalone but is designed to be called from
 ## maker.R [cf Makefile], which creates the pdf file
 ## "closest_approach2.pdf"
 
-source("usefulfuncs.R") # defines stringpoints()
+source("usefulfuncs.R") # defines stringpoints() and dseq()
 
 
 mask <- TRUE
@@ -22,7 +24,7 @@ polargrid(rlab=6.5)
 
 dist <- exp(seq(from=log(1.0001), to=log(1.076109317),len=80))
 dist <- seq(from=(1.0001), to=1.076109317,len=80)
-dist <- dseq(from=(1.00012), to=1.076109317,len=100,power=2.3)[1:30]
+dist <- dseq(from=(1.00012), to=1.076109317,len=100,power=2.3)
 
 thetamax <- 0.1 + dist*0  # default value, (almost) always do-able
 
