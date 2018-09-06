@@ -2,6 +2,10 @@ pdf(file="closest_approach.pdf")
 source("closest_approach.R")
 dev.off()
 
+pdf(file="closest_approach2.pdf")
+source("closest_approach2.R")
+dev.off()
+
 pdf(file="angle_at_r_equals_2.pdf")
 source("angle_at_r_equals_2.R")
 dev.off()
