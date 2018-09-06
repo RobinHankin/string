@@ -274,18 +274,28 @@ The canonical result is shown in Figure~\ref{flamm_withstring}:
 Flamm's paraboloid with a taut string.  Note that an actual 3D model
 would require the string to be constrained above and below.
 
-Figure~\ref{closest_approach} shows strings indexed by distance of
-approach to the singularity, which occurs at~$\phi=0$.  Strings with a
-sufficiently close passage to the event horizon self-intersect;
-numerical methods show that the critical value is~$\simeq
-1.076109317$, with an uncertainty of 1 in the last digit: if a string
-with two free ends passes closer than this, it forms a closed loop.
+Figure~\ref{closest_approach_non_self_intersecting} shows
+nonselfintersecting strings indexed by distance of approach to the
+singularity, which occurs at~$\phi=0$.  Strings with a sufficiently
+close passage to the event horizon self-intersect; numerical methods
+show that the critical value is~$\simeq 1.076109317$, with an
+uncertainty of 1 in the last digit: if a string with two free ends
+passes closer than this, it forms a closed loop.
 
 \begin{figure}[h!]
 \centering
-\includegraphics{closest_approach.pdf}
-\caption{Strings arranged by closest approach to the event horizon}
-\label{closest_approach}
+\includegraphics{closest_approach_nonselfintersecting.pdf}
+\caption{Strings arranged by closest approach to the event horizon:
+  non-self-intersecting strings}
+\label{closest_approach_non_self_intersecting}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics{closest_approach_selfintersecting.pdf}
+\caption{Strings arranged by closest approach to the event horizon:
+ self-intersecting strings}
+\label{closest_approach_self_intersecting}
 \end{figure}
 
 It is possible to parametrize the string in a number of different
