@@ -22,8 +22,6 @@ polargrid(rlab=6.5)
 ## setup ends
 
 
-dist <- exp(seq(from=log(1.0001), to=log(1.076109317),len=80))
-dist <- seq(from=(1.0001), to=1.076109317,len=80)
 dist <- dseq(from=(1.00012), to=1.076109317,len=100,power=2.3)
 
 thetamax <- 0.1 + dist*0  # default value, (almost) always do-able
