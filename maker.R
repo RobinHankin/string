@@ -1,8 +1,8 @@
-pdf(file="closest_approach.pdf")
+pdf(file="closest_approach_nonselfintersecting.pdf")
 source("closest_approach.R")
 dev.off()
 
-pdf(file="closest_approach2.pdf")
+pdf(file="closest_approach_selfintersecting.pdf")
 source("closest_approach2.R")
 dev.off()
 
