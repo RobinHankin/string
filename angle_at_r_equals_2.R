@@ -18,7 +18,7 @@ mask <- TRUE    # set to FALSE to see entire string
 jj <- 6.5
 par(pty='s')
 plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',xlab='',ylab='',axes=FALSE)
-polargrid(rlab=6.5)
+
 
 
 dist_from_hole <- 2
@@ -117,5 +117,5 @@ if(mask){
 }
 
 
-
+polargrid(rlab=6.5)
 event_horizon()

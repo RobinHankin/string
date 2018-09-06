@@ -13,16 +13,10 @@ pars <- c(eel=1)  # dummy
 jj <- 6
 par(xpd=TRUE)
 plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=FALSE,,xlab='',ylab='')
-
-
-
-polargrid(rlab=6.5)
 ## setup ends
 
 
 dist <- dseq(from=1.076109317, to=7.5, len=100, power=2)
-
-thetamax <- 0.1 + dist*0  # default value, (almost) always do-able
 
 cutoffmatrix <- matrix(c(
  1.060, pi  ,
@@ -75,4 +69,6 @@ for (theta in seq(from=0,to=2*pi,len=100)){
   polygon(jjxy[,1],jjxy[,2],col='white',border=NA)
 }
 
+
+polargrid(rlab=6.5)
 event_horizon()
