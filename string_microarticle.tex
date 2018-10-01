@@ -72,21 +72,21 @@
   Auckland 1142, New Zealand}
 
 
-\received{1 May 2013}
-\finalform{10 May 2013}
-\accepted{13 May 2013}
-\availableonline{15 May 2013}
+\received{day month year}
+\finalform{day month year}
+\accepted{day month year}
+\availableonline{day month year}
 \communicated{R. Hankin}
 
 
 \begin{abstract}
 %%%
-Here I analyze the behaviour of light inextensible strings under
-tension in the vicinity of a nonrotating black hole.  Proper length
-(given by the spatial component of the Schwarzshild metric) is
+Here I analyze the behaviour of stationary, light inextensible strings
+under tension in the vicinity of a nonrotating black hole.  Proper
+length (given by the spatial component of the Schwarzshild metric) is
 minimized by the Euler-Lagrange equations.  Light inextensible taut
 strings may assume topologically distinct configurations, and here I
-give some numerical solutions and theoretical observations.
+give some numerical solutions and theoretical observations.  
 %%%%
 \end{abstract}
 
@@ -105,24 +105,23 @@ give some numerical solutions and theoretical observations.
 %% main text
 \section{Introduction}
 \label{intro}
-In this short paper I consider the behaviour of a light inextensible
-string in the exterior Schwarzschild metric.  A light string is not
-subject to gravity, and being under tension means that its
-configuration is an extremum of proper length.  Of course, no real
-string is perfectly weightless or inextensible.  With tension~$T$,
-gravitational acceleration $g$ and (proper) mass per (proper) unit
-length~$\mu$, then ideal behaviour will be appropriate for
-lengthscales $L\lesssim\frac{T}{\mu g}$.  Using Newtonian expressions
-for the strength of gravity at the event horizon gives
-$L\ll\frac{TGM}{\mu c^2}$.  For the string to behave as though light
-on lengthscales comparable with the Schwarzschild radius would require
-$T\gtrsim\mu c^2$.  Exceeding this criterion would violate the
-dominant energy condition (and in this context we note that transverse
-waves would propagate at speed~$\sqrt{T/\mu}\sim c$).  Nevertheless,
-the idealization of a light inextensible string is an interesting and
-informative limit: its analysis interprets the concept ``straight
-line'' and suggests a possible way of manipulating a black hole.  The
-Schwarzschild metric
+Light inextensible strings are a stalwart feature of elementary
+physics.  A light string is not subject to gravity, and being under
+tension means that its configuration is an extremum of proper length.
+Of course, no real string is perfectly weightless or inextensible.
+With tension~$T$, gravitational acceleration $g$ and (proper) mass per
+(proper) unit length~$\mu$, then a string will behave as though light
+on lengthscales $L\lesssim\frac{T}{\mu g}$.  Using Newtonian
+expressions for the strength of gravity at the event horizon of a
+black hole gives $L\lesssim\frac{TGM}{\mu c^2}$.  For the string to
+behave as though light on lengthscales comparable with the
+Schwarzschild radius would require $T\gtrsim\mu c^2$.  Exceeding this
+criterion would violate the dominant energy condition (and in this
+context we note that transverse waves would propagate at
+speed~$\sqrt{T/\mu}\sim c$).  Nevertheless, the idealization of a
+light inextensible string is an interesting and informative limit: its
+analysis interprets the concept ``straight line'' and suggests a
+possible way of manipulating a black hole.  The Schwarzschild metric
 
 \begin{equation}\label{schwarzschild}
 ds^2= -dt^2\left(1-1/r\right) +\frac{dr^2}{1-1/r} + r^2\left(d\theta^2 + \sin^2\theta d\phi^2\right),
@@ -163,7 +162,7 @@ of~$r=r\left(\phi\right)$ gives us a path length of
 \begin{equation}
 %  \int_{p_1}^{p_2}\sqrt{\frac{\left(r'\right)^2}{1-2M/r} + r^2}d\phi=
   \int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-1/r} + r^2\right)^\frac{1}{2}d\phi=
-  \int_{p_1}^{p_2}F\left(r,r'\right)d\phi.
+  \int_{p_1}^{p_2}F\left(r,r'\right)d\phi
 \end{equation}
 
 \noindent where dashes denote differentiation with respect to~$\phi$.  The
@@ -184,28 +183,27 @@ becomes infinite, and the string has a point of inflection,
 if~$\left(r'\right)^2=2r\left(r-1\right)$.
 
 \section{Results}
-Light inextensible strings fall into two distinct classes: those with
-two free ends, and those with one free end (the other ``end'' is
-tangential to the event horizon).  
+Solutions to equation~\ref{rdashdash} fall into two distinct classes:
+those with two free ends, and those with one free end (the other
+``end'' is tangential to the event horizon, in general).
 
 Figure~\ref{closest_approach_non_self_intersecting} shows non-self
-intersecting strings indexed by distance of approach to the
+intersecting strings indexed by minimum distance of approach to the
 singularity, which is taken to occur at~$\phi=0$.  Strings with a
-sufficiently close passage to the event horizon self-intersect;
-numerical methods show that the critical value is~$\simeq
-1.076109317$, with an uncertainty of 1 in the last digit: if the
-closest approach is less than this value, the string crosses itself
-at~$\phi=\pi/2$.  Figure~\ref{closest_approach_non_self_intersecting}
-shows some non-self-intersecting strings and
-figure~\ref{closest_approach_self_intersecting} shows some strings
-that self-intersect.  Figure~\ref{one_free_end} shows some strings
-that pass through~$\left(2,0\right)$ and are tangent to the event horizon.
+sufficiently close passage to the event horizon self-intersect
+(Figure~\ref{closest_approach_self_intersecting}).  Numerical methods
+show that the critical value is~$\simeq 1.076109317$, with an
+uncertainty of~1 in the last digit: if the closest approach is less
+than this value, the string crosses itself at~$\phi=\pi/2$.
+Figure~\ref{one_free_end} shows some strings that are tangent to the
+event horizon and pass through the point~$\left(2,0\right)$
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=70mm]{closest_approach_nonselfintersecting.pdf}
 \caption{Non-self intersecting strings arranged by distance~$d$ of
-  closest approach to the event horizon, occurring at~$\phi=0$}
+  closest approach to the event horizon, occurring tangentially
+  at~$\phi=0$}
 \label{closest_approach_non_self_intersecting}
 \end{figure}
 
@@ -229,15 +227,15 @@ that pass through~$\left(2,0\right)$ and are tangent to the event horizon.
 
 \section{Discussion}
 
-The analysis above was restricted to the case~$r\geq 1$, where it is
-possible to hold objects steady.  Of course, once within the event
-horizon, even a light inextensible string cannot hold itself steady
-(at least in Schwarzschild coordinates) and one would have to account
-for the dynamics of the system.
+Light inextensible strings under tension are one interpretation of
+``straight line'' in general relativity, the others being null
+geodesics and world lines of massive objects.  Here it is shown that
+such strings adopt non-trivial configurations including
+self-intersecting paths.
 
-In figure~\ref{closest_approach_non_self_intersecting}, one's
+In Figure~\ref{closest_approach_non_self_intersecting}, one's
 classical intuition would suggest that the black hole feels a force to
-the right, and should start accelerating.  However, it is not clear by
+the left, and should start accelerating.  However, it is not clear by
 what mechanism such a force would be transmitted: the situation is
 steady, so no gravitational waves are produced; the string is
 inextensible, so stores no energy.  Likewise,
