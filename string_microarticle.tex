@@ -115,34 +115,34 @@ gravitational acceleration $g$ and (proper) mass per (proper) unit
 length~$\mu$, then ideal behaviour will be appropriate for
 lengthscales $L\lesssim\frac{T}{\mu g}$.  Using Newtonian expressions
 for the strength of gravity at the event horizon gives
-$L\ll\frac{TGM}{\mu c^2}$.  For the string to behave itself near the
-event horizon on lengthscales comparable with the Schwarzschild radius
-would require $T\gtrsim\mu c^2$.  Exceeding this criterion would
-violate the dominant energy condition (and in this context we note
-that transverse waves would propagate at speed~$\sqrt{T/\mu}\sim c$).
-
-Nevertheless, the idealization of a light inextensible string is an
-interesting and informative limit: its analysis interprets the concept
-``straight line'' and suggests a possible way of manipulating a black
-hole.  The Schwarzschild metric
+$L\ll\frac{TGM}{\mu c^2}$.  For the string to behave as though light
+on lengthscales comparable with the Schwarzschild radius would require
+$T\gtrsim\mu c^2$.  Exceeding this criterion would violate the
+dominant energy condition (and in this context we note that transverse
+waves would propagate at speed~$\sqrt{T/\mu}\sim c$).  Nevertheless,
+the idealization of a light inextensible string is an interesting and
+informative limit: its analysis interprets the concept ``straight
+line'' and suggests a possible way of manipulating a black hole.  The
+Schwarzschild metric
 
 \begin{equation}\label{schwarzschild}
 ds^2= -dt^2\left(1-1/r\right) +\frac{dr^2}{1-1/r} + r^2\left(d\theta^2 + \sin^2\theta d\phi^2\right)
 \end{equation}
 
 where units in which~$2GM=c=1$ are used, has been known for over a
-century and makes a number of counter-intuitive predictions.  Here I
-consider the spatial component~$ds^2= \frac{dr^2}{1-1/r} +
-r^2d\phi^2$, confined to equatorial points~($\phi=\pi/2$); we
-understand~$1<r<\infty$ throughout.  A string of constant~$r$ will,
-trivially, have proper length~$2\pi r$.
+century~\cite{schwarzschild1916} and makes a number of
+counter-intuitive predictions.  Here I consider the spatial
+component~$ds^2= \frac{dr^2}{1-1/r} + r^2d\phi^2$, confined to
+equatorial points~($\phi=\pi/2$); we understand~$1<r<\infty$
+throughout.  A string of constant~$r$ will, trivially, have proper
+length~$2\pi r$.
 
 Considering first the radial component we may calculate the
 proper length $L\left(r_1,r_2\right)$ of a string stretching
 from~$r=r_1\geq 1$ to~$r_2\geq r_1$ at constant $\theta,\phi$:
 
 \begin{equation}\label{radial_string_length}
-  \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-2M/r}}=
+  \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-1/r}}=
   \left.
   \sqrt{r(r-1)} +\frac{1}{2}\log\left(
   \frac{r+\sqrt{r-1}}{r-\sqrt{r-1}}\right)
@@ -152,8 +152,6 @@ from~$r=r_1\geq 1$ to~$r_2\geq r_1$ at constant $\theta,\phi$:
 Observe that integration may be performed with a lower limit
 of~$r_1=1$ with no difficulty, even though the radial component of the
 Schwarzschild metric approaches infinity there.  
-
-\subsection{Radial and angular components}
 
 Integrating along a path between two
 points~$p_1=\left(r_1,\phi_1\right)$ and~$p_2=\left(r_2,\phi_2\right)$
@@ -165,7 +163,7 @@ of~$r=r\left(\phi\right)$ gives us a path length of
 
 \begin{equation}
 %  \int_{p_1}^{p_2}\sqrt{\frac{\left(r'\right)^2}{1-2M/r} + r^2}d\phi=
-  \int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-2M/r} + r^2\right)^\frac{1}{2}d\phi=
+  \int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-1/r} + r^2\right)^\frac{1}{2}d\phi=
   \int_{p_1}^{p_2}F\left(r,r'\right)d\phi.
 \end{equation}
 
@@ -204,7 +202,8 @@ passes closer than this, it forms a closed loop.
 Figure~\ref{closest_approach_non_self_intersecting} shows some
 non-self-intersecting strings and
 figure~\ref{closest_approach_self_intersecting} shows some strings
-that self-intersect.
+that self-intersect.  Figure~\ref{one_free_end} shows some strings
+that pass through~$\left(2,0\right)$ and tangent to the event horizon.
 
 \begin{figure}[h!]
 \centering
@@ -222,10 +221,7 @@ that self-intersect.
 \label{closest_approach_self_intersecting}
 \end{figure}
 
-Figure~\ref{one_free_end_r_equals_2} shows some strings that pass
-through~$\left(2,0\right)$ and tangent to the event horizon.
 
-\subsection{Strings with one free end}
 
 \begin{figure}[h!]
 \centering
@@ -236,7 +232,6 @@ through~$\left(2,0\right)$ and tangent to the event horizon.
 
 
 \section{Discussion}
-
 
 The analysis above was restricted to the case~$r\geq 1$, where it is
 possible to hold objects steady.  Of course, once within the event
@@ -254,7 +249,7 @@ Figure~\ref{one_free_end} would suggest that angular momentum is
 transmitted to the black hole, but no mechanism is apparent.
 
 This work considered only the Schwarzschild metric and generalizing it
-to the Kerr metric~\cite{asdfsadfasfd} might be interesting.  
+to the Kerr metric~\cite{kerr1963} might be interesting.  
 
 
 %%Vancouver style references.
