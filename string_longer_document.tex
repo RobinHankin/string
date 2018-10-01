@@ -1,0 +1,453 @@
+\documentclass[prb,preprint]{revtex4-1} 
+% The line above defines the type of LaTeX document.
+% Note that AJP uses the same style as Phys. Rev. B (prb).
+
+% The % character begins a comment, which continues to the end of the line.
+
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+
+
+\begin{document}
+
+% Be sure to use the \title, \author, \affiliation, and \abstract macros
+% to format your title page.  Don't use lower-level macros to  manually
+% adjust the fonts and centering.
+
+\title{Light inextensible strings under tension in the Schwarzschild geometry}
+% In a long title you can use \\ to force a line break at a certain location.
+
+\author{Robin K. S. Hankin}
+\email{hankin.robin@gmail.com} % optional
+\altaffiliation[permanent address: ]{2-14 Wakefield Street, Auckland, New Zealand} % optional second address
+% If there were a second author at the same address, we would put another 
+% \author{} statement here.  Don't combine multiple authors in a single
+% \author statement.
+\affiliation{AUT University, 2-14 Wakefield Street, Auckland, New Zealand}
+% Please provide a full mailing address here.
+
+% See the REVTeX documentation for more examples of author and affiliation lists.
+
+\date{\today}
+
+\begin{abstract}
+
+\end{abstract}
+
+% AJP requires an abstract for all regular article submissions.
+% Abstracts are optional for submissions to the "Notes and Discussions" section.
+
+\maketitle % title page is now complete
+
+\section{Introduction}
+
+In this short paper I consider the behaviour of a light inextensible
+string in the exterior Schwarzschild metric.  A light string is not
+subject to gravity, and being under tension means that its
+configuration is an extremum of proper length.  Of course, no real
+string is perfectly weightless or inextensible.  With tension~$T$,
+gravitational acceleration $g$ and (proper) mass per (proper) unit
+length~$\mu$, then ideal behaviour will be appropriate for
+lengthscales $L\lesssim\frac{T}{\mu g}$.  Using Newtonian expressions
+for the strength of gravity at the event horizon gives
+$L\ll\frac{TGM}{\mu c^2}$.  For the string to behave itself near the
+event horizon on lengthscales comparable with the Schwarzschild radius
+would require $T\gtrsim\mu c^2$.  Exceeding this criterion would
+violate the dominant energy condition (and in this context we note
+that transverse waves would propagate at speed~$\sqrt{T/\mu}\sim c$).
+
+Nevertheless, the idealization of a light inextensible string is an
+interesting and informative limit: its analysis interprets the concept
+``straight line'' and suggests a possible way of manipulating a black
+hole.  
+
+The Schwarzschild metric
+
+\begin{equation}\label{schwarzschild}
+ds^2= -dt^2\left(1-2M/r\right) +\frac{dr^2}{1-2M/r} + r^2\left(d\theta^2 + \sin^2\theta d\phi^2\right)
+\end{equation}
+
+where units in which~$2GM=c=1$ are used, has been known for over a
+century and makes a number of counter-intuitive predictions.  Here I
+consider the spatial component
+
+\begin{equation}\label{spatial_schwarzschild}
+  ds^2= \frac{dr^2}{1-2M/r} + r^2d\phi^2
+\end{equation}
+
+confined to equatorial points~($\phi=\pi/2$); we
+understand~$1<r<\infty$ throughout.  A string of constant~$r$ will,
+trivially, have proper length~$2\pi r$.
+
+\subsection*{Radial strings}
+
+Considering first the radial component we may calculate the
+proper length $L\left(r_1,r_2\right)$ of a string stretching
+from~$r=r_1\geq 1$ to~$r_2\geq r_1$ at constant $\theta,\phi$:
+
+\begin{equation}\label{radial_string_length}
+  \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-2M/r}}=
+  \left.
+  \sqrt{r(r-1)} +\frac{1}{2}\log\left(
+  \frac{r+\sqrt{r-1}}{r-\sqrt{r-1}}\right)
+  \right|_{r_1}^{r_2}
+  \end{equation}
+
+Observe that integration may be performed with a lower limit
+of~$r_1=1$ with no difficulty, even though the radial component of the
+Schwarzschild metric approaches infinity there.  The proper string
+length from~$r=1$ to~$r=1+r_0$, say, is given by elementary calculus
+and we can say:
+
+\begin{equation}\label{proper_string_length_large_r}
+  L\left(1,1+r_0\right)=
+  r_0 + \frac{\log(r_0)}{2}
+  + \log(2) -\frac{1}{2} 
+  +o(1)\qquad\mbox{as $r_0\longrightarrow\infty$}
+\end{equation}
+
+
+%In[23]:=  p = Assuming[r0>1,Integrate[1/Sqrt[1-1/r],{r,1,1+r0}]] 
+%
+%                                            r0
+%Out[23]= Sqrt[r0 (1 + r0)] + ArcTanh[Sqrt[------]]
+%                                          1 + r0
+%
+%In[24]:= Limit[p -(r0 + Log[2] + 1/2 +Log[r0]/2) , {r0 -> Infinity}] 
+%
+%Out[24]= {0}
+
+
+For small values of~$r_0$ we have 
+
+\begin{equation}\label{proper_string_length_small_r}
+L\left(1,1+r_0\right) =   \sqrt{r_0}\left(2 - \frac{1}{6}r_0+ o\left(r_0^2\right)\right)\qquad\mbox{as $r_0\longrightarrow 0^+$}
+\end{equation}
+
+
+%var('r,r0')
+%def g(r):  return sqrt(r*(r-1)) + log(    (r+sqrt(r-1))/(r-sqrt(r-1))  )/2
+% (   (g(1+r0)-g(1))/sqrt(r0)    ).taylor(r0,0,2)
+
+% 3/40*r0^2 - 1/6*r0 + 2
+
+
+
+
+\subsection{Radial and angular components}
+
+Taut strings with a metric corresponding
+to~\ref{spatial_schwarzschild} may be visualized using the device of
+{\em Flamm's paraboloid\,}~\cite{flamm1916}
+(figure~\ref{flamm_nostring}), in which a 2D surface corresponding
+to~$\theta=0$ is embedded into~$\mathbb{R}^3$ in such a way that
+distances on the surface correspond to the spatial components of the
+Schwarzschild metric.  Note the absence of points within the event
+horizon.
+
+Integrating equation~\ref{spatial_schwarzschild} along a path between
+two points~$p_1=\left(r_1,\phi_1\right)$
+and~$p_2=\left(r_2,\phi_2\right)$ gives the {\em proper} length of the
+path, which is the length of a string joining~$p_1$ and~$p_2$.  A taut
+but light string from~$p_1$ to~$p_2$ will adopt an extremal-length
+path, as measured by equation~\ref{spatial_schwarzschild}.  Such paths
+may be found by the calculus of variations; parametrizing a curve in
+terms of~$r=r\left(\phi\right)$ gives us a path length of
+
+\begin{equation}
+%  \int_{p_1}^{p_2}\sqrt{\frac{\left(r'\right)^2}{1-2M/r} + r^2}d\phi=
+  \int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-2M/r} + r^2\right)^\frac{1}{2}d\phi=
+  \int_{p_1}^{p_2}F\left(r,r'\right)d\phi.
+\end{equation}
+
+where dashes denote differentiation with respect to~$\phi$.  The
+Euler-Lagrange equations for this system are
+
+\begin{equation}
+  \frac{d}{d\phi}\frac{\partial F}{\partial r'}-\frac{\partial F}{\partial r}=0.
+\end{equation}
+
+This gives, after simplification, an expression for the second
+derivative of~$r$:
+
+\begin{equation}\label{rdashdash}
+  r''\left(\phi\right) =
+  (r-1) + \frac{(4r-3)\left(r'\right)^2}{2r\left(r-1\right)},\qquad r>1
+\end{equation}
+
+This differential equation does not appear to have a simple analytical
+solution (I present some numerical results below) but nevertheless we
+may make several observations.  Equation~\ref{rdashdash} is a
+second-order nonlinear ordinary differential equation and thus has two
+constants of integration.  Consider a solution where there exists a
+point~$\left(r,\phi\right), r>1$ at which~$r'(\phi)=0$.  By Rolle's
+theorem, this point must be unique, as~$r''(\phi)>0$, and be the
+closest approach of the string to the event horizon.  Further, because
+the system is symmetrical under~$\phi\longrightarrow-\phi$, the string
+must be symmetrical about this point; and we can see that~$r$ can take
+arbitrarily large values as~$\phi\longrightarrow\pm\infty$: the string
+has two ``free'' ends which continue to asymptotically flat space.
+
+Solutions for which~$r'(\phi)>0$ whenever~$r>1$ correspond to strings
+that have only one free end; the other is tangential to the event
+horizon, except in the exceptional case of constant~$\phi$ when the
+string is radial for~$r>1$.  The (signed) radius of curvature~$R$ is
+readily evaluated:
+
+\begin{equation}\label{roc}
+  R = \frac{
+    \left(r^2 + \left(r'\right)^2\right)^\frac{3}{2}
+  }{
+%    \left|
+    r^2 + 2\left(r'\right)^2-rr''
+%    \right|
+  }
+  =
+  \frac{
+    \left(r^2 + \left(r'\right)^2\right)^\frac{3}{2}
+  }{
+    r-\frac{\left(r'\right)^2}{2\left(r-1\right)}
+  }\qquad\mbox{along a taut string}
+\end{equation}
+
+which would give~$R$ as a function of~$\left(r,r'\right)$.
+Considering~$r'(\phi)=0$ shows that if a string is tangential at a
+point with~$r_0>1$, then it has a radius of curvature of~$r_0^2$ at
+that point.  Any circular path, including a circular orbit at~$r=r_0$,
+has a radius of curvature of $r_0<r_0^2$, showing that circular orbits
+cannot follow a taut string.  Also observe that null geodesics have a
+radius of curvature of $2r_0^2/3 < r_0^2$, showing that light cannot
+follow a taut string either.
+
+
+% \subsection{Particle paths}
+% 
+% Free particle paths are given by
+% 
+% \begin{equation}
+% \frac{d^2u}{d\phi^2} + u = \frac{2}{\ell^2} + \frac{3}{2}
+% \end{equation}
+% 
+% (Rindler 11.45) where~$u=r^{-1}<1$ is the inverse radius and $\ell$ is a constant.
+% This, in conjunction with equation~\ref{roc}, shows that tangential
+% particle paths have a radius of curvature
+% of~$\frac{2\ell^2}{1+3\ell^2/r^2}$.  This cannot equal the radius of
+% curvature of a tangential string, which is~$r^2$ for any value
+% of~$\ell$; thus no tangentially moving particle can follow a string
+% path, no matter how fast it moves.
+
+Equation~\ref{roc} also shows that~$R$ becomes infinite, and the
+string has a point of inflection,
+if~$\left(r'\right)^2=2r\left(r-1\right)$.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{flamm_nostring.pdf}
+\caption{Flamm's paraboloid}
+\label{flamm_nostring}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics{flamm_string.pdf}
+\caption{Flamm's paraboloid with a string}
+\label{flamm_withstring}
+\end{figure}
+
+\section{Results}
+Light inextensible strings fall into two distinct classes: those with
+two free ends, and those with one free end (the other ``end'' is
+tangential to the event horizon).  Results for strings with two free
+ends are presented first.
+
+
+\subsection{Strings with two free ends}
+
+The canonical result is shown in Figure~\ref{flamm_withstring}:
+Flamm's paraboloid with a taut string.  Note that an actual 3D model
+would require the string to be constrained above and below.
+
+Figure~\ref{closest_approach_non_self_intersecting} shows
+nonselfintersecting strings indexed by distance of approach to the
+singularity, which occurs at~$\phi=0$.  Strings with a sufficiently
+close passage to the event horizon self-intersect; numerical methods
+show that the critical value is~$\simeq 1.076109317$, with an
+uncertainty of 1 in the last digit: if a string with two free ends
+passes closer than this to the event horizon,
+Figure~\ref{closest_approach_non_self_intersecting} shows some
+non-self-intersecting strings and
+figure~\ref{closest_approach_self_intersecting} shows some strings
+that self-intersect.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{closest_approach_nonselfintersecting.pdf}
+\caption{Strings arranged by distance~$d$ of closest approach to the
+  event horizon, occurring at~$\phi=0$; non-self-intersecting strings}
+\label{closest_approach_non_self_intersecting}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics{closest_approach_selfintersecting.pdf}
+\caption{Strings arranged by closest approach to the event horizon:
+ self-intersecting strings}
+\label{closest_approach_self_intersecting}
+\end{figure}
+
+It is possible to parametrize the string in a number of different
+ways.  Figure~\ref{angle_at_r_equals_2} shows the same physical
+system, but the strings are arranged so that they pass through the
+point~$\left(2,0\right)$; the strings are indexed by the
+angle~$\alpha$ made with a radius at that point.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{angle_at_r_equals_2.pdf}
+\caption{Strings \label{angle_at_r_equals_2} passing through
+  $\left(2,0\right)$, two free ends}
+\end{figure}
+
+\subsection{Strings with one free end}
+
+\begin{figure}[h!]
+\centering
+\includegraphics{one_free_end_r_equals_2.pdf}
+\caption{Strings arranged by angle made at $r=2$, one free end}
+\label{y}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics{one_free_end_fixed_EH_intersection.pdf}
+\caption{Strings arranged by QFGASDSF}
+\label{fixed_EH_intersection}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics{curvature_switch.pdf}
+\caption{Strings arranged by QFGASDSF}
+\label{curvature_switch}
+\end{figure}
+
+
+
+\section{Discussion}
+
+
+The analysis above was restricted to the case~$r\geq 1$, where it is
+possible to hold objects steady.  Of course, once within the event
+horizon, even a light inextensible string cannot hold itself steady
+(at least in Schwarzschild coordinates) and one would have to account
+for the dynamics of thes system.
+
+Although the concept of light inextensible string is not entirely
+consistent---tugging one end of a string cannot produce an
+instantaneous response at the other end---it is possible to speculate
+about what might happen if~$r<1$.
+
+We might consider two spaceships, or perhaps more appropriately
+spiders, on identical freefall radial plunge trajectories separated by
+a constant angle~$\theta$.  The spiders might indeed pass a light
+inextensible string between themselves and reel it in so as to
+maintain a tension (but not so tight as to perturb their radial fall);
+what happens to the string?  The spiders will lose causal contact with
+one another after a finite proper time but before encountering the
+singularity, and it is not clear what happens to their string.
+
+Considering Figure~\ref{closest_approach} in which strings under
+tension are near the black hole.  One's classical intuition would
+suggest that the black hole feels a force to the right, and should
+start accelerating.  However, it is not clear by what mechanism such a
+force would be transmitted; the situation is steady, so no
+gravitational waves are produced; the string is inextensible, so
+stores no energy.  Likewise, Figure~\ref{fixed_EH_intersection} would
+suggest that angular momentum is transmitted to the black hole, but no
+mechanism is apparent.
+
+This work considered only the Schwarzschild metric and generalizing it
+to the Kerr metric~\cite{asdfsadfasfd} might be interesting.  
+
+\appendix*   % Omit the * if there's more than one appendix.
+
+\section{Uninteresting stuff}
+
+Appendices are for material that is needed for completeness but
+not sufficiently interesting to include in the main body of the paper.  Most
+articles don't need any appendices, but feel free to use them when
+appropriate.  This sample article needs an appendix only to illustrate how 
+to create an appendix.
+
+\section{Conclusions and further work}
+
+
+Try the Kerr metric too.
+
+
+\begin{thebibliography}{99}
+% The numeral (here 99) in curly braces is nominally the number of entries in
+% the bibliography. It's supposed to affect the amount of space around the
+% numerical labels, so only the number of digits should matter--and even that
+% seems to make no discernible difference.
+
+\bibitem{flamm1916} Flamm, L.: Beitr\"{a}ge zur Einsteinschen
+  Gravitationstheorie.  Physikalische Zeitschrift XVII, 448–454 (1916)
+  
+\bibitem{noBIBTeX} Many \LaTeX\ users manage their bibliographic data with 
+a tool called BIB\TeX.  Unfortunately, AJP cannot accept BIB\TeX\ files; all 
+bibliographic references must be incorporated into the manuscript file
+as shown here, at least when you send an editable file for production.
+
+\bibitem{dyson} Freeman J. Dyson, ``Feynman's proof of the Maxwell equations,''
+Am. J. Phys. \textbf{58} (3), 209--211.  
+% The issue number (3) in this citation is optional, because AJP's pagination 
+% is by volume.
+
+
+
+\end{thebibliography}
+
+% If your manuscript is conditionally accepted, the editors will ask you to
+% submit your editable LaTeX source file.  Before doing so, you should move
+% all tables and figure captions to the end, as shown below.  Tables come 
+% first, followed by figure captions (with figure inclusions commented-out).
+% Figures should be submitted as separate files, collected with the
+% LaTeX file into a single .zip archive.
+
+%\newpage   % Start a new page for tables
+
+%\begin{table}[h!]
+%\centering
+%\caption{Elementary bosons}
+%\begin{ruledtabular}
+%\begin{tabular}{l c c c c p{5cm}}
+%Name & Symbol & Mass (GeV/$c^2$) & Spin & Discovered & Interacts with \\
+%\hline
+%Photon & $\gamma$ & \ \ 0 & 1 & 1905 & Electrically charged particles \\
+%Gluons & $g$ & \ \ 0 & 1 & 1978 & Strongly interacting particles (quarks and gluons) \\
+%Weak charged bosons & $W^\pm$ & \ 82 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$, $\gamma$ \\
+%Weak neutral boson & $Z^0$ & \ 91 & 1 & 1983 & Quarks, leptons, $W^\pm$, $Z^0$ \\
+%Higgs boson & $H$ & 126 & 0 & 2012 & Massive particles (according to theory) \\
+%\end{tabular}
+%\end{ruledtabular}
+%\label{bosons}
+%\end{table}
+
+%\newpage   % Start a new page for figure captions
+
+%\section*{Figure captions}
+
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=5in]{ThreeSunsets.jpg}   % This line stays commented-out
+%\caption{Three overlaid sequences of photos of the setting sun, taken
+%near the December solstice (left), September equinox (center), and
+%June solstice (right), all from the same location at 41$^\circ$ north
+%latitude. The time interval between images in each sequence is approximately
+%four minutes.}
+%\label{sunsets}
+%\end{figure}
+
+\end{document}
