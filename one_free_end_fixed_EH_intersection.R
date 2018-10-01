@@ -12,17 +12,16 @@ par(pty='s')
 plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='n',axes=F,xlab='',ylab='')
 
 
-
 dist_from_hole <- 3
 
 ## One string per start angle, each one a different colour:
-start_angles <- c(seq(from=1.18,by=0.01,to=1.5))
+start_angles <- c(seq(from=1.18,by=0.03,to=1.56))
 
 
 start_angles <- rev(start_angles)
 
-n <- length(start_angles)
-cols <- rainbow(n+round(n/7))
+n <- length(start_angles)+1
+cols <- rainbow(n+round(n/7))[-1]  # "[-1]" so the radial string is correctly coloured
 
 theta_start <- 0
 
@@ -41,10 +40,25 @@ theta_end2[cont(start_angles, c(1.34,1.35))] <-  pi*0.62
 theta_end2[cont(start_angles, c(1.35,1.36))] <-  pi*0.62
 theta_end2[cont(start_angles, c(1.36,1.42))] <-  pi*0.4
 theta_end2[cont(start_angles, c(1.42,1.44))] <-  pi*0.3
-theta_end2[cont(start_angles, c(1.44,1.51))] <-  pi*0.2
-
+theta_end2[cont(start_angles, c(1.44,1.45))] <-  pi*0.2
+theta_end2[cont(start_angles, c(1.45,1.46))] <-  pi*0.2
+theta_end2[cont(start_angles, c(1.46,1.47))] <-  pi*0.2
+theta_end2[cont(start_angles, c(1.47,1.48))] <-  pi*0.2
+theta_end2[cont(start_angles, c(1.48,1.49))] <-  pi*0.2
+theta_end2[cont(start_angles, c(1.49,1.50))] <-  pi*0.2
+theta_end2[cont(start_angles, c(1.50,1.51))] <-  pi*0.15
+theta_end2[cont(start_angles, c(1.51,1.52))] <-  pi*0.1
+theta_end2[cont(start_angles, c(1.52,1.53))] <-  pi*0.1
+theta_end2[cont(start_angles, c(1.53,1.54))] <-  pi*0.07
+theta_end2[cont(start_angles, c(1.54,1.55))] <-  pi*0.05
+theta_end2[cont(start_angles, c(1.55,1.56))] <-  pi*0.02
+theta_end2[cont(start_angles, c(1.56,1.57))] <-  pi*0.02
 
 closest_approach <- start_angles + NA
+
+
+## radial string (kludge):
+points(x=c(1,3),y=c(0,0),type='l',col=cols[1],lwd=2)
 
 
 for(i in seq_along(start_angles)){
@@ -81,16 +95,21 @@ for(i in seq_along(start_angles)){
   rm <- rotmat(angle_of_closest_approach)
   
   jj <- xy_inward %*% rm 
+
+  ## uncomment the following line ("jj <- xy") for debugging the
+  ## theta_end2 stuff above; uncommenting will show the "real" strings
+  ## rather than the rotated ones with only ingoing segments plotted
+  ## jj <- xy
+
   points(jj,type='l',col=cols[i],lwd=2)
 
+
+  ## now plot reflected strings:
   jj[,2] <- -jj[,2] 
   points(jj,type='l',col=cols[i],lwd=2)
   
-  if(FALSE){
-    points(xy_outward %*% rm ,type='l',col=cols[i],lwd=5)
-  }
-  
 }
+
 
 
 
