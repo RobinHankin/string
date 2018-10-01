@@ -82,12 +82,11 @@
 \begin{abstract}
 %%%
 Here I analyze the behaviour of light inextensible strings under
-tension in the vicinity of a black hole.  Proper length (given by the
-spatial component of the Schwarzshild metric) is minimized by the
-Euler-Lagrange equations.  Light inextensible taut strings may assume
-a range of distinct configurations with an arbitrarily high winding
-number around the central singularity, and here I give a range of
-numerical solutions and theoretical observations.
+tension in the vicinity of a nonrotating black hole.  Proper length
+(given by the spatial component of the Schwarzshild metric) is
+minimized by the Euler-Lagrange equations.  Light inextensible taut
+strings may assume topologically distinct configurations, and here I
+give some numerical solutions and theoretical observations.
 %%%%
 \end{abstract}
 
@@ -126,14 +125,14 @@ line'' and suggests a possible way of manipulating a black hole.  The
 Schwarzschild metric
 
 \begin{equation}\label{schwarzschild}
-ds^2= -dt^2\left(1-1/r\right) +\frac{dr^2}{1-1/r} + r^2\left(d\theta^2 + \sin^2\theta d\phi^2\right)
+ds^2= -dt^2\left(1-1/r\right) +\frac{dr^2}{1-1/r} + r^2\left(d\theta^2 + \sin^2\theta d\phi^2\right),
 \end{equation}
 
-where units in which~$2GM=c=1$ are used, has been known for over a
-century~\cite{schwarzschild1916} and makes a number of
+\noindent where units in which~$2GM=c=1$ are used, has been known for
+over a century~\cite{schwarzschild1916} and makes a number of
 counter-intuitive predictions.  Here I consider the spatial
 component~$ds^2= \frac{dr^2}{1-1/r} + r^2d\phi^2$, confined to
-equatorial points~($\phi=\pi/2$); we understand~$1<r<\infty$
+equatorial points~($\theta=\pi/2$); we understand~$1<r<\infty$
 throughout.  A string of constant~$r$ will, trivially, have proper
 length~$2\pi r$.
 
@@ -167,7 +166,7 @@ of~$r=r\left(\phi\right)$ gives us a path length of
   \int_{p_1}^{p_2}F\left(r,r'\right)d\phi.
 \end{equation}
 
-where dashes denote differentiation with respect to~$\phi$.  The
+\noindent where dashes denote differentiation with respect to~$\phi$.  The
 Euler-Lagrange equations for this system,
 $\frac{d}{d\phi}\frac{\partial F}{\partial r'}-\frac{\partial
   F}{\partial r}=0$ give, after simplification, an expression for the
@@ -175,35 +174,32 @@ second derivative of~$r$:
 
 \begin{equation}\label{rdashdash}
   r''\left(\phi\right) =
-  (r-1) + \frac{(4r-3)\left(r'\right)^2}{2r\left(r-1\right)},\qquad r>1
+  (r-1) + \frac{(4r-3)\left(r'\right)^2}{2r\left(r-1\right)},\qquad r>1.
 \end{equation}
 
 This differential equation does not appear to have a simple analytical
-solution; I present some numerical results below.  Solutions for
-which~$r'(\phi)>0$ whenever~$r>1$ correspond to strings that have only
-one free end; the other is tangential to the event horizon, except in
-the exceptional case of constant~$\phi$ when the string is radial
-for~$r>1$.  It is straightforward to show that the radius of curvature
-of a taut string becomes infinite, and the string has a point of
-inflection, if~$\left(r'\right)^2=2r\left(r-1\right)$.
+solution; I present some numerical results below.  It is
+straightforward to show that the radius of curvature of a taut string
+becomes infinite, and the string has a point of inflection,
+if~$\left(r'\right)^2=2r\left(r-1\right)$.
 
 \section{Results}
 Light inextensible strings fall into two distinct classes: those with
 two free ends, and those with one free end (the other ``end'' is
 tangential to the event horizon).  
 
-Figure~\ref{closest_approach_non_self_intersecting} shows
-nonselfintersecting strings indexed by distance of approach to the
-singularity, which occurs at~$\phi=0$.  Strings with a sufficiently
-close passage to the event horizon self-intersect; numerical methods
-show that the critical value is~$\simeq 1.076109317$, with an
-uncertainty of 1 in the last digit: if a string with two free ends
-passes closer than this, it forms a closed loop.
-Figure~\ref{closest_approach_non_self_intersecting} shows some
-non-self-intersecting strings and
+Figure~\ref{closest_approach_non_self_intersecting} shows non-self
+intersecting strings indexed by distance of approach to the
+singularity, which is taken to occur at~$\phi=0$.  Strings with a
+sufficiently close passage to the event horizon self-intersect;
+numerical methods show that the critical value is~$\simeq
+1.076109317$, with an uncertainty of 1 in the last digit: if the
+closest approach is less than this value, the string crosses itself
+at~$\phi=\pi/2$.  Figure~\ref{closest_approach_non_self_intersecting}
+shows some non-self-intersecting strings and
 figure~\ref{closest_approach_self_intersecting} shows some strings
 that self-intersect.  Figure~\ref{one_free_end} shows some strings
-that pass through~$\left(2,0\right)$ and tangent to the event horizon.
+that pass through~$\left(2,0\right)$ and are tangent to the event horizon.
 
 \begin{figure}[h!]
 \centering
@@ -237,12 +233,12 @@ The analysis above was restricted to the case~$r\geq 1$, where it is
 possible to hold objects steady.  Of course, once within the event
 horizon, even a light inextensible string cannot hold itself steady
 (at least in Schwarzschild coordinates) and one would have to account
-for the dynamics of thes system.
+for the dynamics of the system.
 
 In figure~\ref{closest_approach_non_self_intersecting}, one's
 classical intuition would suggest that the black hole feels a force to
 the right, and should start accelerating.  However, it is not clear by
-what mechanism such a force would be transmitted; the situation is
+what mechanism such a force would be transmitted: the situation is
 steady, so no gravitational waves are produced; the string is
 inextensible, so stores no energy.  Likewise,
 Figure~\ref{one_free_end} would suggest that angular momentum is
@@ -256,6 +252,12 @@ to the Kerr metric~\cite{kerr1963} might be interesting.
 \bibliographystyle{model3-num-names}
 \bibliography{refs}
 
+\section*{Supplementary Material}
+
+Calculations are performed using the R programming language; source
+code for the figures is available at
+
+\url{https://github.com/RobinHankin/string.git}
 
 \end{document}
 
