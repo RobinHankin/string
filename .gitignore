@@ -1,9 +1,12 @@
 *.Rout
 *.R~
+*.tex~
 *.pdf
 .RData
-string.aux
-string.bbl
-string.blg
-string.log
+*.aux
+*.bbl
+*.blg
+*.log
+*.spl
 stringNotes.bib
+rinp-template.*
