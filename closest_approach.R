@@ -16,7 +16,7 @@ plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=FALSE,,xlab='',ylab=
 ## setup ends
 
 
-dist <- dseq(from=1.076109317, to=7.5, len=100, power=2)
+dist <- dseq(from=1.076109317, to=7.5, len=30, power=2)
 
 cutoffmatrix <- matrix(c(
  1.060, pi  ,
