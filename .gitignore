@@ -10,3 +10,11 @@
 *.spl
 stringNotes.bib
 rinp-template.*
+
+elsarticle.cls
+elsevier-logo.eps
+model3-num-names.bst
+oldstringNotes.bib
+prletfig01.eps
+rinp-logo.eps
+rinp.sty
