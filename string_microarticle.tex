@@ -184,19 +184,16 @@ if~$\left(r'\right)^2=2r\left(r-1\right)$.
 
 \section{Results}
 Solutions to equation~\ref{rdashdash} fall into two distinct classes:
-those with two free ends, and those with one free end (the other
-``end'' is tangential to the event horizon, in general).
-
-Figure~\ref{closest_approach_non_self_intersecting} shows non-self
-intersecting strings indexed by minimum distance of approach to the
-singularity, which is taken to occur at~$\phi=0$.  Strings with a
-sufficiently close passage to the event horizon self-intersect
-(Figure~\ref{closest_approach_self_intersecting}).  Numerical methods
-show that the critical value is~$\simeq 1.076109317$, with an
-uncertainty of~1 in the last digit: if the closest approach is less
-than this value, the string crosses itself at~$\phi=\pi/2$.
-Figure~\ref{fixed_EH_intersection} shows some strings that are tangent
-to the event horizon at~$\phi=0$.
+those with $r>1$ at all points, and those which attain $r=1$, in which
+case the string is tangential to the event horizon, in general.
+Considering first cases with $r>1$, numerical methods show that if the
+closest approach is greater than a critical value of~$\simeq
+1.076109317(1)$, the string does not self-intersect
+(Figure~\ref{closest_approach_non_self_intersecting}); if the closest
+approach is less than this value, the then string crosses itself
+at~$\phi=\pi/2$ (Figure~\ref{closest_approach_self_intersecting}).
+The case where the string is tangent to the event horizon
+at~$r=1,\phi=0$ is shown in Figure~\ref{fixed_EH_intersection}.
 
 \begin{figure}[h!]
 \centering
@@ -215,15 +212,12 @@ to the event horizon at~$\phi=0$.
 \label{closest_approach_self_intersecting}
 \end{figure}
 
-
-
 \begin{figure}[h!]
 \centering
 \includegraphics[width=70mm]{one_free_end_fixed_EH_intersection.pdf}
 \caption{Strings tangential to event horizon}
 \label{fixed_EH_intersection}
 \end{figure}
-
 
 \section{Discussion}
 
@@ -238,12 +232,9 @@ classical intuition would suggest that the black hole feels a force to
 the left, and should start accelerating.  However, it is not clear by
 what mechanism such a force would be transmitted: the situation is
 steady, so no gravitational waves are produced; the string is
-inextensible, so stores no energy.  Likewise,
-Figure~\ref{fixed_EH_intersection} would suggest that angular momentum is
-transmitted to the black hole, but no mechanism is apparent.
-
-This work considered only the Schwarzschild metric and generalizing it
-to the Kerr metric~\cite{kerr1963} might be interesting.  
+inextensible, so stores no energy.  This work considered only the
+Schwarzschild metric and generalizing it to the Kerr
+metric~\cite{kerr1963} might be interesting.
 
 
 %%Vancouver style references.
