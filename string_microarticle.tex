@@ -134,8 +134,7 @@ ds^2= -dt^2\left(1-1/r\right) +\frac{dr^2}{1-1/r} + r^2\left(d\theta^2 + \sin^2\
 \end{equation}
 
 \noindent where units in which~$2GM=c=1$ are used, has been known for
-over a century~\cite{schwarzschild1916} and makes a number of
-counter-intuitive predictions.  Here I consider the spatial
+over a century~\cite{schwarzschild1916}.  Here I consider the spatial
 component~$ds^2= dr^2/\left(1-1/r\right) + r^2d\phi^2$, confined to
 equatorial points~($\theta=\pi/2$); we understand~$1\leq r<\infty$
 throughout.  A circular string at constant~$r$ will, trivially, have
@@ -183,23 +182,23 @@ second derivative of~$r$:
 \end{equation}
 
 This differential equation does not appear to have a simple analytical
-solution; I present some numerical results below.  It is
-straightforward to show that the radius of curvature of a taut string
-becomes infinite, and the string has a point of inflection,
+solution; solutions correspond to a taut string confined to Flamm's
+paraboloid~\cite{flamm1916}.  It is straightforward to show that the
+string has a point of inflection
 if~$\left(r'\right)^2=2r\left(r-1\right)$.
 
 \section{Results}
 Solutions to equation~\ref{rdashdash} fall into two distinct classes:
 those with $r>1$ at all points, and those which attain $r=1$, in which
 case the string is tangential to the event horizon, in general.
-Considering first cases with $r>1$, numerical methods show that if the
-closest approach is greater than a critical value of~$\simeq
-1.076109317(1)$, the string does not self-intersect
-(Figure~\ref{closest_approach_non_self_intersecting}); if the closest
-approach is less than this value, the then string crosses itself
-at~$\phi=\pi/2$ (Figure~\ref{closest_approach_self_intersecting}).
-The case where the string is tangent to the event horizon
-at~$r=1,\phi=0$ is shown in Figure~\ref{fixed_EH_intersection}.
+Numerical methods show that if the closest approach is greater than a
+critical value of~$\simeq 1.076109317(1)$, the string does not
+self-intersect (Figure~\ref{closest_approach_non_self_intersecting});
+if the closest approach is less than this value, the then string
+crosses itself at~$\phi=\pi/2$
+(Figure~\ref{closest_approach_self_intersecting}).  The case where the
+string is tangent to the event horizon at~$r=1,\phi=0$ is shown in
+Figure~\ref{fixed_EH_intersection}.
 
 \begin{figure}[h!] % Created by "closest_approach.R"
 \centering
@@ -244,7 +243,7 @@ inextensible so stores no energy.
 
 %%Vancouver style references.
 \bibliographystyle{model3-num-names}
-\bibliography{refs}
+\bibliography{stringrefs}
 
 \section*{Supplementary Material}
 
