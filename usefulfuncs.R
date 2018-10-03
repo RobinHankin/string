@@ -83,16 +83,14 @@ library("deSolve")   # needed for ode()
   ## setup ends
 }
 
-fun <- function(cuts,vals){
+`fun` <- function(cuts,vals){
   return(function(x){vals[findInterval(x, c(-Inf, cuts))]})
 }
 
-rotmat <- function(theta){
+`rotmat` <- function(theta){
     matrix(c(cos(theta),sin(theta),-sin(theta),cos(theta)),2,2)
 }
-    
 
-
-dseq <- function(from,to,length.out,power=1){
+`dseq` <- function(from,to,length.out,power=1){  # dseq == distorted seq
   from + (to-from)*seq(from=0,to=1,length.out=length.out)^power
 }
