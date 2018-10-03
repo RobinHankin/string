@@ -82,11 +82,16 @@
 \begin{abstract}
 %%%
 Here I analyze the behaviour of stationary, light inextensible strings
-under tension in the vicinity of a nonrotating black hole.  Proper
-length (given by the spatial component of the Schwarzshild metric) is
-minimized by the Euler-Lagrange equations.  Light inextensible taut
-strings may assume topologically distinct configurations, and here I
-give some numerical solutions and theoretical observations.  
+under tension in the vicinity of a nonrotating black hole.  Such
+strings minimize their proper length, given by integrating the spatial
+equatorial component of the Schwarzshild metric.  The string path is
+calculated by numerical solution to the Euler-Lagrange equations.  If
+the string is entirely outside the event horizon, its closest approach
+is to the singularity is tangential; if the distance of closest
+approach is less than about $1.076109317\cdot(2GM)$, the string
+self-intersects.  Light taut strings interpret the concept ``straight
+line'' and their behaviour suggests a possible way of manipulating a
+black hole.
 %%%%
 \end{abstract}
 
@@ -95,7 +100,7 @@ give some numerical solutions and theoretical observations.
 %% or \MSC[2008] code \sep code (2000 is the default)
 \MSC 83C57\sep 35Q75
 %% Keywords
-\KWD Black Holes\sep Light inextensible string
+\KWD Black holes\sep Light inextensible string
 \end{keyword}
 
 \end{frontmatter}
@@ -111,10 +116,10 @@ tension means that its configuration is an extremum of proper length.
 Of course, no real string is perfectly weightless or inextensible.
 With tension~$T$, gravitational acceleration $g$ and (proper) mass per
 (proper) unit length~$\mu$, then a string will behave as though light
-on lengthscales $L\lesssim\frac{T}{\mu g}$.  Using Newtonian
+on lengthscales $L\lesssim T/\left(\mu g\right)$.  Using Newtonian
 expressions for the strength of gravity at the event horizon of a
-black hole gives $L\lesssim\frac{TGM}{\mu c^2}$.  For the string to
-behave as though light on lengthscales comparable with the
+black hole gives $L\lesssim TGM/\left(\mu c^2\right)$.  For the string
+to behave as though light on lengthscales comparable with the
 Schwarzschild radius would require $T\gtrsim\mu c^2$.  Exceeding this
 criterion would violate the dominant energy condition (and in this
 context we note that transverse waves would propagate at
@@ -130,10 +135,10 @@ ds^2= -dt^2\left(1-1/r\right) +\frac{dr^2}{1-1/r} + r^2\left(d\theta^2 + \sin^2\
 \noindent where units in which~$2GM=c=1$ are used, has been known for
 over a century~\cite{schwarzschild1916} and makes a number of
 counter-intuitive predictions.  Here I consider the spatial
-component~$ds^2= \frac{dr^2}{1-1/r} + r^2d\phi^2$, confined to
-equatorial points~($\theta=\pi/2$); we understand~$1<r<\infty$
-throughout.  A string of constant~$r$ will, trivially, have proper
-length~$2\pi r$.
+component~$ds^2= dr^2/\left(1-1/r\right) + r^2d\phi^2$, confined to
+equatorial points~($\theta=\pi/2$); we understand~$1\leq r<\infty$
+throughout.  A circular string at constant~$r$ will, trivially, have
+proper length~$2\pi r$.
 
 Considering first the radial component we may calculate the
 proper length $L\left(r_1,r_2\right)$ of a string stretching
@@ -221,21 +226,20 @@ at~$r=1,\phi=0$ is shown in Figure~\ref{fixed_EH_intersection}.
 
 \section{Discussion}
 
-Light inextensible strings under tension are one interpretation of
-``straight line'' in general relativity, the others being null
-geodesics and world lines of massive objects.  Here it is shown that
-such strings adopt non-trivial configurations including
-self-intersecting paths.
+Light inextensible strings under tension adopt non-trivial
+configurations including self-intersecting paths.  The path of such
+strings furnishes an interpretation of the concept ``straight line''
+in general relativity, others being null geodesics and world lines of
+massive objects.  Comparing a world line with that of nearby taut
+strings thus furnishes another insight into path curvature,
+complementing the analysis of Abramowicz~\cite{abramowicz1992}.
 
 In Figure~\ref{closest_approach_non_self_intersecting}, one's
 classical intuition would suggest that the black hole feels a force to
 the left, and should start accelerating.  However, it is not clear by
 what mechanism such a force would be transmitted: the situation is
-steady, so no gravitational waves are produced; the string is
-inextensible, so stores no energy.  This work considered only the
-Schwarzschild metric and generalizing it to the Kerr
-metric~\cite{kerr1963} might be interesting.
-
+steady, so no gravitational waves are produced, and the string is
+inextensible so stores no energy.
 
 %%Vancouver style references.
 \bibliographystyle{model3-num-names}
@@ -245,7 +249,8 @@ metric~\cite{kerr1963} might be interesting.
 
 Calculations are performed using the R programming language; source
 code for the figures is available at
-
+\\
+\\
 \url{https://github.com/RobinHankin/string.git}
 
 \end{document}
