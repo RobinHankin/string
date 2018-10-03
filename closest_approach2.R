@@ -16,7 +16,7 @@ pars <- c(eel=1)  # dummy
 ## plot setup:
 jj <- 6
 par(xpd=TRUE)
-plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=FALSE,,xlab='',ylab='')
+plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=F,xlab='',ylab='')
 ## setup ends
 
 
