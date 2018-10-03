@@ -7,8 +7,9 @@ pars <- c(eel=1)  # dummy
 source("usefulfuncs.R")
 
 ## setup:
-jj <- 3.1
-par(pty='s')
+jj <- 2.5
+par(xpd=T)
+par(pty='m')
 plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='n',axes=F,xlab='',ylab='')
 
 
