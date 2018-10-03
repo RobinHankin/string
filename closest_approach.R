@@ -56,10 +56,10 @@ f <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
 for(i in seq_along(dist)){
   tseq <- seq(from=0,to=f(dist[i]),len=100)
   xy <- stringpoints(y_start=dist[i],initial_string_angle = 0,theta=tseq)
-  points(xy,type='l',col=rainbow(length(dist))[i])
+  points(xy,type='l',col=rainbow(length(dist))[i],lwd=2)
   
   xy <- stringpoints(y_start=dist[i],initial_string_angle = 0, theta=-tseq)
-  points(xy,type='l',col=rainbow(length(dist))[i])
+  points(xy,type='l',col=rainbow(length(dist))[i],lwd=2)
 }
 
 # mask strings too far from the black hole:

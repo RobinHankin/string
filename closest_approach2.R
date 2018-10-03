@@ -20,7 +20,7 @@ plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=F,xlab='',ylab='')
 ## setup ends
 
 
-dist <- dseq(from=(1.00012), to=1.076109317,len=100,power=2.3)
+dist <- dseq(from=(1.00012), to=1.076109317,len=50,power=3.3)
 
 
 cutoffmatrix <- matrix(c(
@@ -87,7 +87,7 @@ f <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
 for(i in seq_along(dist)){
   tseq <- seq(from=0,to=f(dist[i]),len=100)
   xy <- stringpoints(y_start=dist[i],initial_string_angle = 0,theta=tseq)
-  points(xy,type='l',col=rainbow(length(dist))[i])
+  points(xy,type='l',col=rainbow(length(dist))[i],lwd=2)
   
 #  xy <- stringpoints(y_start=dist[i],initial_string_angle = 0, theta=-tseq)
 #  points(xy,type='l',col=rainbow(length(dist))[i])
