@@ -33,15 +33,22 @@ phi_start <- 0   # start angle
 ## terminates too early and looks bad.
 
 cutoffmatrix  <- matrix(c(
-    -1, 0.3,
-    0.0, pi/2+0.1,
-    0.1, pi/2+0.8,
-    0.2, pi/2+1.6,
-    0.3, pi/2+1.8,
-    0.5, pi/2+2.4,
-    0.9, pi/2+1.2,
-    1.1, pi/2,
-    pi/2,pi/2-0.2,
+    0.0, pi/2 + 0.0,
+    0.1, pi/2 + 0.7,
+    0.2, pi/2 + 1.4,
+    0.3, pi/2 + 2.2,
+    0.4, pi/2 + 2.7,
+    0.5, pi/2 + 2.8,
+    0.6, pi/2 + 0.9,
+    0.7, pi/2 + 0.3,
+    0.8, pi/2 + 0.2,
+    0.9, pi/2 + 0.1,
+    1.0, pi/2 - 0.1,
+    1.1, pi/2 - 0.1,
+    1.2, pi/2 - 0.1,
+    1.3, pi/2 - 0.1,
+    1.4, pi/2 - 0.1,
+    pi/2,pi/2 - 0.1,
     3, pi/2
     )
    ,ncol=2,byrow=TRUE)
@@ -50,7 +57,7 @@ colnames(cutoffmatrix) <- c("cuts","vals")
 fmax <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
 
 
-for(initialangletotangent in c(seq(from=0,to=1.5,len=40))){
+for(initialangletotangent in c(seq(from=0,to=1.4,len=40))){
  
   xy1 <-
     stringu(
