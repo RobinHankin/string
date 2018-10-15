@@ -14,8 +14,6 @@ par(xpd=TRUE)
 plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=FALSE,,xlab='',ylab='')
 
 
-dummypars <- c(eel=3) # dummy
-
 phi_start <- 0   # start angle
 
 
