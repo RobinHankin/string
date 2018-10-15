@@ -2,9 +2,6 @@
 ## minimal length string (Euler-Lagrange formula)
 ##
 
-## Function light() and stringlightpoints() set up the ODE for null
-## geodesics (light paths).
-
 library("deSolve")   # needed for ode()
 
 `taut_string` <- function(theta, state, pars){
