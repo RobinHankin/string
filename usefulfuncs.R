@@ -94,3 +94,14 @@ library("deSolve")   # needed for ode()
 `dseq` <- function(from,to,length.out,power=1){  # dseq == distorted seq
   from + (to-from)*seq(from=0,to=1,length.out=length.out)^power
 }
+
+`circ` <- function(center,r,...){
+  theta <- seq(from=0,to=2*pi,len=100)
+  points(center[1]+r*cos(theta),center[2]+r*sin(theta),type='l',...)
+  return(0)
+}
+
+`mycirc` <- function(x,r,...){
+  f <- function(r){2*r^2/3}  # radius of curvature of a ray at radius r moving tangentially
+  circ(c(x-f(r),0),f(r),...)  # shows an osculating circle
+}
