@@ -31,4 +31,8 @@ pdf(file="flamm_string.pdf")
 flamm(string=TRUE,phi=50,theta=50)
 dev.off()
 
+pdf(file="light_start_at_r_equals_2.pdf")
+source("light_start_at_r_equals_2.R")
+dev.off()
+
 
