@@ -34,21 +34,47 @@ phi_start <- 0   # start angle
 
 cutoffmatrix  <- matrix(c(
     0.0, pi/2 + 0.0,
-    0.1, pi/2 + 0.7,
-    0.2, pi/2 + 1.4,
-    0.3, pi/2 + 2.2,
-    0.4, pi/2 + 2.7,
+    0.1, pi/2   + 0.9,
+    0.15, pi/2  + 1.57,
+    0.2, pi/2   + 1.57,
+    0.22, pi/2  + 2.3,
+    0.23, pi/2  + 2.3,
+    0.26, pi/2  + 2.5,
+    0.28, pi/2  + pi,
+    0.285, pi/2  + 3.6,
+    0.29, pi/2  + 3*pi/2,
+    0.295, pi/2  + 3*pi/2,
+    0.30, pi/2   + 3*pi/2,
+    0.301, pi/2 + 5,
+    0.302, pi/2 + 6,
+    0.305, pi/2 + 6,
+    0.31, pi/2 + 6,
+    0.32, pi/2 + 6,
+    0.33, pi/2 + 4,
+    0.34, pi/2 + 4.2,
+    0.35, pi/2 + 4,
+    0.36, pi/2 + 4,
+    0.37, pi/2 + 3.7,
+    0.38, pi/2 + 3.5,
+    0.4, pi/2 + 3.4,
+    0.43, pi/2 + 3.2,
+    0.45, pi/2 + 2.9,
     0.5, pi/2 + 2.8,
-    0.6, pi/2 + 0.9,
-    0.7, pi/2 + 0.3,
-    0.8, pi/2 + 0.2,
-    0.9, pi/2 + 0.1,
-    1.0, pi/2 - 0.1,
-    1.1, pi/2 - 0.1,
-    1.2, pi/2 - 0.1,
-    1.3, pi/2 - 0.1,
-    1.4, pi/2 - 0.1,
-    pi/2,pi/2 - 0.1,
+    0.55, pi/2 + 2.4,
+    0.6, pi/2 + 2.3,
+    0.7, pi/2 + 2.1,
+    0.8, pi/2 + 1.6,
+    0.9, pi/2 + 1.5,
+    1.0, pi/2 +1.2,
+    1.1, pi/2 +1.1,
+    1.15, pi/2 +1.03,
+    1.2, pi/2 +0.9,
+    1.25, pi/2 +0.8,
+    1.3, pi/2 +0.6,
+    1.35, pi/2+0.4 ,
+    1.4, pi/2 +0.3,
+    1.5, pi/2 +0.2,
+    pi/2,pi/2 ,
     3, pi/2
     )
    ,ncol=2,byrow=TRUE)
@@ -57,13 +83,16 @@ colnames(cutoffmatrix) <- c("cuts","vals")
 fmax <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
 
 
-for(initialangletotangent in c(seq(from=0,to=1.4,len=40))){
- 
+for(initialangletotangent in c(seq(from=0,to=1.4,len=120))){
+
+
+  final_phi <- min(fmax(initialangletotangent),2*pi)
+  print(c(initialangletotangent,final_phi))
   xy1 <-
     stringu(
         r_start=r_start,  # r=3/2 is a circular (but unstable) orbit
         dubydphistart = tan(initialangletotangent)/r_start,
-        phi=seq(from=0,to=fmax(initialangletotangent) ,len=100)
+        phi=seq(from=0,to=final_phi,len=100)
     )
   
   points(xy1,col='red',type='l')
@@ -75,10 +104,10 @@ polargrid()
 ## Mask strings too far from the black hole:
 if(mask){
   xy <- cbind(c(4,30,30,4),c(-0.5,-0.5,0.5,0.5))
-  howmany <- 30  # 100 for production, 10 for testing
+  howmany <- 100  # 100 for production, 10 for testing
   for (theta in seq(from=0,to=2*pi,len=howmany)){
     jjxy <- xy %*% rotmat(theta)
-    polygon(jjxy[,1],jjxy[,2],col='gray',border=NA) # white for production
+    polygon(jjxy[,1],jjxy[,2],col='white',border=NA) # white for production
   }
 }
 
