@@ -18,12 +18,13 @@ phi_start <- 0   # start angle
 
 
 ## The chief numerical difficulty here is defining the maximum angle
-## that the string can attain.  We are starting at (r=2,phi=0) and
-## indexing by angle made by the string to the tangent at that point.
-## We need to determine what the maximum value of phi is.  For
-## example, consider flat space and a light ray starting tangentially
-## at (2,0).  Then the maximum value of phi would be pi/2.  In curved
-## Schwarzschild space, this angle is more than pi/2.
+## that the path (here a light ray, elsewhere a taut string) can
+## attain.  We are starting at (r=2,phi=0) and indexing by angle made
+## by the string to the tangent at that point.  We need to determine
+## what the maximum value of phi is.  For example, consider flat space
+## and a light ray starting tangentially at (2,0).  Then the maximum
+## value of phi would be pi/2.  In curved Schwarzschild space, this
+## angle is more than pi/2.
 
 
 ## Variable 'cutoffmatrix' has two columns.  The first gives the angle
