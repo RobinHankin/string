@@ -9,8 +9,8 @@ library("deSolve")   # ode()
     })
 }
 
-## function stringlightpoints() deals with r; cf lightu() which works with u=1/r
-`stringlightpoints` <- function(r_start, phi_start, lambda){
+## function lightpoints() deals with r; cf lightu() which works with u=1/r
+`lightpoints` <- function(r_start, phi_start, lambda){
     yini <- c(r=r_start , phi=phi_start)
     bh <- ode(yini, lambda, light, pars, rtol=1e-6)
     
