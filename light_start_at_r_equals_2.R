@@ -1,20 +1,17 @@
 ## Null geodesics starting at r=2 but with different starting angles.
 
-## ODE is d^2u/d phi^2 = 3u^2/2-u  
+## ODE is d^2u/d phi^2 = 3u^2/2-u  (where u=1/r)
 
 source("usefulfuncs.R") # defines polargrid() etc
-source("usefullightfuncs.R") # defines lightstringpoints()
+source("usefullightfuncs.R") # defines lightpoints()
 
 r_start <- 2 # starting radius for light ray
-mask <- TRUE    # set to FALSE to see entire string
+mask <- TRUE    # set to FALSE to see entire geodesic
 
 ## plot setup:
 jj <- 3
 par(xpd=TRUE)
-plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=FALSE,,xlab='',ylab='')
-
-
-phi_start <- 0   # start angle
+plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=FALSE,xlab='',ylab='')
 
 
 ## The chief numerical difficulty here is defining the maximum angle
@@ -84,8 +81,8 @@ colnames(cutoffmatrix) <- c("cuts","vals")
 fmax <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
 
 
-for(initialangletotangent in c(seq(from=0,to=1.4,len=120))){
 
+for(initialangletotangent in c(seq(from=0,to=1.4,len=120))){
 
   final_phi <- min(fmax(initialangletotangent),2*pi)
   print(c(initialangletotangent,final_phi))
@@ -114,5 +111,3 @@ if(mask){
 
 
 event_horizon(fill=FALSE)
-
-
