@@ -1,0 +1,83 @@
+## Null geodesics starting at r=2 but with different starting angles.
+
+## ODE is d^2u/d phi^2 = 3u^2/2-u  
+
+source("usefulfuncs.R") # defines polargrid() etc
+source("usefullightfuncs.R") # defines lightstringpoints()
+
+r_start <- 2 # starting radius for light ray
+mask <- TRUE    # set to FALSE to see entire string
+
+## plot setup:
+jj <- 3
+par(xpd=TRUE)
+plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=FALSE,,xlab='',ylab='')
+
+
+dummypars <- c(eel=3) # dummy
+
+phi_start <- 0   # start angle
+
+
+## The chief numerical difficulty here is defining the maximum angle
+## that the string can attain.  We are starting at (r=2,phi=0) and
+## indexing by angle made by the string to the tangent at that point.
+## We need to determine what the maximum value of phi is.  For
+## example, consider flat space and a light ray starting tangentially
+## at (2,0).  Then the maximum value of phi would be pi/2.  In curved
+## Schwarzschild space, this angle is more than pi/2.
+
+
+## Variable 'cutoffmatrix' has two columns.  The first gives the angle
+## at the tangent.  The second gives the maximum value of phi to
+## integrate to.  Make this too big, and the Runge-Kutta integration
+## stops and returns an error; make it too small and the string
+## terminates too early and looks bad.
+
+cutoffmatrix  <- matrix(c(
+    -1, 0.3,
+    0.0, pi/2+0.1,
+    0.1, pi/2+0.8,
+    0.2, pi/2+1.6,
+    0.3, pi/2+1.8,
+    0.5, pi/2+2.4,
+    0.9, pi/2+1.2,
+    1.1, pi/2,
+    pi/2,pi/2-0.2,
+    3, pi/2
+    )
+   ,ncol=2,byrow=TRUE)
+
+colnames(cutoffmatrix) <- c("cuts","vals")
+fmax <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
+
+
+for(initialangletotangent in c(seq(from=0,to=1.5,len=40))){
+ 
+  xy1 <-
+    stringu(
+        r_start=r_start,  # r=3/2 is a circular (but unstable) orbit
+        dubydphistart = tan(initialangletotangent)/r_start,
+        phi=seq(from=0,to=fmax(initialangletotangent) ,len=100)
+    )
+  
+  points(xy1,col='red',type='l')
+}
+
+polargrid()
+
+
+## Mask strings too far from the black hole:
+if(mask){
+  xy <- cbind(c(4,30,30,4),c(-0.5,-0.5,0.5,0.5))
+  howmany <- 30  # 100 for production, 10 for testing
+  for (theta in seq(from=0,to=2*pi,len=howmany)){
+    jjxy <- xy %*% rotmat(theta)
+    polygon(jjxy[,1],jjxy[,2],col='gray',border=NA) # white for production
+  }
+}
+
+
+event_horizon(fill=FALSE)
+
+
