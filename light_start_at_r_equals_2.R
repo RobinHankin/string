@@ -70,10 +70,12 @@ cutoffmatrix  <- matrix(c(
     1.25, pi/2 +0.8,
     1.3, pi/2 +0.6,
     1.35, pi/2+0.4 ,
-    1.4, pi/2 +0.3,
-    1.5, pi/2 +0.2,
-    pi/2,pi/2 ,
-    3, pi/2
+    1.4, pi/2+0.2 ,
+    1.45, pi/2 ,
+    1.47, 0.4,
+    1.48, 0.1,
+    1.50, 0.1,
+    3, 0.1
     )
    ,ncol=2,byrow=TRUE)
 
@@ -81,8 +83,7 @@ colnames(cutoffmatrix) <- c("cuts","vals")
 fmax <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
 
 
-
-for(initialangletotangent in c(seq(from=0,to=1.4,len=120))){
+for(initialangletotangent in c(seq(from=0,to=1.51,len=1000))){
 
   final_phi <- min(fmax(initialangletotangent),2*pi)
   print(c(initialangletotangent,final_phi))
