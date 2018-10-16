@@ -7,11 +7,14 @@ source("usefullightfuncs.R") # defines lightpoints()
 
 r_start <- 2 # starting radius for light ray
 mask <- TRUE    # set to FALSE to see entire geodesic
+size_of_plot <- 3 
+
 
 ## plot setup:
-jj <- 3
 par(xpd=TRUE)
-plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=FALSE,xlab='',ylab='')
+
+jj <- c(-size_of_plot, size_of_plot)
+plot(NULL,asp=1,xlim=jj,ylim=jj,type='l',axes=FALSE,xlab='',ylab='')
 
 
 ## The chief numerical difficulty here is defining the maximum angle
