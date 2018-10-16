@@ -23,6 +23,7 @@ library("deSolve")   # ode()
 
 
 ## function lightu() deals with u=1/r
+## ODE is d^2u/dphi^2 =3u^2/2-u
 `lightu` <- function(lambda, state, pars){
   with(as.list(c(state,pars)),{  # state is c(u,du)
     d2u <- 3*u^2/2-u
