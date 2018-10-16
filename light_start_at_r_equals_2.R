@@ -7,7 +7,7 @@ source("usefullightfuncs.R") # defines lightpoints()
 
 r_start <- 2 # starting radius for light ray
 mask <- TRUE    # set to FALSE to see entire geodesic
-size_of_plot <- 3 
+size_of_plot <- 3
 
 
 ## plot setup:
@@ -51,7 +51,9 @@ cutoffmatrix  <- matrix(c(
     0.305, pi/2 + 6,
     0.31, pi/2 + 6,
     0.32, pi/2 + 6,
-    0.33, pi/2 + 4,
+    0.325, pi/2 + 4.5,
+    0.33, pi/2 + 4.4,
+    0.335, pi/2 + 4.3,
     0.34, pi/2 + 4.2,
     0.35, pi/2 + 4,
     0.36, pi/2 + 4,
