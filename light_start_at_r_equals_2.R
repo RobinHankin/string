@@ -34,10 +34,27 @@ plot(NULL,asp=1,xlim=jj,ylim=jj,type='l',axes=FALSE,xlab='',ylab='')
 ## terminates too early and looks bad.
 
 cutoffmatrix  <- matrix(c(
-    0.0, pi/2 + 0.0,
+    -pi/2,0.00001,
+    -1.55, 0.001,
+    -1.5, 0.001,
+    -1.4, 0.1,
+    -1.3, 0.1,
+    -1.2, 0.1,
+    -1.1, 0.1,
+    -1.0, 0.1,
+    -0.9, 0.1,
+    -0.8, 0.1,
+    -0.7, 0.14,
+    -0.6, 0.1,
+    -0.5, 0.1,
+    -0.4, 0.1,
+    -0.3, 0.1,
+    -0.2, 0.2,
+    -0.1, 0.3,
+    0.0, pi/2 + 0.4,
     0.1, pi/2   + 0.9,
     0.15, pi/2  + 1.56,
-    0.2, pi/2   + 1.57,
+    0.2, pi/2   + pi/2,
     0.22, pi/2  + 2.3,
     0.23, pi/2  + 2.3,
     0.26, pi/2  + 2.5,
@@ -66,7 +83,7 @@ cutoffmatrix  <- matrix(c(
     0.55, pi/2 + 2.4,
     0.6, pi/2 + 2.3,
     0.7, pi/2 + 2.1,
-    0.8, pi/2 + 1.6,
+    0.8, pi/2 + 1.7,
     0.9, pi/2 + 1.5,
     1.0, pi/2 +1.2,
     1.1, pi/2 +1.1,
@@ -77,18 +94,27 @@ cutoffmatrix  <- matrix(c(
     1.35, pi/2+0.4 ,
     1.4, pi/2+0.2 ,
     1.45, pi/2 ,
-    1.47, 0.4,
-    1.48, 0.1,
-    1.50, 0.1,
-    3, 0.1
+    1.47, 1.3,
+    1.48, 1.447,
+    1.50,1.2,
+    1.51,1.1,
+    1.52,1.1,
+    1.53,0.9,
+    1.54,0.8,
+    1.55,0.65,
+    1.56,0.65,
+    1.57,0.5,
+    pi/2-0.00005,0.0001,
+    pi/2+0.1, 0.1
     )
    ,ncol=2,byrow=TRUE)
 
 colnames(cutoffmatrix) <- c("cuts","vals")
 fmax <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
 
+jj <- c(seq(from=-pi/2+0.14,to=pi/2-0.02,len=100))
 
-for(initialangletotangent in c(seq(from=0,to=1.51,len=1000))){
+for(initialangletotangent in jj){
 
   final_phi <- min(fmax(initialangletotangent),2*pi)
   print(c(initialangletotangent,final_phi))
@@ -102,6 +128,10 @@ for(initialangletotangent in c(seq(from=0,to=1.51,len=1000))){
   points(xy1,col='red',type='l')
 }
 
+## radial ray
+segments(x0=0,x1=r_start,y0=0,col='red')
+
+## grid:
 polargrid()
 
 
@@ -111,7 +141,7 @@ if(mask){
   howmany <- 100  # 100 for production, 10 for testing
   for (theta in seq(from=0,to=2*pi,len=howmany)){
     jjxy <- xy %*% rotmat(theta)
-    polygon(jjxy[,1],jjxy[,2],col='white',border=NA) # white for production
+    polygon(jjxy[,1],jjxy[,2],col="white",border=NA) # white for production
   }
 }
 
