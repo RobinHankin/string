@@ -41,9 +41,13 @@ plot(NULL,asp=1,xlim=jj,ylim=jj,type='l',axes=FALSE,xlab='',ylab='')
 
 cutoffmatrix  <- matrix(c(
     -pi/2,0.00001,
-    -1.55, 0.001,
-    -1.5, 0.01,
-    -1.4, 0.05,
+    -1.55, 0.01,
+    -1.53, 0.02,
+    -1.51, 0.04,
+    -1.49, 0.05,
+    -1.47, 0.07,
+    -1.45, 0.07,
+    -1.4, 0.09,
     -1.3, 0.15,
     -1.2, 0.2,
     -1.1, 0.3,
@@ -118,7 +122,7 @@ cutoffmatrix  <- matrix(c(
 colnames(cutoffmatrix) <- c("cuts","vals")
 fmax <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
 
-jj <- c(seq(from=-pi/2+0.01,to=pi/2-0.01,len=100))
+jj <- c(seq(from=-pi/2+0.01,to=pi/2-0.01,len=1000))
 
 for(initialangletotangent in jj){
 
