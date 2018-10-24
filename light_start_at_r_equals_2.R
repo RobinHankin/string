@@ -27,10 +27,17 @@ plot(NULL,asp=1,xlim=jj,ylim=jj,type='l',axes=FALSE,xlab='',ylab='')
 
 
 ## Variable 'cutoffmatrix' has two columns.  The first gives the angle
-## at the tangent.  The second gives the maximum value of phi to
-## integrate to.  Make this too big, and the Runge-Kutta integration
-## stops and returns an error; make it too small and the string
-## terminates too early and looks bad.
+## of the string at its start point (r=r_start, theta=0) to the
+## tangent of the circle of radius r_start at that point.  Negative
+## values mean outward-going strings and positive values mean
+## inward-going strings.  +pi/2 corresponds to a radially inward
+## string and -pi/2 corresponds to a radially outward string.  0
+## corresponds to a string that is tangential.  The second column
+## gives the maximum value of phi to integrate to.  Make this too big,
+## and the Runge-Kutta integration fails, and returns an error; make
+## it too small and the string terminates too early and looks bad
+## (because it is soooo much nicer to have the string [apparently] go
+## to infinity than have a free end in space).
 
 cutoffmatrix  <- matrix(c(
     -pi/2,0.00001,
