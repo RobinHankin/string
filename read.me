@@ -4,7 +4,6 @@ point (and arxiv too, I guess).  The string is assumed to be under
 infinite tension (or alternatively is infinitely light) so it
 minimizes its proper length.
 
-
 To latex string_microarticle.tex, you need the style files etc from Elesevier.
 To get these, go to the website:
 
@@ -12,4 +11,10 @@ https://www.elsevier.com/journals/results-in-physics/2211-3797/guide-for-authors
 
 Download the latex template, elsarticle_rinp_microarticle_template.zip
 
-unzip it and copy the files to the working directory where latex will find them.
+unzip it and copy the files to the working directory where latex will
+find them.  You will need elsarticle.cls, rinp.sty and
+elsevier-logo.pdf, rinp-logo.pdf model3-num-names.bst (and possibly
+other files if you change the source file).
+
+Actually "make" is incomplete and you might need to run pdflatex
+several times (and bibtex as well) to create string_microarticle.pdf.
