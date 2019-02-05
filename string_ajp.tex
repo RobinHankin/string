@@ -100,15 +100,39 @@ from~$r=r_1\geq 1$ to~$r_2\geq r_1$ at constant $\theta,\phi$:
 
 Observe that integration may be performed with a lower limit
 of~$r_1=1$ with no difficulty, even though the radial component of the
-Schwarzschild metric approaches infinity there.  
+Schwarzschild metric approaches infinity there.
 
+Elementary methods show that the proper length $\ell$ of radial strings has
+some peculiar features.  Firstly, consider the proper length from
+$r=1$ to $r=1+w$ where $w>0, \left|w\right|\ll 1$.  Then
+
+\begin{equation}
+  \ell=\int_{r=1}^{r=1+w}ds
+  =2\sqrt{w} + \frac{1}{3}w^{3/2} + O(w^{5/2})
+\end{equation}
+
+This would indicate that, close to the Schwarzschild radius $r=1$,
+large (but finite) amounts of string are required to connect two
+points with slightly differing radial coordinates.  Passing to the
+case $w\gg 1$ we have
+
+\begin{equation}
+  \ell  =\frac{1}{2} + \log(2) + w + \frac{1}{8}w^{-1} + O(w^{-2}),
+\end{equation}
+
+\noindent suggesting that there is ``extra radial space'', of length
+over $1.19$ Schwarzschild radii, sensible at large distances from the
+event horizon.  This might suggest that radial strings have to be
+longer than expected.
+
+\subsection{Nonradial string}
 Integrating along a path between two
 points~$p_1=\left(r_1,\phi_1\right)$ and~$p_2=\left(r_2,\phi_2\right)$
-gives the {\em proper} length of the path, which is the length of a
-string joining~$p_1$ and~$p_2$.  A taut but light string from~$p_1$
-to~$p_2$ will adopt an extremal-length path.  Such paths may be found
-by the calculus of variations; parametrizing a curve in terms
-of~$r=r\left(\phi\right)$ gives us a path length of
+gives the {\em proper} length of the path, which is the length of an
+inextensible string joining~$p_1$ and~$p_2$.  A taut but light string
+from~$p_1$ to~$p_2$ will adopt an extremal-length path.  Such paths
+may be found by the calculus of variations; parametrizing a curve in
+terms of~$r=r\left(\phi\right)$ gives us a path length of
 
 \begin{equation}
 %  \int_{p_1}^{p_2}\sqrt{\frac{\left(r'\right)^2}{1-2M/r} + r^2}d\phi=
@@ -127,11 +151,21 @@ second derivative of~$r$:
   (r-1) + \frac{(4r-3)\left(r'\right)^2}{2r\left(r-1\right)},\qquad r>1.
 \end{equation}
 
-This differential equation does not appear to have a simple analytical
-solution; solutions correspond to a taut string confined to Flamm's
-paraboloid~\cite{flamm1916}.  It is straightforward to show that the
-string has a point of inflection
+This differential equation does not appear to be soluble analytically;
+solutions correspond to a taut string confined to Flamm's
+paraboloid~\cite{flamm1916}; see figure~\ref{flamm}.  It is
+straightforward to show that the string has a point of inflection
 if~$\left(r'\right)^2=2r\left(r-1\right)$.
+
+\begin{figure}[h!] % Created by "flamm.R"
+\centering
+\includegraphics[width=70mm]{flamm_string.pdf}
+\caption{Perspective fiew of Flamm's paraboloid with superimposed minimal-length path corresponding to a taut, light string}
+\label{flamm}
+\end{figure}
+
+
+
 
 \section{Results}
 Solutions to equation~\ref{rdashdash} fall into two distinct classes:
