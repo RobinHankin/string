@@ -1,0 +1,204 @@
+\documentclass[prb,preprint]{revtex4-1} 
+% The line above defines the type of LaTeX document.
+% Note that AJP uses the same style as Phys. Rev. B (prb).
+
+% The % character begins a comment, which continues to the end of the line.
+
+\usepackage{amsmath}  % needed for \tfrac, \bmatrix, etc.
+\usepackage{amsfonts} % needed for bold Greek, Fraktur, and blackboard bold
+\usepackage{graphicx} % needed for figures
+
+\begin{document}
+
+% Be sure to use the \title, \author, \affiliation, and \abstract macros
+% to format your title page.  Don't use lower-level macros to  manually
+% adjust the fonts and centering.
+
+\title{Light inextensible strings under tension in the Schwarzschild geometry}
+% In a long title you can use \\ to force a line break at a certain location.
+
+\author{Robin K. S. Hankin}
+\email{hankin.robin@gmail.com} % optional
+\altaffiliation[permanent address: ]{55 Wellesley Street East,
+Auckland, New Zealand}
+% If there were a second author at the same address, we would put another 
+% \author{} statement here.  Don't combine multiple authors in a single
+% \author statement.
+\affiliation{School of Engineering, Computer and Mathematical Sciences, Auckland University of Technology}
+% Please provide a full mailing address here.
+
+
+% See the REVTeX documentation for more examples of author and affiliation lists.
+
+\date{\today}
+
+\begin{abstract}
+Here I analyze the behaviour of stationary, light inextensible strings
+under tension in the vicinity of a nonrotating black hole.  Such
+strings minimize their proper length, given by integrating the spatial
+component of the Schwarzshild metric along the string.  The path is
+calculated by numerical solution to the Euler-Lagrange equations.  If
+the string is entirely outside the event horizon, its closest approach
+is to the singularity is tangential; if the distance of closest
+approach is less than about $1.076109317$ Schwarzschild radii, the
+string self-intersects.  If the string attains $r=2GM/c^2$, then it
+will in general be tangential to the event horizon.  Light taut
+strings interpret the concept ``straight line'' and their behaviour
+suggests a possible way of manipulating a black hole.
+\end{abstract}
+% AJP requires an abstract for all regular article submissions.
+% Abstracts are optional for submissions to the "Notes and Discussions" section.
+
+\maketitle % title page is now complete
+
+
+\section{Introduction} % Section titles are automatically converted to all-caps.
+% Section numbering is automatic.
+
+\section{Introduction}
+\label{intro}
+Light inextensible strings are a stalwart feature of elementary
+physics.  A light string is not subject to gravity, and being under
+tension means that its configuration is an extremum of proper length.
+Of course, no real string is perfectly weightless or inextensible.
+With tension~$T$, gravitational acceleration $g$ and (proper) mass per
+(proper) unit length~$\mu$, then a string will behave as though light
+on lengthscales $L\lesssim T/\left(\mu g\right)$.  Using Newtonian
+expressions for the strength of gravity at the event horizon of a
+black hole gives $L\lesssim TGM/\left(\mu c^2\right)$.  For the string
+to behave as though light on lengthscales comparable with the
+Schwarzschild radius would require $T\gtrsim\mu c^2$.  Exceeding this
+criterion would violate the dominant energy condition (and in this
+context we note that transverse waves would propagate at
+speed~$\sqrt{T/\mu}\sim c$).  Nevertheless, the idealization of a
+light inextensible string is an interesting and informative limit: its
+analysis interprets the concept ``straight line'' and suggests a
+possible way of manipulating a black hole.  The Schwarzschild metric
+
+\begin{equation}\label{schwarzschild}
+ds^2= -dt^2\left(1-1/r\right) +\frac{dr^2}{1-1/r} + r^2\left(d\theta^2 + \sin^2\theta d\phi^2\right),
+\end{equation}
+
+\noindent where units in which~$2GM=c=1$ are used, has been known for
+over a century~\cite{schwarzschild1916}.  Here I consider the spatial
+component~$ds^2= dr^2/\left(1-1/r\right) + r^2d\phi^2$, confined to
+equatorial points~($\theta=\pi/2$); we understand~$1\leq r<\infty$
+throughout.  A circular string at constant~$r$ will, trivially, have
+proper length~$2\pi r$.
+
+Considering first the radial component we may calculate the
+proper length $L\left(r_1,r_2\right)$ of a string stretching
+from~$r=r_1\geq 1$ to~$r_2\geq r_1$ at constant $\theta,\phi$:
+
+\begin{equation}\label{radial_string_length}
+  \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-1/r}}=
+  \left.
+  \sqrt{r(r-1)} +\frac{1}{2}\log\left(
+  \frac{r+\sqrt{r-1}}{r-\sqrt{r-1}}\right)
+  \right|_{r_1}^{r_2}
+  \end{equation}
+
+Observe that integration may be performed with a lower limit
+of~$r_1=1$ with no difficulty, even though the radial component of the
+Schwarzschild metric approaches infinity there.  
+
+Integrating along a path between two
+points~$p_1=\left(r_1,\phi_1\right)$ and~$p_2=\left(r_2,\phi_2\right)$
+gives the {\em proper} length of the path, which is the length of a
+string joining~$p_1$ and~$p_2$.  A taut but light string from~$p_1$
+to~$p_2$ will adopt an extremal-length path.  Such paths may be found
+by the calculus of variations; parametrizing a curve in terms
+of~$r=r\left(\phi\right)$ gives us a path length of
+
+\begin{equation}
+%  \int_{p_1}^{p_2}\sqrt{\frac{\left(r'\right)^2}{1-2M/r} + r^2}d\phi=
+  \int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-1/r} + r^2\right)^\frac{1}{2}d\phi=
+  \int_{p_1}^{p_2}F\left(r,r'\right)d\phi
+\end{equation}
+
+\noindent where dashes denote differentiation with respect to~$\phi$.  The
+Euler-Lagrange equations for this system,
+$\frac{d}{d\phi}\frac{\partial F}{\partial r'}-\frac{\partial
+  F}{\partial r}=0$ give, after simplification, an expression for the
+second derivative of~$r$:
+
+\begin{equation}\label{rdashdash}
+  r''\left(\phi\right) =
+  (r-1) + \frac{(4r-3)\left(r'\right)^2}{2r\left(r-1\right)},\qquad r>1.
+\end{equation}
+
+This differential equation does not appear to have a simple analytical
+solution; solutions correspond to a taut string confined to Flamm's
+paraboloid~\cite{flamm1916}.  It is straightforward to show that the
+string has a point of inflection
+if~$\left(r'\right)^2=2r\left(r-1\right)$.
+
+\section{Results}
+Solutions to equation~\ref{rdashdash} fall into two distinct classes:
+those with $r>1$ at all points, and those which attain $r=1$, in which
+case the string is tangential to the event horizon, in general.
+Numerical methods show that if the closest approach is greater than a
+critical value of~$\simeq 1.076109317(1)$, the string does not
+self-intersect (Figure~\ref{closest_approach_non_self_intersecting});
+if the closest approach is less than this value, the then string
+crosses itself at~$\phi=\pi/2$
+(Figure~\ref{closest_approach_self_intersecting}).  The case where the
+string is tangent to the event horizon at~$r=1,\phi=0$ is shown in
+Figure~\ref{fixed_EH_intersection}.
+
+\begin{figure}[h!] % Created by "closest_approach.R"
+\centering
+\includegraphics[width=70mm]{closest_approach_nonselfintersecting.pdf}
+\caption{Non-self intersecting strings arranged by distance~$d$ of
+  closest approach to the event horizon, occurring tangentially
+  at~$\phi=0$}
+\label{closest_approach_non_self_intersecting}
+\end{figure}
+
+\begin{figure}[h!] % created by "closest_approach2.R"
+\centering
+\includegraphics[width=70mm]{closest_approach_selfintersecting.pdf}
+\caption{Strings arranged by closest approach to the event horizon:
+ self-intersecting strings shown for $\phi\geq 0$}
+\label{closest_approach_self_intersecting}
+\end{figure}
+
+\begin{figure}[h!] % created by "one_free_end_fixed_EH_intersection.R"
+\centering
+\includegraphics[width=70mm]{one_free_end_fixed_EH_intersection.pdf}
+\caption{Strings tangential to event horizon}
+\label{fixed_EH_intersection}
+\end{figure}
+
+\section{Discussion}
+
+Light inextensible strings under tension adopt non-trivial
+configurations including self-intersecting paths.  The path of such
+strings furnishes an interpretation of the concept ``straight line''
+in general relativity, others being null geodesics and world lines of
+massive objects.  Comparing a world line with that of nearby taut
+strings thus furnishes another insight into path curvature,
+complementing the analysis of Abramowicz~\cite{abramowicz1992}.
+
+In Figure~\ref{closest_approach_non_self_intersecting}, one's
+classical intuition would suggest that the black hole feels a force to
+the left, and should start accelerating.  However, it is not clear by
+what mechanism such a force would be transmitted: the situation is
+steady, so no gravitational waves are produced, and the string is
+inextensible so stores no energy.
+
+%%Vancouver style references.
+\bibliographystyle{model3-num-names}
+\bibliography{stringrefs}
+
+\section*{Supplementary Material}
+
+Calculations are performed using the R programming language; source
+code for the figures is available at
+\\
+\\
+\url{https://github.com/RobinHankin/string.git}
+
+\end{document}
+
+%%
