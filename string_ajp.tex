@@ -154,7 +154,7 @@ second derivative of~$r$:
 \begin{figure}[h!] % Created by "flamm.R"
 \centering
 \includegraphics[width=70mm]{flamm_string.pdf}
-\caption{Perspective fiew of Flamm's paraboloid with superimposed minimal-length
+\caption{Perspective view of Flamm's paraboloid with superimposed minimal-length
   path corresponding to a taut, light string}
 \label{flamm}
 \end{figure}
@@ -203,7 +203,8 @@ has a radius of curvature of $r_0<r_0^2$, showing that circular orbits
 cannot follow a taut string at closest approach.  Also observe that
 null geodesics have a radius of curvature of $2r_0^2/3 < r_0^2$,
 showing that light cannot follow a taut string at closest approach
-either.
+either.  The string has a point of inflection
+if~$\left(r'\right)^2=2r(r-1)$.
 
 Compare the above analysis with a taut {\em heavy} string which
 adopts, at least locally, a catenary configuration at closest
@@ -215,9 +216,8 @@ one free end; the other is tangential to the event horizon, except in
 the exceptional case of constant~$\phi$ when the string is radial
 for~$r>1$.
 
+\section{Numerical results}
 
-
-\section{Results}
 Solutions to equation~\ref{rdashdash} fall into two distinct classes:
 those with $r>1$ at all points, and those which attain $r=1$, in which
 case the string is tangential to the event horizon, in general.
@@ -228,7 +228,7 @@ if the closest approach is less than this value, the then string
 crosses itself at~$\phi=\pi/2$
 (Figure~\ref{closest_approach_self_intersecting}).  The case where the
 string is tangent to the event horizon at~$r=1,\phi=0$ is shown in
-Figure~\ref{fixed_EH_intersection}.
+Figure~\ref{fixed_EH_intersection}.  
 
 \begin{figure}[h!] % Created by "closest_approach.R"
 \centering
@@ -242,8 +242,9 @@ Figure~\ref{fixed_EH_intersection}.
 \begin{figure}[h!] % created by "closest_approach2.R"
 \centering
 \includegraphics[width=170mm]{closest_approach_selfintersecting.pdf}
-\caption{Strings arranged by closest approach to the event horizon:
- self-intersecting strings shown for $\phi\geq 0$}
+\caption{Self-intersecting strings arranged by closest approach to the
+  event horizon which occurs at $\phi=0$.  
+  shown for $\phi\geq 0$}
 \label{closest_approach_self_intersecting}
 \end{figure}
 
@@ -252,6 +253,16 @@ Figure~\ref{fixed_EH_intersection}.
 \includegraphics[width=170mm]{one_free_end_fixed_EH_intersection.pdf}
 \caption{Strings tangential to event horizon}
 \label{fixed_EH_intersection}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics{curvature_switch.pdf} % created by "radius_of_curvature_switch.R"
+\caption{Strings arranged by point of curvature switch, which occurs
+  at~$\phi=0$.  Colour changes from black to red at points of
+  infinite~$R$; black indicates convex to the origin and red indicates
+  concave regions}
+\label{curvature_switch}
 \end{figure}
 
 \section{Discussion}
