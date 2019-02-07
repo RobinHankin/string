@@ -1,9 +1,6 @@
-## lots of blue strings with varying closest approach distances.
-
 ## This script runs standalone but is designed to be called from
 ## maker.R [cf Makefile], which creates the pdf file
 ## "curvature_switch.pdf"
-
 
 source("usefulfuncs.R") # defines stringpoints()
 
@@ -46,13 +43,11 @@ for(i in seq_along(dist)){
   wm <-  which.min(rr)
   theta1 <- theta-theta[wm]
   xy1 <- cbind(r*cos(theta1),r*sin(theta1))
-##  points(xy1[ thing,],type='l',col=rainbow(length(dist))[i])  # nice rainbow colours
   points(xy1[ thing,],type='l',col='red')   # red
   points(xy1[!thing,],type='l',col='black')
  
   theta2 <- -theta-theta[wm]
   xy2 <- cbind(r*cos(theta2),r*sin(theta2))
-#  points(xy2[ thing,],type='l',col=rainbow(length(dist))[i])  # nice rainbow colours
   points(xy2[ thing,],type='l',col='red')
   points(xy2[!thing,],type='l',col='black')
 
