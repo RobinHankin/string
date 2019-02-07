@@ -28,7 +28,7 @@ flamm(string=FALSE,phi=50,theta=40)
 dev.off()
 
 pdf(file="flamm_string.pdf")
-flamm(string=TRUE,phi=50,theta=50)
+flamm(string=TRUE,addlegend=FALSE,phi=50,theta=50)
 dev.off()
 
 pdf(file="light_start_at_r_equals_2.pdf")
