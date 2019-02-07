@@ -114,7 +114,7 @@ $r=1$ to $r=1+w$ where $w>0, \left|w\right|\ll 1$.  Then
 This would indicate that, close to the Schwarzschild radius $r=1$,
 large (but finite) amounts of string are required to connect two
 points with slightly differing radial coordinates.  Passing to the
-case $w\gg 1$ we have
+case $w\gg 1$ we have an asymptotic expansion that begins
 
 \begin{equation}
   \ell  =\frac{1}{2} + \log(2) + w + \frac{1}{8}w^{-1} + O(w^{-2}),
@@ -122,8 +122,8 @@ case $w\gg 1$ we have
 
 \noindent suggesting that there is ``extra radial space'', of length
 over $1.19$ Schwarzschild radii, sensible at large distances from the
-event horizon.  This might suggest that radial strings have to be
-longer than expected.
+event horizon.  This might suggest that radial strings have longer
+proper length than expected.
 
 \subsection{Nonradial string}
 Integrating along a path between two
@@ -151,19 +151,69 @@ second derivative of~$r$:
   (r-1) + \frac{(4r-3)\left(r'\right)^2}{2r\left(r-1\right)},\qquad r>1.
 \end{equation}
 
-This differential equation does not appear to be soluble analytically;
-solutions correspond to a taut string confined to Flamm's
-paraboloid~\cite{flamm1916}; see figure~\ref{flamm}.  It is
-straightforward to show that the string has a point of inflection
-if~$\left(r'\right)^2=2r\left(r-1\right)$.
-
 \begin{figure}[h!] % Created by "flamm.R"
 \centering
 \includegraphics[width=70mm]{flamm_string.pdf}
-\caption{Perspective fiew of Flamm's paraboloid with superimposed minimal-length path corresponding to a taut, light string}
+\caption{Perspective fiew of Flamm's paraboloid with superimposed minimal-length
+  path corresponding to a taut, light string}
 \label{flamm}
 \end{figure}
 
+Solutions to this differential equation correspond to a taut string
+confined to Flamm's paraboloid~\cite{flamm1916}; see
+figure~\ref{flamm}.
+
+There does not appear to be a simple analytical solution but
+nevertheless we may make several observations.
+Equation~\ref{rdashdash} is a second-order nonlinear ordinary
+differential equation and thus has two constants of integration.
+There are two qualitatively different types of solutions: those with a
+tangential point ($r'=0,r>1$), and those without.  Consider first
+solutions with such a point: there exists a pair~$\left(r,\phi\right),
+r>1$ at which~$r'(\phi)=0$.  By Rolle's theorem, this point must be
+unique, as~$r''(\phi)>0$, and be the closest approach of the string to
+the event horizon.
+
+Further, because the system is symmetrical
+under~$\phi\longrightarrow-\phi$, the string must be symmetrical about
+at this point.  The (signed) radius of curvature~$R$ is readily
+evaluated:
+
+\begin{equation}\label{roc}
+  R = \frac{
+    \left(r^2 + \left(r'\right)^2\right)^\frac{3}{2}
+  }{
+%    \left|
+    r^2 + 2\left(r'\right)^2-rr''
+%    \right|
+  }
+  =
+  \frac{
+    \left(r^2 + \left(r'\right)^2\right)^\frac{3}{2}
+  }{
+    r-\frac{\left(r'\right)^2}{2\left(r-1\right)}
+  }\qquad\mbox{along a taut string}
+\end{equation}
+
+\noindent which would give~$R$ as a function of~$\left(r,r'\right)$.
+Considering~$r'(\phi)=0$ shows that if a string is tangential at a
+point with~$r_0>1$, then it has a radius of curvature of~$r_0^2$ at
+that point.  Any circular path, including a circular orbit at~$r=r_0$,
+has a radius of curvature of $r_0<r_0^2$, showing that circular orbits
+cannot follow a taut string at closest approach.  Also observe that
+null geodesics have a radius of curvature of $2r_0^2/3 < r_0^2$,
+showing that light cannot follow a taut string at closest approach
+either.
+
+Compare the above analysis with a taut {\em heavy} string which
+adopts, at least locally, a catenary configuration at closest
+approach~\cite{nguyen2007}.  Such a configuration is manifestly convex
+to the singularity, in contrast to light strings which are concave.
+
+If, conversely, $r'(\phi)>0$ whenever~$r>1$, then the string has only
+one free end; the other is tangential to the event horizon, except in
+the exceptional case of constant~$\phi$ when the string is radial
+for~$r>1$.
 
 
 
@@ -182,7 +232,7 @@ Figure~\ref{fixed_EH_intersection}.
 
 \begin{figure}[h!] % Created by "closest_approach.R"
 \centering
-\includegraphics[width=70mm]{closest_approach_nonselfintersecting.pdf}
+\includegraphics[width=170mm]{closest_approach_nonselfintersecting.pdf}
 \caption{Non-self intersecting strings arranged by distance~$d$ of
   closest approach to the event horizon, occurring tangentially
   at~$\phi=0$}
@@ -191,7 +241,7 @@ Figure~\ref{fixed_EH_intersection}.
 
 \begin{figure}[h!] % created by "closest_approach2.R"
 \centering
-\includegraphics[width=70mm]{closest_approach_selfintersecting.pdf}
+\includegraphics[width=170mm]{closest_approach_selfintersecting.pdf}
 \caption{Strings arranged by closest approach to the event horizon:
  self-intersecting strings shown for $\phi\geq 0$}
 \label{closest_approach_self_intersecting}
@@ -199,7 +249,7 @@ Figure~\ref{fixed_EH_intersection}.
 
 \begin{figure}[h!] % created by "one_free_end_fixed_EH_intersection.R"
 \centering
-\includegraphics[width=70mm]{one_free_end_fixed_EH_intersection.pdf}
+\includegraphics[width=170mm]{one_free_end_fixed_EH_intersection.pdf}
 \caption{Strings tangential to event horizon}
 \label{fixed_EH_intersection}
 \end{figure}
