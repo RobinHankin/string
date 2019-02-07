@@ -12,19 +12,24 @@ source("usefulfuncs.R")
 pars <- c(eel=1) # dummy
 
 
-flamm <- function(string=TRUE, ...){
+flamm <- function(string=TRUE, drawlegend=FALSE, ...){
+
+  ## string, drawlengend: Boolean specifying whether or not to draw
+  ## the string and/or the legend.  "...", further arguments passed to
+  ## scatter3D().
 
   ## values of r and theta to plot: use longer vectors to make the plot
   ## look better but this takes longer
+
 
   thetavals <- seq(from=0,to=2*pi,len=100)
   rvals <-  seq(from=1,to=10,len=30)
 
   ## set up the axis:
   scatter3D(x=1:2, y=1:2, z=1:2,   # dummy points
-            bty=NULL,type='n',lwd=1,pch=NA,
+            type='n',lwd=1,pch=NA,
             r=100000,box=FALSE,scale=FALSE,colkey=FALSE,
-            xlim=c(-10,10),ylim=c(-10,10),zlim=c(-32,0),
+            xlim=c(-5,5),ylim=c(-5,5),zlim=c(-16,0),
             ...
             )
 
@@ -87,25 +92,29 @@ flamm <- function(string=TRUE, ...){
             lwd=2, col='black',
             add=TRUE,ticktype='detailed'
             )
-  legend("topright",
-         legend = c(
-             expression(paste("lines of constant ",r)),
-             expression(paste("lines of constant ",phi)),
-             "taut string"),
-         col = c("blue","red","black"),
-         lty = 1,
-         lwd = c(0.1,0.1,2)
-         )
+
+    if(drawlegend){
+      legend("topright",
+             legend = c(
+                 expression(paste("lines of constant ",r)),
+                 expression(paste("lines of constant ",phi)),
+                 "taut string"),
+             col = c("blue","red","black"),
+             lty = 1,
+             lwd = c(0.1,0.1,2)
+             )
+    }
   } else {
-  legend("topright",
-         legend = c(
-             expression(paste("lines of constant ",r)),
-             expression(paste("lines of constant ",phi))),
-         col = c("blue","red","black"),
-         lty = 1,
-         lwd = c(0.1,0.1)
-         )
+    if(drawlegend){
+      legend("topright",
+             legend = c(
+                 expression(paste("lines of constant ",r)),
+                 expression(paste("lines of constant ",phi))),
+             col = c("blue","red","black"),
+             lty = 1,
+             lwd = c(0.1,0.1)
+             )
+    }
   }
-  
 }  # closes flamm <- function
 
