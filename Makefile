@@ -10,4 +10,4 @@ pdf: string_ajp.tex
 
 
 clean:
-	rm *.pdf
+	rm *.pdf *.Rout *.aux *.bbl *.log
