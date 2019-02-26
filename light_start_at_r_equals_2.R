@@ -122,7 +122,7 @@ cutoffmatrix  <- matrix(c(
 colnames(cutoffmatrix) <- c("cuts","vals")
 fmax <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
 
-jj <- c(seq(from=-pi/2+0.01,to=pi/2-0.01,len=1000))
+jj <- c(seq(from=-pi/2+0.01,to=pi/2-0.01,len=100))
 
 for(initialangletotangent in jj){
 
@@ -157,3 +157,4 @@ if(mask){
 
 
 event_horizon(fill=FALSE)
+points(2,0,pch=16)
