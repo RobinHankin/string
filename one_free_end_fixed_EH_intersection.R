@@ -7,13 +7,15 @@ pars <- c(eel=1)  # dummy
 source("usefulfuncs.R")
 
 ## setup:
-jj <- 2.5
+jj <- c(-2.5,2.5)
 par(xpd=T)
 par(pty='m')
-plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='n',axes=F,xlab='',ylab='')
-
-
+plot(NULL,asp=1,xlim=jj,ylim=jj,type='n',axes=F,xlab='',ylab='')
 dist_from_hole <- 3
+userainbow <- FALSE  # TRUE = rainbow, FALSE = all strings blue
+
+## setup ends
+
 
 ## One string per start angle, each one a different colour:
 start_angles <- c(seq(from=1.18,by=0.03,to=1.56))
@@ -23,6 +25,7 @@ start_angles <- rev(start_angles)
 
 n <- length(start_angles)+1
 cols <- rainbow(n+round(n/7))[-1]  # "[-1]" so the radial string is correctly coloured
+if(!userainbow){  cols[] <- "blue"}
 
 theta_start <- 0
 

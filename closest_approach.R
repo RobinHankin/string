@@ -10,9 +10,10 @@ source("usefulfuncs.R") # defines stringpoints()
 pars <- c(eel=1)  # dummy
 
 ## plot setup:
-jj <- 6
+jj <- c(-6,6)
 par(xpd=TRUE)
-plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',axes=FALSE,,xlab='',ylab='')
+plot(NULL,asp=1,xlim=jj,ylim=jj,type='l',axes=FALSE,,xlab='',ylab='')
+userainbow <- FALSE   # TRUE = rainbow, FALSE = all strings blue
 ## setup ends
 
 
@@ -54,12 +55,19 @@ cutoffmatrix <- matrix(c(
 f <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
 
 for(i in seq_along(dist)){
+  if(userainbow){
+    stringcol <- rainbow(length(dist))[ii]
+  } else {
+    stringcol <- "blue"
+  }
+
   tseq <- seq(from=0,to=f(dist[i]),len=100)
   xy <- stringpoints(y_start=dist[i],initial_string_angle = 0,theta=tseq)
-  points(xy,type='l',col=rainbow(length(dist))[i],lwd=2)
+  points(xy,type='l',col=stringcol,lwd=2)
   
   xy <- stringpoints(y_start=dist[i],initial_string_angle = 0, theta=-tseq)
-  points(xy,type='l',col=rainbow(length(dist))[i],lwd=2)
+  points(xy,type='l',col=stringcol,lwd=2)
+
 }
 
 # mask strings too far from the black hole:

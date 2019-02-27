@@ -43,12 +43,12 @@ for(i in seq_along(dist)){
   wm <-  which.min(rr)
   theta1 <- theta-theta[wm]
   xy1 <- cbind(r*cos(theta1),r*sin(theta1))
-  points(xy1[ thing,],type='l',col='red')   # red
+  points(xy1[ thing,],type='l',col='blue')   # blue
   points(xy1[!thing,],type='l',col='black')
  
   theta2 <- -theta-theta[wm]
   xy2 <- cbind(r*cos(theta2),r*sin(theta2))
-  points(xy2[ thing,],type='l',col='red')
+  points(xy2[ thing,],type='l',col='blue')
   points(xy2[!thing,],type='l',col='black')
 
   print(paste("done ",dist[i],sep = ""))
