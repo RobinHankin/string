@@ -1,4 +1,10 @@
-## Null geodesics.  Here, the light starts tangentially from phi=0.
+## Null geodesics in the Schwarzschild geometry.
+
+## This script runs standalone but is designed to be called from
+## maker.R [cf Makefile], which creates the pdf file
+## "light_closest_approach.pdf"
+
+## Here, the light starts tangentially from phi=0.
 ## It is like closest_approach.R and closest_approach2.R but for light
 ## beams rather than string.  Compare light_start_at_r_equals_2.R,
 ## which has light beams starting from (2,0) going in all directions.
@@ -20,7 +26,7 @@ source("usefullightfuncs.R") # defines lightpoints()
 
 r_start <- 2 # starting radius for light ray
 mask <- TRUE    # set to FALSE to see entire geodesic (TRUE is time-consuming but needed for publication quality)
-size_of_plot <- 6
+size_of_plot <- 3.5
 
 ## plot setup:
 par(xpd=TRUE)
@@ -140,4 +146,5 @@ circ(1.5,lwd=3,lty=1,col="red")   # ergosphere
 
 event_horizon(fill=FALSE)
 
-
+legend("bottomleft",bg="white",legend=c("null geodesic","closed photon orbit","event horizon"),
+       lty=1,col=c("red","red","black"),lwd=c(1,3,1))
