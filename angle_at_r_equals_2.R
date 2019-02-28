@@ -18,10 +18,9 @@ mask <- TRUE    # set to FALSE to see entire string
 jj <- 6.5
 par(pty='s')
 plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',xlab='',ylab='',axes=FALSE)
-
-
-
+userainbow <- FALSE   # colour of strings (FALSE = all strings blue)
 dist_from_hole <- 2
+## setup ends
 
 ## Define start_angles, specifying the angle that the string makes at
 ## (2,0) from a tangent:
@@ -33,6 +32,10 @@ start_angles <- seq(from=-0.8,to=0.0,by=0.015)
 
 n <- length(start_angles)
 cols <- rainbow(n+round(n/7))
+
+  if(!userainbow){
+    cols[] <- "blue"
+  }
 
 theta_start <- 0
 
