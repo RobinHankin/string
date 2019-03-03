@@ -29,7 +29,6 @@ if(!userainbow){  cols[] <- "blue"}
 
 theta_start <- 0
 
-theta_end1 <- 0 + 0*start_angles ## upward/outward
 theta_end2 <- pi*0.45 + 0*start_angles  # downward/inward
 
 theta_end2[cont(start_angles, c(0.10,0.50))] <-  pi/2
