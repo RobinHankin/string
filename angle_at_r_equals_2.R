@@ -28,7 +28,7 @@ dist_from_hole <- 2
 
 ## One string per start angle, each one a different colour:
 delta_angle <- 0.02
-start_angles <- seq(from=-0.8,to=pi/2,by=delta_angle)
+start_angles <- seq(from=-0.8,to=pi/2,length=100)
 start_angles <- start_angles[-length(start_angles)]
 
 
@@ -104,7 +104,7 @@ for(i in seq_along(start_angles)){
   points(xy,type='l',col=cols[i],lwd=1)
 }
 
-
+## Radial string:
 points(rbind(c(2,0),c(100,0)),col=cols[i+1],type='l')
 
 ## Now the downward strings:
