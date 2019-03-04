@@ -140,7 +140,7 @@ for(initialangletotangent in start_angle){
   points(xy1,col='red',type='l')
 }
 
-## radial ray
+## radial ray (inward and outward):
 segments(x0=0,x1=4,y0=0,col='red')
 
 ## grid:
