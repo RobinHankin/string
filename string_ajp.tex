@@ -254,6 +254,39 @@ The case where the string is tangent to the event horizon at~$\phi=0$,
 including a radial string, is shown in
 Figure~\ref{fixed_EH_intersection}.
 
+\section{Discussion}
+
+Light inextensible strings under tension adopt non-trivial
+configurations including self-intersecting paths.  The path of such
+strings furnishes an interpretation of the concept ``straight line''
+in general relativity, others being null geodesics and world lines of
+massive objects.  Comparing a world line with that of nearby taut
+strings thus furnishes another insight into path curvature,
+complementing the analysis of Abramowicz~\cite{abramowicz1992}.
+
+In Figure~\ref{closest_approach_non_self_intersecting}, one's
+classical intuition would suggest that the black hole feels a force to
+the left, and should start accelerating.  However, it is not clear by
+what mechanism such a force would be transmitted: the situation is
+steady, so no gravitational waves are produced, and the string is
+inextensible so stores no energy.  Further work might include analysis
+of taut strings near a spinning black hole.
+
+%%Vancouver style references.
+\bibliographystyle{model3-num-names}
+\bibliography{stringrefs}
+
+\section*{Supplementary Material}
+
+Calculations are performed using the R programming language~\citep{rcore2018};
+source code for the figures is available at
+\\
+\\
+\url{https://github.com/RobinHankin/string.git}
+
+
+\section*{Figures}
+
 \begin{figure}[p] % Created by "closest_approach.R"
 \centering
 \includegraphics[width=170mm]{closest_approach_nonselfintersecting.pdf}
@@ -267,8 +300,8 @@ Figure~\ref{fixed_EH_intersection}.
 \centering
 \includegraphics[width=170mm]{closest_approach_selfintersecting.pdf}
 \caption{Self-intersecting strings arranged by closest approach to the
-  event horizon which occurs at $\phi=0$.  
-  shown for $\phi\geq 0$}
+  event horizon which occurs at $\phi=0$.  Strings shown for $\phi\geq
+  0$}
 \label{closest_approach_self_intersecting}
 \end{figure}
 
@@ -300,7 +333,6 @@ Figure~\ref{fixed_EH_intersection}.
 \label{strings_r_equals_2}
 \end{figure}
 
-
 \begin{figure}[p]
 \centering
 \includegraphics{light_start_at_r_equals_2.pdf} % created by "angle_start_at_r_equals_2.R"
@@ -322,36 +354,6 @@ Figure~\ref{fixed_EH_intersection}.
 \label{fixed_EH_intersection}
 \end{figure}
 
-\section{Discussion}
 
-Light inextensible strings under tension adopt non-trivial
-configurations including self-intersecting paths.  The path of such
-strings furnishes an interpretation of the concept ``straight line''
-in general relativity, others being null geodesics and world lines of
-massive objects.  Comparing a world line with that of nearby taut
-strings thus furnishes another insight into path curvature,
-complementing the analysis of Abramowicz~\cite{abramowicz1992}.
-
-In Figure~\ref{closest_approach_non_self_intersecting}, one's
-classical intuition would suggest that the black hole feels a force to
-the left, and should start accelerating.  However, it is not clear by
-what mechanism such a force would be transmitted: the situation is
-steady, so no gravitational waves are produced, and the string is
-inextensible so stores no energy.  Further work might include analysis
-of taut strings near a spinning black hole.
-
-%%Vancouver style references.
-\bibliographystyle{model3-num-names}
-\bibliography{stringrefs}
-
-\section*{Supplementary Material}
-
-Calculations are performed using the R programming language~\citep{rcore2018};
-source code for the figures is available at
-\\
-\\
-\url{https://github.com/RobinHankin/string.git}
 
 \end{document}
-
-%%
