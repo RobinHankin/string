@@ -27,7 +27,9 @@ dist_from_hole <- 2
 
 
 ## One string per start angle, each one a different colour:
-start_angles <- seq(from=-0.8,to=0.0,by=0.015) 
+delta_angle <- 0.02
+start_angles <- seq(from=-0.8,to=pi/2,by=delta_angle)
+start_angles <- start_angles[-length(start_angles)]
 
 
 n <- length(start_angles)
@@ -39,14 +41,11 @@ cols <- rainbow(n+round(n/7))
 
 theta_start <- 0
 
-theta_end1 <- rep(pi/2, length(start_angles))
-theta_end2 <- rep(pi/2-0.9, length(start_angles))
-
 ## following construction uses `cutoffmatrix` to specify maximum angle
-## for each string, using fun() which is defined in usefulfuncs.R:
+## for each string, using approxfun() 
 
 cutoffmatrix  <- matrix(c(
-    -9.83, pi/2  + 0.00,
+    -0.90, pi/2  + 0.00,
     -0.80, pi/2  + 3.30,
     -0.79, pi/2  + 3.20,  # -0.8 to -0.79
    -0.785, pi/2  + 3.10,
@@ -72,7 +71,21 @@ cutoffmatrix  <- matrix(c(
     -0.20, pi/2  + 0.70,
     -0.15, pi/2  + 0.50,
     -0.10, pi/2  + 0.40,
-    +0.01, pi/2  + 0.30
+   +0, pi/2  + 0.30,
+  0.1,pi/2-0.1,
+  0.2,pi/2-0.1,
+   0.3,pi/3+0.1,
+   0.5,pi/3,
+   0.8,pi/5,
+  0.9,pi/6,
+  1.0,pi/7,
+  1.1,pi/8,
+  1.2,pi/13,
+  1.3,pi/15,
+  1.4,pi/29,
+  pi/2-0.1,pi/39,
+  pi/2-0.05,pi/79,
+   pi/2-0.015,pi/300
     )
    ,ncol=2,byrow=TRUE)
 
@@ -92,17 +105,19 @@ for(i in seq_along(start_angles)){
 }
 
 
+points(rbind(c(2,0),c(100,0)),col=cols[i+1],type='l')
+
 ## Now the downward strings:
 if(FALSE){
     for(i in seq_along(start_angles)){
         xy <-
             stringpoints(
                 y_start = dist_from_hole,
-                initial_string_angle = -(pi-start_angles[i]),
-                theta = -seq(from=theta_start,to=theta_end2[i],len=100)
+                initial_string_angle = -start_angles[i],
+                theta = seq(from=theta_start,to=-f_upwards(-start_angles[i]),len=100)
             )
-        
-        points(xy,type='l',col=cols[i],lwd=5)
+        xy[,2] <- -xy[,2]
+        points(xy,type='l',col=cols[i],lwd=0.2)
     }
     
 }
