@@ -123,10 +123,10 @@ cutoffmatrix  <- matrix(c(
 colnames(cutoffmatrix) <- c("cuts","vals")
 fmax <- approxfun(cutoffmatrix[,1],cutoffmatrix[,2])
 
-jj <- seq(from=-pi/2,to=pi/2,len=100)
-jj <- jj[-c(1,length(jj))]
+start_angle <- seq(from=-pi/2,to=pi/2,len=100)
+start_angle <- start_angle[-c(1,length(start_angle))]
 
-for(initialangletotangent in jj){
+for(initialangletotangent in start_angle){
 
   final_phi <- min(fmax(initialangletotangent),2*pi)
   print(c(initialangletotangent,final_phi))
