@@ -40,9 +40,10 @@ plot(NULL,asp=1,xlim=jj,ylim=jj,type='l',axes=FALSE,xlab='',ylab='')
 ## to infinity than have a free end in space).
 
 cutoffmatrix  <- matrix(c(
-    -pi/2,0.00001,
+    -pi/2,0.01,
+    -1.57,0.01,
     -1.55, 0.01,
-    -1.53, 0.02,
+    -1.53, 0.03,
     -1.51, 0.04,
     -1.49, 0.05,
     -1.47, 0.07,
@@ -122,7 +123,8 @@ cutoffmatrix  <- matrix(c(
 colnames(cutoffmatrix) <- c("cuts","vals")
 fmax <- approxfun(cutoffmatrix[,1],cutoffmatrix[,2])
 
-jj <- c(seq(from=-pi/2+0.01,to=pi/2-0.01,len=100))
+jj <- seq(from=-pi/2,to=pi/2,len=100)
+jj <- jj[-c(1,length(jj))]
 
 for(initialangletotangent in jj){
 
@@ -139,7 +141,7 @@ for(initialangletotangent in jj){
 }
 
 ## radial ray
-segments(x0=0,x1=r_start,y0=0,col='red')
+segments(x0=0,x1=4,y0=0,col='red')
 
 ## grid:
 polargrid()
