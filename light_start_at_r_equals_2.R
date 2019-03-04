@@ -120,7 +120,7 @@ cutoffmatrix  <- matrix(c(
    ,ncol=2,byrow=TRUE)
 
 colnames(cutoffmatrix) <- c("cuts","vals")
-fmax <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
+fmax <- approxfun(cutoffmatrix[,1],cutoffmatrix[,2])
 
 jj <- c(seq(from=-pi/2+0.01,to=pi/2-0.01,len=100))
 

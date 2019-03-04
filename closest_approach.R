@@ -52,7 +52,7 @@ cutoffmatrix <- matrix(c(
  9.00, 1.60 ),
  ncol=2,byrow=TRUE)
 
-f <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
+f <- approxfun(cutoffmatrix[,1],cutoffmatrix[,2])
 
 for(i in seq_along(dist)){
   if(userainbow){

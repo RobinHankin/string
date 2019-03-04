@@ -34,33 +34,31 @@ cols <- rainbow(n+round(n/7))
 
 theta_start <- 0
 
-theta_end1 <- 0 + 0*start_angles ## upward/outward
+
 theta_end2 <- pi*0.05 + 0*start_angles  # downward/inward
+cutoffmatrix <- matrix(c(
+0.10 ,   pi,
+0.50 ,   pi,
+1.00 ,   pi/2 + 0.1,
+1.10 ,   pi/2,
+1.19 ,   pi/2 ,
+1.21 ,   pi/3,
+1.27 ,   pi/4,
+1.29 ,   pi/4,
+1.32 ,   pi/4,
+1.34 ,   pi/4,
+1.35 ,   pi/4,
+1.36 ,   pi/6,
+1.42 ,   pi/6,
+1.44 ,   pi/10,
+1.51 ,   pi/20,
+1.53 ,   pi/30,
+1.55 ,   pi/60,
+1.56 ,   pi/120,
+1.57 ,   pi/600,
+1.58 ,   pi/30000),byrow=TRUE,ncol=2)
 
-
-
-theta_end2[cont(start_angles, c(0.10,0.50))] <-  pi
-theta_end2[cont(start_angles, c(0.50,1.00))] <-  pi
-theta_end2[cont(start_angles, c(1.00,1.10))] <-  pi/2 + 0.1
-theta_end2[cont(start_angles, c(1.10,1.19))] <-  pi/2
-theta_end2[cont(start_angles, c(1.19,1.21))] <-  pi/2 
-theta_end2[cont(start_angles, c(1.21,1.27))] <-  pi/3
-theta_end2[cont(start_angles, c(1.27,1.29))] <-  pi/4
-theta_end2[cont(start_angles, c(1.29,1.32))] <-  pi/4
-theta_end2[cont(start_angles, c(1.32,1.34))] <-  pi/4
-theta_end2[cont(start_angles, c(1.34,1.35))] <-  pi/4
-theta_end2[cont(start_angles, c(1.35,1.36))] <-  pi/4
-theta_end2[cont(start_angles, c(1.36,1.42))] <-  pi/6
-theta_end2[cont(start_angles, c(1.42,1.44))] <-  pi/6
-theta_end2[cont(start_angles, c(1.44,1.51))] <-  pi/10
-theta_end2[cont(start_angles, c(1.51,1.53))] <-  pi/20
-theta_end2[cont(start_angles, c(1.53,1.55))] <-  pi/30
-theta_end2[cont(start_angles, c(1.55,1.56))] <-  pi/60
-theta_end2[cont(start_angles, c(1.56,1.57))] <-  pi/120
-theta_end2[cont(start_angles, c(1.57,1.58))] <-  pi/600
-theta_end2[cont(start_angles, c(1.58,1.59))] <-  pi/30000
-## cont() is defined in usefulfuncs.R
-
+f <- approxfun(cutoffmatrix[,1],cutoffmatrix[,2])
 
 ## now the downward ones:
 for(i in seq_along(start_angles)){
@@ -68,7 +66,7 @@ for(i in seq_along(start_angles)){
     stringpoints(
         y_start = dist_from_hole,
         initial_string_angle = -(pi-start_angles[i]),
-        theta = -seq(from=theta_start,to=theta_end2[i],len=1000)
+        theta = -seq(from=theta_start,to=f(start_angles[i]),len=1000)
     )
   rsq <- c(1+sum(xy[1,]^2),rowSums(xy^2)) # rsq == r-squared
   inward <- diff(rsq)<0      # TRUE if the string is moving inward

@@ -13,13 +13,11 @@ par(pty='m')
 plot(NULL,asp=1,xlim=jj,ylim=jj,type='n',axes=F,xlab='',ylab='')
 dist_from_hole <- 3
 userainbow <- FALSE  # TRUE = rainbow, FALSE = all strings blue
-
 ## setup ends
 
 
 ## One string per start angle, each one a different colour:
 start_angles <- c(seq(from=1.18,by=0.03,to=1.56))
-
 
 start_angles <- rev(start_angles)
 
@@ -29,33 +27,36 @@ if(!userainbow){  cols[] <- "blue"}
 
 theta_start <- 0
 
-theta_end2 <- pi*0.45 + 0*start_angles  # downward/inward
 
-theta_end2[cont(start_angles, c(0.10,0.50))] <-  pi/2
-theta_end2[cont(start_angles, c(0.50,1.00))] <-  pi/2 +0.3
-theta_end2[cont(start_angles, c(1.00,1.19))] <-  pi*1.1
-theta_end2[cont(start_angles, c(1.19,1.21))] <-  3*pi/2 
-theta_end2[cont(start_angles, c(1.21,1.27))] <-  pi
-theta_end2[cont(start_angles, c(1.27,1.29))] <-  pi*0.9
-theta_end2[cont(start_angles, c(1.29,1.32))] <-  pi*0.8
-theta_end2[cont(start_angles, c(1.32,1.34))] <-  pi*0.7
-theta_end2[cont(start_angles, c(1.34,1.35))] <-  pi*0.62
-theta_end2[cont(start_angles, c(1.35,1.36))] <-  pi*0.62
-theta_end2[cont(start_angles, c(1.36,1.42))] <-  pi*0.4
-theta_end2[cont(start_angles, c(1.42,1.44))] <-  pi*0.3
-theta_end2[cont(start_angles, c(1.44,1.45))] <-  pi*0.2
-theta_end2[cont(start_angles, c(1.45,1.46))] <-  pi*0.2
-theta_end2[cont(start_angles, c(1.46,1.47))] <-  pi*0.2
-theta_end2[cont(start_angles, c(1.47,1.48))] <-  pi*0.2
-theta_end2[cont(start_angles, c(1.48,1.49))] <-  pi*0.2
-theta_end2[cont(start_angles, c(1.49,1.50))] <-  pi*0.2
-theta_end2[cont(start_angles, c(1.50,1.51))] <-  pi*0.15
-theta_end2[cont(start_angles, c(1.51,1.52))] <-  pi*0.1
-theta_end2[cont(start_angles, c(1.52,1.53))] <-  pi*0.1
-theta_end2[cont(start_angles, c(1.53,1.54))] <-  pi*0.07
-theta_end2[cont(start_angles, c(1.54,1.55))] <-  pi*0.05
-theta_end2[cont(start_angles, c(1.55,1.56))] <-  pi*0.02
-theta_end2[cont(start_angles, c(1.56,1.57))] <-  pi*0.02
+cutoffmatrix <-	 matrix(c(
+0.00,     pi/2,
+0.10,     pi/2,
+0.50, 	  pi/2 +0.3,
+1.00,     pi*1.1,
+1.19,     3*pi/2,
+1.21, 	  pi,
+1.27, 	  pi*0.9,
+1.29, 	  pi*0.8,
+1.32, 	  pi*0.7,
+1.34, 	  pi*0.62,
+1.35, 	  pi*0.62,
+1.36, 	  pi*0.4,
+1.42, 	  pi*0.3,
+1.44, 	  pi*0.2,
+1.45, 	  pi*0.2,
+1.46, 	  pi*0.2,
+1.47, 	  pi*0.2,
+1.48, 	  pi*0.2,
+1.49, 	  pi*0.2,
+1.50, 	  pi*0.15,
+1.51, 	  pi*0.1,
+1.52, 	  pi*0.1,
+1.53, 	  pi*0.07,
+1.54, 	  pi*0.05,
+1.55, 	  pi*0.02,
+1.56, 	  pi*0.02),ncol=2,byrow=TRUE)
+
+f <- approxfun(cutoffmatrix[,1],cutoffmatrix[,2])
 
 closest_approach <- start_angles + NA
 
@@ -69,7 +70,7 @@ for(i in seq_along(start_angles)){
     stringpoints(
         y_start = dist_from_hole,
         initial_string_angle = -(pi-start_angles[i]),
-        theta = -seq(from=theta_start,to=theta_end2[i],len=1000)
+        theta = -seq(from=theta_start,to=f(start_angles[i]),len=1000)
     )
   
   rsq <- c(1+sum(xy[1,]^2),rowSums(xy^2))  # dist from singularity squared
