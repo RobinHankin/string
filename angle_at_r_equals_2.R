@@ -77,7 +77,7 @@ cutoffmatrix  <- matrix(c(
    ,ncol=2,byrow=TRUE)
 
 colnames(cutoffmatrix) <- c("cuts","vals")
-f_upwards <- fun(cutoffmatrix[,1],cutoffmatrix[,2])
+f_upwards <- approxfun(cutoffmatrix[,1],cutoffmatrix[,2])
 
 for(i in seq_along(start_angles)){
 
