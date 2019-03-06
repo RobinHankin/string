@@ -21,7 +21,7 @@ userainbow <- FALSE   # colour of strings (FALSE = all strings blue)
 ## setup ends
 
 
-dist <- dseq(from=(1.00012), to=1.076109317,len=50,power=3.3)
+dist <- dseq(from=(1.00012), to=1.076109317,len=70,power=3)
 
 cutoffmatrix <- matrix(c(
     1.0000, pi + 3.30 -3.3 ,
