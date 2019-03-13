@@ -7,7 +7,8 @@ source("usefulfuncs.R") # defines polargrid() etc
 source("usefullightfuncs.R") # defines lightpoints()
 
 r_start <- 1 # starting radius for light ray
-mask <- FALSE    # set to FALSE to see entire geodesic
+mask <- TRUE    # set to TRUE to mask the diagram to a circle; set to
+                # FALSE for debugging (masking is time-consuming)
 size_of_plot <- 3
 
 ## plot setup:
@@ -75,24 +76,37 @@ cutoffmatrix  <- matrix(c(
     -0.3, 4.2,
     -0.2, 3.6,
     -0.15, 3.2,
-    -0.1, 2.9,
-    0.0, pi/2 + 0.7,
-    0.1, pi/2 +0.7  ,
-    0.15, pi/2 +0.4 ,
-    0.2, pi/2+0.3   ,
-    0.30, 2  ,
-    0.4, 2  ,
+    -0.1, 3.1,
+    -0.05, 2.9,
+    0.0, 2.9,
+    0.1,2.9,
+    0.15,2.9,
+    0.2,2.9,
+    
+    0.5, 2.5,
+    0.1, 2.4  ,
+    0.15, 2.4,
+    0.2, 2.5   ,
+    0.25, 2.4  ,
+    0.30, 2.4  ,
+    0.4, 2.2  ,
     0.5, 2.2  ,
-    0.6, 1.8  ,
-    0.7, 1.9  ,
-    0.8, 1.6  ,
-    0.9, 1.4  ,
+
+    0.6, 2.1  ,
+    0.7, 2.1  ,
+    0.8, 2.0  ,
+
+    0.9, 1.8  ,
     1.0, 1.7  ,
-    1.1, 1.6  ,
-    1.2, 1.2  ,
-    1.3, 1.1  , 
-    1.4, 1.0  , 
-    1.5, 1.0  , 
+    1.1, 1.7  ,
+    1.2, 1.6  ,
+    1.3, 1.4  , 
+    1.4, 1.2  , 
+    1.5, 1.0  ,
+    1.51,0.8,
+    1.53,0.7,
+    1.54,0.6,
+    1.55,0.6,
     pi/2 , 0.1   
     )
    ,ncol=2,byrow=TRUE)
@@ -101,12 +115,13 @@ cutoffmatrix  <- matrix(c(
 colnames(cutoffmatrix) <- c("cuts","vals")
 fmax <- approxfun(cutoffmatrix[,1],cutoffmatrix[,2])
 
-start_angle <- seq(from=-pi/2,to=pi/2,len=800)
+start_angle <- seq(from=-pi/2,to=pi/2,len=100)
 
 start_angle <- start_angle[-c(1,length(start_angle))]
 
-wanted <- (start_angle > -0.2) & (start_angle < 0.1)
-#start_angle <- start_angle[wanted]
+## Uncomment the following when refining cutoffmatrix:
+## wanted <- (start_angle > 1.5) & (start_angle < pi/2)
+## start_angle <- start_angle[wanted]
 
 for(initialangletotangent in start_angle){
 
