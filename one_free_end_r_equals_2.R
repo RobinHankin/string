@@ -9,13 +9,13 @@ source("usefulfuncs.R")
 ## setup:
 jj <- 2
 par(xpd=TRUE)
-
 plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),axes=FALSE,xlab='',ylab='')  # close-up
 
 
 closest_approach <- matrix(0,0,2)  # used for debugging theta_end2 values
 colnames(closest_approach) <- c("start_angle","closest_approach")
 dist_from_hole <- 2
+userainbow <- FALSE
 
 ## one string per start angle, each a different colour; start_angle =
 ## pi/2 is a radial string:
@@ -31,6 +31,7 @@ start_angles <- sort(start_angles,decreasing=TRUE)
 
 n <- length(start_angles)
 cols <- rainbow(n+round(n/7))
+if(!userainbow){  cols[] <- "blue"}
 
 theta_start <- 0
 
@@ -85,6 +86,6 @@ for(i in seq_along(start_angles)){
 }
 
 polargrid(rlab=1.8)
-segments(1,0,2,0,col='red')  # radial string
+segments(1,0,2,0,col=cols[1])  # radial string
 points(dist_from_hole,0,pch=16)
 event_horizon(fill=TRUE)
