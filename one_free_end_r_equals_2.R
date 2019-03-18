@@ -40,7 +40,8 @@ theta_end2 <- pi*0.05 + 0*start_angles  # downward/inward
 cutoffmatrix <- matrix(c(
 0.10 ,   pi,
 0.50 ,   pi,
-1.00 ,   pi/2 + 0.1,
+0.70 ,   pi + 0.4,
+1.00 ,   pi/2 + 0.4,
 1.10 ,   pi/2,
 1.19 ,   pi/2 ,
 1.21 ,   pi/3,
