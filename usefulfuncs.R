@@ -38,7 +38,7 @@ library("deSolve")   # needed for ode()
 ## function cont() returns TRUE if x is in the interval specified
 `cont` <- function(x,interval){ (x-interval[1])*(x-interval[2]) <=0}
 
-`polargrid` <- function(r=1:7,n=12,rlab=max(r)/2, labels=TRUE,...){
+`polargrid` <- function(r=1:7,n=12,rlab=max(r)/2, labels=FALSE,...){
   fish <- c(
       expression(pi/6),    # Note off-by-one error
       expression(pi/3),
