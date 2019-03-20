@@ -7,8 +7,6 @@
 
 source("usefulfuncs.R") # defines stringpoints()
 
-pars <- c(eel=1)  # dummy
-
 ## plot setup:
 domask <- TRUE
 jj <- c(-6,6)

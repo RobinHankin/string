@@ -9,9 +9,6 @@
 library("plot3D")
 source("usefulfuncs.R")
 
-pars <- c(eel=1) # dummy
-
-
 flamm <- function(string=TRUE, drawlegend=FALSE, ...){
 
   ## string, drawlengend: Boolean specifying whether or not to draw

@@ -11,7 +11,7 @@ source("usefulfuncs.R") # defines stringpoints() and dseq()
 
 
 domask <- TRUE
-pars <- c(eel=1)  # dummy
+
 
 ## plot setup:
 jj <- 6

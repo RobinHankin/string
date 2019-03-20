@@ -2,8 +2,6 @@
 ## maker.R [cf Makefile], which creates the pdf file
 ## "one_free_end_r_equals_2.pdf"
 
-pars <- c(eel=1)  # dummy for the ODE solver
-
 source("usefulfuncs.R")
 
 ## setup:

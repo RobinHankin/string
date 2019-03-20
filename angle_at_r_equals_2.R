@@ -8,11 +8,7 @@
 ## "angle_at_r_equals_2.pdf".
 
 
-pars <- c(eel=1)  # dummy
-
 source("usefulfuncs.R")
-
-
 domask <- TRUE    # set to FALSE to see entire string
 
 ## setup:
