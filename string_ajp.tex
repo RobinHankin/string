@@ -161,7 +161,7 @@ second derivative of~$r$:
 
 Solutions to this differential equation correspond to a taut string
 confined to Flamm's paraboloid~\cite{flamm1916}; see
-figure~\ref{flamm}.
+Figure~\ref{flamm}.
 
 There does not appear to be a simple analytical solution but
 nevertheless we may make several observations.
@@ -225,13 +225,13 @@ those which attain $r=1$, in which case the string is tangential to
 the event horizon, unless it is radial.
 
 Taking strings for which $r>1$ first,
-figure~\ref{closest_approach_non_self_intersecting} shows a sequence
+Figure~\ref{closest_approach_non_self_intersecting} shows a sequence
 of non-self-intersecting numerical solutions to
 equation~\ref{rdashdash}, rotated so that the tangential point of
 closest approach occurs at~$\phi=0$.
 Figure~\ref{closest_approach_self_intersecting} shows the
 corresponding diagram for self-interesecting strings
-(figure~\ref{light_closest_approach} shows comparable null geodesic
+(Figure~\ref{light_closest_approach} shows comparable null geodesic
 diagram for comparison).  A bisection technique reveals that if the
 closest approach is greater than a critical value of~$\simeq
 1.076109317(1)$, the string does not self-intersect; if the closest
@@ -244,9 +244,14 @@ occurs at~$\phi=0$; we see that each string has a finite length in
 which it is convex to the origin and two semi-infinite stretches in
 which the curvature is negative.
 
-The case where the string is tangent to the event horizon at~$\phi=0$,
-including a radial string, is shown in
-Figure~\ref{fixed_EH_intersection}.
+The cases where the string is tangent to the event horizon
+at~$\phi=0$, including a radial string, are shown in
+Figures~\ref{one_free_end_r_equals_2} and~\ref{fixed_EH_intersection}
+for strings tangential to or missing the Schwarzschild radius
+respectively.  There are other ways to parametrize the strings; Figure
+\ref{strings_r_equals_2}, for example, shows strings passing
+through~$(2,0)$; Figure~\ref{light_r_equals_2} shows light paths for
+comparison.
 
 \section{Discussion}
 
@@ -310,23 +315,36 @@ source code for the figures is available at
 \begin{figure}[p] % Created by "light_closest_approach.R"
 \centering
 \includegraphics[width=170mm]{light_closest_approach.pdf}
-\caption{Null geodesics in the Schwarzschild geometry passing
-  through~$(r,0)$, at which point they are tangential.  Note the
-  differences between these curves and the taut strings shown
-  elsewhere: unlike taug strings, null geodesics have positive
-  curvature everywhere, may cross the event horizon inwards, and are
-  never tangential to the event horizon}
+\caption{Null geodesics in the Schwarzschild geometry, tangential
+  at~$\phi=0$.  Note the differences between these curves and the taut
+  strings shown elsewhere: unlike taug strings, null geodesics have
+  positive curvature everywhere, may cross the event horizon inwards,
+  and are never tangential to the event horizon}
 \label{light_closest_approach}
 \end{figure}
 
 \begin{figure}[p]
 \centering
 \includegraphics{curvature_switch.pdf} % created by "radius_of_curvature_switch.R"
-\caption{Strings arranged by point of curvature switch, which occurs
-  at~$\phi=0$.  Colour changes from black to red at points of
-  infinite~$R$; black indicates convex to the origin and red indicates
-  concave regions}
+\caption{Strings arranged by point at which the radius of curvature
+  switches, which occurs at~$\phi=0$.  Colour changes from black to
+  blue at points of infinite~$R$; black indicates convex to the origin
+  and blue indicates concave regions}
 \label{curvature_switch}
+\end{figure}
+
+\begin{figure}[p] % created by "one_free_end_r_equals_2.R"
+\centering
+\includegraphics[width=170mm]{one_free_end_r_equals_2.pdf}
+\caption{Strings tangential to the event horizon passing through $(2,0)$}
+\label{one_free_end_r_equals_2}
+\end{figure}
+
+\begin{figure}[p] % created by "one_free_end_fixed_EH_intersection.R"
+\centering
+\includegraphics[width=170mm]{one_free_end_fixed_EH_intersection.pdf}
+\caption{Strings tangential to event horizon at $(1,0)$}
+\label{fixed_EH_intersection}
 \end{figure}
 
 \begin{figure}[p]
@@ -343,19 +361,7 @@ source code for the figures is available at
 \label{light_r_equals_2}
 \end{figure}
 
-\begin{figure}[p] % created by "one_free_end_r_equals_2.R"
-\centering
-\includegraphics[width=170mm]{one_free_end_r_equals_2.pdf}
-\caption{Strings passing through $(2,0)$ tangential to event horizon}
-\label{one_free_end_r_equals_2}
-\end{figure}
 
-\begin{figure}[p] % created by "one_free_end_fixed_EH_intersection.R"
-\centering
-\includegraphics[width=170mm]{one_free_end_fixed_EH_intersection.pdf}
-\caption{Strings tangential to event horizon}
-\label{fixed_EH_intersection}
-\end{figure}
 
 
 
