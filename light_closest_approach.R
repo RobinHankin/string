@@ -25,7 +25,7 @@ source("usefulfuncs.R") # defines polargrid() etc
 source("usefullightfuncs.R") # defines lightpoints()
 
 r_start <- 2 # starting radius for light ray
-mask <- TRUE    # set to FALSE to see entire geodesic (TRUE is time-consuming but needed for publication quality)
+domask <- TRUE    # set to FALSE to see entire geodesic (TRUE is time-consuming but needed for publication quality)
 size_of_plot <- 3.5
 
 ## plot setup:
@@ -127,14 +127,7 @@ polargrid()
 
 
 ## Mask strings too far from the black hole:
-if(mask){
-  xy <- cbind(c(4,30,30,4),c(-0.5,-0.5,0.5,0.5))
-  howmany <- 100  # 100 for production, 10 for testing
-  for (theta in seq(from=0,to=2*pi,len=howmany)){
-    jjxy <- xy %*% rotmat(theta)
-    polygon(jjxy[,1],jjxy[,2],col="white",border=NA) # white for production
-  }
-}
+if(domask){ mask(4) }
 
 circ <- function(r,...){
   th <- seq(from=0,to=2*pi,len=300)

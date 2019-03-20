@@ -102,3 +102,12 @@ library("deSolve")   # needed for ode()
   f <- function(r){2*r^2/3}  # radius of curvature of a ray at radius r moving tangentially
   circ(c(x-f(r),0),f(r),...)  # shows an osculating circle
 }
+
+`mask` <- function(radius,n=100,...){  # n=100 for production, 10 for testing
+  BIG <- 30
+  xy <- cbind(c(radius,BIG,BIG,radius),c(-0.5,-0.5,0.5,0.5))
+  for (theta in seq(from=0,to=2*pi,len=n)){
+    jjxy <- xy %*% rotmat(theta)
+    polygon(jjxy[,1],jjxy[,2],col='white',border=NA,...) # white for production
+  }
+}

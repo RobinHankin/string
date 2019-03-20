@@ -5,7 +5,7 @@
 source("usefulfuncs.R") # defines stringpoints()
 
 pars <- c(eel=1)  # dummy
-
+domask <- TRUE
 ## plot setup:
 jj <- 5.5
 par(xpd=TRUE)
@@ -55,11 +55,5 @@ for(i in seq_along(dist)){
 
 }
 
-# mask strings too far from the black hole:
-xy <- cbind(c(7,30,30,7),c(-0.5,-0.5,0.5,0.5))
-for (theta in seq(from=0,to=2*pi,len=100)){
-  jjxy <- xy %*% rotmat(theta)
-  polygon(jjxy[,1],jjxy[,2],col='white',border=NA)
-}
-
+if(domask){mask(7)}
 event_horizon()
