@@ -58,7 +58,7 @@ library("deSolve")   # needed for ode()
   jj <- seq(from=0,to=2*pi,len=100)
   xy <- cbind(cos(jj),sin(jj))
   for(i in r){ points(xy*i,type='l',lty=3,lwd=0.5, col='gray', ...) }
-  angs <- seq_len(n)*2*pi/n
+  angs <- seq_len(n)*2*pi/n  # last element is 0 (mod 2*pi)
   for(a in seq_along(angs)){
       segments(
           x0=0, y0=0,
@@ -80,9 +80,6 @@ library("deSolve")   # needed for ode()
   ## setup ends
 }
 
-`fun` <- function(cuts,vals){
-  return(function(x){vals[findInterval(x, c(-Inf, cuts))]})
-}
 
 `rotmat` <- function(theta){
     matrix(c(cos(theta),sin(theta),-sin(theta),cos(theta)),2,2)
