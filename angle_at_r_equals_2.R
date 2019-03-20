@@ -1,6 +1,7 @@
-## Lots of rainbow coloured strings all passing through the same point
-## at different angles.  For production PDF image, source file
-## "maker.R", which creates the best PDF.
+## Lots of strings [blue for the paper but can be rainbow colours],
+## all passing through the same point at different angles.  For
+## production PDF image, source file "maker.R", which creates the best
+## PDF.
 
 ## This script runs standalone but is designed to be called from
 ## maker.R [cf Makefile], which creates the pdf file
@@ -15,9 +16,12 @@ source("usefulfuncs.R")
 mask <- TRUE    # set to FALSE to see entire string
 
 ## setup:
-jj <- 6.5
+
 par(pty='s')
-plot(NULL,asp=1,xlim=c(-jj,jj),ylim=c(-jj,jj),type='l',xlab='',ylab='',axes=FALSE)
+par(xpd=TRUE)
+size_of_plot <- 3
+jj <- c(-size_of_plot,size_of_plot)
+plot(NULL,asp=1,xlim=jj,ylim=jj,type='l',xlab='',ylab='',axes=FALSE)
 userainbow <- FALSE   # colour of strings (FALSE = all strings blue)
 dist_from_hole <- 2
 ## setup ends
@@ -126,7 +130,7 @@ points(dist_from_hole,0,pch=16)
 
 ## Mask strings too far from the black hole:
 if(mask){
-  xy <- cbind(c(7,30,30,7),c(-0.5,-0.5,0.5,0.5))
+  xy <- cbind(c(4,30,30,4),c(-0.5,-0.5,0.5,0.5))
   howmany <- 100  # 100 for production, 10 for testing
   for (theta in seq(from=0,to=2*pi,len=howmany)){
     jjxy <- xy %*% rotmat(theta)
