@@ -22,7 +22,7 @@ thetamax <- 0.1 + dist*0  # default value, (almost) always do-able
 
 cuts <- c(        1,   1.06,  1.07, 1.08,   1.11,    1.13,    1.15,     1.17,  1.19,    1.21,    1.31,   1.41,  1.51, 1.7, 2.01,    3,    6, 7,  9)
 vals <- c(  NA,      pi,    pi,   3.1,   2.87,   2.79,    2.71,     2.61,   2.51,  2.45,      2.38,     2.2,   2.1,  2.0, 1.9,   1.7, 1.4,  1.2, 1)
-f <- fun(cuts,vals)
+f <- approxfun(cuts,vals)
 
 ## Thus f(1.03) = pi, f(1.12) = 2.5
 
