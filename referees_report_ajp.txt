@@ -1,0 +1,292 @@
+[sent to my gmail on 2 May 2019; slight editing for clarity and latexing of suggested equations]
+
+
+
+
+
+
+R1's report
+
+
+In this paper the author calculates the possible configurations of a
+light inextensible string in the geometry of the Schwarzschild
+spacetime. There are two major reasons why I cannot recommend the
+publication of this paper in American Journal of Physics.
+
+The first reason has to do with the physics of a massless string in
+general relativity, which the author gets wrong. The closest thing to
+a massless string in relativistic physics is the Nambu-Goto string,
+for which the linear mass density is equal to the string tension. The
+Nambu-Goto string provides a model for a cosmic string, and this model
+has been extensively studied in the literature. It is known, for
+example, that the string moves in a curved spacetime so as to
+extremize the area of the two-dimensional world sheet (the analogue of
+world line for a one-dimensional object). For a static string in
+Schwarzschild spacetime, the condition of area extremum leads to the
+following differential equation for r(phi):
+
+
+r'' - 2(r-M) (r')^2/( r(r-2M) ) - r + M = 0,
+
+
+where a prime indicates differentiation with respect to phi. This
+equation is different from the author's Eq (6), which is obtained by
+extremizing the string's proper length. It may be tempting to think (I
+was so tempted until I did the calculation) that extremization of
+world-sheet area should be the same as extremization of proper length
+for a static string, but this is not so. If the author wishes to
+calculate configurations of a Nambu-Goto string in the Schwarzschild
+spacetime, he should proceed with the previous equation instead of his
+Eq (6).
+
+The second reason to recommend rejection has to do with the lack of
+clear pedagogical objectives for the paper. Given the journal's
+mendate, it is crucially important for each paper to spell out in the
+clearest terms what its pedagogical objectives are. Papers published
+in American Journal of Physics aim to help the physics instructor, and
+the physics student, to gain useful insights into a given area of
+physics. It is not clear, in this regard, what the author
+intended. The introduction and discussion sections briefly mention the
+counterintuitive behaviour of the centrifugal force identified by
+Abramowicz, but the precise relation with strings is not explained.
+
+
+R2's report
+
+Date: 4/28/2019
+Manuscript Number: 31390-1
+Author: Robin K. S. Hankin
+Title: Light inextensible strings under tension in the Schwarzschild geometry
+
+1. Summary. Briefly summarize why you do or do not believe this
+manuscript would be of interest and/or value to readers of the
+American Journal of Physics.  I came to this article with some hope:
+it seemed on first glance to be a nice, short article on a potentially
+interesting topic. However, I regret to say that in its present form
+it is not suitable for publication. There are mathematical errors in
+the first section, and problems with clarity in a number of places
+(including one of the figures). The author has also chosen an
+unconventional unit system that may confuse readers, and certain
+issues could benefit from a more detailed treatment. The last
+paragraph contains some unwarranted and unjustified
+speculation. Finally, I think that the author needs to make a better
+case for why this would be of interest to readers.
+
+2. Technical correctness. Is the manuscript technically correct?
+There are some significant errors in the first section. Equation (2) should have read
+
+
+\begin{equation}
+  \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-1/r}}=
+  \left[
+  \sqrt{r(r-1)} +\frac{1}{2}\ln\left(
+  \frac{\sqrt{r}+\sqrt{r-1}}{\sqrt{r}-\sqrt{r-1}}\right)
+  \right]_{r_1}^{r_2}
+  \end{equation}
+
+
+Stating the integral’s lower limit as “r = r1” was confusing,
+particularly as it was not clear in the original that both terms to
+the right of the equals sign were to be evaluated at the limits.  The
+author also erroneously had “r” instead of “√r” as the first term in
+both the numerator and denominator of the argument of the logarithm,
+which should also be a natural logarithm, not a base-10 logarithm.
+
+In spite of the incorrect expression in equation (2), equation (3)
+appears to be right. But I think equation (4) lacks one term and had
+the wrong factor in front of another: it should read:
+
+\begin{equation}
+  \ell = \frac{1}{2} + \ln(2) + \frac{1}{2}\ln w + w + \frac{3}{8}w^{-1} + O(w^{-2}),
+\end{equation}
+
+
+The missing factor of 1/2 ln w was particularly problematic in that it
+means that the interpretation of the equation in the following
+sentences needs adjustment.  In the last line of the section, the
+author could be more firm: “radial strings clearly have a length
+longer than the Schwarzschild radial coordinate difference w.”
+
+
+After all of this, I was very afraid that equation (6) would not be
+correct either. After several hours and pages of calculation, I
+finally got very close to the same result (but I am still missing some
+factors of 2). So I cannot be certain that it is correct either: it
+needs careful checking. If the author has an easy way to prove this,
+I’d love to see it outlined in an appendix: it was for me a
+complicated and tricky calculation.
+
+Finally, the speculation in last paragraph seems to me to be incorrect
+or at least not convincing.  An ideal taut string simply marks out a
+geodesic on the spacelike hypersurface t = constant, θ = 1/2 π. Its
+tension therefore is simply directed along itself (it is locally
+straight), and since it is already as straight as it can be, no energy
+can be extracted by making the string “straighter” relative to the
+Schwarzschild coordinate system. This is completely unlike the
+situation in Cartesian coordinates in flat space, where
+“straightening” the string would indeed release energy that could go
+to kinetic energy in the string and/or the object around which the
+string is bent. (In the case of a truly inextensible string in flat
+space, the energy would come from work done on the string’s ends,
+because they would move outward against the string’s tension as the
+fixed-length string becomes more nearly a geodesic. But in the
+Schwarzschild hypersurface, the string is already as straight as it
+can be, so I think the intuitive analogy is a false one. In any case,
+the situation is hopelessly unphysical, since no string is truly
+massless or inextensible, and as the author points out, the tensions
+on real strings approaching the event horizon would become impossibly
+large.)
+
+3. Attention to audience. Is the introduction sufficiently complete
+and the general level of presentation sufficiently accessible to the
+majority of AJP readers whose expertise will lie in other
+subdisciplines of physics?  In general, the level was fine: to
+understand the author’s main point one only needs a very basic
+understanding of the Schwarzschild metric and the calculus of
+variations. (The author could have arrived at equation (6) by using
+the geodesic equation, I believe, but the approach through the
+calculus of variations is more accessible.)
+
+
+However, the author does refer to a few technical terms such as “the
+dominant energy condition” and “Flamm’s paraboloid” that most readers
+would not know. The author also appeals to “Rolle’s theorem,” which I
+knew nothing about (and when I looked it up online, it did not seem to
+be relevant to the argument). The author should either explain these
+terms or avoid them.  Finally, I did not find the introduction that
+helpful or compelling. It seems to me that the real value of this
+paper is that it explores the character of spacelike geodesics on the
+Schwarzschild hypersurface t = constant and θ =1/2 π, something that
+the author does say and admirably illus- trates in Figure 1. As the
+author argues, an inextensible, massless string is hopelessly
+unrealistic in the context of black holes. As I have argued above, the
+“possible way of manipulating a black hole” is illusory, and no
+material string could actually be draped along the paths that the
+author illustrates. So what is the value of exploring these shapes? I
+think that the best thing that can be said is that these paths help us
+explore the geometry of the Schwarzschild hypersurface. But what
+exactly do we learn from this exploration? The introduction could make
+a better case for what we can learn and its value.
+
+4. Style, clarity, and grammar. Is the writing style, clarity, English grammar, etc. suitable for publica-
+tion in AJP?
+
+I found certain parts of this article very unclear. In general, I
+would have found a longer but deeper article more valuable. The
+explanations and justifications provided were generally too
+terse. What “elementary methods” were used to arrive at equation (3)?
+How does one do the “asymptotic” expansion that leads to equation (4)?
+What exact “bisection technique” yields the critical value for
+self-intersecting string? A brief description of the approaches would
+give the reader stronger confidence that the reader understands the
+described process.
+
+The author used “dashes” below equation equation (5), but I think
+meant to say “primes” (at least in American English).
+
+I did not understand what the author was trying to say near the end of
+section II, when the author said that a catenary was “manifestly
+convex” while the taut string was “concave:” I’d like to see the
+author spell this out. In the next paragraph, the author says that the
+other end of a string with r0 > 0 is “tangential” to the event
+horizon. Does this mean that it asymptotically approaches the event
+horizon, or becomes tangential as it crosses the event horizon, or
+what?  The same issue appears in the last paragraph of section III. In
+both cases, I think a more precise statement about exactly what is
+going on would be helpful to the reader.
+
+If the author is going to illustrate null worldlines, it would help to
+describe the equation for null worldlines that is analogous to
+equation (6) and either derive it or specify a source.
+
+Though this is probably not technically an error, I think that the
+author specifies the critical value on the fourth line of page 5 to
+unrealistic precision. As someone who does numerical modeling as part
+of my research, I think that we cannot know this value to more than
+three or maybe four decimal places without knowing much more about the
+details of the computer model (for example, the size of the grid
+steps, the order of the approximations, and whether the model uses
+adaptive stepping). Even truncation errors associated with
+double-precision floating-calculations might lead to errors larger
+than those proposed by the author.
+
+Finally, I found the unit system that the author uses to be
+unconventional and unnecessarily opaque. While the author is certainly
+free to express radii in units of the Schwarzschild radius, this is
+not usually done in GR research and teaching: units where r, t, M, s,
+etc. are expressed in length units are much more common (G = c = 1,
+not 2GM = c = 1. Though there is nothing wrong with the author’s
+choice in principle (and it certainly makes certain equations
+simpler), for someone familiar with the field, it rubs against the
+automatic unit-checking that many of us use to ensure that we are
+doing things right. For example, an equation like r0 < r2 0 (in the
+thirdline below equation (7)) drives that automatic unit-testing
+subroutine crazy!  When I checked equation (6), I had to go back to
+using units where r = 2M is the event horizon, so that I could track
+down errors by checking units.
+
+The author might consider adopting the more common practice of using
+units where r is in length units and r = 2M is the radius of the event
+horizon, and then use Greek-letter unitless variables such as ρ ≡ r/2M
+to signal to the reader when one is using a unitless expression of
+r. I’d then go back to unit-based equations in discussion and
+interpretation. (An alternative would be to use r but define the
+Schwarzschild radius to be b or some other simple symbol to avoid
+writing 2M all the time. But I personally would simply use 2M for the
+Schwarzschild radius: it is not all that much extra writing.) This
+would help readers familiar with the conventions more easily extract
+the equations’ physical meaning.
+
+5. Figures and captions. Is the manuscript sufficiently and
+appropriately illustrated with figures and are the figures and figure
+captions clear?
+
+Most of the figures were adequate and helpful. However, I had a lot of
+trouble with Figure 3. I think that the author is only displaying half
+a string, and that as one is going counterclockwise, the strings are
+getting closer and closer to the event horizon at their starting
+point. But this took me an unnecessarily long time to figure out. Some
+more detailed explanation in the caption and some color-coding of the
+strings would help.
+
+Figure 8 was also troublesome. First of all, what is the physical
+meaning of “tangent to the event horizon”? I guess that this means
+that the string intersects the event horizon at one point. But
+certainly no physical string could do this, and I am not sure that
+even a spacelike geodesic could do this: I am thinking (though I am
+not sure) that the string would have to end at that point.  By the
+earlier argument, such a string would have to be self-intersecting
+(maybe even intersecting multiple times). Also, since everything blurs
+together at r = 1, φ = 0, I can’t tall which lines on the upper half
+link to lines on the lower half (if they do). It would make sense that
+these would be symmetrical, but if so, I don’t believe that the
+parabola flanking the radial line at φ = 0 makes sense, considering
+results from where the closest approach is r > 1. This needs more
+explanation and clarification.
+
+6. References. Are the references to
+previous work, in this journal and elsewhere, adequate?
+
+The references were adequate.
+
+7. Overall recommendation: X Weak Revise and Resubmit
+
+As outlined above, I think that this article would need many changes
+to become acceptable, and I am not sure what the value would be to
+most readers. Even so, I find the article modestly interesting myself,
+and the author might be able to make an even better case for it in a
+future revision.
+
+8. Nature of the manuscript.
+
+I think that this article is not directly applicable to the classroom,
+but provides insights and back- ground that could have a modest impact
+in a undergraduate or graduate-level general relativity course as an
+interesting figure or as a homework problem.
+
+9. Additional Commentary (Please use as much additional space as you
+like to provide additional commentary and, if you are recommending
+revision, suggestions for improvement.)  (I think that my commentary
+above is already almost as long as the article itself!)
+
+
