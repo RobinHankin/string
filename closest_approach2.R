@@ -83,9 +83,8 @@ cutoffmatrix <- matrix(c(
     1.080, pi + 0.00
     ),byrow=TRUE,ncol=2)
 f <- approxfun(cutoffmatrix[,1],cutoffmatrix[,2])
+## Thus f(1.05) = pi + 0.2
 
-
-## Thus f(1.03) = pi, f(1.12) = 2.5
 
 for(i in seq_along(dist)){
 

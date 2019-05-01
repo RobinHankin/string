@@ -18,7 +18,7 @@ library("deSolve")   # needed for ode()
 `stringpoints` <- function(y_start,initial_string_angle, theta=seq(from=0, to=pi, len=100),give=FALSE){
 
   ## use-case: 
-  ## pars <- c(eel=1) # [dummy]
+  pars <- c(eel=1) # [dummy]
   ## stringpoints(2,0,theta=seq(from=0,to=pi/2,len=100))
 
   print(c(y_start,initial_string_angle))
