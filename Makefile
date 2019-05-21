@@ -7,6 +7,7 @@ R: closest_approach.R closest_approach2.R angle_at_r_equals_2.R one_free_end_r_e
 
 pdf: string_ajp.tex
 	pdflatex string_ajp
+	pdflatex string_jpam
 
 
 clean:
