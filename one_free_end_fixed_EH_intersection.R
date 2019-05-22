@@ -90,7 +90,7 @@ for(i in seq_along(start_angles)){
           point_of_closest_approach[2]/
           point_of_closest_approach[1]
       )
-  print(angle_of_closest_approach)
+#  print(angle_of_closest_approach)
   if(angle_of_closest_approach>0){
       angle_of_closest_approach <-
           angle_of_closest_approach -pi

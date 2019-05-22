@@ -21,7 +21,7 @@ library("deSolve")   # needed for ode()
   pars <- c(eel=1) # [dummy]
   ## stringpoints(2,0,theta=seq(from=0,to=pi/2,len=100))
 
-  print(c(y_start,initial_string_angle))
+#  print(c(y_start,initial_string_angle))
   yini <- c(y=y_start, ydash=y_start*tan(initial_string_angle))
 
   bh <- ode(yini,theta,taut_string,pars,rtol=1e-6)

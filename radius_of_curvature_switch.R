@@ -27,7 +27,7 @@ f <- approxfun(cuts,vals)
 ## Thus f(1.03) = pi, f(1.12) = 2.5
 
 for(i in seq_along(dist)){
-  print(paste("starting ",dist[i],sep = ""))
+#  print(paste("starting ",dist[i],sep = ""))
   tseq <- seq(from=0,to=f(dist[i]),len=1000)
   bh <- stringpoints(y_start=dist[i],initial_string_angle = 0,theta=tseq,give=TRUE)
   r <- bh[,2]
@@ -50,7 +50,7 @@ for(i in seq_along(dist)){
   points(xy2[ thing,],type='l',col='blue')
   points(xy2[!thing,],type='l',col='black')
 
-  print(paste("done ",dist[i],sep = ""))
+#  print(paste("done ",dist[i],sep = ""))
 
 }
 

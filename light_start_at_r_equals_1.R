@@ -123,7 +123,7 @@ start_angle <- start_angle[-c(1,length(start_angle))]
 for(initialangletotangent in start_angle){
 
   final_phi <- min(fmax(initialangletotangent),2*pi)
-  print(c(initialangletotangent,final_phi))
+#  print(c(initialangletotangent,final_phi))
   xy1 <-
     stringu(
         r_start=r_start,  # r=3/2 is a circular (but unstable) orbit
