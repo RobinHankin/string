@@ -2,10 +2,10 @@
 
 Needs["VariationalMethods`"]                                                                    
 
-EulerEquations[Sqrt[y[x]^2 + y'[x]^2],y[x],x]                                                   
+EulerEquations[Sqrt[y[x]^2 + y'[x]^2],y[x],x]  
 
 
-p = EulerEquations[Sqrt[y[x]^2/(1-1/y[x]) + y'[x]^2],y[x],x] // FullSimplify
+p = EulerEquations[Sqrt[y'[x]^2/(1-1/y[x]) + y[x]^2],y[x],x] // FullSimplify
 
 ss = p[[1]]//Numerator
 
