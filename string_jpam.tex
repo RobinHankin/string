@@ -40,8 +40,8 @@ component of the Schwarzschild metric along the string.  The path is
 calculated by numerical solution to the Euler-Lagrange equations.  If
 the string is entirely outside the event horizon, its closest approach
 to the singularity is tangential; if the distance of closest
-approach is less than about $1.0761\cdot 2GM$, the
-string self-intersects.  If the string attains $r=2GM$, then it
+approach is less than about $1.0761\cdot 2M$, the
+string self-intersects.  If the string attains $r=2M$, then it
 will in general be tangential to the event horizon.  Light taut
 strings interpret the concept ``straight line'' and their behaviour
 suggests a possible way of manipulating a black hole.
@@ -64,7 +64,7 @@ With tension~$T$, gravitational acceleration $g$ and (proper) mass per
 (proper) unit length~$\mu$, then a string will behave as though light
 on lengthscales $L\lesssim T/\left(\mu g\right)$.  Using Newtonian
 expressions for the strength of gravity at the event horizon of a
-black hole gives $L\lesssim TGM/\left(\mu c^2\right)$.  For the string
+black hole gives $L\lesssim TM/\left(\mu c^2\right)$.  For the string
 to behave as though light on lengthscales comparable with the
 Schwarzschild radius would require $T\gtrsim\mu c^2$.  Exceeding this
 criterion would violate the dominant energy condition (and in this
@@ -84,19 +84,19 @@ strings, an option not pursued here.
 The Schwarzschild metric
 
 \begin{equation}\label{schwarzschild}
-ds^2= -dt^2\left(1-2GM/r\right) +\frac{dr^2}{1-2GM/r} + r^2\left(d\theta^2 + \sin^2\theta d\phi^2\right),
+ds^2= -dt^2\left(1-2M/r\right) +\frac{dr^2}{1-2M/r} + r^2\left(d\theta^2 + \sin^2\theta d\phi^2\right),
 \end{equation}
 
-\noindent where units in which~$c=1$ are used, has been known for
+\noindent where units in which~$G=c=1$ are used, has been known for
 over a century~\cite{schwarzschild1916}.  Here I consider the spatial
-component~$ds^2= dr^2/\left(1-2GM/r\right) + r^2d\phi^2$, confined to
-equatorial points~($\theta=\pi/2$); we understand~$2GM\leq r<\infty$
+component~$ds^2= dr^2/\left(1-2M/r\right) + r^2d\phi^2$, confined to
+equatorial points~($\theta=\pi/2$); we understand~$2M\leq r<\infty$
 throughout.  A circular string at constant~$r$ will, trivially, have
 proper length~$2\pi r$.
 
 Considering first the radial component we may calculate the
 proper length $L\left(r_1,r_2\right)$ of a string stretching
-from~$r=r_1\geq 2GM$ to~$r_2\geq r_1$ at constant $\theta,\phi$:
+from~$r=r_1\geq 2M$ to~$r_2\geq r_1$ at constant $\theta,\phi$:
 
 % \begin{equation}\label{radial_string_length_properunits}
 %   \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-1/r}}=
@@ -107,20 +107,20 @@ from~$r=r_1\geq 2GM$ to~$r_2\geq r_1$ at constant $\theta,\phi$:
 %   \end{equation}
 
 \begin{equation}\label{radial_string_length}
-  \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-2GM/r}}=
+  \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-2M/r}}=
   \left.
-  \sqrt{r(r-2GM)} +\frac{1}{2}\log\left(
-  \frac{\sqrt{r}+\sqrt{r-2GM}}{\sqrt{r}-\sqrt{r-2GM}}\right)
+  \sqrt{r(r-2M)} +\frac{1}{2}\log\left(
+  \frac{\sqrt{r}+\sqrt{r-2M}}{\sqrt{r}-\sqrt{r-2M}}\right)
   \right|_{r_1}^{r_2}
   \end{equation}
 
 Observe that integration may be performed with a lower limit
-of~$r_1=2GM$ with no difficulty, even though the radial component of the
+of~$r_1=2M$ with no difficulty, even though the radial component of the
 Schwarzschild metric approaches infinity there.
 
 Elementary methods show that the proper length $\ell$ of radial strings has
 some peculiar features.  Firstly, consider the proper length from
-$r=2GM$ to $r=2GM(1+w)$ where $w>0, \left|w\right|\ll 1$.  Then
+$r=2M$ to $r=2M(1+w)$ where $w>0, \left|w\right|\ll 1$.  Then
 
 %  \begin{equation}\label{ell_properunits}
 %    \ell=\int_{r=1}^{r=1+w}ds
@@ -129,11 +129,11 @@ $r=2GM$ to $r=2GM(1+w)$ where $w>0, \left|w\right|\ll 1$.  Then
 
  \begin{equation}\label{ell}
    \ell =
-   \int_{r=2GM}^{r=2GM(1+w)}ds
-   =2GM\left(2\sqrt{w} + \frac{1}{3}w^{3/2} + O(w^{5/2})\right).
+   \int_{r=2M}^{r=2M(1+w)}ds
+   =2M\left(2\sqrt{w} + \frac{1}{3}w^{3/2} + O(w^{5/2})\right).
  \end{equation}
 
-This would indicate that, close to the Schwarzschild radius $r=2GM$,
+This would indicate that, close to the Schwarzschild radius $r=2M$,
 large (but finite) amounts of string are required to connect two
 points with slightly differing radial coordinates.  Passing to the
 case $w\gg 1$ we have an asymptotic expansion that begins
@@ -143,11 +143,11 @@ case $w\gg 1$ we have an asymptotic expansion that begins
 % \end{equation}
 % 
 \begin{equation}\label{asymptotic_ell}
-  \ell = 2GM\left(w +  \frac{1}{2}\log w + \frac{1}{2} + \log(2)  +  \frac{1}{8}w^{-1} + O(w^{-2})\right),
+  \ell = 2M\left(w +  \frac{1}{2}\log w + \frac{1}{2} + \log(2)  +  \frac{1}{8}w^{-1} + O(w^{-2})\right),
 \end{equation}
 
 \noindent suggesting that there is ``extra radial space'', of length
-over $1.19\cdot 2GM$, sensible at large distances from the event
+over $1.19\cdot 2M$, sensible at large distances from the event
 horizon.  Radial strings have proper length longer than the
 Schwarzschild radial coordinate difference $w$.
 
@@ -168,7 +168,7 @@ terms of~$r=r\left(\phi\right)$ gives us a path length of
 
 \begin{equation}
 %  \int_{p_1}^{p_2}\sqrt{\frac{\left(r'\right)^2}{1-2M/r} + r^2}d\phi=
-  \int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-2GM/r} + r^2\right)^\frac{1}{2}d\phi=
+  \int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-2M/r} + r^2\right)^\frac{1}{2}d\phi=
   \int_{p_1}^{p_2}F\left(r,r'\right)d\phi
 \end{equation}
 
@@ -184,7 +184,7 @@ second derivative of~$r$:
 % \end{equation}
 \begin{equation}\label{rdashdash}
   r''\left(\phi\right) =
-  (r-2GM) + \frac{(4r-6GM)\left(r'\right)^2}{2r\left(r-2GM\right)},\qquad r>2GM.
+  (r-2M) + \frac{(4r-6M)\left(r'\right)^2}{2r\left(r-2M\right)},\qquad r>2M.
 \end{equation}
 
 \noindent 
@@ -192,18 +192,18 @@ Solutions to equation~\ref{rdashdash} correspond to a taut string
 confined to Flamm's paraboloid~\cite{flamm1916}; see
 Figure~\ref{flamm}.  It is interesting to compare
 equation~\ref{rdashdash} with the corresponding equation for null
-geodesics, which is usually given~\cite{wald} in terms of $u=2GM/r$ as
+geodesics, which is usually given~\cite{wald} in terms of $u=2M/r$ as
 $u''=3u^2/2-u$, but is equivalent
-to~$r''\left(\phi\right)=r-3GM+4GMr'/r$.
+to~$r''\left(\phi\right)=r-3M+4Mr'/r$.
 
 There does not appear to be a simple analytical solution to
 equation~\ref{rdashdash} but nevertheless we may make several
 observations.  Equation~\ref{rdashdash} is a second-order nonlinear
 ordinary differential equation and thus has two constants of
 integration.  There are two qualitatively different types of
-solutions: those with a tangential point ($r'=0,r>2GM$), and those
+solutions: those with a tangential point ($r'=0,r>2M$), and those
 without.  Consider first solutions with such a point: there exists a
-pair~$\left(r,\phi\right), r>2GM$ at which~$r'(\phi)=0$.  This point
+pair~$\left(r,\phi\right), r>2M$ at which~$r'(\phi)=0$.  This point
 must be unique, as~$r''(\phi)>0$, and be the closest approach of the
 string to the event horizon.
 
@@ -240,20 +240,20 @@ evaluated:
   \frac{
     \left(r^2 + \left(r'\right)^2\right)^\frac{3}{2}
   }{
-    r-\frac{\left(r'\right)^2}{2\left(r-2GM\right)}
+    r-\frac{\left(r'\right)^2}{2\left(r-2M\right)}
   }\qquad\mbox{along a taut string}
 \end{equation}
 
 \noindent which would give~$R$ as a function of~$\left(r,r'\right)$.
 Considering~$r'(\phi)=0$ shows that if a string is tangential at a
-point with~$r_0>2GM$, then it has a radius of curvature of~$r_0^2/2GM$
+point with~$r_0>2M$, then it has a radius of curvature of~$r_0^2/2M$
 at that point.  Any circular path, including a circular orbit
-at~$r=r_0$, has a radius of curvature of $r_0<r_0^2/2GM$, showing that
+at~$r=r_0$, has a radius of curvature of $r_0<r_0^2/2M$, showing that
 circular orbits cannot follow a taut string at closest approach.  Also
-observe that null geodesics have a radius of curvature of $r_0^2/3GM <
-r_0^2/2GM$, showing that light cannot follow a taut string at closest
+observe that null geodesics have a radius of curvature of $r_0^2/3M <
+r_0^2/2M$, showing that light cannot follow a taut string at closest
 approach either.  The string has a point of inflection
-if~$\left(r'\right)^2=2r(r-2GM)$.
+if~$\left(r'\right)^2=2r(r-2M)$.
 
 Compare the above analysis with a taut {\em heavy} string which
 adopts, at least locally, a catenary configuration at closest
@@ -261,21 +261,21 @@ approach~\cite{nguyen2007}.  A heavy string is manifestly convex to
 the singularity in the sense that $R<0$ if $\phi'=0$, in contrast to
 light strings which have $R>0$.
 
-If, conversely, $r'(\phi)\neq 0$ whenever~$r>2GM$, then the string has
+If, conversely, $r'(\phi)\neq 0$ whenever~$r>2M$, then the string has
 only one free end; the other is tangential to the event horizon (in
 the sense that ${\displaystyle \lim_{r\longrightarrow 1^+}r'=0}$),
 except in the degenerate case of constant~$\phi$ when the string is
-radial for~$r>2GM$.
+radial for~$r>2M$.
 
 \section{Numerical results}
 
 Here I solve equation~\ref{rdashdash} using the \verb+deSolve+ package
 for ordinary differential equations~\cite{soetart2010}.  Non-radial
-solutions fall into two distinct classes: those with $r>2GM$ at all
-points, and those which attain $r=2GM$, in which case the string is
+solutions fall into two distinct classes: those with $r>2M$ at all
+points, and those which attain $r=2M$, in which case the string is
 tangential to the event horizon.
 
-We first consider strings for which $r>2GM$ everywhere (that is,
+We first consider strings for which $r>2M$ everywhere (that is,
 completely exterior strings).
 Figure~\ref{closest_approach_non_self_intersecting} shows a sequence
 of non-self-intersecting numerical solutions to
@@ -286,9 +286,9 @@ corresponding diagram for self-interesecting strings
 (Figure~\ref{light_closest_approach} shows equivalent null geodesics
 for comparison).  A bisection technique reveals that if the closest
 approach is greater than a critical value of about~$\simeq 1.0761\cdot
-2GM$, the string does not self-intersect; if the closest approach is
+2M$, the string does not self-intersect; if the closest approach is
 less than this value, then the string crosses itself at~$\phi=\pi/2$.
-As discussed above, if $\left(r'\right)^2=2r(r-2GM)$, the string has a
+As discussed above, if $\left(r'\right)^2=2r(r-2M)$, the string has a
 point of inflection at which point the radius of curvature becomes
 infinite.  Figure~\ref{curvature_switch} shows non-self intersecting
 strings rotated so that the point of inflection occurs at~$\phi=0$; we
@@ -298,14 +298,14 @@ negative.
 
 There are other ways to parametrize completely exterior strings;
 Figure \ref{strings_r_equals_2}, for example, shows strings passing
-through~$(4GM,0)$.  Figure~\ref{light_r_equals_2} shows light paths for
+through~$(4M,0)$.  Figure~\ref{light_r_equals_2} shows light paths for
 comparison.
 
-The cases where the string attains $r=2GM$ are tangent to the event
+The cases where the string attains $r=2M$ are tangent to the event
 horizon (or, exceptionally, purely radial).
 Figure~\ref{fixed_EH_intersection} shows strings tangential to the
 event horizon at~$\phi=0$ and Figure~\ref{one_free_end_r_equals_2}
-shows tangential strings passing through $(4GM,0)$.
+shows tangential strings passing through $(4M,0)$.
 
 \section{Discussion}
 
@@ -364,7 +364,7 @@ source code for the figures is available at
 \includegraphics[width=170mm]{closest_approach_selfintersecting.pdf}
 \caption{Self-intersecting strings shown for $\phi\geq 0$.  Closest
   approach to the event horizon occurs at $\phi=0$ (3 o'clock) and
-  $r/2GM\in\left(1,1.0761\right)$; strings are symmetrical about $\phi=0$
+  $r/2M\in\left(1,1.0761\right)$; strings are symmetrical about $\phi=0$
   but for clarity only $\phi\geq 0$ is shown}
 \label{closest_approach_self_intersecting}
 \end{figure}
@@ -393,14 +393,14 @@ source code for the figures is available at
 \begin{figure}[p]
 \centering
 \includegraphics{angle_at_r_equals_2.pdf} % created by "angle_at_r_equals_2.R"
-\caption{Strings passing through $(4GM,0)$}
+\caption{Strings passing through $(4M,0)$}
 \label{strings_r_equals_2}
 \end{figure}
 
 \begin{figure}[p]
 \centering
 \includegraphics{light_start_at_r_equals_2.pdf} % created by "angle_start_at_r_equals_2.R"
-\caption{Null geodesics passing through $(4GM,0)$, shown for $0\leq\phi\leq 2\pi$}
+\caption{Null geodesics passing through $(4M,0)$, shown for $0\leq\phi\leq 2\pi$}
 \label{light_r_equals_2}
 \end{figure}
 
@@ -414,7 +414,7 @@ source code for the figures is available at
 \begin{figure}[p] % created by "one_free_end_r_equals_2.R"
 \centering
 \includegraphics[width=170mm]{one_free_end_r_equals_2.pdf}
-\caption{Strings tangential to the event horizon passing through $(4GM,0)$}
+\caption{Strings tangential to the event horizon passing through $(4M,0)$}
 \label{one_free_end_r_equals_2}
 \end{figure}
 
