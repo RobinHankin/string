@@ -1,7 +1,9 @@
 ## Plots a trajectory of an (infinitesimal mass) object orbiting a
-## black hole, showing non-closed orbit.  Works standalone but 
+## black hole, showing non-closed orbit.  Works standalone but is
+## intended to be called by maker.R which creates a pdf file.
 
-## notation follows Rindler, p239
+## Notation follows Rindler, p239
+
 library("deSolve")
 source("usefulfuncs.R")
      
