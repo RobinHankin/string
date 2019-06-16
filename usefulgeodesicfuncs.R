@@ -34,6 +34,7 @@ source("usefulfuncs.R")
 }
 
 ## Example use-cases
+if(FALSE){
 jj <- trajectory(30, 1/2, 3) # m=1/2 -> Schwarzschild radius = 1
 plot(jj$x,jj$y, asp=1, type='l', axes=FALSE, ylim=c(-30,30), xlab='', ylab='')
 polargrid(r=10*(1:3))
@@ -51,3 +52,4 @@ jj <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=15e17,len=1e6))
 plot(jj$x,jj$y, asp=1, type='l', axes=FALSE, xlab='', ylab='')
 event_horizon()
 
+}
