@@ -6,7 +6,7 @@
 
 library("deSolve")
 source("usefulfuncs.R")
-source("mercury.R")
+source("mercury.R")  # orbital parameters for Mercury in geometrized units
      
 LVmod <- function(Time, State, Pars) {
     with(as.list(c(State, Pars)), {
@@ -53,4 +53,4 @@ phi <- out$phi[change]
 phi <- (phi) %% (2*pi)
 
 
-plot(tee,phi)
+plot(tee,phi-pi)
