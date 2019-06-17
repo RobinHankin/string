@@ -16,7 +16,7 @@ source("usefulfuncs.R")
 }
 
 `trajectory` <- function(r_start, m, h, tau=NULL, GR=TRUE, SI=TRUE){
-  if(is.null(tau)){tau<- seq_len(3000)} # works nicely with trajectory(30, 1/2, 3)
+  if(is.null(tau)){tau<- seq_len(3100)} # works nicely with trajectory(30, 1/2, 3)
 
   yini <- c(
       r    = r_start,
@@ -27,8 +27,8 @@ source("usefulfuncs.R")
   bh <- as.data.frame(ode(y=yini, times=tau, func=geodesic, c(m=m, h=h, GR=GR), rtol=1e-6))
 
   if(SI){
-    bh[,1] <- bh[,1]/sol  # sol from mercury.R
-    bh[,3] <- bh[,3]*sol
+    bh[,1] <- bh[,1]/299792458  # sol defined in mercury.R
+    bh[,3] <- bh[,3]*299792458
   }
 
   r   <- bh[,2]
