@@ -17,7 +17,15 @@ The perihelion advance of Mercury is a well-known test of general relativity.  E
 
 ## Introduction 
 
-The orbit of Mercury has long been known to advance at a rate of about 6400'' [seconds of arc] per century.  Various classical phenomena, such as the effects of Venus, and the oblateness of the sun, account for all but 43 seconds of arc and this remaining amount puzzled astronomers for many years. According to Einstien and others, the general theory of relativity predicts an additional precession of almost exactly 43 seconds per century.  In this document I will calculate the precessional rate using numerical methods.
+The orbit of Mercury has long been known to advance at a rate of about
+575'' [seconds of arc] per century.  Various classical phenomena, such
+as the effects of Venus, and the oblateness of the sun, account for
+all but 43'' and this remaining amount puzzled astronomers for many
+years.  According to Einstien and others, the general theory of
+relativity predicts an additional precession of almost exactly 43
+seconds per century, thus closing the gap between expectation and
+observation.  In this document I will calculate the precessional rate
+using numerical methods.
 
 ## Closed and non-closed orbits.
 
@@ -147,4 +155,5 @@ giving
 prec*prod(conversion)
 ```
 
-closely agreeing with Einstein's original prediction of 43.  A more careful analysis would account for the nonzero mass of Mercury.
+closely agreeing with Einstein's original prediction of 43''.  A more
+careful analysis would account for the nonzero mass of Mercury.
