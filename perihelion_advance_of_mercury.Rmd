@@ -1,0 +1,150 @@
+---
+title: "Perihelion advance of Mercury"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("mercury.R")
+source("usefulfuncs.R")
+source("usefulgeodesicfuncs.R")
+```
+
+## Summary
+
+The perihelion advance of Mercury is a well-known test of general relativity.  Einstein calculated that Mercury's perihelion would advance by 44 seconds of arc per century due to general relativistic effects; here I reproduce that analysis using numerical reasoning.
+
+
+## Introduction 
+
+The orbit of Mercury has long been known to advance at a rate of about 6400'' [seconds of arc] per century.  Various classical phenomena, such as the effects of Venus, and the oblateness of the sun, account for all but 44 seconds of arc and this remaining amount puzzled astronomers for many years. According to Einstien and others, the general theory of relativity predicts an additional precession of almost exactly 44 seconds per century.  In this document I will calculate the precessional rate using numerical methods.
+
+## Closed and non-closed orbits.
+
+Consider the following R idiom, in which ```trajectory()``` is used to directly simulate a geodesic in Schwarzschild space:
+
+
+```{r}
+jj <- trajectory(30, 1/2, 3) # m=1/2 -> Schwarzschild radius = 1
+plot(jj$x,jj$y, asp=1, type='l', axes=FALSE, xlab='', ylab='',main='Geodesics in the Schwarzschild geometry')
+polargrid(r=10*(1:3))
+event_horizon()
+```
+
+In the above, we see a typical orbit in Schwarzschild space and a precession of around 40 degrees per orbit.  As a consistency check we can perform the same calculation but with Newtonian approximations:
+
+
+```{r}
+jj <- trajectory(30, 1/2, 3, GR=FALSE) # GR=FALSE means use Newtonian approximation
+plot(jj$x,jj$y, asp=1, type='l', axes=FALSE, xlab='', ylab='',main='Newtonian approximation')
+polargrid(r=10*(1:3))
+event_horizon()
+```
+
+and above we see that the orbit is accurately closed, as expected.
+
+
+## Mercury
+
+First we specify some orbital parameters for the orbit of Mercury, mostly taken from wikipedia:
+```{r}
+G <-  6.674e-11     # big G in SI
+M  <- 1.9885e30     # mass of Sun (kg)
+M_merc <- 3.3011e23 # mass of Mercury (kg)
+sol <- 299792458    # speed of light (m/s)
+merc_perihelion <- 46001200e3 
+merc_aphelion   <- 69816900e3
+mu <- G*(M + M_merc)
+```
+
+Now we calculate some features of the orbit in geometrized units:
+```{r} 
+d <- G*M/sol^2  # mass of sun in meters
+r_s <- 2*d      # Schwarzschild radius of Sun (=2M)
+```
+
+
+And some futher features using classical geometry:
+```{r}
+a <- (merc_perihelion + merc_aphelion)/2
+cee <- a-merc_perihelion
+b <- sqrt(a^2-cee^2)
+ecc <- sqrt(1-(b/a)^2)  # should match ecc_wiki above
+ell <- (a^2-cee^2)/a  # semi-latus rectum
+```
+
+Now calculate maximum and minimum orbital speeds:
+
+```{r}
+vmin <- sqrt(mu/ell)*(1-ecc)
+vmax <- sqrt(mu/ell)*(1+ecc)
+```
+
+And we need to specify the orbital angular mometum in different units:
+
+
+```{r}   
+specific_angular_momentum_SI <- merc_perihelion * vmax
+h <- specific_angular_momentum_SI/sol #geometrized units
+```
+
+With all these we can simulate the orbit:
+```{r}
+ out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e15,len=5e5))
+ plot(out$x,out$y,type='l',asp=1,axes=FALSE,xlab='',ylab='')
+ event_horizon()
+ max(out$phi/(2*pi))
+```
+
+In the above diagram we see over 15.4 orbits of Mercury, exhibiting no visible deviation from an exactly closed orbital path.  To calculate the precession we need to simulate the motion for a longer time:
+
+
+```{r}
+out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e16,len=1e7))
+```
+
+We need to isolate the change points (actually calculating aphelion rather than perihelion for convencence):
+
+```{r}
+jj1 <- c(NA,out$rdot)
+jj2 <- c(out$rdot,NA)
+change <- (jj1>0) & (jj2<0)
+
+tee    <- out$time[change]
+
+phi <- out$phi[change]
+phi <- (phi) %% (2*pi)
+
+plot(tee,phi-pi)
+```
+
+There is a lot of noise on this caused by the discrete nature of the simulation results provided by ```ode()```.  To estimate the precession we can use linear regression:
+
+```{r}
+prec <- lm(phi~tee)$coefficients[2]
+prec
+```
+
+And to convert to astronomical units we use
+```{r}
+conversion <-
+  c(
+      seconds_per_minute = 60,
+      minutes_per_hour   = 60,
+      hours_per_day      = 24,
+      days_per_year      = 365.25,
+      years_per_century  = 100,
+      degrees_per_radian = 180/pi,
+      minutes_per_degree = 60,
+      seconds_per_minute = 60
+  )
+
+```
+
+giving
+
+```{r}
+prec*prod(conversion)
+```
+
+closely agreeing with Einstein's original prediction of 44.  A more careful analysis would account for the nonzero mass of Mercury.
