@@ -51,3 +51,43 @@ if(FALSE){  # do not run; takes a long time
   plot(out$x,out$y,type='l',asp=1)
   ## this is done better in trajectory_mercury.R
 }
+
+
+conversion1 <- prod(c(  # used in the Rmd file
+    seconds_per_minute = 60, 
+    minutes_per_hour   = 60,
+    hours_per_day      = 24,
+    days_per_year      = 365.25,
+    years_per_century  = 100,
+    degrees_per_radian = 180/pi,
+    minutes_per_degree = 60,
+    seconds_per_minute = 60
+))
+
+seconds_per_orbit <- prod(c(
+    seconds_per_minute = 60,
+    minutes_per_hour   = 60,
+    hours_per_day      = 24,
+    days_per_orbit     = 87.969
+))
+
+seconds_per_century <- prod(c(
+    seconds_per_minute = 60,
+    minutes_per_hour   = 60,
+    hours_per_day      = 24,
+    days_per_year      = 365.25,
+    years_per_century  = 100
+))
+
+orbits_per_century <- seconds_per_century/seconds_per_orbit
+arcseconds_per_radian <- prod(
+    c(
+        degrees_per_radian = 180/pi,
+        minutes_per_degree = 60,
+        seconds_per_minute = 60
+        ))
+
+
+precession <- 24*pi^3*a^2/(per^2*sol^2*(1-ecc^2))  # radians/orbit
+arcseconds_per_orbit <- precession*arcseconds_per_radian
+arcseconds_per_century <- arcseconds_per_orbit * orbits_per_century
