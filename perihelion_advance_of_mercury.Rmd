@@ -113,8 +113,10 @@ With all these we can simulate the orbit:
 In the above diagram we see over 15.4 orbits of Mercury, exhibiting no
 visible deviation from an exactly closed orbital path.  Nevertheless,
 the orbit is not closed as Mercury has a tiny amount of orbital
-precession.  To calculate this precession we need to simulate the
-motion for a longer time:
+precession.  Note that the Schwarzschild radius would be microsopic at
+this scale (the size of the central disk is dominated by the width of
+the plotting line used for the event horizon).  To calculate this
+precession we need to simulate the motion for a longer time:
 
 
 ```{r}
