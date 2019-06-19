@@ -113,7 +113,7 @@ for(r in r_start){
   final_phi <- pmin(fmax(r),2*pi)
   print(r)
   xy1 <-
-    stringu(
+    nullgeodesic(
         r_start=r,  # r=3/2 is a circular (but unstable) orbit
         dubydphistart = 0,  # going vertically at the start
         phi=seq(from=0,to=final_phi,len=100)

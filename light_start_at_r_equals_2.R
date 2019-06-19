@@ -131,7 +131,7 @@ for(initialangletotangent in start_angle){
   final_phi <- min(fmax(initialangletotangent),2*pi)
 #  print(c(initialangletotangent,final_phi))
   xy1 <-
-    stringu(
+    nullgeodesic(
         r_start=r_start,  # r=3/2 is a circular (but unstable) orbit
         dubydphistart = tan(initialangletotangent)/r_start,
         phi=seq(from=0,to=final_phi,len=100)

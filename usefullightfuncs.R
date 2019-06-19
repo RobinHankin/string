@@ -31,7 +31,7 @@ library("deSolve")   # ode()
   })
 }
 
-`stringu` <- function(r_start,dubydphistart,phi,include=FALSE){
+`nullgeodesic` <- function(r_start,dubydphistart,phi,include=FALSE){
   yini <- c(
       u  = 1/r_start,
       du = dubydphistart
