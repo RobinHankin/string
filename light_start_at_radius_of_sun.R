@@ -6,14 +6,8 @@
 
 ## More documentation is given in light_starts_at_r_equals_2.R
 
-cat(paste("Einstein's prediction: ",4*G*M/sol^2/radius_of_sun*180/pi*60^2,"\n"))
-cat(paste("Eddington's measurement: ",1.75,"\n"))
-## calculated value printed at the end
-cat("calculating...\n")
-Sys.sleep(10)  # dramatic pause (the actual calculation is almost instantaneous)
-
-
 source("usefullightfuncs.R") # defines nullgeodesic()
+
 
 G <- 6.67408e-11  # Gravitational constant (SI)
 M <- 1.989e30     # mass of sun (SI)
@@ -21,6 +15,16 @@ sol <- 299792458  # speed of light
 radius_of_sun <- 695510e3 # (m)
 r_schwarz <- 2*G*M/sol^2 # Schwarzschild radius of sun (m)
 r_start  <- radius_of_sun/r_schwarz # starting radius for light ray
+
+
+cat(paste("Einstein's prediction: ",4*G*M/sol^2/radius_of_sun*180/pi*60^2,"\n"))
+cat(paste("Eddington's measurement: ",1.75,"\n"))
+## calculated value printed at the end
+cat("calculating...\n")
+Sys.sleep(10)  # dramatic pause (the actual calculation is almost instantaneous)
+
+
+
 
 initialangletotangent <- 0  # tangential ray
  
