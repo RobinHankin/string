@@ -31,7 +31,7 @@ library("deSolve")   # ode()
   })
 }
 
-`stringu` <- function(r_start,dubydphistart,phi){
+`stringu` <- function(r_start,dubydphistart,phi,include=FALSE){
   yini <- c(
       u  = 1/r_start,
       du = dubydphistart
@@ -44,6 +44,10 @@ library("deSolve")   # ode()
   ## NB: bh[,3] is du/phi
   
   xy <- cbind(r*cos(phi),r*sin(phi))
+  if(include){
+      xy <- cbind(xy,r,phi)
+  }
+      
   return(xy)
 }
 
