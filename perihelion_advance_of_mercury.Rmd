@@ -123,8 +123,8 @@ precession we need to simulate the motion for a longer time:
 out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e16,len=1e7))
 ```
 
-We need to isolate the change points (actually calculating aphelion
-rather than perihelion for convenience):
+We need to isolate the change points, here found isolating iterations
+$i$ such that ```r[i-1]<r[i]``` and r[i]>r[i+1]```:
 
 ```{r}
 jj1 <- c(NA,out$rdot)
@@ -136,7 +136,7 @@ tee    <- out$time[change]
 phi <- out$phi[change]
 phi <- (phi) %% (2*pi)
 
-plot(tee,phi-pi,main='orbital angle at aphelion',xlab='time (seconds)',ylab='angle of aphelion')
+plot(tee,phi-pi,main='orbital angle of Mercury at perihelion',xlab='time (seconds)',ylab='angle of perihelion')
 ```
 
 The above diagram shows a clear trend, somewhat obscured by a vertical
@@ -172,6 +172,23 @@ prec*prod(conversion)
 
 closely agreeing with Einstein's original prediction of 43''.  A more
 careful analysis would account for the nonzero mass of Mercury.
+
+By way of a consistency check, we can plot a similar diagram but with
+the classical approximation:
+
+```{r}
+out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e16,len=1e7),GR=FALSE)
+jj1 <- c(NA,out$rdot)
+jj2 <- c(out$rdot,NA)
+change <- (jj1>0) & (jj2<0)
+tee    <- out$time[change]
+phi <- out$phi[change]
+phi <- (phi) %% (2*pi)
+plot(tee,phi-pi,main='orbital angle at of Mercury at perihelion, classical case',xlab='time (seconds)',ylab='angle of perihelion')
+```
+
+In the above plot, note how there is no trend, consistent with the
+Newtonian case of zero perihelion advance.
 
 ##  Theoretical analysis
 
