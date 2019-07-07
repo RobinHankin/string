@@ -4,7 +4,7 @@
 
 ## Notation follows Rindler, p239
 
-source("usefulgeodesicfuncs.R")
+source("usefulgeodesicfuncs.R")  # defines trajectory()
 source("mercury.R")  # orbital parameters for Mercury in geometrized units
      
 out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e16,len=1e7))

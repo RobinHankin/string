@@ -1,3 +1,5 @@
+# Some useful geodesic functions; used by (eg) trajectory_mercury.R
+
 library("deSolve")   # ode()
 source("usefulfuncs.R")
 
