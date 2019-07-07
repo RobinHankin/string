@@ -105,8 +105,8 @@ h <- specific_angular_momentum_SI/sol #geometrized units
 With all these we can simulate the orbit:
 ```{r}
  out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e15,len=5e5))
- plot(out$x,out$y,type='l',asp=1,axes=FALSE,xlab='',ylab='',main='Orbit of Mercury')
- event_horizon()
+ plot(out$x,out$y,type='l',asp=1,axes=FALSE,xlab='',ylab='',main='Orbit of Mercury, Sun not to scale')
+ points(0,0,pch=21,bg='yellow',col='orange') # Schwarzschild radius invisible at this scale
  max(out$phi/(2*pi))
 ```
 
