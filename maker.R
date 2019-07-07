@@ -43,7 +43,7 @@ pdf(file="light_closest_approach.pdf")
 source("light_closest_approach.R")
 dev.off()
 
-pdf(file="trajectory.pdf")
+pdf(file="illustrative_relativistic_trajectory.pdf")
 source("trajectory.R")
 dev.off()
 
