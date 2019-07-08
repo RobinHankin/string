@@ -16,12 +16,11 @@ d_venus <- seq(from=r_venus/r_s * 0.999, to=r_venus/r_s * 1.001,len=100)
 out_earth <- nullgeodesic(r_start=r0,b=b_radial*(1-small),tau=c(0,d_earth))
 out_venus <- nullgeodesic(r_start=r0,b=b_radial*(1-small),tau=c(0,d_venus))
 
-g_earth <- approxfun(out_earth$r,out_earth$r)
-g_venus <- approxfun(out_venus$r,out_venus$r)
-
+f_earth <- approxfun(out_earth$r,out_earth$r)
+f_venus <- approxfun(out_venus$r,out_venus$r)
 
 transit_time_relativistic  <-   # transit time in seconds
-(g_earth(r_earth)+g_venus(r_venus))*r_s/sol
+(f_earth(r_earth/r_s) + f_venus(r_venus/r_s))*r_s/sol
 
   
 transit_time_classical <- (r_earth + r_venus)/sol # seconds
