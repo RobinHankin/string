@@ -12,7 +12,6 @@ source("mercury.R")   # defines M=2e30, the mass of the sun, orbital
     with(as.list(c(State, Pars
                    )), {
                      jj <- 1-1/r  # 2GM=1
-                     print(b^2*jj/r^2)
                      drbydt <- jj*sqrt(1-b^2*jj/r^2) ## NB: positive root
                      dphibydt <- b*jj/r^2
                      return(list(c(rdot=drbydt,phidot=dphibydt)))
@@ -23,14 +22,14 @@ source("mercury.R")   # defines M=2e30, the mass of the sun, orbital
 
   if(is.null(tau)){
         tau<- seq(from=0,to=100.1,len=100)
-  } # works nicely with ADSADFSADFSDFASDFSAADFSFDSDFS()
+  } 
 
   yini <- c(
       r    = r_start,
       phi  = 0  # Start at 3 o'clock
   )
 
-  bh <- ode(y=yini, times=tau, func=nullgeodesicequation, parms=c(b=b))
+  bh <- ode(y=yini, times=tau, func=nullgeodesicequation, parms=c(b=b),rtol=1e-8,atol=1e-7)
   r   <- bh[,2]
   phi <- bh[,3]
 
