@@ -10,8 +10,8 @@ sol <- 299792458    # speed of light (m/s)
 r_sun <- 695510e3   # radius of sun in meters
 
 
-r_venus <- 108000000e3 # Venus's orbital radius (m)
-r_earth <- 150000000e3 # Earth's orbital radius (m)
+orbital_radius_venus <- 108000000e3 # Venus's orbital radius (m)
+orbital_radius_earth <- 150000000e3 # Earth's orbital radius (m)
 
 d <- G*M/sol^2  # mass of sun in meters
 r_s <- 2*d      # Schwarzschild radius of Sun (=2M)
