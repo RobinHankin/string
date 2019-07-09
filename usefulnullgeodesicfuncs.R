@@ -1,6 +1,9 @@
-# Some useful null geodesic functions; but here we parametrize a light
-# path in terms of coordinate time t, so we can simulate the Shapiro
-# delay between earth and Mercury.
+## Some useful null geodesic functions, designed to be called from
+## file "shapiro.R".  Functionality here differs from that in
+## usefullightfuncs.R in that here we parametrize a light path in
+## terms of coordinate time t, so we can simulate the Shapiro delay
+## between earth and Mercury.  In file usefullightfuncs.R we
+## parametrize in terms of azimuthal angle phi, not time.
 
 library("deSolve")   # ode()
 source("usefulfuncs.R")
