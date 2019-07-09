@@ -1,4 +1,10 @@
-# Numerical verification of the Shapiro delay experiment
+## Numerical verification of the Shapiro delay experiment.
+##
+## Technically, this is a failed experiment: the predicted Shapiro
+## delay, between Earth and Venus, is zero (as printed at the bottom
+## of this file).  What baffles me is why the agreement is so precise,
+## given that the two methods of calculation are so utterly different.
+
 
 source("usefulnullgeodesicfuncs.R")
 
@@ -24,9 +30,11 @@ f_venus <- approxfun(out_venus$r,out_venus$r)
 transit_time_relativistic  <-   # transit time in seconds
 (f_earth(orbital_radius_earth/r_s) + f_venus(orbital_radius_venus/r_s))*r_s/sol
 
-  
+
+## Now calculate the classical time, simply distance/speed:
 transit_time_classical <- (orbital_radius_earth + orbital_radius_venus)/sol # seconds
 
+## plot (rather dull):
 plot(out_earth$x,out_earth$y,type='o',col='red',cex=st(out_earth$time),asp=1)
 event_horizon()
 
