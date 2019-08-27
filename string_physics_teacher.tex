@@ -18,19 +18,23 @@
 
 \begin{abstract}
 
-  
-  Here I analyze the behaviour of stationary, light inextensible strings
-under tension in the vicinity of a nonrotating black hole.  Such
-strings minimize their proper length, given by integrating the spatial
-component of the Schwarzschild metric along the string.  The path is
-calculated by numerical solution to the Euler-Lagrange equations.  If
-the string is entirely outside the event horizon, its closest approach
-to the singularity is tangential; if the distance of closest
-approach is less than about $1.0761\cdot 2M$, the
-string self-intersects.  If the string attains $r=2M$, then it
-will in general be tangential to the event horizon.  Light taut
-strings interpret the concept ``straight line'' and their behaviour
-suggests a possible way of manipulating a black hole.
+Light inextensible string under tension is a stalwart feature of
+elementary physics.  Here I show how considering such string in the
+vicinity of a black hole, together with computer algebra systems, can
+generate insight into the Schwarzschild geometry that is accessible to
+undergraduates.  Light taut strings minimize their proper length,
+given by integrating the spatial component of the Schwarzschild metric
+along the string.  The path itself is given by straightforward
+numerical solution to the Euler-Lagrange equations.  If the string is
+entirely outside the event horizon, its closest approach to the
+singularity is tangential.  At this point the string is {\em visibly}
+curved, surely a memorable and informative insight.  The geometry of
+the Schwarzschild metric induces some peculiar nonlocal behaviour: if
+the distance of closest approach is less than about $1.0761\cdot 2M$,
+the string self-intersects, even though it is everywhere under
+tension.  Light taut strings furnish a third interpretation of the
+concept ``straight line'', the other two being null geodesics and
+free-fall world lines.
 
 
 % \PACS{PACS code1 \and PACS code2 \and more}
@@ -49,27 +53,25 @@ Black holes\sep light inextensible string\sep minimal-length path
 General relativity is a topic of long-standing fascination for
 undergraduate physics students [CITATION NEEDED].  Einstein's concept
 of ``curved'' spacetime is an enduring metaphor that attracts large
-numbers of undergraduates into courses such as AUT's frontiers of
-astronomy courses.
+numbers of undergraduates into introductory general relativity.
 
-Students are weary of being told that ``space is warped'' and ``not
-even light can escape a black hole''.  Students typically stumble on
-the concept of warped spacetime on the grounds that torsion-free
-metrics are not embedded IN ANYTHING.  
+Here I show how numerical methods, including computer algebra systems,
+can be used to interpret the concept of ``straight line'' in the
+vicinity of a black hole.  The problem is would be suitable for an
+undergraduate homework problem~\cite{ajpeditor}.
 
-Here I show how numerical methods can be used to interpret the concept
-of ``straight line'' in the vicinity of a black hole.  As
-\cite{overduin2018} point out, demonstrations of relativistic concepts
-using everyday materials (in their case gravitational waves visualised
-by oscillations in spandex) can exert a galvanising effect on
-students.
+A light string's being under tension means that its path will be an
+extremum of proper length: the calculus of variations proves that the
+path is straight in the sense of zero curvature.  In terrestrial
+gravity, standard $25\times 10^{-6}\mbox{kg}\cdot\mbox{m}^{-1}$ cotton
+sewing thread at its breaking strain of about $40\,\mbox{N}$ would
+have a sag of~$\sim 6\times 10^{-6}\mbox{m}$ over a $1\,\mbox{m}$
+horizontal scale: barely perceptible.  How does such a quotidian
+observation translate into the vicinity of a black hole?  Would the
+``warping of space'' result in {\em visibly} curved thread?
 
-Light inextensible strings are a stalwart feature of elementary
-physics.  It is perhaps not out of place to point out explicitly that
-a light string is not subject to gravity, and its being under tension
-means that its configuration is an extremum of proper length.  Of
-course, no real string is perfectly weightless or inextensible.  With
-tension~$T$, gravitational acceleration $g$ and (proper) mass per
+Of course, no real string is perfectly weightless or inextensible.
+With tension~$T$, gravitational acceleration $g$ and (proper) mass per
 (proper) unit length~$\mu$, then a string will behave as though light
 on lengthscales $L\lesssim T/\left(\mu g\right)$.  Using
 $c^4/\left(4GM\right)$ for the strength of gravity at the event
@@ -84,15 +86,11 @@ and informative limit: Rindler~\cite{rindler}, for example, considers
 lowering a heavy object to the event horizon on the end of such a
 string to illustrate energetic arguments in GR.
 
-Analysis of non-radial strings interprets the concept ``straight
-line'' and suggests a possible way of manipulating a black hole.
-Peculiar counterintuitive behaviour such as inward-directed
-centrifugal force in the vicinity of a black hole is well
-known~\cite{abramowicz1992,abramowicz1993}, and the analysis of taut
-strings furnishes another everyday window into general relativity.
-Another possibility, discussed by Thorne~\cite{thorne1986}, is to pass
-electric current through such taut strings, an option not pursued
-here.
+Dynamic definitions of straight line also run into difficulties:
+counterintuitive behaviour such as inward-directed centrifugal force
+in the vicinity of a black hole is well
+known~\cite{abramowicz1992,abramowicz1993}.
+
 
 The Schwarzschild metric
 
@@ -131,9 +129,10 @@ Observe that integration may be performed with a lower limit
 of~$r_1=2M$ with no difficulty, even though the radial component of the
 Schwarzschild metric approaches infinity there.
 
-Elementary methods show that the proper length $\ell$ of radial strings has
-some peculiar features.  Firstly, consider the proper length from
-$r=2M$ to $r=2M(1+w)$ where $w>0, \left|w\right|\ll 1$.  Then
+Elementary methods show that the proper length $\ell$ of radial
+strings has some non-Euclidean features.  Firstly, consider the proper
+length from $r=2M$ to $r=2M(1+w)$ where $w>0, \left|w\right|\ll 1$.
+Then
 
 %  \begin{equation}\label{ell_properunits}
 %    \ell=\int_{r=1}^{r=1+w}ds
@@ -162,7 +161,8 @@ case $w\gg 1$ we have an asymptotic expansion that begins
 \noindent suggesting that there is ``extra radial space'', of length
 over $1.19\cdot 2M$, sensible at large distances from the event
 horizon.  Radial strings have proper length longer than the
-Schwarzschild radial coordinate difference $w$.
+Schwarzschild radial coordinate difference $w$, a nice illustration of
+the failure of Euclidean geometry.
 
 \section{Nonradial string}
 Integrating along a path between two
@@ -207,7 +207,9 @@ Figure~\ref{flamm}.  It is interesting to compare
 equation~\ref{rdashdash} with the corresponding equation for null
 geodesics, which is usually given~\cite{wald} in terms of $u=2M/r$ as
 $u''=3u^2/2-u$, but is equivalent
-to~$r''\left(\phi\right)=r-3M+4Mr'/r$.
+to~$r''\left(\phi\right)=r-3M+2M\left(r'\right)^2/r$.  This shows that
+light, being sensitive to the time component of the metric, behaves
+differently from string, which is not.
 
 There does not appear to be a simple analytical solution to
 equation~\ref{rdashdash} but nevertheless we may make several
@@ -262,11 +264,11 @@ Considering~$r'(\phi)=0$ shows that if a string is tangential at a
 point with~$r_0>2M$, then it has a radius of curvature of~$r_0^2/2M$
 at that point.  Any circular path, including a circular orbit
 at~$r=r_0$, has a radius of curvature of $r_0<r_0^2/2M$, showing that
-circular orbits cannot follow a taut string at closest approach.  Also
-observe that null geodesics have a radius of curvature of $r_0^2/3M <
-r_0^2/2M$, showing that light cannot follow a taut string at closest
-approach either.  The string has a point of inflection
-if~$\left(r'\right)^2=2r(r-2M)$.
+circular orbits cannot follow a taut string at closest approach (as in
+the classical case).  Also observe that null geodesics have a radius
+of curvature of $r_0^2/3M < r_0^2/2M$, showing that light cannot
+follow a taut string at closest approach either.  The string has a
+point of inflection if~$\left(r'\right)^2=2r(r-2M)$.
 
 Compare the above analysis with a taut {\em heavy} string which
 adopts, at least locally, a catenary configuration at closest
