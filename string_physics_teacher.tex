@@ -98,13 +98,14 @@ ds^2= -dt^2\left(1-2M/r\right) +\frac{dr^2}{1-2M/r} + r^2\left(d\theta^2 + \sin^
 \noindent where units in which~$G=c=1$ are used, has been known for
 over a century~\cite{schwarzschild1916}.  Here I consider the spatial
 component~$ds^2= dr^2/\left(1-2M/r\right) + r^2d\phi^2$, confined to
-equatorial points~($\theta=\pi/2$); we understand~$2M\leq r$
+equatorial points~($\theta=\pi/2$); we understand~$r\geqslant 2M$
 throughout.  A circular string at constant~$r$ will, trivially, have
 proper length~$2\pi r$.
 
-Considering first the radial component we may calculate the
-proper length $L\left(r_1,r_2\right)$ of a string stretching
-from~$r=r_1\geq 2M$ to~$r_2\geq r_1$ at constant $\theta,\phi$:
+Considering first the radial component we may calculate the proper
+length $L\left(r_1,r_2\right)$ of a string stretching
+from~$r=r_1\geqslant 2M$ to~$r_2\geqslant r_1$ at constant
+$\theta,\phi$:
 
 % \begin{equation}\label{radial_string_length_properunits}
 %   \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-1/r}}=
@@ -372,10 +373,10 @@ source code for the figures is available at
 \begin{figure}[p] % created by "closest_approach2.R"
 \centering
 \includegraphics[width=170mm]{closest_approach_selfintersecting.pdf}
-\caption{Self-intersecting strings shown for $\phi\geq 0$.  Closest
+\caption{Self-intersecting strings shown for $\phi\geqslant 0$.  Closest
   approach to the event horizon occurs at $\phi=0$ (3 o'clock) and
   $r/2M\in\left(1,1.0761\right)$; strings are symmetrical about $\phi=0$
-  but for clarity only $\phi\geq 0$ is shown}
+  but for clarity only $\phi\geqslant< 0$ is shown}
 \label{closest_approach_self_intersecting}
 \end{figure}
 
@@ -410,7 +411,8 @@ source code for the figures is available at
 \begin{figure}[p]
 \centering
 \includegraphics{light_start_at_r_equals_2.pdf} % created by "angle_start_at_r_equals_2.R"
-\caption{Null geodesics passing through $(4M,0)$, shown for $0\leq\phi\leq 2\pi$}
+\caption{Null geodesics passing through $(4M,0)$, shown for
+  $0\leqslant\phi\leqslant 2\pi$}
 \label{light_r_equals_2}
 \end{figure}
 
