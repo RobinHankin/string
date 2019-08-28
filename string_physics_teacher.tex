@@ -210,30 +210,21 @@ $r''=r+2\left(r'\right)^2/r$).
 
 There does not appear to be a simple analytical solution to
 equation~\ref{rdashdash} but it is a straightforward second order ODE,
-amenable to numerical solution.  There are two qualitatively different
-types of solutions: those with a tangential point ($r'=0,r>2M$), and
-those without.  Consider first solutions with such a point: there
-exists a pair~$\left(r,\phi\right), r>2M$ at which~$r'(\phi)=0$.  This
-point must be unique, as~$r''(\phi)>0$, and be the closest approach of
-the string to the event horizon.
+amenable to numerical solution.  Here we consider only strings
+exterior to the event horizon, $r>2M$, and for these we have a
+well-defined point of closest approach to the event horizon.  Further,
+because the system is invariant under~$\phi\longrightarrow-\phi$, the
+string must be symmetrical about at this point.
+Considering~$r'(\phi)=0$ shows that a tangential string at a point
+with~$r_0>2M$ obeys, to first order, $r''=r-2M$, while tangential null
+geodesics follow $r''=r-3M$.  Thus a taut string would {\em look}
+curved to a local observer, having a (visual) radius of curvature of
+$r_0^2/M\sqrt{1-2M/r_0}$ (the extra term comes from the fact that
+appearance is driven by local $ds$, not Schwarzschild $r$).  At the
+photon sphere $r_0=3M$, such a string would appear to have a radius
+of~$\sqrt{27}M$.  For a solar mass black hole this would be about
+$15\unit{km}$, a readily understandable result.
 
-Further, because the system is invariant
-under~$\phi\longrightarrow-\phi$, the string must be symmetrical about
-at this point.  Considering~$r'(\phi)=0$ shows that a tangential
-string at a point with~$r_0>2M$ obeys, to first order, $r''=r-2M$,
-while tangential null geodesics follow $r''=r-3M$.  Thus a taut string
-would {\em look} curved to a local observer, having a (visual) radius
-of curvature of $r_0^2/M\sqrt{1-2M/r_0}$ (the extra term comes from
-the fact that appearance is driven by local $ds$, not Schwarzschild
-$r$).  At the photon sphere $r_0=3M$, such a string would appear to
-have a radius of~$\sqrt{27}M$.  For a solar mass black hole this would
-be about $15\unit{km}$, a readily understandable result.
-
-If, conversely, $r'(\phi)\neq 0$ whenever~$r>2M$, then the string has
-only one free end; the other is tangential to the event horizon (in
-the sense that ${\displaystyle \lim_{r\longrightarrow 2M^+}r'=0}$),
-except in the degenerate case of constant~$\phi$ when the string is
-radial for~$r>2M$.
 
 \section{Numerical results}
 
@@ -257,11 +248,7 @@ less than this value, then the string crosses itself at~$\phi=\pi/2$.
 There are other ways to parametrize completely exterior strings;
 Figure \ref{strings_r_equals_2}, for example, shows strings passing
 through~$(4M,0)$.  Figure~\ref{light_r_equals_2} shows light paths for
-comparison.  The cases where the string attains $r=2M$ are tangent to
-the event horizon (or, exceptionally, purely radial).
-Figure~\ref{fixed_EH_intersection} shows strings tangential to the
-event horizon at~$\phi=0$ and Figure~\ref{one_free_end_r_equals_2}
-shows tangential strings passing through $(4M,0)$.
+comparison.
 
 \section{Discussion}
 
@@ -336,22 +323,6 @@ configuration is suitable for an undergraduate homework problem.
   shown for $0\leqslant\phi\leqslant 2\pi$}
 \label{light_r_equals_2}
 \end{figure}
-
-\begin{figure}[p] % created by "one_free_end_fixed_EH_intersection.R"
-\centering
-\includegraphics[width=\linewidth]{one_free_end_fixed_EH_intersection.pdf}
-\caption{Strings tangential to event horizon at $(1,0)$}
-\label{fixed_EH_intersection}
-\end{figure}
-
-\begin{figure}[p] % created by "one_free_end_r_equals_2.R"
-\centering
-\includegraphics[width=\linewidth]{one_free_end_r_equals_2.pdf}
-\caption{Strings tangential to the event horizon passing through $(4M,0)$}
-\label{one_free_end_r_equals_2}
-\end{figure}
-
-
 
 \end{document}
 
