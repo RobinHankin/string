@@ -260,13 +260,15 @@ evaluated:
 
 \noindent which would give~$R$ as a function of~$\left(r,r'\right)$.
 Considering~$r'(\phi)=0$ shows that if a string is tangential at a
-point with~$r_0>2M$, then it has a radius of curvature of~$r_0^2/2M$
-there.  Tangential null geodesics have a radius of curvature of
-$r_0^2/3M$, strictly less than that of a string.  This shows that a
-taut string would {\em look} curved to a local observer, having a
-(visual) radius of curvature of $r_0^2/6M$.  At the photon sphere of a
-solar mass black hole, such a string would appear to have a radius of
-about $2\unit{km}$, a readily understandable result.
+point with~$r_0>2M$, then it obeys, to first order, $r''=r-2M$, while
+tangential null geodesics follow $r''=r-3M$.  This shows that a taut
+string would {\em look} curved to a local observer, having a (visual)
+radius of curvature of $r_0^2/M\sqrt{1-2M/r_0}$ (the extra term comes
+from the fact that appearance is driven by local $ds$, not
+Schwarzschild $r$).  At the photon sphere $r_0=3M$, such a string
+would appear to have a radius of~$\sqrt{27}M$.  For a solar mass black
+hole this would be about $15\unit{km}$, a readily understandable
+result.
 
 Compare the above analysis with a taut {\em heavy} string which
 adopts, at least locally, a catenary configuration at closest
@@ -384,7 +386,7 @@ source code for the figures is available at
 
 \begin{figure}[p] % Created by "light_closest_approach.R"
 \centering
-\includegraphics[width=170mm]{light_closest_approach.pdf}
+\includegraphics[width=170mm]{light_closest_approach.pdf}
 \caption{Null geodesics in the Schwarzschild geometry, tangential
   at~$\phi=0$.  Note the differences between these curves and the taut
   strings shown elsewhere: unlike taut strings, null geodesics have
