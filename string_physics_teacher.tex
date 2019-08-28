@@ -50,12 +50,14 @@ Black holes\sep light inextensible string\sep minimal-length path
 \linenumbers
 \section{Introduction}
 
-General relativity is a topic of long-standing fascination for
-undergraduate physics students~\cite{christensen2012}.  Here I show
-how numerical methods, including computer algebra systems, can be used
-to interpret the concept of ``straight line'' in the vicinity of a
-black hole.  The analysis would be suitable for an undergraduate
-homework problem~\cite{romano2019}.
+General relativity is a topic of long-standing fascination for physics
+undergraduates~\cite{christensen2012}.  Students appreciate everyday
+illustrations of the concepts involved, as recent educational work on
+gravitational wave visualisations attests~\cite{overduin2018}.  Here I
+show how considering light inextensible string can be used to
+interpret the concept of ``straight line'' in the vicinity of a black
+hole.  The analysis presented here would be suitable for an
+undergraduate homework problem~\cite{romano2019}.
 
 A light string's being under tension means that its path will be an
 extremum of proper length.  In flat space, the calculus of variations
@@ -222,7 +224,7 @@ pair~$\left(r,\phi\right), r>2M$ at which~$r'(\phi)=0$.  This point
 must be unique, as~$r''(\phi)>0$, and be the closest approach of the
 string to the event horizon.
 
-Further, because the system is symmetrical
+Further, because the system is invariant
 under~$\phi\longrightarrow-\phi$, the string must be symmetrical about
 at this point.  Considering~$r'(\phi)=0$ shows that a tangential
 string at a point with~$r_0>2M$ obeys, to first order, $r''=r-2M$,
@@ -242,12 +244,12 @@ radial for~$r>2M$.
 
 \section{Numerical results}
 
-Here I solve equation~\ref{rdashdash} numerically, using the
-\verb+deSolve+ package for ordinary differential
-equations~\cite{soetart2010}.  Non-radial solutions fall into two
-distinct classes: those with $r>2M$ at all points, and those which
-attain $r=2M$, in which case the string is tangential to the event
-horizon.
+Here I solve equation~\ref{rdashdash} numerically, using R programming
+language~\cite{rcore2019} and the \verb+deSolve+ package for ordinary
+differential equations~\cite{soetart2010}.  Non-radial solutions fall
+into two distinct classes: those with $r>2M$ at all points, and those
+which attain $r=2M$, in which case the string is tangential to the
+event horizon.
 
 We first consider strings for which $r>2M$ everywhere (that is,
 completely exterior strings).
@@ -281,13 +283,8 @@ Although photon paths provide a definition of straightness, their
 world lines are sensitive to the time component of the metric.  Light
 taut strings respond only to the spatial components of the metric, and
 their configuration is arguably a more intuitive and helpful way to
-think about straightness.  Non-trivial configurations are adopted by
-such strings, including self-intersecting paths.  Taut strings are
-arguably as fundamental a definition of straighn
-
-Comparing light paths with that of nearby taut strings thus
-furnishes another insight into path curvature, complementing the
-analysis of Abramowicz~\cite{abramowicz1992}.
+think about straightness.  Using numerical methods to compute string
+configuration is suitable for an undergraduate homework problem.
 
 \section*{Supplementary Material}
 
