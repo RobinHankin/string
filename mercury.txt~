@@ -1,0 +1,14 @@
+G <-  6.674e-11  # big G in SI
+M_sun  <- 1.9885e30 # mass of Sun (kg)
+M_merc <- 3.3011e23 # mass of Mercury
+sol <- 299792458    # speed of light
+
+d <- G*M/sol^2 
+r_s <- 2*d  # Schwarzschild radius of Sun
+ecc <- 0.205630 # eccentricity of Mercury's orbit
+per <- 87.969 * 3600*24
+	
+merc_aphelion   <- 69816900e3  # meters
+merc_perihelion <- 46001200e3
+
+merc_eccentricity <- sqrt(1-merc_aphelion/merc_perihelion)
