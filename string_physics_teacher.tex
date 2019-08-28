@@ -190,8 +190,7 @@ $\frac{d}{d\phi}\frac{\partial F}{\partial r'}-\frac{\partial
 {\tt
 Needs["VariationalMethods`"]\\
 p = EulerEquations[Sqrt[y'[x]\^{}2/(1-1/y[x]) + y[x]\^{}2],y[x],x] // FullSimplify\\
-ss = p[[1]]//Numerator\\
-DSolve[ss==0,y[x],x]
+DSolve[p[[1]]//Numerator == 0, y[x],x]
 }}, an expression for the second derivative of~$r$:
 
 \begin{equation}\label{rdashdash}
