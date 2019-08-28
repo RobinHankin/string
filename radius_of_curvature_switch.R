@@ -1,3 +1,12 @@
+} # This line vandalises the script, which is subject to a serious
+  # conceptual error.  The "radius of curvature" of a string (or
+  # indeed a null geodesic) is meaningless unless one is in flat
+  # space: it depends on the coordinate system used.  At least, that
+  # is my current thinking.
+
+
+
+
 ## This script runs standalone but is designed to be called from
 ## maker.R [cf Makefile], which creates the pdf file
 ## "curvature_switch.pdf"
