@@ -1,5 +1,5 @@
 ## This file creates some variables to be used by trajectory_mercury.R
-## to analyse Mercury's orbit.
+## and perihelion_advance_of_mercury.Rmd to analyse Mercury's orbit.
 
 
 G <-  6.674e-11     # big G in SI
