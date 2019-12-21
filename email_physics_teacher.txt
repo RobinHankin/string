@@ -1,0 +1,21 @@
+Following email sent to me by Gary White, editor of "The Physics
+Teacher", 20 December 2019:
+
+I also want to clarify that The Physics Teacher concerns itself with
+the introductory classroom, so while I think many teachers of physics
+(writ large) might benefit from the insights in your article, I have
+concluded that the teacher of "introductory physics" is unlikely to
+see how to leverage it for their classroom. However, if you were
+interested in framing your results in a way that presumes little
+beyond the typical first year course, wherein you start by gently
+guiding our Newtonian-world-view readers what the "metric" is, and
+then carefully explain the similarities and differences between the
+three kinds of "straight lines" that you mention, and linking wherever
+you can to actual current practical applications of general relativity
+such as the GPS system, and to possibilities for using your results as
+part of (say) a pedagogical unit on bringing general relativity into
+the introductory sequence, then I would be very interested in such an
+article for TPT. Such an article would still need to stay close to our
+benchmark length of 2000 words, but details about numerical solutions
+to differential equations could be moved to appendices intended to be
+viewed online only.
