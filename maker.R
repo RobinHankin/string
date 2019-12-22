@@ -40,5 +40,10 @@ source("light_closest_approach.R")
 dev.off()
 
 
+pdf(file="illustrative_relativistic_trajectory.pdf")
+source("illustrative_relativistic_trajectory.R")
+dev.off()
+
+
 
 
