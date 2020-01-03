@@ -21,6 +21,7 @@
 \address{Auckland University of Technology}
 \ead{hankin.robin@gmail.com}
 
+
 \begin{abstract}
 
 Light inextensible string under tension is a stalwart feature of
@@ -51,6 +52,7 @@ Black holes\sep light inextensible string\sep minimal-length path
 \end{keyword}
 
 \end{frontmatter}
+\newcommand{\rmd}{\mathrm{d}}
 
 \linenumbers
 \section{Introduction}
@@ -94,11 +96,11 @@ symmetric mass are solved by the Schwarzschild
 metric~\cite{schwarzschild1916}.  In units in which~$G=c=1$, this is:
 
 \begin{equation}\label{schwarzschild}
-ds^2= -dt^2\left(1-2M/r\right) +\frac{dr^2}{1-2M/r} + r^2\left(d\theta^2 + \sin^2\theta d\phi^2\right).
+\rmd s^2= -\rmd t^2\left(1-2M/r\right) +\frac{\rmd r^2}{1-2M/r} + r^2\left(\rmd\theta^2 + \sin^2\theta\rmd\phi^2\right).
 \end{equation}
 
-\noindent Here I consider the spatial component~$ds^2=
-dr^2/\left(1-2M/r\right) + r^2d\phi^2$, confined to equatorial
+\noindent Here I consider the spatial component~$\rmd s^2=
+\rmd r^2/\left(1-2M/r\right) + r^2\rmd\phi^2$, confined to equatorial
 points~($\theta=\pi/2$); we understand~$r\geqslant 2M$ throughout.  A
 circular string at constant~$r$ will, trivially, have proper
 length~$2\pi r$.
@@ -117,7 +119,7 @@ from~$r=r_1\geqslant 2M$ to~$r_2\geqslant r_1$ at constant $\theta,\phi$:
 %   \end{equation}
 
 \begin{equation}\label{radial_string_length}
-  \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-2M/r}}=
+  \int_{r=r_1}^{r_2}\frac{\rmd r}{\sqrt{1-2M/r}}=
   \left.
   \sqrt{r(r-2M)} +\frac{1}{2}\log\left(
   \frac{\sqrt{r}+\sqrt{r-2M}}{\sqrt{r}-\sqrt{r-2M}}\right)
@@ -140,7 +142,7 @@ Then
 
  \begin{equation}\label{ell}
    \ell =
-   \int_{r=2M}^{r=2M(1+w)}ds
+   \int_{r=2M}^{r=2M(1+w)}\rmd s
    =2M\left(2\sqrt{w} + \frac{1}{3}w^{3/2} + O(w^{5/2})\right)
  \end{equation}
 
@@ -180,13 +182,13 @@ terms of~$r=r\left(\phi\right)$ gives us a path length of
 
 \begin{equation}
 %  \int_{p_1}^{p_2}\sqrt{\frac{\left(r'\right)^2}{1-2M/r} + r^2}d\phi=
-  \int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-2M/r} + r^2\right)^\frac{1}{2}d\phi=
-  \int_{p_1}^{p_2}F\left(r,r'\right)d\phi
+  \int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-2M/r} + r^2\right)^\frac{1}{2}\rmd\phi=
+  \int_{p_1}^{p_2}F\left(r,r'\right)\rmd\phi
 \end{equation}
 
 \noindent where dashes denote differentiation with respect to~$\phi$.
 The Euler-Lagrange equations for this system,
-$\frac{d}{d\phi}\frac{\partial F}{\partial r'}-\frac{\partial
+$\frac{\rmd}{\rmd\phi}\frac{\partial F}{\partial r'}-\frac{\partial
   F}{\partial r}=0$ give an expression for the second derivative
 of~$r$ (Mathematica idiom would be {\tt EulerEquations[Sqrt[y[x]\^{}2
       + y'[x]\^{}2/(1-1/y[x])],y[x],x]}):
