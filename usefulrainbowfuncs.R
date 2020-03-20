@@ -83,8 +83,11 @@ f <- function(d){
   normal <- atan2(p3[2],p3[1])
   ## (interior) angle of incidence:
   incidence <- M[2,3]-normal
-  M[3,3] <- pi+(asin(n*incidence) +  normal)
-  
+  if(abs(n*incidence) < 1){ # that is, if the ray can esape
+      M[3,3] <- pi+(asin(n*incidence) +  normal)
+  } else { # total internal reflection...
+      M[3,3] <- normal -incidence
+  }      
   return(M)
 }
 
@@ -99,10 +102,14 @@ f <- function(d){
       x0=M[2,1],y0=M[2,2],
       x1=M[3,1],y1=M[3,2],
       ...)
+
+ ## separate treatment for total internal reflection:
+  if(M[3,3]>0){l <- 10}else{l <- 0.3}
+  
   segments(
       x0=M[3,1],y0=M[3,2],
-      x1=M[3,1]-10.7*cos(M[3,3]),
-      y1=M[3,2]-10.7*sin(M[3,3]),
+      x1=M[3,1]-l*cos(M[3,3]),
+      y1=M[3,2]-l*sin(M[3,3]),
       ...)
 
    
