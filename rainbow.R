@@ -8,24 +8,29 @@ source("usefulrainbowfuncs.R")
 n <- 4/3 # refractive index
 
 
+plot(NA,xlab='',ylab='',asp=1,xlim=c(0.2,0.3),ylim=c(-1,-0.9))
 
 ## First plot the bounding circle:
 size <- 2.0
 a <- seq(from=0,to=2*pi,len=1000)  # 'a' for angle
-plot(sin(a),cos(a),asp=1,type='l',xlab='',ylab='',xlim=c(0.25,0.35),ylim=c(-1.1,-0.8))
-plot(sin(a),cos(a),asp=1,type='l',xlab='',ylab='',xlim=c(-5,5))
+points(sin(a),cos(a),asp=1,type='l')
 
-small <- 1e-5
-for(a in seq(from=0.52,to=sin(2*asin(1/n))-small,by=0.002)){
-  M <- f(a)
-#  if(!is.na(M[3,3])){  drawray(a,lwd=0.2)}
-drawray(a,lwd=0.2)
+small <- 1e-9
+for(a in seq(from=0.52,to=sin(2*asin(1/n))-small,by=0.0005)){
+  drawray(a,lwd=0.2)
 }
 
 drawray(atan(1/n),col='red',lwd=1)
-drawray(sin(2*asin(1/n))-small,col='blue')
-M <- f(sin(2*asin(1/n))-small)
-
+drawray(1-small,col='blue')
+M <- f(1)
+p <- M[3,1:2]
+points(p[1],p[2],pch=16)
+segments(
+    p[1],p[2],
+    p[1] + 10*p[2],
+    p[2] - 10*p[1],
+    col='blue')
+             
 
 ## Axial line is indeterminate, has to be plotted explicitly:
 abline(h=0)
