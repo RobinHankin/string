@@ -6,6 +6,10 @@ pdf(file="closest_approach_selfintersecting.pdf")
 source("closest_approach2.R")
 dev.off()
 
+pdf(file="closest_approach_selfintersecting_onegreen.pdf")
+source("closest_approach3.R")
+dev.off()
+
 pdf(file="angle_at_r_equals_2.pdf")
 source("angle_at_r_equals_2.R")
 dev.off()

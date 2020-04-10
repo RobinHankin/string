@@ -71,20 +71,22 @@ black hole?  Would the ``warping of space'' result in {\em visibly}
 curved thread?
 
 Of course, no real string is perfectly weightless or inextensible.
-With tension~$T$, gravitational acceleration $g$ and (proper) mass per
-(proper) unit length~$\mu$, then a string will behave as though light
-on lengthscales $L\lesssim T/\left(\mu g\right)$.  Using
-$c^4/\left(4GM\right)$ for the strength of gravity at the event
-horizon of a black hole with mass $M$ gives $L\lesssim TM/\left(\mu
-c^4\right)$.  For the string to behave as though light on lengthscales
-comparable with the Schwarzschild radius would require $T\gtrsim\mu
-c^2$.  Exceeding this criterion would violate the dominant energy
-condition (and in this context we note that transverse waves would
-propagate at speed~$\sqrt{T/\mu}\sim c$).  Nevertheless, the
-idealization of a string as light and inextensible is an interesting
-and informative limit: Rindler~\cite{rindler}, for example, considers
-lowering a heavy object to the event horizon on the end of such a
-string to illustrate energetic arguments in GR.
+Students could use dimensional analysis to assess the accuracy of such
+approximations.  With tension~$T$, gravitational acceleration $g$ and
+(proper) mass per (proper) unit length~$\mu$, then a string will
+behave as though light on lengthscales $L\lesssim T/\left(\mu
+g\right)$.  Using $c^4/\left(4GM\right)$ for the strength of gravity
+at the event horizon of a black hole with mass $M$ gives $L\lesssim
+TM/\left(\mu c^4\right)$.  For the string to behave as though light on
+lengthscales comparable with the Schwarzschild radius would require
+$T\gtrsim\mu c^2$.  Exceeding this criterion would violate the
+dominant energy condition (and in this context we might remind
+students that transverse waves would propagate at
+speed~$\sqrt{T/\mu}\sim c$).  Nevertheless, the idealization of a
+string as light and inextensible is an interesting and instructive
+limit: Rindler~\cite{rindler}, for example, considers lowering a heavy
+object to the event horizon on the end of such a string to illustrate
+energetic arguments in GR.
 
 \section{The Schwarzschild metric}
 
@@ -96,24 +98,40 @@ metric~\cite{schwarzschild1916}.  In units in which~$G=c=1$, this is:
 ds^2= -dt^2\left(1-2M/r\right) +\frac{dr^2}{1-2M/r} + r^2\left(d\theta^2 + \sin^2\theta d\phi^2\right).
 \end{equation}
 
-\noindent Here I consider the spatial component~$ds^2=
-dr^2/\left(1-2M/r\right) + r^2d\phi^2$, confined to equatorial
-points~($\theta=\pi/2$); we understand~$r\geqslant 2M$ throughout.  A
-circular string at constant~$r$ will, trivially, have proper
-length~$2\pi r$.
+Many undergraduate courses will present the Schwarzschild metric {\em
+  ex nihilo}, in which case its pedagogical value would be to
+illustrate non-Newtonian features of GR such as time dilation.  The
+most striking of these are temporal: suppose pulses of light are
+emitted from a distant source [such as a pulsar] with interval $t_P$;
+the coefficient of $dt^2$ implies that a student, stationary at
+distance $r>2M$ from the singularity will perceive these pulses to
+have an interval of~$t_P/\sqrt{1-2M/r} < t_P$ [it might be worth
+  emphasising that coordinate ``$t$'' coincides with Lorentzian time
+  for an observer at infinity].  Further, if our student emits pulses
+at (local) interval $t_L$, then the distant observer would see these
+pulses with an interval of $t_L\sqrt{1-2M/r}$, and this approaches
+infinity as $r\longrightarrow 2M$ and the distant observer sees the
+student ``freezing''.  Nevertheless, the free-fall time from the Event
+Horizon to the singularity is finite.
 
-Considering first the radial component we may calculate the
-proper length $L\left(r_1,r_2\right)$ of a string stretching
-from~$r=r_1\geqslant 2M$ to~$r_2\geqslant r_1$ at constant $\theta,\phi$:
+We also see a failure of classical geometry: the coordinate $r$ has
+the defining feature that the circumference of a circle of radius $r$
+has circumference $2\pi r$; but radial distances are not Euclidean.
+To investigate this phenomenon, we consider the spatial
+component~$ds^2= dr^2/\left(1-2M/r\right) + r^2d\phi^2$, confined to
+equatorial points~($\theta=\pi/2$); we understand~$r\geqslant 2M$
+throughout.
 
-
-% \begin{equation}\label{radial_string_length_properunits}
-%   \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-1/r}}=
-%   \left.
-%   \sqrt{r(r-1)} +\frac{1}{2}\log\left(
-%   \frac{\sqrt{r}+\sqrt{r-1}}{\sqrt{r}-\sqrt{r-1}}\right)
-%   \right|_{r_1}^{r_2}
-%   \end{equation}
+Students might need to be reminded of the concepts of proper time and
+proper length: these are quantities measured {\em locally}.  In
+particular, we note that proper length of an object is the length as
+measured by a local observer at rest with respect to the object.  The
+proper length of a string is the length measured by an inchworm as it
+crawls along the string.  A circular string at constant~$r$ will,
+trivially, have proper length~$2\pi r$.  Considering first the radial
+component we may calculate the proper length $L\left(r_1,r_2\right)$
+of a string stretching from~$r=r_1\geqslant 2M$ to~$r_2\geqslant r_1$
+at constant $\theta,\phi$:
 
 \begin{equation}\label{radial_string_length}
   \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-2M/r}}=
@@ -132,11 +150,6 @@ strings has some non-Euclidean features.  Firstly, consider the proper
 length from $r=2M$ to $r=2M(1+w)$ where $w>0, \left|w\right|\ll 1$.
 Then
 
-%  \begin{equation}\label{ell_properunits}
-%    \ell=\int_{r=1}^{r=1+w}ds
-%    =2\sqrt{w} + \frac{1}{3}w^{3/2} + O(w^{5/2})
-%  \end{equation}
-
  \begin{equation}\label{ell}
    \ell =
    \int_{r=2M}^{r=2M(1+w)}ds
@@ -149,10 +162,7 @@ Then
  differing radial coordinates.  Passing to the case $w\gg 1$ we have
  an asymptotic expansion that begins
 
-% \begin{equation}\label{asymptotic_ell_properunits}
-%   \ell = w +  \frac{1}{2}\log w + \frac{1}{2} + \log(2)  +  \frac{1}{8}w^{-1} + O(w^{-2}),
-% \end{equation}
-% 
+
 \begin{equation}\label{asymptotic_ell}
   \ell = 2M\left(w +  \frac{1}{2}\log w + \frac{1}{2} + \log(2)  +  \frac{1}{8}w^{-1} + O(w^{-2})\right),
 \end{equation}
@@ -161,6 +171,30 @@ Then
 distances from the event horizon, with radial strings being
 arbitrarily longer than flat space would allow: a nice illustration of
 the failure of Euclidean geometry.
+
+\section{Three types of straight line}
+
+There are at least three types of ``straight line'' to consider when
+studying general relativity.  In the context of
+equation~\ref{schwarzschild} we have:
+
+\begin{enumerate}
+\item null geodesics: paths for which $ds^2=0$ at all points.  Light
+  travels on null geodesics and is arguably the ``straightest'' of
+  straight lines.
+\item timelike geodesics: paths for which $ds^2>0$ everywhere, and for
+  which $\int\sqrt{ds^2}$ is a minimum.  These are the paths that
+  objects in freefall follow.
+\item taut string: paths for which $dt=0$, thereby considering the
+  configuration of a string.  If the proper length
+  $\int\sqrt{dr^2+r^2d\theta^2}$ is a minimum, the string is taut.
+\end{enumerate}
+
+The path of a taut string seems to be a natural and intuitive
+interpretation of straight line, with immediate everyday
+interpretation, yet has been neglected in the pedagogical literature.
+Nontrivial taut strings require analysis of nonradial paths, which I
+consider below.
 
 \section{Nonradial string}
 Integrating along a path between two
@@ -171,11 +205,6 @@ from~$p_1$ to~$p_2$ will adopt an extremal-length path.  Such paths
 may be found by the calculus of variations; parametrizing a curve in
 terms of~$r=r\left(\phi\right)$ gives us a path length of
 
-% \begin{equation}
-% %  \int_{p_1}^{p_2}\sqrt{\frac{\left(r'\right)^2}{1-2M/r} + r^2}d\phi=
-%   \int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-1/r} + r^2\right)^\frac{1}{2}d\phi=
-%   \int_{p_1}^{p_2}F\left(r,r'\right)d\phi
-% \end{equation}
 
 \begin{equation}
 %  \int_{p_1}^{p_2}\sqrt{\frac{\left(r'\right)^2}{1-2M/r} + r^2}d\phi=
@@ -197,53 +226,77 @@ of~$r$ (Mathematica idiom would be {\tt EulerEquations[Sqrt[y[x]\^{}2
 
 \noindent Solutions to equation~\ref{rdashdash} correspond to a taut
 string confined to Flamm's paraboloid~\cite{flamm1916}; see
-Figure~\ref{flamm}.  It is interesting to compare
-equation~\ref{rdashdash} with the corresponding equation for null
-geodesics, which is usually given~\cite{wald} in terms of $u=2M/r$ as
-$u''=3u^2/2-u$, but is equivalent
-to~$r''\left(\phi\right)=r-3M+2\left(r'\right)^2/r$.  This shows that
-light, being sensitive to the time component of the metric, behaves
-differently from string, which is not (at this point it might be worth
-``reminding'' students that a straight line in flat space,
+Figure~\ref{flamm}.  At this point it might be worth ``reminding''
+students that a straight line in flat space,
 $r=r_0\sec\left(\phi-\phi_0\right)$, obeys
-$r''=r+2\left(r'\right)^2/r$).
+$r''=r+2\left(r'\right)^2/r$, and that equation~\ref{rdashdash}
+reduces to this in the limit $r/2M\longrightarrow\infty$.
 
-There does not appear to be a simple analytical solution to
-equation~\ref{rdashdash}; but it is a straightforward second order
-ODE, amenable to numerical solution and no harder than the equivalent
-for null geodesics, a standard homework problem.  Here we consider
-only strings exterior to the event horizon, $r>2M$, which have a
-well-defined point of closest approach to the singularity.  Because
-the system is invariant under~$\phi\longrightarrow-\phi$, the string
-must be symmetrical about this point.  If $\phi'$ is small, then a
-string follows $r''=r-2M$, while tangential null geodesics follow
-$r''=r-3M$.  Thus a taut string would {\em look} curved to a local
-observer, having a (visual) radius of curvature of
-$r_0^2/M\sqrt{1-2M/r_0}$ (the extra term comes from the fact that
-appearance is driven by local $ds$, not Schwarzschild $r$).  At the
-photon sphere $r_0=3M$, such a string would appear to have a radius
-of~$\sqrt{27}M$.  For a solar mass black hole this would be about
-$15\unit{km}$, a readily understandable result.
+It is interesting to compare equation~\ref{rdashdash} with the
+corresponding equation for null geodesics, which is usually
+given~\cite{wald} in terms of $u=2M/r$ as $u''=3u^2/2-u$, but is
+equivalent to~$r''\left(\phi\right)=r-3M+2\left(r'\right)^2/r$.  This
+shows that light, being sensitive to the time component of the metric,
+behaves differently from string, which is not.
 
 
+Here we consider only strings exterior to the event horizon, $r>2M$,
+which have a well-defined point of closest approach to the
+singularity.  Because the system is invariant
+under~$\phi\longrightarrow-\phi$, the string must be symmetrical about
+this point.  If $\phi'$ is small, then a string follows $r''=r-2M$,
+while tangential null geodesics follow $r''=r-3M$.  Thus a taut string
+would {\em look} curved to a local observer, having a (visual) radius
+of curvature of $r_0^2/M\sqrt{1-2M/r_0}$ (the extra term comes from
+the fact that appearance is driven by local $ds$, not Schwarzschild
+$r$).  At the photon sphere $r_0=3M$, such a string would appear to
+have a radius of~$\sqrt{27}M$.  For a solar mass black hole this would
+be about $15.4\unit{km}$, a readily understandable result.  Of course,
+real cotton thread would break here, but the deviation of tangential
+light from a taut string's path would be about $0.13\unit{mm}$,
+certainly detectable by the naked eye.
 \section{Numerical results}
 
-Here I solve equation~\ref{rdashdash} numerically, using the R
-programming language~\cite{rcore2019} and the \verb+deSolve+ package
-for ordinary differential equations~\cite{soetart2010}.  First we
-consider strings for which $r>2M$ everywhere (that is, completely
-exterior strings).
+There does not appear to be a simple analytical solution to
+equation~\ref{rdashdash} and numerical methods are needed.  In an
+educational context, we might use Euler's method to illustrate the
+concepts and find $\left(r,r'\right)$---that is, a point in a
+two-dimensional phase space---as a function of independent variable
+$\phi$.  We specify initial conditions $(r_0,r'_0)$ at $\phi_0$ and
+repeatedly increment $\phi$ by a small amount $\delta\phi$:
+
+\begin{eqnarray}
+\phi&\longrightarrow&\phi+\delta\phi\nonumber\\
+r   &\longrightarrow&r+r'\delta\phi\nonumber\\
+r'  &\longrightarrow&r' + r''\delta\phi\qquad\mbox{where $r''$ is from equation~\ref{rdashdash}.}
+\end{eqnarray}
+
+Of course, Euler's method is numerically unstable and inefficient;
+here use the R programming language~\cite{rcore2019} and the
+\verb+deSolve+ package for ordinary differential
+equations~\cite{soetart2010} using the standard \verb+lsoda+ solver.
+The equations typically imply
+$\displaystyle\lim_{\phi\longrightarrow\pm\phi_C}=\infty$ for some
+critical value $\phi_C$ of $\phi$ [observe $\phi_C=\pi/2$ for flat
+  space] and this makes numerical analysis challenging.
+
+First we consider strings for which $r>2M$ everywhere (that is,
+completely exterior strings).
 Figure~\ref{closest_approach_non_self_intersecting} shows a sequence
 of non-self-intersecting numerical solutions to
 equation~\ref{rdashdash}, rotated so that the tangential point of
 closest approach occurs at~$\phi=0$.
-Figure~\ref{closest_approach_self_intersecting} shows the
-corresponding diagram for self-interesecting strings
-(Figure~\ref{light_closest_approach} shows equivalent null geodesics
-for comparison).  A bisection technique reveals that if the closest
-approach is greater than a critical value of about~$\simeq 1.0761\cdot
-2M$, the string does not self-intersect; if the closest approach is
-less than this value, then the string crosses itself at~$\phi=\pi/2$.
+
+Further analysis reveals something unexpected: for some values of
+initial conditions, the string self-intersects even though it is under
+tension everywhere and cannot support any nonzero bending moment.
+Figure~\ref{closest_approach_self_intersecting} shows some
+self-interesecting strings (Figure~\ref{light_closest_approach} shows
+equivalent null geodesics for comparison).  A bisection technique
+reveals that if the closest approach is greater than a critical value
+of about~$\simeq 1.0761\cdot 2M$, the string does not self-intersect;
+if the closest approach is less than this value, then the string
+crosses itself at~$\phi=\pi/2$.
 
 There are other ways to parametrize completely exterior strings;
 Figure \ref{strings_r_equals_2}, for example, shows strings passing
@@ -258,7 +311,11 @@ world lines are sensitive to the time component of the metric.  Light
 taut strings respond only to the spatial components of the metric, and
 their configuration is arguably a more intuitive and helpful way to
 think about straightness.  Using numerical methods to compute string
-configuration is suitable for an undergraduate homework problem.
+configuration is suitable for an undergraduate homework problem; the
+difficult part is specifying sensible initial conditions.
+
+The code producing the figures is available at github,
+\url{http://github.com/RobinHankin/string}.
 
 \bibliography{stringrefs.bib}
 
@@ -284,14 +341,19 @@ configuration is suitable for an undergraduate homework problem.
 \label{closest_approach_non_self_intersecting}
 \end{figure}
 
-\begin{figure}[p] % created by "closest_approach2.R"
+\begin{figure}[p] % created by "closest_approach3.R"
 \centering
-\includegraphics[width=\linewidth]{closest_approach_selfintersecting.pdf}
+\includegraphics[width=\linewidth]{closest_approach_selfintersecting_onegreen.pdf}
+
 \caption{Light inextensible strings under tension close to a black
-  hole.  Here self-intersecting strings are shown for $\phi\geqslant
-  0$.  Closest approach to the event horizon occurs at $\phi=0$ (3
-  o'clock) and $r/2M\in\left(1,1.0761\right)$; strings are symmetrical
-  about $\phi=0$ but for clarity only $\phi\geqslant 0$ is shown}
+  hole.  Here, self-intersecting strings are shown for $\phi\geqslant
+  0$ for clarity, but a single string is shown in green for
+  $-3.69\leqslant\phi\leqslant 3.69$, making the self-intersection
+  evident (all strings in the diagram, whether blue or green,
+  self-intersect at $\phi=\pm\pi$, even if the point of intersection
+  is far to the right).  Closest approach to the event horizon occurs
+  at $\phi=0$ (3 o'clock) and $r/2M\in\left(1,1.0761\right)$; all
+  strings are symmetrical about $\phi=0$}
 \label{closest_approach_self_intersecting}
 \end{figure}
 
