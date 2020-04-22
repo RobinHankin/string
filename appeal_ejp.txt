@@ -1,0 +1,181 @@
+Dear Professors Thorn, Joy, and Bewley
+
+I wish to appeal against an earlier decision of manuscrip EJP-105190, "Light
+inextensible strings in the Schwarzschild geometry".
+
+Thank you for giving me the opportunity to appeal the earlier decision.  I
+believe the negative comments of the reviewers are due to a
+misconstruing of the manuscript; and one of the comments, although
+apparently negative, can be interpreted in a positive way.  I believe
+that I can address all three referees' comments with only very minor
+changes to the manuscript (and a modified figure).
+
+In the following, the referees' comments are preceded by a chevron
+(">") and my replies are included inline.  I have changed linebreaks
+in the interest of clarity; I also respond to the positive comments
+that were made.
+
+I note that no referee even hints at lack of novelty, or interest, or
+accuracy.  The problem considered is natural and informative.
+
+
+Referee: 1
+
+COMMENTS TO THE AUTHOR(S)
+
+> In the manuscript, the Author analyses lengths of radial string and
+> inextensible string as defined in eq.1 and eq.6 respectively. For
+> radial string, the Author presents two asymptotic expansions given in
+> eq.3 and eq.4. For the inextensible string, analytic asymptotic
+> expressions are not available and therefore the Author, by using so
+> called R programming language, presents result of his analysis in
+> Fig2-6.
+
+This is a fair summary of the content of the manuscript although I
+would point out the asymptotic expressions for radial strings do not
+appear elsewhere.  Their appearance in the manuscript is a natural
+consequence of considering inextensible string.
+
+The "so-called R programming language" is rapidly becoming the lingua
+franca of many numerical disciplines, alongside python.  R is
+open-source and this philosophy facilitates open exchange of ideas.
+
+> To my opinion all results discussed in the article can be considered
+> homework problem for undergraduate students.
+
+I interpret this observation as a *positive* comment on the
+manuscript: a novel but natural problem is stated; the solution is
+presented sufficiently clearly to be considered (by this referee at
+least) suitable for a homework problem.  Many new techniques are
+obvious in retrospect.
+
+Many of the exercises in classic textbooks (Rindler, Moore, Schutz)
+started life as journal articles, the passage from research article to
+homework problem is part of the natural cycle of improvement in
+understanding.
+
+> I note however that EJP is international journal of high quality. This
+> journal is not devoted for publication results of homework problems
+> for undergraduate student.
+
+> In my opinion, results obtained in the manuscript do not warrant
+> publication on EJP.
+
+The comments above make no criticism of the manuscript; the comments
+merely observe that the methodology is obvious in retrospect.
+
+> There is no discussion of up-to-date problems in the manuscript.
+> The manuscript is not recommended for publication in EJP.
+
+There is nothing relevant in the literature apart from the articles I
+have cited, which makes it difficult to discuss "up-to-date problems".
+I spent a very long time with our physics subject specialist
+information professional (librarian) searching for relevant literature
+and we found nothing; searching is difficult because the term "string"
+means something very different in modern literature.
+
+
+Referee: 2
+
+COMMENTS TO THE AUTHOR(S)
+
+> This manuscript studies some aspects of the Schwarzschild geometry by
+> considering inextensible light strings with tension placed in the
+> background of this spacetime. These strings are curved following
+> spacelike geodesics, which present some differences with respect to
+> the timelike and null geodesics followed by particles and light rays.
+
+This is an accurate summary of the work.
+
+> I think this is a nice exercise that shows quite unintuitive features
+> of black hole geometries, and therefore it is a valuable example in
+> order to illustrate the non-euclidean character of the spacetime in
+> General Relativity.
+
+Thank you for this comment!   Thank you!
+
+> I have a question concerning Fig. 2. Should I understand that the
+> paths shown there really represent light strings with some tension
+> which are fixed at their endpoints? So, if two persons were pulling
+> from each end, would the strings remain static following those curves?
+
+Yes, if two persons were to pull on the ends of the string, it would
+remain static.  In the manuscript I have avoided such interpretations
+on the grounds that light inextensible strings do not exist, but the
+referee is absolutely correct.  A sentence confirming this would be
+very easy to add to the manuscript.  The referee's insight could well
+lead to other counter-intuitive features of the Schwarzschild
+geometry, so surely manuscript would sit well in a research journal.
+
+> This is particularly striking in the case of the strings that almost
+> round the black hole. I would ask the author to clarify and emphasize
+> this point.
+
+This is a valuable piece of feedback.  As I said, I was not keen to
+emphasise interpretations along these lines because of the
+idealization of light inextensible string...but if the referee thinks
+it is worth emphasising I certainly can do so.  For example, figure 3
+could have an additional string showing the self-intersection
+explicitly, rather than implicitly as currently done.  That would be a
+very visually striking illustration of the referee's insight.
+
+
+> Also, in the line 74 it reads “If phi’ is small…” but I think it
+> should be r’ instead of phi’.
+
+
+Technically he is right, but because the string is tangential at
+phi=0, small r' is equivalent to small phi'.  My thinking was that phi
+was the independent variable; further, r' would not be observable
+locally.  But a clarificatory comment would be easy to add here.
+
+
+> When these points are taken into account I think the paper would be ready for
+> publication.
+
+
+thank you!
+
+Referee: 3
+
+COMMENTS TO THE AUTHOR(S)
+
+> I am sorry, but the author of this paper seems to have misunderstood
+> something fundamental in physics. There are no light inextensible
+> objects in curved spacetime, especially not in the vicinity of a black
+> hole. It is ironic, that the author uses the word "string", since
+> strings are not at all inextensible. On the contrary, since
+> longitudinal motion is unphysical for strings.  In conclusion, I
+> recommend rejection.
+
+I am having difficulty constructively engaging with these comments.
+Noone is claiming that light inextensible string actually exists; it
+is merely a useful and informative idealization of real string, used
+by many influential textbook authors.  I discuss this at length in the
+manuscript, including a discussion of the situation in the vicinity of
+a black hole.  Authors such as Rindler use light inextensible strings
+as an informative idealization; noone takes Rindler to task for this,
+and certainly noone accuses Rindler of misunderstanding fundamental
+physics.
+
+
+I cannot interpret the phrase "longitudinal motion is unphysical for
+strings".  I simply do not understand what this referee is trying to
+convey.
+
+
+Referee: Editor in Chief
+COMMENTS TO THE AUTHORS
+
+> We had two conflicting reports which is why - according to our regular
+> procedures - an adjudicator was asked for a third independent opinion.
+> As you can see, the latter also recommended rejection.  Considering
+> the arguments of all reports I follow the critical referees and the
+> paper is rejected.
+
+
+Again, thank you for the opportunity to present my case.
+
+With very best wishes
+
+Robin
