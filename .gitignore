@@ -8,6 +8,7 @@
 *.blg
 *.log
 *.spl
+*.out
 stringNotes.bib
 rinp-template.*
 
