@@ -179,3 +179,49 @@ Again, thank you for the opportunity to present my case.
 With very best wishes
 
 Robin
+
+
+
+
+
+Following imbecelic email received from EJP June 17 2020:
+
+
+COMMENTS TO THE AUTHOR(S)
+Dear Editors,
+
+The author intended to discuss light inextensible strings under
+tension in the vicinity of a Schwarzschild black hole. There are basic
+errors and complete faulty application of general relativistic
+dynamics.  First, a point-particle traces out a world line with action
+given by the integral of ds. That is, equations (2), (3), (4) and (5)
+determine the world line of a point particle moving near the vicinity
+of a Schwarzschild black hole (see Carroll's 1st edition spacetime and
+geometry, chapter 3.3) and not the length of a string. A string is an
+extended object in general relativity and traces out a world sheet
+with action given by the Nambu-Goto action in terms of the world sheet
+area (Zwiebach chapter 6.4). In fact tension and energy analysis of a
+stretched string with full Poincare invariance is worked out correctly
+starting in Zwiebach chapter 6.7.  The Equation in the paragraph above
+line 60 on page 4 is not the Euler-Lagrange equation for the action in
+(5). The form of the equation in the paragraph assumes (5) is Galilei
+invariant, however (5) comes from the general relativistic line
+element and thus is Poincare, Diffeomorphism and
+re-affine-parametrization invariant. That implies that equation (6) is
+not the correct equation of motion! The correct equation of motion is
+simply the geodesic equation, which is well known for the
+Schwarzschild spacetime. In fact looking at Carroll (first edition)
+chapter 5, equation (5.53); the author's equation (6) should come from
+the second equation in (5.53) of Carroll, when taking the respective
+limits for t and theta. That said, the coefficient of (r')^2 should be
+Gamma^r_{rr}, which is incongruent. Equation (6) is also not
+compatible with the spacetime isometries of the Schwarzschild metric,
+i.e. the conserved angular momentum is given by r^2d\phi/d\tau (See
+Carroll (5.62)). Also (6) implies phi must be affine, since
+(r-2M)=-\Gamma^r_{\phi\phi}D\phi/d\tau, but phi cannot be isomorphic
+to an affine parameter since for c=1 the s in ds is affine.  In
+conclusion, the manuscript is riddled with basic scientific errors and
+not pedagogically significant. It is not suitable for publication.
+
+EDITOR IN CHIEF'S FINAL COMMENTS:
+We had a new independent adjudicator look at the paper and based on the report, the paper is now finally rejected after appeal.
