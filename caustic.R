@@ -41,15 +41,16 @@ if(FALSE){
 
 # now the reflected rays (whose envelope forms the caustic):
 for(aa in a){
-  abline(
-      a = cos(2*aa) -  sin(2*aa)*tan(pi/2-3*aa),
-      b = tan(pi/2-3*aa),
-      lwd = 0.2 
-  )
+      A <- cos(2*aa) -  sin(2*aa)*tan(pi/2-3*aa)
+      B <- tan(pi/2-3*aa)
+      x0 <- (-A*B - sqrt(A^2*B^2-(1+B^2)*(A^2-1)))/(1+B^2)
+      x1 <- (-A*B + sqrt(A^2*B^2-(1+B^2)*(A^2-1)))/(1+B^2)
+      y0 <- A + B*x0
+      y1 <- A + B*x1
+      segments(x0,y0,x1,y1,lwd=0.2)
 }
 
 ## Vertical line is indeterminate, has to be plotted explicitly:
 segments(0,-1,0,1,lwd=0.2)
 
-## Mask outside of circle:
-mask(1.001)
+
