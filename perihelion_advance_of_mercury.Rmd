@@ -33,7 +33,7 @@ Consider the following R idiom, in which `trajectory()` is used to
 directly simulate a geodesic in Schwarzschild space:
 
 
-```{r}
+```{r,label=geodesicsimulatorGR}
 # Simulate a trajectory starting at r=30, mass of sun=1/2 so Schwarzschild radius=1:
 jj <- trajectory(r_start=30, m=1/2, h=3) # h=3 gives angular momentum
 plot(jj$x,jj$y, asp=1, type='l', axes=FALSE, xlab='', ylab='',main='Geodesics in the Schwarzschild geometry')
@@ -47,7 +47,7 @@ around 40 degrees per orbit.  As a consistency check we can perform
 the same calculation but with Newtonian approximations:
 
 
-```{r}
+```{r,label=geodesicsimulatorclassical}
 jj <- trajectory(30, 1/2, 3, GR=FALSE) # GR=FALSE means use Newtonian approximation
 plot(jj$x,jj$y, asp=1, type='l', axes=FALSE, xlab='', ylab='',main='Newtonian approximation')
 polargrid(r=10*(1:3))
@@ -61,7 +61,8 @@ and above we see that the orbit is accurately closed, as expected
 ## Mercury
 
 First we specify some orbital parameters for the orbit of Mercury, mostly taken from Wikipedia:
-```{r}
+
+```{r,label=mercuryorbitalparameters}
 G <-  6.674e-11     # big G in SI
 M  <- 1.9885e30     # mass of Sun (kg)
 M_merc <- 3.3011e23 # mass of Mercury (kg)
@@ -72,14 +73,16 @@ mu <- G*(M + M_merc)
 ```
 
 Now we calculate some features of the orbit in geometrized units:
-```{r} 
+
+```{r,label=geometrizedunits} 
 d <- G*M/sol^2  # mass of sun in meters
 r_s <- 2*d      # Schwarzschild radius of Sun (=2M)
 ```
 
 
 And some further features using classical geometry:
-```{r}
+
+```{r,label=furtherfeaturesclassical}
 a <- (merc_perihelion + merc_aphelion)/2
 cee <- a-merc_perihelion
 b <- sqrt(a^2-cee^2)
@@ -89,7 +92,7 @@ ell <- (a^2-cee^2)/a  # semi-latus rectum
 
 Now calculate maximum and minimum orbital speeds:
 
-```{r}
+```{r,label=maxandminorbitalperiods}
 vmin <- sqrt(mu/ell)*(1-ecc)
 vmax <- sqrt(mu/ell)*(1+ecc)
 ```
@@ -97,13 +100,13 @@ vmax <- sqrt(mu/ell)*(1+ecc)
 And we need to specify the orbital angular mometum in different units:
 
 
-```{r}   
+```{r,label=orbitalangularmomentumSI}   
 specific_angular_momentum_SI <- merc_perihelion * vmax
 h <- specific_angular_momentum_SI/sol #geometrized units
 ```
 
 With all these we can simulate the orbit:
-```{r}
+```{r,label=orbitsimulatorincludingGR,cache=TRUE}
  out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e15,len=5e5))
  plot(out$x,out$y,type='l',asp=1,axes=FALSE,xlab='',ylab='',main='Orbit of Mercury, Sun not to scale')
  points(0,0,pch=21,bg='yellow',col='orange') # Schwarzschild radius invisible at this scale
@@ -119,14 +122,14 @@ the plotting line used for the event horizon).  To calculate this
 precession we need to simulate the motion for a longer time:
 
 
-```{r}
+```{r,label=orbitsimulatorGRlongtime,cache=TRUE}
 out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e16,len=1e7))
 ```
 
 We need to isolate the change points, here found isolating iterations
 $i$ such that `r[i-1]<r[i]` and `r[i]>r[i+1]`:
 
-```{r}
+```{r,label=orbitalangleatperihelion}
 jj1 <- c(NA,out$rdot)
 jj2 <- c(out$rdot,NA)
 change <- (jj1>0) & (jj2<0)
@@ -144,13 +147,14 @@ spread due to the discrete nature of the simulation.  To estimate the
 underlying trend, which is the general relativistic precession of
 Mercury, we can use linear regression:
 
-```{r}
+```{r,label=calculateprecession}
 prec <- lm(phi~tee)$coefficients[2]
 prec
 ```
 
 And to convert to astronomical units we use
-```{r}
+
+```{r,label=converttoastronomialunits}
 conversion <-
   c(
       seconds_per_minute = 60,
@@ -166,7 +170,7 @@ conversion <-
 
 giving
 
-```{r}
+```{r,label=resultofprecessionconverted}
 prec*prod(conversion)
 ```
 
@@ -176,7 +180,7 @@ careful analysis would account for the nonzero mass of Mercury.
 By way of a consistency check, we can plot a similar diagram but with
 the classical approximation:
 
-```{r}
+```{r,precessionwithclassicaldynamics,cache=TRUE}
 out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e16,len=1e7),GR=FALSE)
 jj1 <- c(NA,out$rdot)
 jj2 <- c(out$rdot,NA)
@@ -200,7 +204,7 @@ In current notation, a first-order analysis gives
 
 for the precession.  In R idiom:
 
-```{r}
+```{r,label=theoreticalprecessioncalculator}
 precession <- 24*pi^3*a^2/(per^2*sol^2*(1-ecc^2))  # radians/orbit
 precession
 ```
@@ -209,7 +213,7 @@ To convert this figure (which is given in radians per orbit) to the
 more usual units of arcseconds per century, we need to multiply by a
 sequence of factors:
 
-```{r}
+```{r,label=converttohumancentricunits}
 seconds_per_orbit <- prod(c(
     seconds_per_minute = 60,
     minutes_per_hour   = 60,
