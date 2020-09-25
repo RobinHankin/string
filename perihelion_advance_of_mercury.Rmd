@@ -29,7 +29,7 @@ using numerical methods.
 
 ## Closed and non-closed orbits.
 
-Consider the following R idiom, in which ```trajectory()``` is used to
+Consider the following R idiom, in which `trajectory()` is used to
 directly simulate a geodesic in Schwarzschild space:
 
 
@@ -41,7 +41,7 @@ polargrid(r=10*(1:3))
 event_horizon()  # show the event horizon, to scale
 ```
 
-(NB ```trajectory()``` takes geometrized units).  In the above, we see
+(NB `trajectory()` takes geometrized units).  In the above, we see
 a typical trajectory in Schwarzschild space with a precession of
 around 40 degrees per orbit.  As a consistency check we can perform
 the same calculation but with Newtonian approximations:
@@ -124,7 +124,7 @@ out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e16,len=1e7))
 ```
 
 We need to isolate the change points, here found isolating iterations
-$i$ such that ```r[i-1]<r[i]``` and r[i]>r[i+1]```:
+$i$ such that `r[i-1]<r[i]` and `r[i]>r[i+1]`:
 
 ```{r}
 jj1 <- c(NA,out$rdot)
