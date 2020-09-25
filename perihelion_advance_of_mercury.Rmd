@@ -122,7 +122,7 @@ the plotting line used for the event horizon).  To calculate this
 precession we need to simulate the motion for a longer time:
 
 
-```{r,label=orbitsimulatorGRlongtime,cache=TRUE}
+```{r,label=orbitsimulatorGRlongtime,cache=TRUE}  # takes ~5 mins to run
 out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e16,len=1e7))
 ```
 
@@ -180,7 +180,7 @@ careful analysis would account for the nonzero mass of Mercury.
 By way of a consistency check, we can plot a similar diagram but with
 the classical approximation:
 
-```{r,precessionwithclassicaldynamics,cache=TRUE}
+```{r,precessionwithclassicaldynamics,cache=TRUE}  # takes ~ 5 mins to run
 out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e16,len=1e7),GR=FALSE)
 jj1 <- c(NA,out$rdot)
 jj2 <- c(out$rdot,NA)
