@@ -55,7 +55,19 @@ event_horizon()
 ```
 
 and above we see that the orbit is accurately closed, as expected
-(three orbits are simulated, the lines overlap).
+(three orbits are simulated, the lines overlap).  However, a more
+exacting test would be to plot the same lines but focussing in on the
+aphelion point $(30,0)$:
+
+```{r,label=closeupofaphelion}
+dx <- 0.01
+dy <- 0.5
+plot(jj$x,jj$y,xlim=c(29.99,30.001),ylim=c(-dy,dy),type='b',xlab='x',ylab='y')
+```
+
+In the above we see an accurately closed orbit (which simulates more
+than three full revolutions round the sun).
+
 
 
 ## Mercury
@@ -99,7 +111,6 @@ vmax <- sqrt(mu/ell)*(1+ecc)
 
 And we need to specify the orbital angular mometum in different units:
 
-
 ```{r,label=orbitalangularmomentumSI}   
 specific_angular_momentum_SI <- merc_perihelion * vmax
 h <- specific_angular_momentum_SI/sol #geometrized units
@@ -122,12 +133,36 @@ the plotting line used for the event horizon).  To calculate this
 precession we need to simulate the motion for a longer time:
 
 
-```{r,label=orbitsimulatorGRlongtime,cache=TRUE}  # takes ~5 mins to run
-out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e16,len=1e7))
+```{r,label=orbitsimulatorGRlongtime,cache=TRUE}
+out <- trajectory(merc_perihelion,m=d,h=h,tau=seq(from=0,to=35e16,len=1e7)) # takes ~5 mins
+tail(out)
 ```
 
-We need to isolate the change points, here found isolating iterations
-$i$ such that `r[i-1]<r[i]` and `r[i]>r[i+1]`:
+From the above we see that the trajectory has been simulated up to
+about $965$ radians or about $\frac{965}{2\pi}\simeq 153$ revolutions
+round the sun.  Plotting the entire trajectory is computationally
+expensive, but we can plot the simulated trajectory close to aphelion
+as for the Newtonian case:
+
+```{r, label-plotmercuryorbitGR}
+maxx <- 46001200027
+n <- 650000
+s <- seq_len(n)
+plot(out$x[s],out$y[s],xlim=c(maxx-500,maxx+100),ylim=c(-5e6,5e6),type='o',xlab="x",ylab="y",pch=c(16,rep(1,n-1)))
+```
+
+In the above plot, note the differing axis scales.  The start point is
+shown as a solid circle, subseqent points shown with open circles.
+Lines connect consecutive points in the simulation.  It is difficult
+to see evidence for precession in this plot because the points
+correspond to regular snapshots of Mercury's position in successive
+orbits, and the time evolution is not shown.  To proceed we need to
+find the aphelion (or an approximation to it) somehow, and show that
+the aphelion systematically increases with time.  Given the numerics,
+we find points on the simulated trajectory which are a local maximum
+distance from the sun.  This is straightfoward numerically, we
+identify iterations $i$ (which have radius `r[i]`) satisfying both
+`r[i-1]<r[i]` and `r[i]>r[i+1]`:
 
 ```{r,label=orbitalangleatperihelion}
 jj1 <- c(NA,out$rdot)
@@ -180,8 +215,9 @@ careful analysis would account for the nonzero mass of Mercury.
 By way of a consistency check, we can plot a similar diagram but with
 the classical approximation:
 
-```{r,precessionwithclassicaldynamics,cache=TRUE}  # takes ~ 5 mins to run
+```{r,precessionwithclassicaldynamics,cache=TRUE}
 out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e16,len=1e7),GR=FALSE)
+# trajectory() takes ~ 5 mins to run
 jj1 <- c(NA,out$rdot)
 jj2 <- c(out$rdot,NA)
 change <- (jj1>0) & (jj2<0)
