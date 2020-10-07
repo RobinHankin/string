@@ -141,8 +141,8 @@ tail(out)
 From the above we see that the trajectory has been simulated up to
 about $965$ radians or about $\frac{965}{2\pi}\simeq 153$ revolutions
 round the sun.  Plotting the entire trajectory is computationally
-expensive, but we can plot the simulated trajectory close to aphelion
-as for the Newtonian case:
+expensive, but we can plot part of the simulated trajectory close to
+aphelion as for the Newtonian case:
 
 ```{r, label-plotmercuryorbitGR}
 maxx <- 46001200027
