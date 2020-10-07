@@ -184,6 +184,8 @@ underlying trend, which is the general relativistic precession of
 Mercury, we can use linear regression:
 
 ```{r,label=calculateprecession}
+fit <- lm(phi~tee)
+summary(fit)
 prec <- lm(phi~tee)$coefficients[2]
 prec
 ```
@@ -210,11 +212,13 @@ giving
 prec*prod(conversion)
 ```
 
-closely agreeing with Einstein's original prediction of 43''.  A more
-careful analysis would account for the nonzero mass of Mercury.
-
-By way of a consistency check, we can plot a similar diagram but with
-the classical approximation:
+The estimate of closely agreeing with Einstein's original prediction
+of 43'' (note that the standard error in `fit` of about
+`r round(summary(fit)$coefficients[2,2] * prod(conversion),2)`'' is a
+severe overestimate as this ignores the serial correlation in the
+residuals); a more careful analysis would account for the nonzero mass
+of Mercury.  By way of a consistency check, we can plot a similar
+diagram but with the classical approximation:
 
 ```{r,precessionwithclassicaldynamics,cache=TRUE}
 out <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=35e16,len=1e7),GR=FALSE)
@@ -225,11 +229,16 @@ change <- (jj1>0) & (jj2<0)
 tee    <- out$time[change]
 phi <- out$phi[change]
 phi <- (phi) %% (2*pi)
+newtfit <- summary(lm(phi~tee))
 plot(tee,phi-pi,main='orbital angle at of Mercury at perihelion, classical case',xlab='time (seconds)',ylab='angle of perihelion')
 ```
 
-In the above plot, note how there is no trend, consistent with the
-Newtonian case of zero perihelion advance.
+In the above plot, note how there is no trend [the OLS estimate of the
+slope is $`r round(prod(conversion)*newtfit$coefficients[2,1],2)` \pm
+`r round(prod(conversion)*newtfit$coefficients[2,2],2)`$, again in
+units of arcseconds per century], consistent with the Newtonian case
+of zero perihelion advance.
+
 
 ##  Theoretical analysis
 
@@ -280,5 +289,5 @@ arcseconds_per_century <- arcseconds_per_orbit * orbits_per_century
 arcseconds_per_century
 ```
 
-Compare with the value of about 43.37 obtained from numerical
-integration, showing close agreement.
+Compare with the value of about `r round(prec*prod(conversion),2)`
+obtained above from numerical integration, showing close agreement.
