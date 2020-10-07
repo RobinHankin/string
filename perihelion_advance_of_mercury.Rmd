@@ -152,7 +152,7 @@ plot(out$x[s],out$y[s],xlim=c(maxx-500,maxx+100),ylim=c(-5e6,5e6),type='o',xlab=
 ```
 
 In the above plot, note the differing axis scales.  The start point is
-shown as a solid circle, subseqent points shown with open circles.
+shown as a solid circle, subsequent points shown with open circles.
 Lines connect consecutive points in the simulation.  It is difficult
 to see evidence for precession in this plot because the points
 correspond to regular snapshots of Mercury's position in successive
