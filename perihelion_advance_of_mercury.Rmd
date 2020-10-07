@@ -156,25 +156,26 @@ shown as a solid circle, subseqent points shown with open circles.
 Lines connect consecutive points in the simulation.  It is difficult
 to see evidence for precession in this plot because the points
 correspond to regular snapshots of Mercury's position in successive
-orbits, and the time evolution is not shown.  To proceed we need to
-find the aphelion (or an approximation to it) somehow, and show that
-the aphelion systematically increases with time.  Given the numerics,
-we find points on the simulated trajectory which are a local maximum
-distance from the sun.  This is straightfoward numerically, we
-identify iterations $i$ (which have radius `r[i]`) satisfying both
-`r[i-1]<r[i]` and `r[i]>r[i+1]`:
+orbits, and the time evolution is not shown.  
+
+To proceed we need to find the perihelion (or an approximation to it)
+somehow, and show that the estimated perihelion systematically
+increases with time.  Given the numerics, we find points on the
+simulated trajectory which are a local minimum distance from the sun.
+This is straightfoward numerically; we identify iterations $i$ (which
+have radius `r[i]`) satisfying both `r[i-1]<r[i]` and `r[i]>r[i+1]`:
 
 ```{r,label=orbitalangleatperihelion}
 jj1 <- c(NA,out$rdot)
 jj2 <- c(out$rdot,NA)
-change <- (jj1>0) & (jj2<0)
+change <- (jj1<0) & (jj2>0)
 
 tee    <- out$time[change]
 
 phi <- out$phi[change]
 phi <- (phi) %% (2*pi)
 
-plot(tee,phi-pi,main='orbital angle of Mercury at perihelion',xlab='time (seconds)',ylab='angle of perihelion')
+plot(tee,phi,main='orbital angle of Mercury at perihelion',xlab='time (seconds)',ylab='angle of perihelion')
 ```
 
 The above diagram shows a clear trend, somewhat obscured by a vertical
