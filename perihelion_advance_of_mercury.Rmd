@@ -127,7 +127,7 @@ With all these we can simulate the orbit:
 In the above diagram we see over 15.4 orbits of Mercury, exhibiting no
 visible deviation from an exactly closed orbital path.  Nevertheless,
 the orbit is not closed as Mercury has a tiny amount of orbital
-precession.  Note that the Schwarzschild radius would be microsopic at
+precession.  Note that the Schwarzschild radius would be microscopic at
 this scale (the size of the central disk is dominated by the width of
 the plotting line used for the event horizon).  To calculate this
 precession we need to simulate the motion for a longer time:
@@ -162,7 +162,7 @@ To proceed we need to find the perihelion (or an approximation to it)
 somehow, and show that the estimated perihelion systematically
 increases with time.  Given the numerics, we find points on the
 simulated trajectory which are a local minimum distance from the sun.
-This is straightfoward numerically; we identify iterations $i$ (which
+This is straightforward numerically; we identify iterations $i$ (which
 have radius `r[i]`) satisfying both `r[i-1]<r[i]` and `r[i]>r[i+1]`:
 
 ```{r,label=orbitalangleatperihelion}
