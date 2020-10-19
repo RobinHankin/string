@@ -14,16 +14,19 @@
 
 \begin{document}
 \begin{frontmatter}
-\title{Light inextensible strings under tension in the Schwarzschild geometry}
+\title{Light inextensible strings (threads) under tension in the
+  Schwarzschild geometry: a new interpretation for ``straight line''
+  in general relativity}
 
 \begin{abstract}
 
-Light inextensible string under tension is a stalwart feature of
-elementary physics.  Here I show how considering such string in the
+Light inextensible string (thread) under tension is a stalwart feature
+of elementary physics.  Here I show how considering such string in the
 vicinity of a black hole, with the help of computer algebra systems,
 can generate insight into the Schwarzschild geometry in the context of
-an undergraduate homework problem.  Light taut strings minimize their
-proper length, given by integrating the spatial component of the
+an undergraduate homework problem, specifically by re-interpreting the
+concept ``straight line''.  Light taut strings minimize their proper
+length, given by integrating the spatial component of the
 Schwarzschild metric along the string.  The path itself is given by
 straightforward numerical solution to the Euler-Lagrange equations.
 If the string is entirely outside the event horizon, its closest
@@ -92,7 +95,8 @@ energetic arguments in GR.
 
 The vacuum Einstein field equations for a static, spherically
 symmetric mass are solved by the Schwarzschild
-metric~\cite{schwarzschild1916}.  In units in which~$G=c=1$, this is:
+metric~\cite{schwarzschild1916}.  In geometrized units, that is, a
+system in which~$G=c=1$, the Schwarzschild metric is:
 
 \begin{equation}\label{schwarzschild}
 ds^2= -dt^2\left(1-2M/r\right) +\frac{dr^2}{1-2M/r} + r^2\left(d\theta^2 + \sin^2\theta d\phi^2\right).
@@ -117,10 +121,14 @@ Horizon to the singularity is finite.
 We also see a failure of classical geometry: the coordinate $r$ has
 the defining feature that the circumference of a circle of radius $r$
 has circumference $2\pi r$; but radial distances are not Euclidean.
-To investigate this phenomenon, we consider the spatial
-component~$ds^2= dr^2/\left(1-2M/r\right) + r^2d\phi^2$, confined to
-equatorial points~($\theta=\pi/2$); we understand~$r\geqslant 2M$
-throughout.
+This is frequently expressed by saying that space is ``warped'', a
+concept that has proved troublesome for generations of students.
+Considering taut strings surely furnishes students with a useful
+conceptual tool to understand the non-Euclidean geometry near a black
+hole.  To investigate this phenomenon, we consider the spatial
+component~$ds^2= dr^2/\left(1-2M/r\right) + r^2d\phi^2$ of the
+Schwarzschild metric, confined to equatorial points~($\theta=\pi/2$);
+we understand~$r\geqslant 2M$ throughout.
 
 Students might need to be reminded of the concepts of proper time and
 proper length: these are quantities measured {\em locally}.  In
@@ -128,10 +136,13 @@ particular, we note that proper length of an object is the length as
 measured by a local observer at rest with respect to the object.  The
 proper length of a string is the length measured by an inchworm as it
 crawls along the string.  A circular string at constant~$r$ will,
-trivially, have proper length~$2\pi r$.  Considering first the radial
-component we may calculate the proper length $L\left(r_1,r_2\right)$
-of a string stretching from~$r=r_1\geqslant 2M$ to~$r_2\geqslant r_1$
-at constant $\theta,\phi$:
+trivially, have proper length~$2\pi r$ [this follows from considering
+  the Schwarzschild metric at constant $t,r,\theta$; the string will
+  then have proper (inchworm) length $\int_{\phi=0}^{2\pi}ds=2\pi r$].
+Considering now the radial component we may calculate the proper
+length $L\left(r_1,r_2\right)$ of a string stretching
+from~$r=r_1\geqslant 2M$ to~$r_2\geqslant r_1$ at constant
+$\theta,\phi$:
 
 \begin{equation}\label{radial_string_length}
   \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-2M/r}}=
@@ -141,14 +152,20 @@ at constant $\theta,\phi$:
   \right|_{r_1}^{r_2}
   \end{equation}
 
-Observe that integration may be performed with a lower limit
-of~$r_1=2M$ with no difficulty, even though the radial component of the
-Schwarzschild metric approaches infinity there.
+(students might need to be told explicitly that the right hand side of
+equation~\ref{radial_string_length} not being equal to its Euclidean
+value of $r_2-r_1$ is a direct illustration of the non-flatness of
+space near a black hole).  Observe that the integration may be
+performed with a lower limit of~$r_1=2M$ with no difficulty, even
+though the radial component of the Schwarzschild metric approaches
+infinity there.
 
-Elementary methods show that the proper length $\ell$ of radial
-strings has some non-Euclidean features.  Firstly, consider the proper
-length from $r=2M$ to $r=2M(1+w)$ where $w>0, \left|w\right|\ll 1$.
-Then
+One criticism of this analysis from a pedagogical perspective is that
+the algebra is involved and nonintuitive.  However, we may apply
+inchworm thinking via calculus and asymptotic series to show
+simplified expressions for the proper length $\ell$ of radial strings.
+Firstly, consider the proper length from $r=2M$ to $r=2M(1+w)$ where
+$w>0, \left|w\right|\ll 1$.  Then
 
  \begin{equation}\label{ell}
    \ell =
@@ -187,7 +204,8 @@ equation~\ref{schwarzschild} we have:
   objects in freefall follow.
 \item taut string: paths for which $dt=0$, thereby considering the
   configuration of a string.  If the proper length
-  $\int\sqrt{dr^2+r^2d\theta^2}$ is a minimum, the string is taut.
+  $\int\sqrt{dr^2+r^2d\theta^2}$ is a minimum, the string is taut in
+  the sense that its inchworm-measured length is a minimum.
 \end{enumerate}
 
 The path of a taut string seems to be a natural and intuitive
@@ -226,7 +244,7 @@ of~$r$ (Mathematica idiom would be {\tt EulerEquations[Sqrt[y[x]\^{}2
 
 \noindent Solutions to equation~\ref{rdashdash} correspond to a taut
 string confined to Flamm's paraboloid~\cite{flamm1916}; see
-Figure~\ref{flamm}.  At this point it might be worth ``reminding''
+Figure~\ref{flamm}.  At this point it might be worth reminding
 students that a straight line in flat space,
 $r=r_0\sec\left(\phi-\phi_0\right)$, obeys
 $r''=r+2\left(r'\right)^2/r$, and that equation~\ref{rdashdash}
@@ -271,14 +289,14 @@ r   &\longrightarrow&r+r'\delta\phi\nonumber\\
 r'  &\longrightarrow&r' + r''\delta\phi\qquad\mbox{where $r''$ is from equation~\ref{rdashdash}.}
 \end{eqnarray}
 
-Of course, Euler's method is numerically unstable and inefficient;
-here use the R programming language~\cite{rcore2019} and the
+Of course, Euler's method is numerically unstable and inefficient.
+Here we use the R programming language~\cite{rcore2019} and the
 \verb+deSolve+ package for ordinary differential
 equations~\cite{soetart2010} using the standard \verb+lsoda+ solver.
 The equations typically imply
-$\displaystyle\lim_{\phi\longrightarrow\pm\phi_C}=\infty$ for some
-critical value $\phi_C$ of $\phi$ [observe $\phi_C=\pi/2$ for flat
-  space] and this makes numerical analysis challenging.
+$\displaystyle\lim_{\phi\longrightarrow\pm\phi_C} r(\phi)=\infty$ for
+some critical value $\phi_C$ of $\phi$ [observe $\phi_C=\pi/2$ for
+  flat space] and this makes numerical analysis challenging.
 
 First we consider strings for which $r>2M$ everywhere (that is,
 completely exterior strings).
@@ -289,7 +307,12 @@ closest approach occurs at~$\phi=0$.
 
 Further analysis reveals something unexpected: for some values of
 initial conditions, the string self-intersects even though it is under
-tension everywhere and cannot support any nonzero bending moment.
+tension everywhere and cannot support any nonzero bending moment.  One
+might imagine our inchworm confidently declaring that the string was
+everywhere ``straight'' in the sense of being a minimal proper length
+path, and finding to his astonishment that he has traversed a closed
+loop.
+
 Figure~\ref{closest_approach_self_intersecting} shows some
 self-interesecting strings (Figure~\ref{light_closest_approach} shows
 equivalent null geodesics for comparison).  A bisection technique
@@ -310,11 +333,14 @@ Although photon paths provide a definition of straightness, their
 world lines are sensitive to the time component of the metric.  Light
 taut strings respond only to the spatial components of the metric, and
 their configuration is arguably a more intuitive and helpful way to
-think about straightness.  Using numerical methods to compute string
-configuration is suitable for an undergraduate homework problem; the
-difficult part is specifying sensible initial conditions.
+think about straightness.  The device of using an inchworm to measure
+proper distance along a non-extensible string serves to aid
+understanding of the non-Euclidean nature of space near a black hole.
 
-The code producing the figures is available at github,
+Using numerical methods to compute string configuration is suitable
+for an undergraduate homework problem; the difficult part is
+specifying sensible initial conditions.  The code producing the
+figures is available at github,
 \url{http://github.com/RobinHankin/string}.
 
 \bibliography{stringrefs.bib}
@@ -326,8 +352,13 @@ The code producing the figures is available at github,
 \begin{figure}[h!] % Created by "flamm.R"
 \centering
 \includegraphics[width=\linewidth]{flamm_string.pdf}
-\caption{Perspective view of Flamm's paraboloid with superimposed minimal-length
-  path corresponding to a taut, light string}
+\caption{Perspective view of Flamm's paraboloid with superimposed
+  minimal-length path corresponding to a taut, light string.  Proper
+  length along this string corresponds to the path integral in
+  $\mathbb{R}^3$.  Students might not be familiar with the fact that
+  the vertical axis has no physical interpretation: there is no
+  meaningful sense in which the spatial component of the Schwarzschild
+  metric is a submanifold of a higher-dimensional Euclidean space}
 \label{flamm}
 \end{figure}
 
