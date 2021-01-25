@@ -1,0 +1,48 @@
+Reviewers' comments:
+ 
+Reviewer 1: This paper studies geodesics on the equatorial plane of
+the spatial sections (constant time slices) of the Schwarzschild
+spacetime. The geodesic equation in this case reduces to a second
+order non-linear ODE, given by Eq. (6) in the paper, and it is solved
+numerically. A few geodesics are plotted in Fig. 1, 2, 3, and 5.
+ 
+The author's idea is to use the path of light taut strings to
+visualize "straight lines in the vicinity of a black hole". The paper
+claims that light taut strings will follow paths that minimize proper
+length, so the paths are geodesics in spatial sections of the
+Schwarzschild spacetime in the second paragraph in the introduction
+section and also in the discussion section. However, this major claim
+was made without any justification. Justification for this major claim
+needs to be given.
+
+The paper has imprecise usage of GR terminology. A few statements are
+unclear. Examples include:
+ 
+1.  "straight line" in the vicinity of black hole... (Introduction/paragraph 1)
+I believe it refers to straight line in spatial sections of black hole.
+ 
+2. large (but finite) amounts of string are required to... (second line after Eq. 3)
+why large amounts are needed since w is small?
+ 
+3. with radial strings being arbitrarily longer than flat space would
+allow... (below Eq. 4) what is the meaning of this statement?
+ 
+4. corresponding equation for null geodesics... (second line below Eq. 6)
+I believe the author refers to the orbit equation of null geodesics confined to the equatorial plane.
+ 
+5. phi' should be r' (page 4 line 5)
+ 
+6. Local observer (page 4 line 7)
+I believe the author means static observer in Schwarzschild coordinates.
+ 
+7. Radius of curvature (page 4 line 7) Since the equatorial plane is
+now curved, what radius of curvature is the author talking about?
+Clarification is needed.
+ 
+8. A radius of \sqrt{27M} (page 4 line 9) What radius is this?
+ 
+9. Although photon paths provide a definition of
+straightness... (discussion section line 2) In GR, worldlines of
+photon are null geodesics. The paper does not distinguish geodesics of
+spatial sections and geodesics of spacetime.
+ 
