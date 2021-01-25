@@ -18,22 +18,24 @@ needs to be given.
 The paper has imprecise usage of GR terminology. A few statements are
 unclear. Examples include:
  
-1.  "straight line" in the vicinity of black hole... (Introduction/paragraph 1)
-I believe it refers to straight line in spatial sections of black hole.
+1.  "straight line" in the vicinity of black
+hole... (Introduction/paragraph 1) I believe it refers to straight
+line in spatial sections of black hole.
  
-2. large (but finite) amounts of string are required to... (second line after Eq. 3)
-why large amounts are needed since w is small?
+2. large (but finite) amounts of string are required to... (second
+line after Eq. 3) why large amounts are needed since w is small?
  
 3. with radial strings being arbitrarily longer than flat space would
 allow... (below Eq. 4) what is the meaning of this statement?
  
-4. corresponding equation for null geodesics... (second line below Eq. 6)
-I believe the author refers to the orbit equation of null geodesics confined to the equatorial plane.
+4. corresponding equation for null geodesics... (second line below
+Eq. 6) I believe the author refers to the orbit equation of null
+geodesics confined to the equatorial plane.
  
 5. phi' should be r' (page 4 line 5)
  
-6. Local observer (page 4 line 7)
-I believe the author means static observer in Schwarzschild coordinates.
+6. Local observer (page 4 line 7) I believe the author means static
+observer in Schwarzschild coordinates.
  
 7. Radius of curvature (page 4 line 7) Since the equatorial plane is
 now curved, what radius of curvature is the author talking about?
