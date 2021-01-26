@@ -46,11 +46,11 @@ a tension on the strings, we see that the S1 is unstable with respect
 to S2, because S2 has fewer links.  Thus equilibrium paths of light
 inextensible strings are at least local minima of length.
 
-Much of the above reasoning is neccarily tautological; it is perfectly
-reasonable to *define* an "inextensible light string under tension" as
-one that adopts a minimal [or at least extremal] proper-length path
-between its end points, AND I HAVE INCLUDED A SHORT DISCUSSION IN THE
-MANUSCRIPT.
+However, much of the above reasoning is necessarily tautological; it
+is perfectly reasonable to *define* an "inextensible light string
+under tension" as one that adopts a minimal [or at least extremal]
+proper-length path between its end points, and i have included a short
+discussion in the manuscript.
 
 > The paper has imprecise usage of GR terminology. A few statements are
 > unclear. Examples include:
