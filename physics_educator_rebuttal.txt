@@ -83,13 +83,17 @@ think it is worth it for the extra clarity.
 > line after Eq. 3) why large amounts are needed since w is small?
 
 That is an extremely good observation.  The word "large" is
-inappropriate here, I think.  Asymptotic expansions can be confusing
-and what I meant to say was that the ratio of proper string length to
-Euclidean string length approached infinity. But the word "large" is
-not right here, and I have rephrased accordingly.
+inappropriate and misleading here, I think.  Asymptotic expansions can
+be confusing and what I meant to say was that the ratio of proper
+string length to Euclidean string length (that is, length as estimated
+by the Euclidean formula (1+r)-1 where 'r' is circumferential radius)
+approaches infinity.  But the word "large" is not right here, and I
+have rephrased accordingly.
 
+I have also realised that this equation and the preceding one for
+small w can be made much more comprehensible by giving an example, and
+I have included two examples using solar-mass black holes.
 
-    NOT YET FINALISED THIS 
 
 >  
 > 3. with radial strings being arbitrarily longer than flat space would
