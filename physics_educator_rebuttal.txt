@@ -127,8 +127,6 @@ Manuscript now corrected.
 I realise that I have been misusing the word "local" to mean "static"
 and have now corrected the manuscript.
 
-    NOT YET FINALISED THIS 
-
 
 >  
 > 7. Radius of curvature (page 4 line 7) Since the equatorial plane is
