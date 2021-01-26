@@ -121,8 +121,6 @@ corrected.
 
 Manuscript now corrected.
 
-    NOT YET FINALISED THIS 
-
 > 6. Local observer (page 4 line 7) I believe the author means static
 > observer in Schwarzschild coordinates.
 
