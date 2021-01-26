@@ -133,15 +133,19 @@ and have now corrected the manuscript.
 > now curved, what radius of curvature is the author talking about?
 > Clarification is needed.
 
-On re-reading, the original manuscript was a little cryptic.  Now rephrased:
-
-    NOT YET FINALISED THIS 
+On re-reading, the original manuscript was a little cryptic.  I have
+added a detailed derivation of this result that should clarify the
+issue.  In essence, a light beam and a tangential string will diverge
+quadratically and this leads to the radius of curvature quoted.
 
 
 >  
 > 8. A radius of \sqrt{27M} (page 4 line 9) What radius is this?
 
-this is the visual radius, any confusion cleared up by point 7 correction above.
+
+Derivation added as a result of point 7 above should clarify this
+issue.
+
 
 >  
 > 9. Although photon paths provide a definition of
