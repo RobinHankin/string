@@ -67,19 +67,17 @@ The original sentence was:
 :: vicinity of a black hole.
 
 It might be rephrased: "...interpret the concept of "straight line" in
-spatial sections of a black hole", but I believe this misses the
-point.  My thinking was that the concept of "straight line" in the
-abstract, is to be re-interpreted as the path taken by a light
-inextensible string.
+spatial sections of a black hole", but I believe this form of words
+would be potentially misleading.  My thinking was that the concept of
+"straight line" ---in the abstract---is to be re-interpreted in the
+manuscript as the path taken by a light inextensible string.
 
-I HAVE NOW REPHRASED THE MANUSCRIPT, THE NEW SENTENCE IS
+It now reads "Here I interpret a straight line as the path adopted by
+a stationary, light inexensible string under tension passing between
+two points"
 
-:: Here I interpret a straight line as the path adopted by a light
-inexensible string passing between two points.
-
-
-NOT YET FINIALISED THIS.
-
+There is a little bit of repetition in the revised manuscript, but I
+think it is worth it for the extra clarity.
 
 > 2. large (but finite) amounts of string are required to... (second
 > line after Eq. 3) why large amounts are needed since w is small?
