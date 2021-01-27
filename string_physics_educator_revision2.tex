@@ -16,8 +16,8 @@
 
 \author{Robin K. S. Hankin}
 
-\address{School of Engineering, Computing, and Mathematical Sciences, Auckland University of Technology, 55 Wellesley Street East\\
-Auckland 1142, New Zealand
+\address{School of Engineering, Computing, and Mathematical Sciences\\Auckland University of Technology\\55 Wellesley Street East\\
+  Auckland CBD, Auckland 1010, New Zealand\\
 \email{hankin.robin@gmail.com}}
 
 \maketitle
@@ -68,7 +68,7 @@ metric tensor along string's path between its endpoints.  A light
 string's being under tension means that its path will be an extremum
 of proper length: non-extremal paths between two fixed points cannot
 be in stable equilibrium as the tension acts to shorten the path;
-stable paths must therefore be of extremal proper-length.  In flat
+stable paths must therefore be of extremal proper length.  In flat
 space, the calculus of variations proves that the path is straight in
 the sense of zero curvature.  In terrestrial gravity, standard
 $25\times 10^{-6}\unit{kg}\cdot\unit{m}^{-1}$ cotton sewing thread at
@@ -108,11 +108,10 @@ ds^2= -dt^2\left(1-2M/r\right) +\frac{dr^2}{1-2M/r} + r^2\left(d\theta^2 + \sin^
 dr^2/\left(1-2M/r\right) + r^2d\phi^2$, confined to equatorial
 points~($\theta=\pi/2$); we understand~$r\geqslant 2M$ throughout.  A
 circular string at constant~$r$ will, trivially, have proper
-length~$2\pi r$.
-
-Considering first the radial component we may calculate the
-proper length $L\left(r_1,r_2\right)$ of a string stretching
-from~$r=r_1\geqslant 2M$ to~$r_2\geqslant r_1$ at constant $\theta,\phi$:
+length~$2\pi r$.  Considering first the radial component we may
+calculate the proper length $L\left(r_1,r_2\right)$ of a string
+stretching from~$r=r_1\geqslant 2M$ to~$r_2\geqslant r_1$ at constant
+$\theta,\phi$:
 
 
 % \begin{equation}\label{radial_string_length_properunits}
@@ -128,17 +127,15 @@ from~$r=r_1\geqslant 2M$ to~$r_2\geqslant r_1$ at constant $\theta,\phi$:
   \left.
   \sqrt{r(r-2M)} +\frac{1}{2}\log\left(
   \frac{\sqrt{r}+\sqrt{r-2M}}{\sqrt{r}-\sqrt{r-2M}}\right)
-  \right|_{r_1}^{r_2}
+  \right|_{r_1}^{r_2}.
   \end{equation}
 
 Observe that integration may be performed with a lower limit
-of~$r_1=2M$ with no difficulty, even though the radial component of the
-Schwarzschild metric approaches infinity there.
-
-Elementary methods show that the proper length $\ell$ of radial
-strings has some non-Euclidean features.  Firstly, consider the proper
-length from $r=2M$ to $r=2M(1+w)$ where $w>0, \left|w\right|\ll 1$.
-Then
+of~$r_1=2M$ with no difficulty, even though the radial component of
+the Schwarzschild metric approaches infinity there.  Elementary
+methods show that the proper length $\ell$ of radial strings has some
+non-Euclidean features.  Firstly, consider the proper length from
+$r=2M$ to $r=2M(1+w)$ where $w>0, \left|w\right|\ll 1$.  Then
 
 %  \begin{equation}\label{ell_properunits}
 %    \ell=\int_{r=1}^{r=1+w}ds
@@ -154,11 +151,11 @@ Then
 (compare the flat space string length of $2Mw$).  This would indicate
  that, close to the Schwarzschild radius $r=2M$, more string is
  required to connect two points with slightly differing radial
- coordinates.  Taking a solar-mass black hole and $w=10^{-3}$ as an
- example, the proper length computed in flat space would be
- $10^{-2}\cdot 2M\simeq 3\,\mathrm{m}$---compare $\sim
- 187\,\mathrm{m}$ from equation~\ref{ell}.  Passing to the case $w\gg
- 1$ we have an asymptotic expansion that begins
+ coordinates than would be expected classically.  Taking a solar-mass
+ black hole and $w=10^{-3}$ as an example, the proper length computed
+ in flat space would be $10^{-2}\cdot 2M\simeq 3\,\mathrm{m}$; compare
+ $\simeq 187\,\mathrm{m}$ from equation~\ref{ell}.  Passing to the
+ case $w\gg 1$ we have an asymptotic expansion that begins
 
 % \begin{equation}\label{asymptotic_ell_properunits}
 %   \ell = w +  \frac{1}{2}\log w + \frac{1}{2} + \log(2)  +  \frac{1}{8}w^{-1} + O(w^{-2}),
@@ -246,9 +243,9 @@ the system is invariant under~$\phi\longrightarrow-\phi$, the string
 must be symmetrical about this point.  If $r'$ is small, then a string
 follows $r''=r-2M$, while tangential null geodesics follow $r''=r-3M$.
 Working to first order, and writing~$d$ for the difference in
-Schwarzschild $r$ between string and null geodesic, we see that
-$d''=M$.  Transforming coordinates to $(x,y) = (r\phi,r-r_0)$ and with
-boundary conditions corresponding to a string and null geodesic
+Schwarzschild~$r$ between string and null geodesic, we have $d''=M$.
+Transforming coordinates to $(x,y) = (r\phi,r-r_0)$ and with boundary
+conditions corresponding to both string and null geodesic being
 tangential at the $(x,y)$ origin, we see that
 $d=\frac{M}{2}(x/r_0)^2$.  However, a static local observer tied to
 the string would measure
