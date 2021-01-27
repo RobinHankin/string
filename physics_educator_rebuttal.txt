@@ -1,7 +1,7 @@
 Rebuttal follows.  Reviewers' comments preceded by a chevron (">") and
 my response included inline.
 
-Overall response: the comments are prefectly reasonable and I have
+Overall response: the comments are perfectly reasonable and I have
 addressed them individually.  The manuscript is much stengthened as a
 result and I commend it to you.
 
@@ -27,29 +27,22 @@ result and I commend it to you.
 
 On the one hand, this is a perfectly reasonable request: the claim is
 indeed a major one, and one that had no explicit justification in the
-manuscript.  But on the other, it requires no justification as it is
-true by defnition.  Didactically, one might conceptualise a string as
-being comprised of many tiny links, each of which contributes some
-small length to the string, and each of which is sufficiently small
-for Euclidean geometry to describe its length.  Each link is subject
-to a well-defined local tension with respect to its neighbours.
+manuscript.  But I could argue that it requires no justification: one
+could say that the claim is true by definition.  Didactically, one
+might conceptualise a string as being comprised of many tiny links,
+each of which contributes some small length to the string, and each of
+which is sufficiently small for Euclidean geometry to describe its
+length.  Each link is subject to a well-defined local tension with
+respect to its neighbours.
 
 We may then *count* the links and use this as a proxy for proper
 length, demonstrating the consistency of the concept of proper length;
 and of course small links oblige one to use infinitesimal calculus.
 
-Imagine two strings, S1 and S2, which both smoothly join point p to
-point q (perhaps in a Schwarzschild space), and their paths are close
-in the sense of the Calculus of Variations.  Further, imagine that S1
-has a proper length slightly exceeding that of S2.  If we then impose
-a tension on the strings, we see that the S1 is unstable with respect
-to S2, because S2 has fewer links.  Thus equilibrium paths of light
-inextensible strings are at least local minima of length.
-
 However, much of the above reasoning is necessarily tautological; it
 is perfectly reasonable to *define* an "inextensible light string
 under tension" as one that adopts a minimal [or at least extremal]
-proper-length path between its end points, and i have included a short
+proper-length path between its end points.  I have included a short
 discussion in the manuscript.
 
 > The paper has imprecise usage of GR terminology. A few statements are
@@ -62,15 +55,16 @@ discussion in the manuscript.
 
 The original sentence was:
 
-:: The sentence was: Here I show how considering light inextensible 
+:: Here I show how considering light inextensible 
 :: string can be used to interpret the concept of "straight line" in the
 :: vicinity of a black hole.
 
 It might be rephrased: "...interpret the concept of "straight line" in
 spatial sections of a black hole", but I believe this form of words
 would be potentially misleading.  My thinking was that the concept of
-"straight line" ---in the abstract---is to be re-interpreted in the
-manuscript as the path taken by a light inextensible string.
+"straight line" ---in the abstract sense of how straightness itself is
+defined---is to be re-interpreted in the manuscript as the path taken
+by a light inextensible string.
 
 It now reads "Here I interpret a straight line as the path adopted by
 a stationary, light inexensible string under tension passing between
@@ -102,17 +96,14 @@ I have included two examples using solar-mass black holes.
 
 Euclidean geometry predicts that l=2Mw; the intent of that sentence
 was to point out that we Euclidean predictions are arbirtarily
-incorrect as we move away from the black hole.  I have rephrased.
-
-
-    NOT YET FINALISED THIS 
-
+incorrect as we move away from the black hole.  I have rephrased and
+included a numerical example which should appeal to students of GR.
 
 > 4. corresponding equation for null geodesics... (second line below
 > Eq. 6) I believe the author refers to the orbit equation of null
 > geodesics confined to the equatorial plane.
 
-corrected.
+corrected, equatorial restriction now mentioned explicitly
 
 
 >  
@@ -125,7 +116,7 @@ Manuscript now corrected.
 > observer in Schwarzschild coordinates.
 
 I realise that I have been misusing the word "local" to mean "static"
-and have now corrected the manuscript.
+and have now corrected the manuscript. 
 
 
 >  
@@ -136,7 +127,8 @@ and have now corrected the manuscript.
 On re-reading, the original manuscript was a little cryptic.  I have
 added a detailed derivation of this result that should clarify the
 issue.  In essence, a light beam and a tangential string will diverge
-quadratically and this leads to the radius of curvature quoted.
+quadratically and this leads to the radius of curvature quoted.  The
+manuscript is much clearer than before.
 
 
 >  
@@ -144,8 +136,9 @@ quadratically and this leads to the radius of curvature quoted.
 
 
 Derivation added as a result of point 7 above should clarify this
-issue.
-
+issue.  This is the curvature of the string that a static observer,
+who is tied to the string, would measure if he considered a beam of
+light to be "straight".
 
 >  
 > 9. Although photon paths provide a definition of
@@ -153,7 +146,6 @@ issue.
 > photon are null geodesics. The paper does not distinguish geodesics of
 > spatial sections and geodesics of spacetime.
 >
-
 
 I would argue that emphasising the concept of "spatial sections" might
 be somewhat counterproductive, even though I admittedly present a
@@ -183,6 +175,7 @@ spatial section in which we condition on t=t0.
 
 The world lines of freely-falling objects follow non-null geodesics
 and photons follow null geodesics.  Light inextensible string follows
-neither of these paths.  I think the revised manuscript makes this
-clear
+neither of these paths.  I hope that the revised manuscript makes this
+clear, and the various diagrams of strings and null geodesics should
+emphasise the difference between the two.
 
