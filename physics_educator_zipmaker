@@ -1,0 +1,13 @@
+
+#!/bin/bash
+
+# This script creates a zipfile to be sent to TPE editor Lakshmi Narayanan.
+
+R CMD BATCH maker.R # creates the figures in PDF form
+pdflatex string_physics_educator_revision2
+pdflatex string_physics_educator_revision2
+bibtex   string_physics_educator_revision2
+pdflatex string_physics_educator_revision2
+pdflatex string_physics_educator_revision2
+
+zip hankin_string_TPE_revision2.zip string_physics_educator_revision2.tex string_physics_educator_revision2.pdf stringrefs.bib flamm_string.pdf closest_approach_nonselfintersecting.pdf closest_approach_selfintersecting.pdf light_closest_approach.pdf angle_at_r_equals_2.pdf light_start_at_r_equals_2.pdf
