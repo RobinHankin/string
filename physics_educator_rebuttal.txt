@@ -155,35 +155,34 @@ issue.
 >
 
 
-I don't think the concept of "spatial sections" is particularly
-helpful, even though I do present a diagram of Flamm's paraboloid
-[which is obligatory I would say].  A spatial section S is a
-three-dimensional subset of a spacetime in which we require the
-squared interval between any two events of S to be spacelike.  It is
-easy to give an example of a spatial section in flat Minkowski space
-(t,x,y,z) as (t0,x,y,z) for some fixed t0.  Such constructions are
-somewhat more difficult in Schwarzschild space but we might use
-Schwarzschild coordinates (t,r,theta,phi) and then specify
-S2=(t0,r,theta,phi).  But for r1,r2<2M and fixed [theta,phi] we find
-that the interval between (t0,r1,theta,phi) and (t0,r2,theta,phi) is
-timelike; thus S2 is not a spatial section in the sense defined above.
-But for r>2M it is a perfectly acceptable spatial section, and this is
-illustrated in Figure 1.
+I would argue that emphasising the concept of "spatial sections" might
+be somewhat counterproductive, even though I admittedly present a
+diagram of Flamm's paraboloid [which is obligatory here, I would say].
+A spatial section S is a 3D subset of a 4D spacetime in which we
+require the squared interval between any two distinct events of S to
+be spacelike.  It is easy to give an example of a spatial section in
+flat Minkowski space: with standard coordinates (t,x,y,z) we consider
+events (t0,x,y,z) for some fixed t0.  Such constructions are somewhat
+more difficult in Schwarzschild space but we might use Schwarzschild
+coordinates (t,r,theta,phi) and then specify S2=(t0,r,theta,phi).  The
+Schwarzschild metric then shows that S2 is a spatial section, provided
+that r>2M, because the Schwarzschild metric (equation 1 in the
+manuscript) is diagonal, and the nonvanishing components are strictly
+positive.
 
 When considering static strings it is easier and more convenient to
 use standard Schwarzschild coordinates (t,r,theta,phi) and then simply
-ignore the t coordinate as it plays no part in calculating proper
-length of a string (of course, we need to be careful to specify that
-we are outside the event horizon).  If the string is static, we may
-imagine two static observers tied to the string; in calculating the
-amount of proper distance between the two observers (string length) we
-simply ignore the t coordinate and integrate the spatial component of
-the Schwarzschild metric.  This process is distinct from the concept
-of spatial section in which we condition on t=t0.
+ignore the 't' coordinate as it plays no part in calculating proper
+length of a string (being careful to specify that we are outside the
+event horizon).  If the string is static, we may imagine two static
+observers tied to the string; in calculating the amount of proper
+distance between the two observers (string length) we simply ignore
+the 't' coordinate and integrate the spatial component of the
+Schwarzschild metric.  This process is distinct from the concept of
+spatial section in which we condition on t=t0.
 
 The world lines of freely-falling objects follow non-null geodesics
 and photons follow null geodesics.  Light inextensible string follows
-neither of these paths.  We might consider a string in terms of the
-world lines of its links, and then require that the proper [spatial]
-distance between the links be constant.  The
+neither of these paths.  I think the revised manuscript makes this
+clear
 
