@@ -96,6 +96,10 @@ it to you.
 > between Eq. (1) and Eq. (3) denote the same quantity.  Why use
 > different symbols?
 > 
+
+corrected, now using $\ell$ consistently for proper length.
+
+
 > 8.  Suggestion: In the line above Eq. (3), if $w >> 0$ then one does
 > not need absolute value bars in $|w|<< 1$.
 > 
