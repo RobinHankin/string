@@ -1,126 +1,141 @@
-Review of "Light inextensible strings (thread) under tension in the
-Schwarzschild geometry" submitted to The Physics Educator
+Herewith my rebuttal to the review of "Light inextensible strings..."
+The referee's comments are preceded by a chevron (">") and my response
+is inline.  I have tinkered with linebreaks here and there in the
+interests of clarity, and have replaced some mathematical notation in
+the original review with latex equivalents.
 
-I want to begin by congratulating the author on a very clever
-exercise.  If the route of a non-stretchable string under tension
-would take the path of least distance, asking about the behavior of a
-tight string in a Schwarzschild geometry, and comparing that path to
-that of a light ray, offers an interesting question.  One might
-initially suppose the two paths would be the same, or approximately
-so.  The author rightly observes that General Relativity is a "topic
-of long-standing fascination for physics undergraduates." True, but I
-am unsure whether this particular exercise will offer more
-understanding or more confusion for the intended undergraduates,
-because the distinction between a stretched string and a null metrics
-may be blurred (see point 11 below).
+Short story: I agree with all the comments made and have modified the
+manuscript accordingly; changes appear in the manuscript using colour
+coding for ease of reference.  The document is stronger, more
+cohesive, more accurate, and hopefully more instructive; and I commend
+it to you.
 
-I would point out that at least one calculation presented in the paper
-can found in existing introductory General Relativity textbooks.
-Specifically, the meaning of the r-coordinate, and the difference
-between Delta r and the distance between two concentric shells of
-different r-coordinates (eq. 2) is thoroughly discussed in Taylor &
-Wheeler's book Exploring Black Holes: Introduction to General
-Relativity (Addison-Wesley-Longman, 2000), Ch. 2.  While the
-calculation of Eq. (2) should be included in this paper for
-completeness and done before going on to other calculations, Taylor &
-Wheeler's black holes book is a standard pedagogical reference for
-such calculations, and should be included among the references.
-Taylor & Wheeler's book is very likely the intended undergraduate
-student's first encounter with General Relativity.
 
-The paper raises a few questions in this reviewer's mind, and in
-elsewhere it offers opportunities for suggestions.
 
-1.  Question.  First paragraph in "Introduction": The third sentence
-"Here I interpret straight line as the path adopted by a stationary,
-light inextensible string under tension passing between two points."
-Is this to be understood as identical to the definition of "geodesic"?
-If that is the assumption, can it be justified, because when one
-thinks of geodesic in General Relativity, one has "free-fall" in mind,
-and the stretched string, being "stationary," would not be in
-free-fall in the global coordinate system.
 
-2.  Suggestion about the line that begins on p. 1 and continues to
-p. 2, about "lengthscales $L\leq T/(\mu g)$: Saying it this way may
-present a sticking point for the undergraduate audience towards whom
-this paper in intended.  The logic behind this inequality would show
-greater clarity if one says something like "the weight of the string
-does not exceed the tension, so that $L\mu g<T$".  From this the
-stated inequality about lengthscales follows easily.
-
-3.  Suggestion.  Stating "$c^4/4GM$ for the strength of gravity at the
-event horizon" may leave an undergraduate audience baffled.  By
-starting from where they are, with $g=GM/r^2$, then setting r equal to
-the Schwarzschild radius, the stated result follows immediately,
-without mystery.
-
-4.  Question. Lines 3-4, page 2.  Can the author explain what is meant
-by "the dominant energy condition"?
-
-5.  Suggestion.  2nd and 3rd line below eq. (2): the statement "A
-circular string at constant r will, trivially, have proper length
-$2\pi r$."  Stating the relation this way muddies the logic and the
-distinction between flat and Schwarzschild space.  The r-coordinate of
-a spherical shell centered on a point mass M is defined operationally
-by measuring the circumference of the shell and dividing the
-circumference's value by $2\pi$.  That must be understood before the
-calculations of Eq. (2) can make sense.  As the sentence is presently
-structured it may obscure the distinction between the r coordinate and
-radial lengths because it invites the undergraduate reader to
-interpret the "triviality" as a statement about plane Euclidean
-geometry instead of the Schwarzschild geometry's definition of the
-r-coordinate.
-
-6.  Question.  There may be a typographical error in Eq. (2).
-Shouldn't the coefficient of the logarithm be 2M instead of 1/2?  As
-written the equation is not dimensionally consistent, since r and M
-are measured in the same units.  Compare to Taylor & Wheeler's
-Exploring Black Holes, p. 2-28, Eq. (27).
-
-7.  Suggestion: It appears that the $L$ and the $l$ that appear
-between Eq. (1) and Eq. (3) denote the same quantity.  Why use
-different symbols?
-
-8.  Suggestion: In the line above Eq. (3), if $w >> 0$ then one does
-not need absolute value bars in $|w|<< 1$.
-
-9.  Question.  2nd line below Eq. (4), why are radial strings
-"arbitrarily" longer than flat space would imply?  It appears the
-difference is a matter of calculation (or measurement), not arbitrary.
-Please explain this choice of words.
-
-10. Suggestion.  Line below Eq. (5), I think the word "dashes" should
-be "primes".  This is a dash: --- and this is a prime: ', at least in
-usage with which I am familiar.
-
-11.  The paragraph below Eq. (6) is puzzling.  Here the path of the
-tight string is being compared to an "equatorial null geodesic," which
-I take to mean the path of a light beam moving along the equator.  If
-we are considering a light beam, then shouldn't a term with $t$ in it
-appear somewhere?  The puzzlement continues given the statement that
-"light, being sensitive to the time component of the metric" whereas
-the equations discussed in this paragraph say nothing (that I can see)
-about the time component of the metric.  The proper time interval
-would be zero, but the coordinate time interval $dt$ would, I think,
-be nonzero.  What am I missing?
-
-12.  In the passage below Eq. (6), I am having trouble making the
-connection between $r''(\phi)=r-3M + 2(r')^2/r$ and the claim that the
-solution is $r=r_0\sec(\phi-\phi_0)$.  What trig identity am I
-missing?
-
-13.  Can the author explain more fully what is meant by a "tangential
-null geodesic" (several lines after Eq. 6)?  That terminology makes it
-sound like the r-coordinate does not change, whence $r'$ would be
-zero, but that appears to not be the case.  In this section, if $r'$
-is small I see where the approximation $r''=r-2M$ comes from, but I am
-having trouble seeing where $r''-r-3M$ arises for the alleged
-tangential null geodesics.  What am I not seeing?
-
-I will have to take the author's word for the numerical results.
-
-This is an interesting paper.  I congratulate the author for thinking
-of such an intriguing application of the Schwarzschild metric.
-However, in this reviewer's opinion, before the paper can be well
-fitted to its announced audience ("an undergraduate homework problem")
-some points need to be clarified.
+> Review of "Light inextensible strings (thread) under tension in the
+> Schwarzschild geometry" submitted to The Physics Educator
+> 
+> I want to begin by congratulating the author on a very clever
+> exercise.  If the route of a non-stretchable string under tension
+> would take the path of least distance, asking about the behavior of a
+> tight string in a Schwarzschild geometry, and comparing that path to
+> that of a light ray, offers an interesting question.  One might
+> initially suppose the two paths would be the same, or approximately
+> so.  The author rightly observes that General Relativity is a "topic
+> of long-standing fascination for physics undergraduates." True, but I
+> am unsure whether this particular exercise will offer more
+> understanding or more confusion for the intended undergraduates,
+> because the distinction between a stretched string and a null metrics
+> may be blurred (see point 11 below).
+> 
+> I would point out that at least one calculation presented in the paper
+> can found in existing introductory General Relativity textbooks.
+> Specifically, the meaning of the r-coordinate, and the difference
+> between Delta r and the distance between two concentric shells of
+> different r-coordinates (eq. 2) is thoroughly discussed in Taylor &
+> Wheeler's book Exploring Black Holes: Introduction to General
+> Relativity (Addison-Wesley-Longman, 2000), Ch. 2.  While the
+> calculation of Eq. (2) should be included in this paper for
+> completeness and done before going on to other calculations, Taylor &
+> Wheeler's black holes book is a standard pedagogical reference for
+> such calculations, and should be included among the references.
+> Taylor & Wheeler's book is very likely the intended undergraduate
+> student's first encounter with General Relativity.
+> 
+> The paper raises a few questions in this reviewer's mind, and in
+> elsewhere it offers opportunities for suggestions.
+> 
+> 1.  Question.  First paragraph in "Introduction": The third sentence
+> "Here I interpret straight line as the path adopted by a stationary,
+> light inextensible string under tension passing between two points."
+> Is this to be understood as identical to the definition of "geodesic"?
+> If that is the assumption, can it be justified, because when one
+> thinks of geodesic in General Relativity, one has "free-fall" in mind,
+> and the stretched string, being "stationary," would not be in
+> free-fall in the global coordinate system.
+> 
+> 2.  Suggestion about the line that begins on p. 1 and continues to
+> p. 2, about "lengthscales $L\leq T/(\mu g)$: Saying it this way may
+> present a sticking point for the undergraduate audience towards whom
+> this paper in intended.  The logic behind this inequality would show
+> greater clarity if one says something like "the weight of the string
+> does not exceed the tension, so that $L\mu g<T$".  From this the
+> stated inequality about lengthscales follows easily.
+> 
+> 3.  Suggestion.  Stating "$c^4/4GM$ for the strength of gravity at the
+> event horizon" may leave an undergraduate audience baffled.  By
+> starting from where they are, with $g=GM/r^2$, then setting r equal to
+> the Schwarzschild radius, the stated result follows immediately,
+> without mystery.
+> 
+> 4.  Question. Lines 3-4, page 2.  Can the author explain what is meant
+> by "the dominant energy condition"?
+> 
+> 5.  Suggestion.  2nd and 3rd line below eq. (2): the statement "A
+> circular string at constant r will, trivially, have proper length
+> $2\pi r$."  Stating the relation this way muddies the logic and the
+> distinction between flat and Schwarzschild space.  The r-coordinate of
+> a spherical shell centered on a point mass M is defined operationally
+> by measuring the circumference of the shell and dividing the
+> circumference's value by $2\pi$.  That must be understood before the
+> calculations of Eq. (2) can make sense.  As the sentence is presently
+> structured it may obscure the distinction between the r coordinate and
+> radial lengths because it invites the undergraduate reader to
+> interpret the "triviality" as a statement about plane Euclidean
+> geometry instead of the Schwarzschild geometry's definition of the
+> r-coordinate.
+> 
+> 6.  Question.  There may be a typographical error in Eq. (2).
+> Shouldn't the coefficient of the logarithm be 2M instead of 1/2?  As
+> written the equation is not dimensionally consistent, since r and M
+> are measured in the same units.  Compare to Taylor & Wheeler's
+> Exploring Black Holes, p. 2-28, Eq. (27).
+> 
+> 7.  Suggestion: It appears that the $L$ and the $l$ that appear
+> between Eq. (1) and Eq. (3) denote the same quantity.  Why use
+> different symbols?
+> 
+> 8.  Suggestion: In the line above Eq. (3), if $w >> 0$ then one does
+> not need absolute value bars in $|w|<< 1$.
+> 
+> 9.  Question.  2nd line below Eq. (4), why are radial strings
+> "arbitrarily" longer than flat space would imply?  It appears the
+> difference is a matter of calculation (or measurement), not arbitrary.
+> Please explain this choice of words.
+> 
+> 10. Suggestion.  Line below Eq. (5), I think the word "dashes" should
+> be "primes".  This is a dash: --- and this is a prime: ', at least in
+> usage with which I am familiar.
+> 
+> 11.  The paragraph below Eq. (6) is puzzling.  Here the path of the
+> tight string is being compared to an "equatorial null geodesic," which
+> I take to mean the path of a light beam moving along the equator.  If
+> we are considering a light beam, then shouldn't a term with $t$ in it
+> appear somewhere?  The puzzlement continues given the statement that
+> "light, being sensitive to the time component of the metric" whereas
+> the equations discussed in this paragraph say nothing (that I can see)
+> about the time component of the metric.  The proper time interval
+> would be zero, but the coordinate time interval $dt$ would, I think,
+> be nonzero.  What am I missing?
+> 
+> 12.  In the passage below Eq. (6), I am having trouble making the
+> connection between $r''(\phi)=r-3M + 2(r')^2/r$ and the claim that the
+> solution is $r=r_0\sec(\phi-\phi_0)$.  What trig identity am I
+> missing?
+> 
+> 13.  Can the author explain more fully what is meant by a "tangential
+> null geodesic" (several lines after Eq. 6)?  That terminology makes it
+> sound like the r-coordinate does not change, whence $r'$ would be
+> zero, but that appears to not be the case.  In this section, if $r'$
+> is small I see where the approximation $r''=r-2M$ comes from, but I am
+> having trouble seeing where $r''-r-3M$ arises for the alleged
+> tangential null geodesics.  What am I not seeing?
+> 
+> I will have to take the author's word for the numerical results.
+> 
+> This is an interesting paper.  I congratulate the author for thinking
+> of such an intriguing application of the Schwarzschild metric.
+> However, in this reviewer's opinion, before the paper can be well
+> fitted to its announced audience ("an undergraduate homework problem")
+> some points need to be clarified.
