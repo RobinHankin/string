@@ -23,3 +23,5 @@ rinp.sty
 # Cache for perihelion_advance_of_mercury.Rmd:
 *_files/
 *_cache/
+
+ws-tpe.cls
