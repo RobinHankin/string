@@ -62,6 +62,24 @@ have cited Taylor and Wheeler (but see my response to Q6 below).
 > thinks of geodesic in General Relativity, one has "free-fall" in mind,
 > and the stretched string, being "stationary," would not be in
 > free-fall in the global coordinate system.
+
+
+I think the sentence in question was technically correct but
+potentially misleading.  What I wanted to do was to make readers think
+about taut thread in the context of GR.  I didn't want to consider
+geodesics at this point in the introduction, or free-falling elevator
+frames.  I want to focus on taut string.
+
+[one of the conceptual difficulties in preparing the manuscript, as
+pointed out by a previous reviewer, is that the string is not in a
+freely-falling elevator frame; as the reviewer points out, such string
+does not follow a geodesic path in any meaningful sense].
+
+I have rephrased the sentence which now reads: "Here I consider the
+path adopted by a stationary, light inexensible string under tension
+passing between two points, and consider the extent to which the
+expression "straight line" would be applicable to such an object".
+
 > 
 > 2.  Suggestion about the line that begins on p. 1 and continues to
 > p. 2, about "lengthscales $L\leq T/(\mu g)$: Saying it this way may
