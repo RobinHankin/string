@@ -42,6 +42,14 @@ it to you.
 > such calculations, and should be included among the references.
 > Taylor & Wheeler's book is very likely the intended undergraduate
 > student's first encounter with General Relativity.
+
+
+I was unaware of the derivation in Taylor and Wheeler that the
+reviewer points me to.  I did not want to suggest that equation 2 was
+new, but was unable to find a derivation of it in the literature.  I
+have cited Taylor and Wheeler (but see my response to Q6 below).
+
+
 > 
 > The paper raises a few questions in this reviewer's mind, and in
 > elsewhere it offers opportunities for suggestions.
