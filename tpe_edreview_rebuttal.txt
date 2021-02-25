@@ -137,6 +137,27 @@ $r=2M(1+w)$ where $w$ is small, $0<w\ll 1$".
 > difference is a matter of calculation (or measurement), not arbitrary.
 > Please explain this choice of words.
 > 
+
+In mathematical usage (but not in general usage, at least according to
+the OED) there is a disctinction in mathematics between arbitrary
+arbitrarily.  One usually uses phrases like "arbitrarily large" to
+convey the idea that some object may become as large as one desires.
+
+In the manuscript the wording was "radial strings are arbitrarily
+longer than flat space would imply", which I think gets the intended
+meaning across.
+
+In this case we have the astonishing result that the discrepancy
+approaches infinity ("becomes arbitrarily large") as w approaches
+infinity.  I have not seen this result explictly before, yet am
+reluctant to claim that it is truly new: after all it is a simple
+consequence of a known result (equation 3).
+
+In any case the original wording was somewhat terse and I have
+rephrased.  The sentence now reads:
+
+
+
 > 10. Suggestion.  Line below Eq. (5), I think the word "dashes" should
 > be "primes".  This is a dash: --- and this is a prime: ', at least in
 > usage with which I am familiar.
