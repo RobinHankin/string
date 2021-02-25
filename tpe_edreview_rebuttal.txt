@@ -70,13 +70,23 @@ have cited Taylor and Wheeler (but see my response to Q6 below).
 > greater clarity if one says something like "the weight of the string
 > does not exceed the tension, so that $L\mu g<T$".  From this the
 > stated inequality about lengthscales follows easily.
-> 
+>
+
+This is a much better way of phrasing the argument and I have
+rephrased as suggested.
+
+
+
 > 3.  Suggestion.  Stating "$c^4/4GM$ for the strength of gravity at the
 > event horizon" may leave an undergraduate audience baffled.  By
 > starting from where they are, with $g=GM/r^2$, then setting r equal to
 > the Schwarzschild radius, the stated result follows immediately,
 > without mystery.
-> 
+>
+
+
+
+
 > 4.  Question. Lines 3-4, page 2.  Can the author explain what is meant
 > by "the dominant energy condition"?
 > 
