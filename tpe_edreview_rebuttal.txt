@@ -91,7 +91,20 @@ it to you.
 > written the equation is not dimensionally consistent, since r and M
 > are measured in the same units.  Compare to Taylor & Wheeler's
 > Exploring Black Holes, p. 2-28, Eq. (27).
-> 
+>
+
+Factor of M now added (actually this caused me some considerable
+confusion and uncertainty.  The equation presented in Taylor and
+Wheeler has a factor of 2M but it should be M---see the attached
+mathematica screenshot, plus the identity arctanh(x) =
+log((1+x)/(1-x))/2.
+
+This was just a typo in that particular line and has no effect on any
+other part of the manuscript.
+
+
+
+
 > 7.  Suggestion: It appears that the $L$ and the $l$ that appear
 > between Eq. (1) and Eq. (3) denote the same quantity.  Why use
 > different symbols?
