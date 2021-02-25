@@ -201,22 +201,22 @@ terms of~$r=r\left(\phi\right)$ gives us a path length of
   \int_{p_1}^{p_2}F\left(r,r'\right)d\phi
 \end{equation}
 
-\noindent where dashes denote differentiation with respect to~$\phi$.
+\noindent where primes denote differentiation with respect to~$\phi$.
 The Euler-Lagrange equations for this system,
 $\frac{d}{d\phi}\frac{\partial F}{\partial r'}-\frac{\partial
   F}{\partial r}=0$ give an expression for the second derivative
 of~$r$ (Mathematica idiom would be {\tt EulerEquations[Sqrt[y[x]\^{}2
       + y'[x]\^{}2/(1-1/y[x])],y[x],x]}):
 
-\begin{equation}\label{rdashdash}
+\begin{equation}\label{rprimeprime}
   r''\left(\phi\right) =
   (r-2M) + \frac{(2r-3M)\left(r'\right)^2}{r\left(r-2M\right)},\qquad r>2M.
 \end{equation}
 
-\noindent Solutions to equation~\ref{rdashdash} correspond to a taut
+\noindent Solutions to equation~\ref{rprimeprime} correspond to a taut
 string confined to Flamm's paraboloid~\cite{flamm1916}; see
 Figure~\ref{flamm}.  It is interesting to compare
-equation~\ref{rdashdash} with the corresponding equation for
+equation~\ref{rprimeprime} with the corresponding equation for
 equatorial null geodesics, which is usually given~\cite{wald} in terms
 of $u=2M/r$ as $u''=3u^2/2-u$, but is equivalent
 to~$r''\left(\phi\right)=r-3M+2\left(r'\right)^2/r$.  This shows that
@@ -235,7 +235,7 @@ $r''=r+2\left(r'\right)^2/r$).
 \end{figurehere}
 
 There does not appear to be a simple analytical solution to
-equation~\ref{rdashdash}; but it is a straightforward second order
+equation~\ref{rprimeprime}; but it is a straightforward second order
 ODE, amenable to numerical solution and no harder than the equivalent
 for null geodesics, a standard homework problem.  Here we consider
 only strings exterior to the event horizon, $r>2M$, which have a
@@ -265,14 +265,14 @@ readily understandable result.
 
 \section{Numerical results}
 
-Here I solve equation~\ref{rdashdash} numerically, using the R
+Here I solve equation~\ref{rprimeprime} numerically, using the R
 programming language~\cite{rcore2019} and the \verb+deSolve+ package
 for ordinary differential equations~\cite{soetart2010}.  First we
 consider strings for which $r>2M$ everywhere (that is, completely
 exterior strings).
 Figure~\ref{closest_approach_non_self_intersecting} shows a sequence
 of non-self-intersecting numerical solutions to
-equation~\ref{rdashdash}, rotated so that the tangential point of
+equation~\ref{rprimeprime}, rotated so that the tangential point of
 closest approach occurs at~$\phi=0$.
 Figure~\ref{closest_approach_self_intersecting} shows the
 corresponding diagram for self-interesecting strings

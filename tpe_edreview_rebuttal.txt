@@ -132,6 +132,9 @@ $r=2M(1+w)$ where $w$ is small, $0<w\ll 1$".
 > 10. Suggestion.  Line below Eq. (5), I think the word "dashes" should
 > be "primes".  This is a dash: --- and this is a prime: ', at least in
 > usage with which I am familiar.
+
+Fixed, notation now consistent
+
 > 
 > 11.  The paragraph below Eq. (6) is puzzling.  Here the path of the
 > tight string is being compared to an "equatorial null geodesic," which
