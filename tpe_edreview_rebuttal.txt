@@ -116,7 +116,14 @@ corrected, now using $\ell$ consistently for proper length.
 
 > 8.  Suggestion: In the line above Eq. (3), if $w >> 0$ then one does
 > not need absolute value bars in $|w|<< 1$.
-> 
+>
+
+
+Fixed, now reads "consider the proper length from $r=2M$ to
+$r=2M(1+w)$ where $w$ is small, $0<w\ll 1$".
+
+
+
 > 9.  Question.  2nd line below Eq. (4), why are radial strings
 > "arbitrarily" longer than flat space would imply?  It appears the
 > difference is a matter of calculation (or measurement), not arbitrary.
