@@ -97,11 +97,12 @@ Factor of M now added (actually this caused me some considerable
 confusion and uncertainty.  The equation presented in Taylor and
 Wheeler has a factor of 2M but it should be M---see the attached
 mathematica screenshot, plus the identity arctanh(x) =
-log((1+x)/(1-x))/2.
+log((1+x)/(1-x))/2.  In the same section Taylor and Wheeler discuss
+one-centimeter long rulers laid end to end many times, a good metaphor
+for proper length.
 
 This was just a typo in that particular line and has no effect on any
-other part of the manuscript.
-
+other part of the manuscript.  
 
 
 
