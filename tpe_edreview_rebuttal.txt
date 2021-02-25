@@ -91,6 +91,28 @@ lowercase l as per suggestion number 7.
 
 > 4.  Question. Lines 3-4, page 2.  Can the author explain what is meant
 > by "the dominant energy condition"?
+
+On reflection the dominant energy condition is not really an
+appropriate or informative or useful or interesting concept for the
+intended readership.  The important thing is that tension greater $\mu
+c^2$ is unphysical and this context, the unphysicality is manifested
+by transverse waves travelling faster than light.
+
+In answer to the question, we may take the stress-energy tensor for a
+stretched string to be diagonal with elements $\mu,-T,0,0$.  Then the
+dominant energy condition is that, for any future-pointing causal
+vector, $-T^\mu_\nu V^\nu$ must also be a future-pointing causal
+vector.  We can see directly that if $T>\mu$ the DEC is violated.
+
+But this is a massive digression to the main thrust of the manuscript
+and any adequate pedagogical explanation would be an intrusive
+distraction.  It is like using a slegehammer to crack a nut.  I have
+removed any reference to the DEC on these grounds, and further
+emphasised the unphysicality of the wave speed being $>c$.
+
+
+
+
 > 
 > 5.  Suggestion.  2nd and 3rd line below eq. (2): the statement "A
 > circular string at constant r will, trivially, have proper length
