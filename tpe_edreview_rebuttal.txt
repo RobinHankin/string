@@ -77,7 +77,7 @@ does not follow a geodesic path in any meaningful sense].
 
 I have rephrased the sentence which now reads: "Here I consider the
 path adopted by a stationary, light inexensible string under tension
-passing between two points, and consider the extent to which the
+passing between two fixed points, and consider the extent to which the
 expression "straight line" would be applicable to such an object".
 
 > 
