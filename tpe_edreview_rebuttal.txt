@@ -151,16 +151,22 @@ emphasised the unphysicality of the wave speed being $>c$.
 The referee is absolutely correct here and raises an important point.
 When I said that the circumference was "trivially" $2\pi r$, what I
 meant was that integrating equation (1) from $phi=0$ to $2\pi$ at
-fixed $t,r,\theta$ was trivial.  This is a direct consequence of the
-*definition* of "r" [which is sometimes called the circumferential
-radial coordinate].  I remember struggling with this myself as an
+fixed $t,r,\theta$ was trivial.  The resulting proper string length is
+a direct consequence of the *definition* of "r" [which is sometimes
+called the circumferential radial coordinate].
+
+This comment has made me realise that the $2\pi r$ proper string
+length is actually the simplest proper length calculation possible in
+the Schwarzschild metric, and I have rephrased accordingly, and I hope
+it is more instructive.  I remember struggling with this myself as an
 undergraduate (I wanted to know what the "real" radius was ...).
 Einstein himself said "it is not so easy to free oneself from the idea
 that coordinates must have an immediate metrical meaning", so I have
-good company.
+good company!
 
-On reflection this point in the manuscript represents a good
-"teachable moment".
+
+
+
 
 
 > 6.  Question.  There may be a typographical error in Eq. (2).
