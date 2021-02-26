@@ -253,7 +253,18 @@ Fixed, notation now consistent
 > about the time component of the metric.  The proper time interval
 > would be zero, but the coordinate time interval $dt$ would, I think,
 > be nonzero.  What am I missing?
-> 
+>
+
+The equation given as $u''=3u^2/2-u$ gives the path of a beam of light
+through Schwarzschild space ideally in terms of $r$ as a function of
+angle, $r=r(\phi)$.  The idea is that a stationary observer has a
+laser pointer pointing in a particular direction, switches it on and
+leaves it on for a long time.  We then record all the points that the
+beam touches.  The path of the light is then simply $r=r(\phi)$, no
+time coordinate involved, as Figures 4 and 6 show.  I have changed the
+citation to Rindler, who gives a detailed derivation.
+
+
 > 12.  In the passage below Eq. (6), I am having trouble making the
 > connection between $r''(\phi)=r-3M + 2(r')^2/r$ and the claim that the
 > solution is $r=r_0\sec(\phi-\phi_0)$.  What trig identity am I
