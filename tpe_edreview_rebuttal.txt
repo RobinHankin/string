@@ -297,6 +297,14 @@ refer to it.
 > tangential null geodesics.  What am I not seeing?
 
 
+Everything can be resolved and clarified by omitting the word
+"tangential" which was misleading, and replacing "small" with
+"negligible".  The sentence now reads "If $r'$ is negligible, then a
+string follows $r''=r-2M$, while null geodesics follow $r''=r-3M$".
+
+The $r''=r-3M$ is just the (new) equation 7 -viz
+$r''\left(\phi\right)=r-3M+2\left(r'\right)^2/r$ but with $r'=0$.
+
 
 
 > 
