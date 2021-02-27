@@ -309,9 +309,20 @@ $r''\left(\phi\right)=r-3M+2\left(r'\right)^2/r$ but with $r'=0$.
 
 > 
 > I will have to take the author's word for the numerical results.
-> 
+>
+
+Not any more! All the software used to create the diagrams is now
+publically available under version control at
+
+https://github.com/RobinHankin/string
+
+and I have added a citation to this repo.  The code is heavily
+documented.
+
+	
 > This is an interesting paper.  I congratulate the author for thinking
 > of such an intriguing application of the Schwarzschild metric.
 > However, in this reviewer's opinion, before the paper can be well
 > fitted to its announced audience ("an undergraduate homework problem")
 > some points need to be clarified.
+
