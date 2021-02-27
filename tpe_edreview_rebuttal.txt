@@ -269,7 +269,25 @@ citation to Rindler, who gives a detailed derivation.
 > connection between $r''(\phi)=r-3M + 2(r')^2/r$ and the claim that the
 > solution is $r=r_0\sec(\phi-\phi_0)$.  What trig identity am I
 > missing?
-> 
+>
+
+There are two separate issues here.  Firstly, null geodesic paths in
+the Schwarzschild metric obey $u''=3u^2/2-u$ where $u=2M/r$.  This is
+equivalent to $r''(\phi) = r-3M + 2(r')^2/r$.  The second issue is
+straight lines in Euclidean flat space (in flat space the expression
+"straight lne" is unambiguous).  WLOG $\phi_0=0$ and if
+$r=r_0\sec\phi$ then $r'=-r_0\sin\phi\cdot\sec^2\phi$ and
+$r''=r_0(\sec\phi + 2\sin^2\phi\sec^3\phi$, from which $r''=2(r')^2/r$
+follows from cancellation.
+
+One can "go the other way"---that is, given ODE $r''=r+2(r')^2/r$, one
+can deriving $r=r_0\sec\phi$---by substituting $u=1/r$ and obtaining
+$u''+u=0$, whence $u=A\cos(\phi-\phi_0)$.
+
+I have rephrased slightly and numbered one of the equations so I can
+refer to it.
+
+
 > 13.  Can the author explain more fully what is meant by a "tangential
 > null geodesic" (several lines after Eq. 6)?  That terminology makes it
 > sound like the r-coordinate does not change, whence $r'$ would be
@@ -277,6 +295,10 @@ citation to Rindler, who gives a detailed derivation.
 > is small I see where the approximation $r''=r-2M$ comes from, but I am
 > having trouble seeing where $r''-r-3M$ arises for the alleged
 > tangential null geodesics.  What am I not seeing?
+
+
+
+
 > 
 > I will have to take the author's word for the numerical results.
 > 
