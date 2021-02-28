@@ -53,3 +53,20 @@ Or r'' = r + 2(r')^2/r
 
 
 In[4]:= EulerEquations[Sqrt[y[x]^2 + y'[x]^2/(1-1/y[x])],y[x],x]
+
+
+Following is _sage_, performing the radial string integration and in
+particular verifying that the 'M' in front of the log term is in fact
+'M' and not 2M' as Taylor and Wheeler claim:
+
+sage: var('r M r1 r2') 
+(r, M, r1, r2)
+
+sage: assume(r>0,r1>0,r2>0, r1>2*M, r2>2*M, r2-r1>0, M>0) 
+sage: integrate(1/sqrt(1-2*M/r),r) 
+M*log(sqrt(-2*M/r + 1) + 1) - M*log(sqrt(-2*M/r + 1) - 1) + r*sqrt(-2*M/r + 1)
+
+It is possible to do the definite integration but it's a mess:
+
+sage: integrate(1/sqrt(1-2*M/r),r,r1,r2).full_simplify()
+-M*log(sqrt(-(2*M - r1)/r1) + 1) + M*log(sqrt(-(2*M - r2)/r2) + 1) + M*log(abs(sqrt(-(2*M - r1)/r1) - 1)) - M*log(abs(sqrt(-(2*M - r2)/r2) - 1)) - r1*sqrt(-(2*M - r1)/r1) + r2*sqrt(-(2*M - r2)/r2) 

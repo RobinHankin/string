@@ -177,18 +177,23 @@ good company!
 > Exploring Black Holes, p. 2-28, Eq. (27).
 >
 
-Factor of M now added (actually this caused me some considerable
+Factor of M now added...actually this caused me some considerable
 confusion and uncertainty.  The equation presented in Taylor and
-Wheeler has a factor of 2M but it should be M---see the attached
-mathematica screenshot, plus the identity arctanh(x) =
-log((1+x)/(1-x))/2.  In the same section Taylor and Wheeler discuss
-one-centimeter long rulers laid end to end many times, a good metaphor
-for proper length.
+Wheeler has a factor of 2M but it should be M, for which I offer the
+following sage transcript:
+
+sage: var('r M r1 r2') 
+(r, M, r1, r2)
+sage: assume(r>0,r1>0,r2>0, r1>2*M, r2>2*M, r2-r1>0, M>0) 
+sage: integrate(1/sqrt(1-2*M/r),r) 
+M*log(sqrt(-2*M/r + 1) + 1) - M*log(sqrt(-2*M/r + 1) - 1) + r*sqrt(-2*M/r + 1)
+
+
+In the same section Taylor and Wheeler discuss one-centimeter long
+rulers laid end to end many times, a good metaphor for proper length.
 
 This was just a typo in that particular line and has no effect on any
-other part of the manuscript.  
-
-
+other part of the manuscript.
 
 > 7.  Suggestion: It appears that the $L$ and the $l$ that appear
 > between Eq. (1) and Eq. (3) denote the same quantity.  Why use
