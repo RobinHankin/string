@@ -112,7 +112,7 @@ dr^2/\left(1-2M/r\right) + r^2d\phi^2$, confined to equatorial
 points~($\theta=\pi/2$); we understand~$r\geqslant 2M$ throughout.
 
 The simplest configuration for a string would be circular at
-constant~$r$ whose proper length would be given by integration of
+constant~$r$ whose proper length is given by integration of
 equation~\ref{schwarzschild} as~$\int_{\phi=0}^{2\pi}r\,d\phi=2\pi r$
 (this is why $r$ is sometimes called ``circumferential radius'').
 Note carefully that $r$ is not the distance {\em to} anything, so this
@@ -282,11 +282,10 @@ readily understandable result.
 
 Here I solve equation~\ref{rprimeprime} numerically, using the R
 programming language~\cite{rcore2019} and the \verb+deSolve+ package
-for ordinary differential equations~\cite{soetart2010}.  First we
-consider strings for which $r>2M$ everywhere (that is, completely
-exterior strings).
-Figure~\ref{closest_approach_non_self_intersecting} shows a sequence
-of non-self-intersecting numerical solutions to
+for ordinary differential equations~\cite{soetart2010}.  We consider
+only strings for which $r>2M$ everywhere (that is, completely exterior
+strings).  Figure~\ref{closest_approach_non_self_intersecting} shows a
+sequence of non-self-intersecting numerical solutions to
 equation~\ref{rprimeprime}, rotated so that the tangential point of
 closest approach occurs at~$\phi=0$.
 Figure~\ref{closest_approach_self_intersecting} shows the
@@ -326,7 +325,7 @@ less than this value, then the string crosses itself at~$\phi=\pi/2$.
   }
   \caption{Null geodesics in the Schwarzschild geometry, tangential
     at~$\phi=0$.  Note the differences between these curves and the taut
-    strings shown elsewhere: unlike taut strings, null geodesices may
+    strings shown elsewhere: unlike taut strings, null geodesics may
     cross the event horizon inwards, and are never tangential to the
     event horizon}
   \label{light_closest_approach}
@@ -361,10 +360,11 @@ comparison.
 The concept of ``straight line'' is problematic in general relativity.
 Although photon paths provide a definition of straightness, their
 world lines are sensitive to the time component of the metric.  Light
-taut strings respond only to the spatial components of the metric, and
-their configuration is arguably a more intuitive and helpful way to
-think about straightness.  Using numerical methods to compute string
-configuration is suitable for an undergraduate homework problem.
+taut strings respond only to the spatial components of a static
+metric, and comparing their configuration to null geodesics is a
+helpful way to think about straightness.  Using numerical methods to
+compute string configuration is suitable for an undergraduate homework
+problem.
 
 \bibliographystyle{unsrt}
 \bibliography{stringrefs.bib}

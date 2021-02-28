@@ -5,13 +5,14 @@ interests of clarity, and have replaced some mathematical notation in
 the original review with latex equivalents.
 
 Short story: I agree with all the comments made and have modified the
-manuscript accordingly; changes appear in the manuscript using colour
-coding for ease of reference.  The document is stronger, more
-cohesive, more accurate, and hopefully more instructive; and I commend
-it to you.
+manuscript accordingly.  The document is stronger, more cohesive, more
+accurate, and hopefully more instructive.  I submit that the extra
+clarity and pedagogical value more than compensates for the slight
+extra length.
 
-
-
+I have changed the discussion slightly (emphasising the
+staticness of the metric considered) as a result of reflecting on the
+totality of the comments too.
 
 > Review of "Light inextensible strings (thread) under tension in the
 > Schwarzschild geometry" submitted to The Physics Educator
@@ -256,7 +257,7 @@ Fixed, notation now consistent
 >
 
 The equation given as $u''=3u^2/2-u$ gives the path of a beam of light
-through Schwarzschild space ideally in terms of $r$ as a function of
+through Schwarzschild space in which $r$ is given as a function of
 angle, $r=r(\phi)$.  The idea is that a stationary observer has a
 laser pointer pointing in a particular direction, switches it on and
 leaves it on for a long time.  We then record all the points that the
