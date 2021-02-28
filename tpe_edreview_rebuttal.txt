@@ -10,9 +10,9 @@ accurate, and hopefully more instructive.  I submit that the extra
 clarity and pedagogical value more than compensates for the slight
 extra length.
 
-I have changed the discussion slightly (emphasising the
-staticness of the metric considered) as a result of reflecting on the
-totality of the comments too.
+I have changed the discussion section at the end very slightly
+(emphasising the staticness of the metric considered) as a result of
+reflecting on the totality of the comments too.
 
 > Review of "Light inextensible strings (thread) under tension in the
 > Schwarzschild geometry" submitted to The Physics Educator
@@ -95,7 +95,6 @@ This is a much better way of phrasing the argument and I have
 rephrased as suggested.
 
 
-
 > 3.  Suggestion.  Stating "$c^4/4GM$ for the strength of gravity at the
 > event horizon" may leave an undergraduate audience baffled.  By
 > starting from where they are, with $g=GM/r^2$, then setting r equal to
@@ -105,8 +104,7 @@ rephrased as suggested.
 
 I have totally rephrased that part of the manuscript using this
 suggestion and it is much clearer (I have also changed uppercase L for
-lowercase l as per suggestion number 7.
-
+lowercase l as per suggestion number 7).
 
 > 4.  Question. Lines 3-4, page 2.  Can the author explain what is meant
 > by "the dominant energy condition"?
@@ -128,8 +126,6 @@ and any adequate pedagogical explanation would be an intrusive
 distraction.  It is like using a slegehammer to crack a nut.  I have
 removed any reference to the DEC on these grounds, and further
 emphasised the unphysicality of the wave speed being $>c$.
-
-
 
 
 > 
@@ -164,10 +160,6 @@ undergraduate (I wanted to know what the "real" radius was ...).
 Einstein himself said "it is not so easy to free oneself from the idea
 that coordinates must have an immediate metrical meaning", so I have
 good company!
-
-
-
-
 
 
 > 6.  Question.  There may be a typographical error in Eq. (2).
@@ -261,14 +253,15 @@ Fixed, notation now consistent
 > be nonzero.  What am I missing?
 >
 
-The equation given as $u''=3u^2/2-u$ gives the path of a beam of light
-through Schwarzschild space in which $r$ is given as a function of
-angle, $r=r(\phi)$.  The idea is that a stationary observer has a
-laser pointer pointing in a particular direction, switches it on and
-leaves it on for a long time.  We then record all the points that the
-beam touches.  The path of the light is then simply $r=r(\phi)$, no
-time coordinate involved, as Figures 4 and 6 show.  I have changed the
-citation to Rindler, who gives a detailed derivation.
+The equation given as $u''=3u^2/2-u$ [here $u=2M/r$] gives the path of
+a beam of light through Schwarzschild space in which $r$ is given as a
+function of angle, $r=r(\phi)$.  The idea is that a stationary
+observer has a laser pointer pointing in a particular direction,
+switches it on and leaves it on for a long time.  We then record all
+the points that the beam touches.  The path of the light is then
+simply $r=r(\phi)$, no time coordinate involved, as Figures 4 and 6
+show.  I have changed the citation to Rindler, who gives a detailed
+derivation.
 
 
 > 12.  In the passage below Eq. (6), I am having trouble making the
@@ -281,10 +274,10 @@ There are two separate issues here.  Firstly, null geodesic paths in
 the Schwarzschild metric obey $u''=3u^2/2-u$ where $u=2M/r$.  This is
 equivalent to $r''(\phi) = r-3M + 2(r')^2/r$.  The second issue is
 straight lines in Euclidean flat space (in flat space the expression
-"straight lne" is unambiguous).  WLOG $\phi_0=0$ and if
+"straight line" is unambiguous).  WLOG $\phi_0=0$ and if
 $r=r_0\sec\phi$ then $r'=-r_0\sin\phi\cdot\sec^2\phi$ and
-$r''=r_0(\sec\phi + 2\sin^2\phi\sec^3\phi$, from which $r''=2(r')^2/r$
-follows from cancellation.
+$r''=r_0(\sec\phi + 2\sin^2\phi\sec^3\phi$, from which
+$r''=r+2(r')^2/r$ follows directly.
 
 One can "go the other way"---that is, given ODE $r''=r+2(r')^2/r$, one
 can deriving $r=r_0\sec\phi$---by substituting $u=1/r$ and obtaining
@@ -310,7 +303,6 @@ string follows $r''=r-2M$, while null geodesics follow $r''=r-3M$".
 
 The $r''=r-3M$ is just the (new) equation 7 -viz
 $r''\left(\phi\right)=r-3M+2\left(r'\right)^2/r$ but with $r'=0$.
-
 
 
 > 
