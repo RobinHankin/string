@@ -1,0 +1,371 @@
+% Authors may submit in single column format.
+% Once your paper got accepted, the publisher will reformat it according to TPE house style (two column).
+%\documentclass[wsdraft]{ws-tpe}
+
+\documentclass{ws-tpe}
+\usepackage{multicol}
+\usepackage{units}
+\usepackage{xcolor}
+\usepackage[superscript]{cite}
+\begin{document}
+
+
+\markboth{Robin K. S. Hankin}{Light inextensible strings (thread) in the Schwarzschild metric}
+
+\title{Light inextensible strings (thread) under tension in the
+  Schwarzschild geometry}
+
+\author{Robin K. S. Hankin}
+
+\address{School of Engineering, Computing, and Mathematical Sciences\\Auckland University of Technology\\55 Wellesley Street East\\
+  Auckland CBD, Auckland 1010, New Zealand\\
+\email{hankin.robin@gmail.com}}
+
+\maketitle
+
+\begin{history}
+\received{Day Month Year}
+\revised{Day Month Year}
+\end{history}
+
+
+\begin{abstract}
+Light inextensible string under tension is a stalwart feature of
+elementary physics.  Here I show how considering such string in the
+vicinity of a black hole, with the help of computer algebra systems,
+can generate insight into the Schwarzschild geometry in the context of
+an undergraduate homework problem.  Light taut strings minimize their
+proper length, given by integrating the spatial component of the
+Schwarzschild metric along the string.  The path itself is given by
+straightforward numerical solution to the Euler-Lagrange equations.
+If the string is entirely outside the event horizon, its closest
+approach to the singularity is tangential.  At this point the string
+is {\em visibly} curved, surely a memorable and informative insight.
+The geometry of the Schwarzschild metric induces some interesting
+nonlocal phenomena: if the distance of closest approach is less than
+about $1.0761\cdot 2M$, the string self-intersects, even though it is
+everywhere under tension.  Light taut strings furnish a third
+interpretation of the concept ``straight line'', the other two being
+null geodesics and free-fall world lines.  All the software used is
+available under the GPL~\cite{hankin2021}.
+\end{abstract}
+
+\keywords{Black holes; Schwarzschild metric; light inextensible
+  string; minimal-length path}
+
+\section{Introduction}
+
+General relativity is a topic of long-standing fascination for physics
+undergraduates~\cite{christensen2012,taylor2000}.  Students appreciate
+everyday illustrations of the concepts involved, as recent educational
+work on gravitational wave visualisations attests~\cite{overduin2018}.
+Here I consider the path adopted by a stationary,
+light inexensible string under tension passing between two fixed points, and consider the extent to which the expression  ``straight line'' would be applicable to such an object.
+The analysis presented here would be suitable for an undergraduate
+homework problem~\cite{romano2019}.
+
+Considering only stationary spacetimes, we define the proper length of
+a string to be the result of integrating the spatial part of the
+metric tensor along string's path between its endpoints.  A light
+string's being under tension means that its path will be an extremum
+of proper length: non-extremal paths between two fixed points cannot
+be in stable equilibrium as the tension acts to shorten the path;
+stable paths must therefore be of extremal proper length.  In flat
+space, the calculus of variations proves that the path is straight in
+the sense of zero curvature.  In terrestrial gravity, standard
+$25\times 10^{-6}\unit{kg}\cdot\unit{m}^{-1}$ cotton sewing thread at
+its breaking strain of about $40\unit{N}$ would have a sag of~${\sim}
+6\times 10^{-6}\unit{m}$ over a $1\unit{m}$ horizontal scale: barely
+perceptible.  How does such a quotidian observation translate into the
+vicinity of a black hole?  Would the ``warping of space'' result in
+{\em visibly} curved thread?
+
+Of course, no real string is perfectly weightless or inextensible.
+With tension~$T$, gravitational acceleration $g$ and (proper) mass per
+(proper) unit length~$\mu$, then a string of length $\ell$ will behave
+as though light if the weight of the string does not exceed the
+tension, so that $T\gtrsim\ell\mu g$.  At the Schwarzschild radius
+$2GM/c^2$ of a black hole with mass $M$, the Newtonian value
+$g=GM/r^2$ gives $T\gtrsim\ell\mu c^4/M$.  For the string to behave as
+though light on lengthscales comparable with the Schwarzschild radius
+(as in the simulations below), we would require $T\gtrsim\mu c^2$.
+Exceeding this criterion is unphysical:
+transverse waves propagate at
+speed~$\sqrt{T/\mu}$ which would exceed $c$.  Nevertheless, the idealization of a
+string as light and inextensible is an interesting and informative
+limit: Rindler~\cite{rindler}, for example, considers lowering a heavy
+object to the event horizon on the end of such a string to illustrate
+energetic arguments in GR.
+
+\section{The Schwarzschild metric}
+
+The vacuum Einstein field equations for a static, spherically
+symmetric mass are solved by the Schwarzschild
+metric~\cite{schwarzschild1916}.  In units in which~$G=c=1$, this is:
+
+\begin{equation}\label{schwarzschild}
+ds^2= -dt^2\left(1-2M/r\right) +\frac{dr^2}{1-2M/r} + r^2\left(d\theta^2 + \sin^2\theta d\phi^2\right).
+\end{equation}
+
+\noindent Here I consider the spatial component~$ds^2=
+dr^2/\left(1-2M/r\right) + r^2d\phi^2$, confined to equatorial
+points~($\theta=\pi/2$); we understand~$r\geqslant 2M$ throughout.
+
+The simplest configuration for a string would be circular at
+constant~$r$ whose proper length is given by integration of
+equation~\ref{schwarzschild} as~$\int_{\phi=0}^{2\pi}r\,d\phi=2\pi r$
+(this is why $r$ is sometimes called ``circumferential radius'').
+Note carefully that $r$ is not the distance {\em to} anything, so this
+result---which operates in Schwarzschild geometry and not plane
+Euclidean geometry---is less obvious than it might appear.
+Considering next a purely radial string we may follow Taylor and
+Wheeler \cite{taylor2000} and calculate the proper length
+$\ell\left(r_1,r_2\right)$ of a string stretching from~$r=r_1\geqslant
+2M$ to~$r_2\geqslant r_1$ at constant $\theta,\phi$:
+
+
+% \begin{equation}\label{radial_string_length_properunits}
+%   \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-1/r}}=
+%   \left.
+%   \sqrt{r(r-1)} +\frac{1}{2}\log\left(
+%   \frac{\sqrt{r}+\sqrt{r-1}}{\sqrt{r}-\sqrt{r-1}}\right)
+%   \right|_{r_1}^{r_2}
+%   \end{equation}
+
+\begin{equation}\label{radial_string_length}
+  \int_{r=r_1}^{r_2}\frac{dr}{\sqrt{1-2M/r}}=
+  \left.
+  \sqrt{r(r-2M)} +M\log\left(
+  \frac{\sqrt{r}+\sqrt{r-2M}}{\sqrt{r}-\sqrt{r-2M}}\right)
+  \right|_{r_1}^{r_2}.
+  \end{equation}
+
+Observe that integration may be performed with a lower limit
+of~$r_1=2M$ with no difficulty, even though the radial component of
+the Schwarzschild metric approaches infinity there.  Elementary
+methods show that the proper length $\ell$ of radial strings has some
+non-Euclidean features.  Firstly, consider the proper length from
+$r=2M$ to $r=2M(1+w)$ where $w$ is small, $0<w\ll 1$.  Then
+
+%  \begin{equation}\label{ell_properunits}
+%    \ell=\int_{r=1}^{r=1+w}ds
+%    =2\sqrt{w} + \frac{1}{3}w^{3/2} + O(w^{5/2})
+%  \end{equation}
+
+ \begin{equation}\label{ell}
+   \ell =
+   \int_{r=2M}^{r=2M(1+w)}ds
+   =2M\left(2\sqrt{w} + \frac{1}{3}w^{3/2} + O(w^{5/2})\right).
+ \end{equation}
+
+(compare the flat space string length of $2Mw$).  This would indicate
+ that, close to the Schwarzschild radius $r=2M$, more string is
+ required to connect two points with slightly differing radial
+ coordinates than would be expected classically.  Taking a solar-mass
+ black hole and $w=10^{-3}$ as an example, the proper length computed
+ in flat space would be $10^{-2}\cdot 2M\simeq 3\,\mathrm{m}$; compare
+ $\simeq 187\,\mathrm{m}$ from equation~\ref{ell}.  Passing to the
+ case $w\gg 1$ we have an asymptotic expansion that begins
+
+% \begin{equation}\label{asymptotic_ell_properunits}
+%   \ell = w +  \frac{1}{2}\log w + \frac{1}{2} + \log(2)  +  \frac{1}{8}w^{-1} + O(w^{-2}),
+% \end{equation}
+% 
+\begin{equation}\label{asymptotic_ell}
+  \ell = 2M\left(w +  \frac{1}{2}\log w + \frac{1}{2} + \log(2)  +  \frac{1}{8}w^{-1} + O(w^{-2})\right).
+\end{equation}
+
+
+\noindent The discrepancy $\Delta=\ell-2Mw$ between the flat-space result of $2Mw$ and
+equation~\ref{asymptotic_ell} has the startling feature that $\lim_{w\longrightarrow\infty}\Delta=\infty$ (because of the $\log w$ term).  This suggests that, even far from the event
+horizon, radial strings are arbitrarily longer than flat space would
+imply: a nice illustration of the failure of Euclidean geometry.
+Again taking a solar mass black hole but with $w=2\times 10^7$
+(corresponding to the orbital radius of Mercury) the difference
+between the classical result and equation~\ref{asymptotic_ell} is
+about $28\,\mathrm{km}$ of extra string.  However, the prediction is
+unlikely to be the basis of a fourth test of general relativity---the
+others being Shapiro time delay, bending of starlight, and the
+perihelion advance of Mercury~\cite{einstein1916}---as the Sun is not
+inside its own Schwarzschild radius.
+
+\section{Nonradial string}
+Integrating along a path between two
+points~$p_1=\left(r_1,\phi_1\right)$ and~$p_2=\left(r_2,\phi_2\right)$
+gives the {\em proper} length of the path, which is the length of an
+inextensible string joining~$p_1$ and~$p_2$.  A taut but light string
+from~$p_1$ to~$p_2$ will adopt an extremal-length path.  Such paths
+may be found by the calculus of variations; parametrizing a curve in
+terms of~$r=r\left(\phi\right)$ gives us a path length of
+
+% \begin{equation}
+% %  \int_{p_1}^{p_2}\sqrt{\frac{\left(r'\right)^2}{1-2M/r} + r^2}d\phi=
+%   \int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-1/r} + r^2\right)^\frac{1}{2}d\phi=
+%   \int_{p_1}^{p_2}F\left(r,r'\right)d\phi
+% \end{equation}
+
+\begin{equation}
+%  \int_{p_1}^{p_2}\sqrt{\frac{\left(r'\right)^2}{1-2M/r} + r^2}d\phi=
+  \int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-2M/r} + r^2\right)^\frac{1}{2}d\phi=
+  \int_{p_1}^{p_2}F\left(r,r'\right)d\phi
+\end{equation}
+
+\noindent where primes denote differentiation with respect to~$\phi$.
+The Euler-Lagrange equations for this system,
+$\frac{d}{d\phi}\frac{\partial F}{\partial r'}-\frac{\partial
+  F}{\partial r}=0$ give an expression for the second derivative
+of~$r$ (Mathematica idiom would be {\tt EulerEquations[Sqrt[y[x]\^{}2
+      + y'[x]\^{}2/(1-1/y[x])],y[x],x]}):
+
+\begin{equation}\label{rprimeprime}
+  r''\left(\phi\right) =
+  (r-2M) + \frac{(2r-3M)\left(r'\right)^2}{r\left(r-2M\right)},\qquad r>2M.
+\end{equation}
+
+\noindent Solutions to equation~\ref{rprimeprime} correspond to a taut
+string confined to Flamm's paraboloid~\cite{flamm1916}; see
+Figure~\ref{flamm}.  It is interesting to compare
+equation~\ref{rprimeprime} with the corresponding equation for
+equatorial null geodesics, which is usually given~\cite{rindler} in
+terms of $u=2M/r$ as $u''=3u^2/2-u$, but is equivalent
+to
+
+\begin{equation}\label{nullgeodesicODE}
+  r''\left(\phi\right)=r-3M+2\left(r'\right)^2/r.
+\end{equation}
+
+This shows that
+light, being sensitive to the time component of the metric, behaves
+differently from string, which is not.  At this point it might be worth
+observing that a straight line in flat space,
+$r=r_0\sec\left(\phi-\phi_0\right)$, obeys
+$r''=r+2\left(r'\right)^2/r$: identical to equation~\ref{nullgeodesicODE} but without the $M$ term.  
+
+\begin{figurehere} % Created by "flamm.R"
+\centering
+\includegraphics[width=\linewidth]{flamm_string.pdf}
+\caption{Perspective view of Flamm's paraboloid with superimposed minimal-length
+  path corresponding to a taut, light string}
+\label{flamm}
+\end{figurehere}
+
+There does not appear to be a simple analytical solution to
+equation~\ref{rprimeprime}; but it is a straightforward second order
+ODE, amenable to numerical solution and no harder than the equivalent
+for null geodesics, a standard homework problem.  Here we consider
+only strings exterior to the event horizon, $r>2M$, which have a
+well-defined point of closest approach to the singularity.  Because
+the system is invariant under~$\phi\longrightarrow-\phi$, the string
+must be symmetrical about this point.  If $r'$ is negligible, then a string
+follows $r''=r-2M$, while null geodesics follow $r''=r-3M$.
+Working to first order, and writing~$d$ for the difference in
+Schwarzschild~$r$ between string and null geodesic, we have $d''=M$.
+Transforming coordinates to $(x,y) = (r\phi,r-r_0)$ and with boundary
+conditions corresponding to both string and null geodesic being
+tangential at the $(x,y)$ origin, we see that
+$d=\frac{M}{2}(x/r_0)^2$.  However, a static local observer tied to
+the string would measure
+$d_\mathrm{local}=d/\sqrt{1-2M/r_0}$---applying
+equation~\ref{schwarzschild}---and obtain
+$d_\mathrm{local}=\frac{M}{2}(x/r_0)^2\left(1-2M/r_0\right)^{-1/2}$
+which would correspond to a radius of curvature
+of~$r_0\cdot\frac{r_0}{M}\cdot\left(1-2M/r_0\right)^{-1/2}$.  Thus a
+taut string would {\em look} curved to a static observer in
+Schwarzschild coordinates, in the sense that a tangential light beam
+and taut string would diverge quadratically.  At the photon sphere
+$r_0=3M$, such a string would appear to have a radius of~$\sqrt{27}M$.
+For a solar mass black hole this would be about $15\unit{km}$, a
+readily understandable result.
+
+
+\section{Numerical results}
+
+Here I solve equation~\ref{rprimeprime} numerically, using the R
+programming language~\cite{rcore2019} and the \verb+deSolve+ package
+for ordinary differential equations~\cite{soetart2010}.  We consider
+only strings for which $r>2M$ everywhere (that is, completely exterior
+strings).  Figure~\ref{closest_approach_non_self_intersecting} shows a
+sequence of non-self-intersecting numerical solutions to
+equation~\ref{rprimeprime}, rotated so that the tangential point of
+closest approach occurs at~$\phi=0$.
+Figure~\ref{closest_approach_self_intersecting} shows the
+corresponding diagram for self-interesecting strings
+(Figure~\ref{light_closest_approach} shows equivalent null geodesics
+for comparison).  A bisection technique reveals that if the closest
+approach is greater than a critical value of about~$\simeq 1.0761\cdot
+2M$, the string does not self-intersect; if the closest approach is
+less than this value, then the string crosses itself at~$\phi=\pi/2$.
+
+\begin{figurehere} % Created by "closest_approach.R"
+  \centerline{
+    \includegraphics[width=\linewidth]{closest_approach_nonselfintersecting.pdf}
+  }
+  \caption{Light inextensible strings under tension close to a black
+    hole.  Here we see non-self intersecting strings arranged by
+    increasing distance of closest approach to the event horizon,
+    occurring tangentially at~$\phi=0$}
+  \label{closest_approach_non_self_intersecting}
+\end{figurehere}
+
+\begin{figurehere} % created by "closest_approach2.R"
+  \centerline{
+    \includegraphics[width=\linewidth]{closest_approach_selfintersecting.pdf}
+  }
+  \caption{Light inextensible strings under tension close to a black
+    hole.  Here self-intersecting strings are shown for $\phi\geqslant
+    0$.  Closest approach to the event horizon occurs at $\phi=0$ (3
+    o'clock) and $r/2M\in\left(1,1.0761\right)$; strings are symmetrical
+    about $\phi=0$ but for clarity only $\phi\geqslant 0$ is shown}
+  \label{closest_approach_self_intersecting}
+\end{figurehere}
+
+\begin{figurehere} % Created by "light_closest_approach.R"
+  \centerline{
+    \includegraphics[width=\linewidth]{light_closest_approach.pdf}
+  }
+  \caption{Null geodesics in the Schwarzschild geometry, tangential
+    at~$\phi=0$.  Note the differences between these curves and the taut
+    strings shown elsewhere: unlike taut strings, null geodesics may
+    cross the event horizon inwards, and are never tangential to the
+    event horizon}
+  \label{light_closest_approach}
+\end{figurehere}
+
+There are other ways to parametrize completely exterior strings;
+Figure \ref{strings_r_equals_2}, for example, shows strings passing
+through~$(4M,0)$.  Figure~\ref{light_r_equals_2} shows light paths for
+comparison.
+
+\begin{figurehere}
+  \centerline{
+    \includegraphics[width=\linewidth]{angle_at_r_equals_2.pdf} % created by "angle_at_r_equals_2.R"
+  }
+  \caption{Light inextensible strings under tension close to a black
+    hole.  Here strings passing through $(4M,0)$ at different angles are
+    shown}
+  \label{strings_r_equals_2}
+\end{figurehere}
+
+\begin{figurehere}
+  \centerline{
+    \includegraphics[width=\linewidth]{light_start_at_r_equals_2.pdf} % created by "angle_start_at_r_equals_2.R"
+  }
+  \caption{Null geodesics passing through $(4M,0)$ at different angles,
+    shown for $0\leqslant\phi\leqslant 2\pi$}
+  \label{light_r_equals_2}
+\end{figurehere}
+
+\section{Discussion}
+
+The concept of ``straight line'' is problematic in general relativity.
+Although photon paths provide a definition of straightness, their
+world lines are sensitive to the time component of the metric.  Light
+taut strings respond only to the spatial components of a static
+metric, and comparing their configuration to null geodesics is a
+helpful way to think about straightness.  Using numerical methods to
+compute string configuration is suitable for an undergraduate homework
+problem.
+
+\bibliographystyle{unsrt}
+\bibliography{stringrefs.bib}
+\end{document} 

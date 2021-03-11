@@ -1,0 +1,137 @@
+\documentclass[12pt]{article}
+\usepackage{xcolor}
+\begin{document}
+
+I appreciate the author responding to each of my previous questions
+and suggestions. For the most part I am satisfied with the author’s
+responses and subsequent modifications to the manuscript. While it is
+not my purpose to annoy the author or delay an editorial decision on
+publication, a small number of comments about minor points remain:
+
+1. The discussion about circumference and $2\pi r$ may be, to the
+undergraduate reader to whom the Schwarzschild metric is still quite
+new, a source of confusion regarding the logic behind the metric. In
+the revised manuscript we read of ``constant $r$ whose proper length
+is given by integration," where the integral is
+
+\[
+\int_{0}^{2\pi} r\,d\phi = 2\pi r
+\]
+
+
+While the integration is certainly true, it this context it appears to
+express a tautology because the $r$- coordinate is defined as the
+circumference of a shell (centered on the origin) divided by $2\pi$.
+The passage just quoted makes it sound (at least to me) like
+``circumference = $2\pi r$ is a derived result, when in fact it the
+logic goes the other way---the measured circumference provides the
+definition of $r$ (see Taylor \& Wheeler, Black Holes, page 2-7, which
+in T\&W pagination means page 7 in Ch. 2; T\&W is a popular
+entry-level textbook for undergraduates interested in general
+relativity).
+
+2. The author's explanation registers with more clarity now in the
+passage about string being ``arbitrarily" large.  At first reading
+this sounds like the author says that the length of a tight string
+fixed between two points may be arbitrary, notwithstanding the
+distinction between ``arbitrary" and ``arbitrarily."  Here is what I
+now understand the author to be saying about the value of l in flat
+and in Schwarzschild spacetimes:
+
+\[
+\ell_\mathrm{flat} = 2Mw
+\]
+
+and, asymptotically,
+
+\[
+\ell_\mathrm{Sch}\sim 2Mw + \log w
+\]
+
+and thus their difference is
+
+
+\[
+\ell_\mathrm{Sch} - \ell_\mathrm{flat}\sim M\log w
+\]
+
+which goes to infinity logarithmically; in other words, for an
+infinite string the Schwarzschild metric is a ``worse infinity" which
+diverges faster than what occurs in flat spacetime.  So far, so good.
+I guess what bothers me is the statement that ``even far from [emphasis
+  added] the event horizon, radial strings are arbitrarily longer than
+flat space would imply...".  So long as $w$ is large (however far from
+the event horizon) but finite, the lengths in both metrics are precise
+numbers, not arbitrary.  Only when $w$ goes to infinity does the
+length in Schwarzschild spacetime become infinitely longer than the
+length in flat spacetime, although though both are infinite.  I
+suppose this passage would sit better with this reader by merely
+stating that the asymptotic difference between $\ell_\mathrm{Sch}$ and
+$\ell_\mathrm{flat}$ diverges logarithmically.  But perhaps this is
+only a matter of taste.
+
+3. I still must disagree with the author about the coefficient of the
+logarithm term in Eq. (2).  The original manuscript put this
+coefficient at $1/2$; I argued that it is $2M$ because of the
+corresponding equation in T\&W (their Eq. [27] on p. 2-28).  I also
+find disagreement with Eq. (2) on a sign in the denominator of the log
+term.  Standing ready to be corrected, please allow me to show why
+this reader thinks these discrepancies exist.  We are to evaluate
+
+\[
+\ell=\int_{r_1}^{r_2}\frac{dr}{\sqrt{1-2M/r}} =
+\int_{r_1}^{r_2}\frac{\sqrt{r}\,dr}{\sqrt{r-2M}},
+\]
+
+Let $r=z^2$ so that $dr=2z\,dz$, and let $2M=a^2$.  Then 
+
+\[
+\ell=2\int_{r_1}^{r_2} \frac{z^2\,dz}{\sqrt{z^2-a^2}}.
+\]
+
+ Using the integral table in the CRC handbook, integral No. 171,
+
+\[
+\int\frac{dx}{\sqrt{x^2\pm a^2}}=\frac{x}{2} \sqrt{z^2\pm a^2}
+\mp \frac{a^2}{2}\log\left| z+\sqrt{x^2\pm a^2}\right|
+\]
+
+
+ and with the minus sign under the radical in the integrand, I obtain
+
+\[
+\ell = 2\left[
+  \frac{z}{2}\sqrt{z^2-a^2} + \frac{a^2}{2}\log\left|z+\sqrt{z^2-a^2}\right|
+  \right]_{z_1}^{z_2}
+\]
+
+\[
+=
+\sqrt{r_2(r_2-2M)}-\sqrt{r_1(r_1-2M)} + 2M\log\left|
+\frac{\sqrt{r_2}+\sqrt{r_2-2M}}{\sqrt{r_1}+\sqrt{r_1-2M}}\right|
+\]
+
+In contrast, Eq (2) reads (points of disagreement in red):
+
+
+\[
+\sqrt{r_2(r_2-2M)}-\sqrt{r_1(r_1-2M)} 
++\color{red}M
+\color{black}\log\left|
+\frac{\sqrt{r_2}+\sqrt{r_2-2M}}{\sqrt{r_1}
+  \color{red}-
+  \color{black}\sqrt{r_1-2M}}\right|
+\]
+
+
+Other than these minor points, I have no further concerns about the
+paper. I find the project very interesting, offering much to think
+about. Having worked with undergraduate physics majors who wish to
+learn some general relativity, once such students are made familiar
+with the Schwarzschild metric, this exercise with a tight string
+offers a useful tool. I leave it to the editors and authors to decide
+what to do with these my latest suggestions regarding the revised
+manuscript. I thank the author for taking my previous suggestions and
+concerns seriously.
+
+\end{document}
