@@ -2,6 +2,7 @@
 \usepackage{xcolor}
 \begin{document}
 
+
 I appreciate the author responding to each of my previous questions
 and suggestions. For the most part I am satisfied with the author’s
 responses and subsequent modifications to the manuscript. While it is
@@ -30,6 +31,15 @@ in T\&W pagination means page 7 in Ch. 2; T\&W is a popular
 entry-level textbook for undergraduates interested in general
 relativity).
 
+\textcolor{blue}{This is a perfectly reasonable comment and 
+  I have changed the manuscript.\\
+{\bf Old text:}
+ ...(this is why $r$ is sometimes called ``circumferential radius'').\\
+{\bf New text:} ...(this is the motivation for the definition of $r$;
+indeed, it is  sometimes called ``circumferential radius'' for this
+reason).
+}
+
 2. The author's explanation registers with more clarity now in the
 passage about string being ``arbitrarily" large.  At first reading
 this sounds like the author says that the length of a tight string
@@ -50,7 +60,6 @@ and, asymptotically,
 
 and thus their difference is
 
-
 \[
 \ell_\mathrm{Sch} - \ell_\mathrm{flat}\sim M\log w
 \]
@@ -69,6 +78,10 @@ suppose this passage would sit better with this reader by merely
 stating that the asymptotic difference between $\ell_\mathrm{Sch}$ and
 $\ell_\mathrm{flat}$ diverges logarithmically.  But perhaps this is
 only a matter of taste.
+
+\textcolor{blue}{ This is a subtle point which took me some
+  considerable time to grok.
+}
 
 3. I still must disagree with the author about the coefficient of the
 logarithm term in Eq. (2).  The original manuscript put this
@@ -97,6 +110,12 @@ Let $r=z^2$ so that $dr=2z\,dz$, and let $2M=a^2$.  Then
 \]
 
 
+{\color{blue} The RHS of the equation above is quoted correctly, but
+  the left hand side should be $\int\frac{x^2\,dx}{\sqrt{x^2\pm
+      a^2}}$, not $\int\frac{dx}{\sqrt{x^2\pm a^2}}$ as quoted [this
+    is CRC equation 164 in my edition].  }
+
+
  and with the minus sign under the radical in the integrand, I obtain
 
 \[
@@ -111,6 +130,7 @@ Let $r=z^2$ so that $dr=2z\,dz$, and let $2M=a^2$.  Then
 \frac{\sqrt{r_2}+\sqrt{r_2-2M}}{\sqrt{r_1}+\sqrt{r_1-2M}}\right|
 \]
 
+
 In contrast, Eq (2) reads (points of disagreement in red):
 
 
@@ -123,6 +143,42 @@ In contrast, Eq (2) reads (points of disagreement in red):
   \color{black}\sqrt{r_1-2M}}\right|
 \]
 
+{\color{blue} The reviewer is correct here but I would observe that
+  the expression above (with or without the red alternative) is not
+  equation 2 of the manuscript.  The reviewer's expression actually
+  matches the RHS of Equation 2 in the manuscript which is
+
+  \[
+  \left.
+  \sqrt{r(r-2M)} +M\log\left(
+  \frac{\sqrt{r}+\sqrt{r-2M}}{\sqrt{r}-\sqrt{r-2M}}\right)
+  \right|_{r_1}^{r_2}
+  \]
+
+  \[
+  = 
+  \sqrt{r_2(r_2-2M)}-  \sqrt{r_1(r_1-2M)}
+ +M\log\left(
+ \frac{\sqrt{r_2}+\sqrt{r_2-2M}}{\sqrt{r_2}-\sqrt{r_2-2M}}
+ \frac{\sqrt{r_1}+\sqrt{r_1-2M}}{\sqrt{r_1}-\sqrt{r_1-2M}}
+ \right)
+  \]
+
+The match is not obvious: one needs to manipulate logarithms of
+negative numbers and keep track of two cut lines on the complex plane
+which manifest as (imaginary) constants of integration.  The apparent
+factor of 2 resolves itself because multiplying numerator and
+denominator by the appropriate conjugate surd results in the {\em
+  square} of the expression given by the referee.
+
+Arguably the referee's formulation is neater and more compact than
+that appearing in the manuscript but I would support my own version on
+the grounds that it is closer to mathematica's output (and indeed is
+much more amenable to asymptotic analysis).
+
+{\bf Summary: the reviewer's algebra was correct but our expressions
+  in fact agree.}
+}
 
 Other than these minor points, I have no further concerns about the
 paper. I find the project very interesting, offering much to think
