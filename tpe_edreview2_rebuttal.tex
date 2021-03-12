@@ -152,6 +152,8 @@ Let $r=z^2$ so that $dr=2z\,dz$, and let $2M=a^2$.  Then
 \]
 
 
+{\color{blue} The reviewer's expression above is correct}
+
 In contrast, Eq (2) reads (points of disagreement in red):
 
 
@@ -164,11 +166,9 @@ In contrast, Eq (2) reads (points of disagreement in red):
   \color{black}\sqrt{r_1-2M}}\right|
 \]
 
-{\color{blue} The reviewer's expression above agrees with my own
-  calculations, but I would observe that the expression above (with or
-  without the red alternative) is {\em not} equation 2 of the
-  manuscript.  The reviewer's expression actually matches the RHS of
-  Equation 2 in the manuscript which is
+{\color{blue} The expression above (with or without the red
+  alternative) is {\em not} equation 2 of the manuscript. Equation 2
+  in the manuscript is:
 
   \[
   \left.
@@ -180,16 +180,35 @@ In contrast, Eq (2) reads (points of disagreement in red):
   \[
   = 
   \sqrt{r_2(r_2-2M)}-  \sqrt{r_1(r_1-2M)}
- +M\log\left(
- \frac{\sqrt{r_2}+\sqrt{r_2-2M}}{\sqrt{r_2}-\sqrt{r_2-2M}}
- \frac{\sqrt{r_1}+\sqrt{r_1-2M}}{\sqrt{r_1}-\sqrt{r_1-2M}}
- \right)
+  +M\log\left(
+  \frac{\sqrt{r_2}+\sqrt{r_2-2M}}{\sqrt{r_2}-\sqrt{r_2-2M}}
+  \frac{\sqrt{r_1}-\sqrt{r_1-2M}}{\sqrt{r_1}+\sqrt{r_1-2M}}
+  \right)
+  \]
+  
+  \[
+  = 
+  \sqrt{r_2(r_2-2M)}-  \sqrt{r_1(r_1-2M)}
+  +M\log\left(
+  \frac{
+    \left(\sqrt{r_2}+\sqrt{r_2-2M}\right)^2
+  }{
+    \left(\sqrt{r_1}+\sqrt{r_1-2M}\right)^2
+  }
+  \right)
   \]
 
-The match is not obvious: one needs to manipulate logarithms of
-negative numbers and keep track of two cut lines on the complex plane
-which manifest as (imaginary) constants of integration.  The apparent
-factor of 2 resolves itself because multiplying numerator and
+  \[
+  = 
+  \sqrt{r_2(r_2-2M)}-  \sqrt{r_1(r_1-2M)}
+  +2M\log\left(
+  \frac{\sqrt{r_2}+\sqrt{r_2-2M}}{\sqrt{r_1}+\sqrt{r_1-2M}}
+  \right)
+  \]
+  
+  
+We see that my original expression matches that of the reviewer.  The
+apparent factor of 2 resolves itself because multiplying numerator and
 denominator by the appropriate conjugate surd results in the {\em
   square} of the expression given by the referee.
 
@@ -198,9 +217,8 @@ that appearing in the manuscript but I would support my own version on
 the grounds that it is closer to mathematica's output (and indeed is
 much more amenable to asymptotic analysis).
 
-{\bf Summary: the reviewer's algebra was correct but our expressions
-  in fact agree.}
-}
+{\bf Summary: both my, and the reviewer's, algebra was correct and our
+  expressions in fact agree.}  }
 
 Other than these minor points, I have no further concerns about the
 paper. I find the project very interesting, offering much to think
