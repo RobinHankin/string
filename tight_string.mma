@@ -2,20 +2,122 @@ There are two things here: firstly, how to get mathematica to express
 the Euler-Lagrange equations in a way that they can be solved
 numerically; and secondly, a demonstration of the asymptotic analysis
 that appears in string_physics_educator_revision4.tex as equations 3
-and 4.
+and 4.  Both sections have cut-and-pastable mathematica code followed
+by a transcript from a session.
 
 
 
-Needs["VariationalMethods`"]
+Needs["VariationalMethods`"] 
+EulerEquations[Sqrt[y[x]^2 + y'[x]^2],y[x],x] 
+p = EulerEquations[Sqrt[y'[x]^2/(1-1/y[x]) + y[x]^2],y[x],x] // FullSimplify 
+ss = p[[1]]//Numerator 
+DSolve[ss==0,y[x],x] 
 
-EulerEquations[Sqrt[y[x]^2 + y'[x]^2],y[x],x]  
 
 
-p = EulerEquations[Sqrt[y'[x]^2/(1-1/y[x]) + y[x]^2],y[x],x] // FullSimplify
 
-ss = p[[1]]//Numerator
+In[1]:= Needs["VariationalMethods`"] 
 
-DSolve[ss==0,y[x],x]
+In[2]:= EulerEquations[Sqrt[y[x]^2 + y'[x]^2],y[x],x] 
+
+                  2          2
+        y[x] (y[x]  + 2 y'[x]  - y[x] y''[x])
+Out[2]= ------------------------------------- == 0
+                      2        2 3/2
+                 (y[x]  + y'[x] )
+
+In[3]:= p = EulerEquations[Sqrt[y'[x]^2/(1-1/y[x]) + y[x]^2],y[x],x] // FullSimp
+lify 
+                       2
+Out[3]= (y[x] (-3 y'[x]  + 2 y[x] 
+ 
+                    2          2
+>          (1 + y[x]  + 2 y'[x]  + y''[x] - y[x] (2 + y''[x])))) / 
+ 
+                                           2
+                                      y'[x]
+>     ((-1 + y[x]) Sqrt[y[x] (y[x] + ---------)]) == 0
+                                     -1 + y[x]
+
+In[4]:= ss = p[[1]]//Numerator 
+
+                      2
+Out[4]= y[x] (-3 y'[x]  + 2 y[x] 
+ 
+                 2          2
+>       (1 + y[x]  + 2 y'[x]  + y''[x] - y[x] (2 + y''[x])))
+
+In[5]:= DSolve[ss==0,y[x],x] 
+
+Out[5]= {{y[x] -> 0}, {y[x] -> 
+ 
+>      InverseFunction[(-2 EllipticF[ArcSin[
+ 
+                                          1 + C[1]
+                     Sqrt[-C[1]] - C[1] + --------
+                                           1 - #1
+                Sqrt[-----------------------------]
+                              Sqrt[-C[1]]              2 Sqrt[-C[1]]
+>               -----------------------------------], ---------------] 
+                              Sqrt[2]                 1 + Sqrt[-C[1]]
+ 
+                                       1 + C[1]
+                  Sqrt[-C[1]] + C[1] + --------
+                                       -1 + #1
+>            Sqrt[-----------------------------] (-1 + #1) 
+                           Sqrt[-C[1]]
+ 
+                         (1 + C[1]) #1
+>            Sqrt[---------------------------] 
+                  (1 + Sqrt[-C[1]]) (-1 + #1)
+ 
+>            (-1 - Sqrt[-C[1]] + (Sqrt[-C[1]] - C[1]) #1)) / 
+ 
+                                                    1 + C[1]
+>          ((1 + C[1]) Sqrt[1 + Sqrt[-C[1]] - ---------------------] 
+                                              Sqrt[-C[1]] (-1 + #1)
+ 
+                                             2
+>            Sqrt[-((-1 + #1) #1 (1 + C[1] #1 ))]) & ][x + C[2]]}, 
+ 
+>    {y[x] -> InverseFunction[(2 
+ 
+                                                        1 + C[1]
+                                   Sqrt[-C[1]] - C[1] + --------
+                                                         1 - #1
+                              Sqrt[-----------------------------]
+                                            Sqrt[-C[1]]
+>            EllipticF[ArcSin[-----------------------------------], 
+                                            Sqrt[2]
+ 
+                                                         1 + C[1]
+                                    Sqrt[-C[1]] + C[1] + --------
+               2 Sqrt[-C[1]]                             -1 + #1
+>             ---------------] Sqrt[-----------------------------] (-1 + #1) 
+              1 + Sqrt[-C[1]]                Sqrt[-C[1]]
+ 
+                         (1 + C[1]) #1
+>            Sqrt[---------------------------] 
+                  (1 + Sqrt[-C[1]]) (-1 + #1)
+ 
+>            (-1 - Sqrt[-C[1]] + (Sqrt[-C[1]] - C[1]) #1)) / 
+ 
+                                                    1 + C[1]
+>          ((1 + C[1]) Sqrt[1 + Sqrt[-C[1]] - ---------------------] 
+                                              Sqrt[-C[1]] (-1 + #1)
+ 
+                                             2
+>            Sqrt[-((-1 + #1) #1 (1 + C[1] #1 ))]) & ][x + C[2]]}}
+
+
+
+
+
+
+
+a = Assuming[M>0 && w>0, Integrate[1/Sqrt[1-2*M/r],{r,2*M,2*M*(1+w)}]] 
+Series[a/(2*M),{w,0,3}] 
+Series[a/(2*M),{w,Infinity,3}] 
 
 
 
