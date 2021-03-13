@@ -1,6 +1,12 @@
+There are two things here: firstly, how to get mathematica to express
+the Euler-Lagrange equations in a way that they can be solved
+numerically; and secondly, a demonstration of the asymptotic analysis
+that appears in string_physics_educator_revision4.tex as equations 3
+and 4.
 
 
-Needs["VariationalMethods`"]                                                                    
+
+Needs["VariationalMethods`"]
 
 EulerEquations[Sqrt[y[x]^2 + y'[x]^2],y[x],x]  
 
@@ -10,3 +16,28 @@ p = EulerEquations[Sqrt[y'[x]^2/(1-1/y[x]) + y[x]^2],y[x],x] // FullSimplify
 ss = p[[1]]//Numerator
 
 DSolve[ss==0,y[x],x]
+
+
+
+
+
+In[40]:= a = Assuming[M>0 && w>0, Integrate[1/Sqrt[1-2*M/r],{r,2*M,2*M*(1+w)}]] 
+
+Out[40]= 2 M (Sqrt[w (1 + w)] + ArcSinh[Sqrt[w]])
+
+
+
+In[42]:= Series[a/(2*M),{w,0,3}] 
+
+                      3/2    5/2
+                     w      w          7/2
+Out[42]= 2 Sqrt[w] + ---- - ---- + O[w]
+                      3      20
+
+In[43]:= Series[a/(2*M),{w,Infinity,3}] 
+
+             1 + Log[4] + Log[w]    1      1       5          -4
+Out[43]= w + ------------------- + --- - ----- + ------ + O[w]
+                      2            8 w       2        3
+                                         32 w    384 w
+
