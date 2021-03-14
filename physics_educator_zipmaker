@@ -4,10 +4,17 @@
 # This script creates a zipfile to be sent to TPE editor Lakshmi Narayanan.
 
 R CMD BATCH maker.R # creates the figures in PDF form
-pdflatex string_physics_educator_revision3
-pdflatex string_physics_educator_revision3
-bibtex   string_physics_educator_revision3
-pdflatex string_physics_educator_revision3
-pdflatex string_physics_educator_revision3
 
-zip hankin_string_TPE_revision3.zip tpe_edreview_rebuttal.txt string_physics_educator_revision3.tex string_physics_educator_revision3.pdf stringrefs.bib flamm_string.pdf closest_approach_nonselfintersecting.pdf closest_approach_selfintersecting.pdf light_closest_approach.pdf angle_at_r_equals_2.pdf light_start_at_r_equals_2.pdf 
+pdflatex string_physics_educator_revision4
+pdflatex string_physics_educator_revision4
+bibtex   string_physics_educator_revision4
+pdflatex string_physics_educator_revision4
+pdflatex string_physics_educator_revision4
+
+pdflatex tpe_edreview2_rebuttal
+pdflatex tpe_edreview2_rebuttal
+bibtex   tpe_edreview2_rebuttal
+pdflatex tpe_edreview2_rebuttal
+pdflatex tpe_edreview2_rebuttal
+
+zip hankin_string_TPE_revision4.zip tpe_edreview2_rebuttal.pdf tpe_edreview2_rebuttal.tex string_physics_educator_revision4.tex string_physics_educator_revision4.pdf stringrefs.bib flamm_string.pdf closest_approach_nonselfintersecting.pdf closest_approach_selfintersecting.pdf light_closest_approach.pdf angle_at_r_equals_2.pdf light_start_at_r_equals_2.pdf 
