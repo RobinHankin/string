@@ -24,7 +24,7 @@ source("mercury.R")   # defines M=2e30, the mass of the sun, orbital
 `nullgeodesic` <- function(r_start, b, tau=NULL, SI=FALSE){
 
   if(is.null(tau)){
-        tau<- seq(from=0,to=100.1,len=100)
+        tau <- seq(from=0,to=100.1,len=100)
   } 
 
   yini <- c(
