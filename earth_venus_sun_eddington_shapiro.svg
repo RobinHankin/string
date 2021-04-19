@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (c497b03c, 2020-09-10)"
+   sodipodi:docname="earth_venus_sun_eddington_shapiro.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.7431107"
+     inkscape:cx="306.23807"
+     inkscape:cy="579.21781"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-global="true"
+     inkscape:snap-grids="false"
+     inkscape:window-width="1252"
+     inkscape:window-height="1174"
+     inkscape:window-x="692"
+     inkscape:window-y="57"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid841" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <circle
+       style="fill:#fdff00;fill-opacity:1;stroke:#030000;stroke-width:1;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="path843"
+       cx="72.760414"
+       cy="148.16667"
+       r="11.90625" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 84.666666,80.697916 V 195.79166"
+       id="path845"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 72.760414,148.16667 84.666666,80.697916"
+       id="path847"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.23333333px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583;"
+       x="89.554932"
+       y="84.090569"
+       id="text851"><tspan
+         sodipodi:role="line"
+         id="tspan849"
+         x="89.554932"
+         y="84.090569"
+         style="stroke-width:0.264583;font-size:4.23333333px;">Earth</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="90.313873"
+       y="196.56549"
+       id="text855"><tspan
+         sodipodi:role="line"
+         id="tspan853"
+         x="90.313873"
+         y="196.56549"
+         style="font-size:3.88056px;stroke-width:0.264583">Venus</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 84.666666,195.79166 72.760414,148.16667"
+       id="path857"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 84.666666,80.697916 c 0,0 4.274543,48.434744 5.312581,64.680914 1.038038,16.24616 -5.312581,50.41283 -5.312581,50.41283"
+       id="path859"
+       sodipodi:nodetypes="czc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="73.01004"
+       y="171.67226"
+       id="text863"><tspan
+         sodipodi:role="line"
+         id="tspan861"
+         x="73.01004"
+         y="171.67226"
+         style="font-size:3.88056px;stroke-width:0.264583">r<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan881">1</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="73.313614"
+       y="107.46592"
+       id="text877"><tspan
+         sodipodi:role="line"
+         id="tspan875"
+         x="73.313614"
+         y="107.46592"
+         style="font-size:3.88056px;stroke-width:0.264583">r<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan879">2</tspan></tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 72.760414,148.16667 11.754464,-0.0749"
+       id="path883"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.88056px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="75.742226"
+       y="146.17188"
+       id="text887"><tspan
+         id="tspan885"
+         x="75.742226"
+         y="146.17188"
+         style="font-size:3.88056px;stroke-width:0.264583"
+         sodipodi:role="line">r<tspan
+   style="font-size:65%;baseline-shift:sub"
+   id="tspan889">s</tspan></tspan></text>
+    <circle
+       style="fill:#b8b3ba;fill-opacity:1;stroke:#030000;stroke-width:0.125212;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="circle891"
+       cx="84.666664"
+       cy="195.79166"
+       r="1.4908003" />
+    <circle
+       style="fill:#86b3ff;fill-opacity:1;stroke:#030000;stroke-width:0.155799;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="circle893"
+       cx="84.666664"
+       cy="80.697914"
+       r="1.8549768" />
+  </g>
+</svg>
