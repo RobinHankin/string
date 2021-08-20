@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Hankin"
+  given-names: "Robin K. S."
+  orcid: "https://orcid.org/0000-0001-5982-0415"
+title: "General relativity in R: light inextensible string in the Schwarzschild metric"
+version: 2.0-1
+url: "https://github.com/RobinHankin/string"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Hankin"
+    given-names: "Robin K. S."
+    orcid: "https://orcid.org/0000-0001-5982-0415"
+  doi: "https://doi.org/10.1142/S2661339521500050"
+  journal: "The Physics Educator"
+  month: December
+  start: 1
+  end: 5
+  title: "General relativity in R: visual representation of Schwarzschild space using different coordinate systems"
+  issue: 2
+  volume: 3
+  year: 2021
