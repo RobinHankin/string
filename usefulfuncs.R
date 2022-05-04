@@ -108,3 +108,10 @@ library("deSolve")   # needed for ode()
     polygon(jjxy[,1],jjxy[,2],col='white',border=NA,...) # white for production
   }
 }
+
+`sl` <- function(r){  # string length
+    A <- sqrt(r)
+    B <- sqrt(r-1)
+    
+    A*B +log((A+B)/(A-B))/2
+}
