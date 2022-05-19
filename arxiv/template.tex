@@ -1,7 +1,6 @@
 \documentclass{article}
 
-
-\usepackage{PRIMEarxiv}
+\usepackage{arxiv}
 
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
@@ -11,42 +10,43 @@
 \usepackage{amsfonts}       % blackboard math symbols
 \usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
-\usepackage{lipsum}
-\usepackage{fancyhdr}       % header
-\usepackage{graphicx}       % graphics
-\graphicspath{{media/}}     % organize your images and other figures under media/ folder
+\usepackage{cleveref}       % smart cross-referencing
+\usepackage{lipsum}         % Can be removed after putting your text content
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{doi}
+\title{Proper radial distance as a coordinate in the Schwarzschild metric}
 
-%Header
-\pagestyle{fancy}
-\thispagestyle{empty}
-\rhead{ \textit{ }} 
+% Here you can change the date presented in the paper title
+%\date{September 9, 1985}
+% Or remove it
+%\date{}
 
-% Update your Headers here
-\fancyhead[LO]{Proper length as a radial coordinate in the Schwarzschild metric}
-% \fancyhead[RE]{Firstauthor and Secondauthor} % Firstauthor et al. if more than 2 - must use \documentclass[twoside]{article}
-
-
-
-  
-%% Title
-\title{A template for Arxiv Style
-%%%% Cite as
-%%%% Update your official citation here when published 
-\thanks{\textit{\underline{Citation}}: 
-\textbf{Authors. Title. Pages.... DOI:000000/11111.}} 
+\author{ \href{https://orcid.org/0000-0000-0000-0000}{\includegraphics[scale=0.06]{orcid.pdf}\hspace{1mm}Robin K. S. Hankin}\thanks{Use footnote for providing further
+		information about author (webpage, alternative
+		address)---\emph{not} for acknowledging funding agencies.} \\
+              AUT University\\
+              Auckland, New Zealand\\
+	\texttt{hankin.robin@gmail.com} \\
 }
 
-\author{
-  Robin K. S. Hankin \\
-Auckland University of Technology \\
-Auckland, New Zealand\\
-  \texttt{hankin.robin@gmail.com} 
-}
+% Uncomment to override  the `A preprint' in the header
+%\renewcommand{\headeright}{Technical Report}
+%\renewcommand{\undertitle}{Technical Report}
+\renewcommand{\shorttitle}{Proper radial distance}
 
+%%% Add PDF metadata to help others organize their library
+%%% Once the PDF is generated, you can check the metadata with
+%%% $ pdfinfo template.pdf
+\hypersetup{
+pdftitle={Proper radial distance as a coordinate in the Schwarzschild metric}
+pdfsubject={q-bio.NC, q-bio.QM},
+pdfauthor={Robin K. S.~Hankin}
+pdfkeywords={First keyword, Second keyword, More},
+}
 
 \begin{document}
 \maketitle
-
 
 \begin{abstract}
 The Schwarzschild solution to the spherically symmetric vacuum
@@ -64,16 +64,15 @@ instead of proper length.
 
 
 % keywords can be removed
-\keywords{Black holes\and Schwarzschild metric\and proper distance}
+\keywords{First keyword \and Second keyword \and More}
 
 
 \section{Introduction}
-
 The Schwarzschild metric is usually written
 
 \begin{equation}
   ds^2=-dt^2\left(1-\frac{2GM}{c^2r}\right)
-  +\frac{dr^2}{\left(1-\frac{2GM}{c^2r}\right)} + r^2(\sin^2\theta
+<  +\frac{dr^2}{\left(1-\frac{2GM}{c^2r}\right)} + r^2(\sin^2\theta
   d\phi^2 + d\theta^2)
 \end{equation}
 
@@ -107,7 +106,14 @@ The proper distance from a point at Schwarzschild coordinate $r$ would be
   \sqrt{r(r-1)} + \frac{1}{2}\log\frac{\sqrt{r}+\sqrt{r-1}}{\sqrt{r}-\sqrt{r-1}}
   \end{equation}
 
-Hankin \cite{hankin2021} shows that
+\cite{hankin2021} shows that
+
+\citep{hankin2021} shows that
+
+\citet{hankin2021} shows that
+
+\cite{hankin2020}
+
 
 \begin{equation}
   u_1(1+w)=2\sqrt{w} + \frac{1}{3}w^{3/2} + O(w^{7/2})
@@ -122,15 +128,8 @@ for $w\ll 1$, and
 for $w\gg 1$.
 
 
-
-
-
-
-\section{Conclusion}
-Your conclusion here
-
-%Bibliography
-\bibliographystyle{unsrt}  
+\bibliographystyle{unsrtnat}
 \bibliography{references}  
+
 
 \end{document}
