@@ -6,7 +6,7 @@
 source("usefulfuncs.R") # defines polargrid() etc
 source("usefullightfuncs.R") # defines lightpoints()
 
-r_start <- 1 # starting radius for light ray
+r_start <- 0.8 # starting radius for light ray
 mask <- TRUE    # set to TRUE to mask the diagram to a circle; set to
                 # FALSE for debugging (masking is time-consuming)
 size_of_plot <- 3
@@ -112,8 +112,7 @@ cutoffmatrix  <- matrix(c(
 colnames(cutoffmatrix) <- c("cuts","vals")
 fmax <- approxfun(cutoffmatrix[,1],cutoffmatrix[,2])
 
-start_angle <- seq(from=-pi/2,to=pi/2,len=100)
-
+start_angle <- seq(from=-pi/2,to=-pi/8,len=30)
 start_angle <- start_angle[-c(1,length(start_angle))]
 
 ## Uncomment the following when refining cutoffmatrix:
@@ -124,13 +123,25 @@ for(initialangletotangent in start_angle){
 
   final_phi <- min(fmax(initialangletotangent),2*pi)
 #  print(c(initialangletotangent,final_phi))
-  xy1 <-
+  xyinc <- 
     nullgeodesic(
         r_start=r_start,  # r=3/2 is a circular (but unstable) orbit
         dubydphistart = tan(initialangletotangent)/r_start,
-        phi=seq(from=0,to=final_phi,len=100)
-    )
+        phi=seq(from=0,to=final_phi,len=100),include=T)
+    
   
+
+
+f <- function(r){
+A <- sqrt(r)
+B <- sqrt(r-1)
+A*B + log((A+B)/(A-B))/2
+
+}
+xyinc[,3] <- f(xyinc[,3])
+xy1 <- cbind(xyinc[,3]*cos(xyinc[,4]),xyinc[,3]*sin(xyinc[,4]))
+
+
   points(xy1,col='red',type='l')
 }
 
@@ -151,5 +162,5 @@ if(mask){
   }
 }
 
-event_horizon(fill=FALSE)
-points(1,0,pch=16)
+
+points(f(1),0,pch=16)
