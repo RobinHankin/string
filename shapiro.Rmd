@@ -15,7 +15,8 @@ source("usefulgeodesicfuncs.R")
 ## Summary
 
 The Shapiro delay is one of the classical tests of general relativity.
-Here I use direct numerical simulation to 
+In this unfinished document I use direct numerical simulation to
+verify the predictions of GR.
 
 
 ## Introduction 
@@ -121,7 +122,7 @@ incidence (note that the relativistic path does not graze the sun but
 actually grazes radius $r_s+2MG/c^2$, but this is the same to first
 order).
 
-![Diagram of light path from Earth to Venus via grazing incidence at sun](earth_venus_sun_eddington_shapiro.png){width=100px}
+![Diagram of light path from Earth to Venus via grazing incidence at sun](earth_venus_sun_eddington_shapiro.png){width=700px}
 
 
 ```{r}
