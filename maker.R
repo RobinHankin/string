@@ -44,10 +44,16 @@ source("light_closest_approach.R")
 dev.off()
 
 
+pdf(file="light_closest_approach_stringcoords.pdf")
+source("light_closest_approach_stringcoords.R")
+dev.off()
+
+
 pdf(file="illustrative_relativistic_trajectory.pdf")
 source("illustrative_relativistic_trajectory.R")
 dev.off()
 
-
-
+pdf(file="light_start_at_r_equals_2_stringcoords.pdf")
+source("light_start_at_r_equals_2_stringcoords.R")
+dev.off()
 

@@ -134,7 +134,8 @@ for(initialangletotangent in start_angle){
     nullgeodesic(
         r_start=r_start,  # r=3/2 is a circular (but unstable) orbit
         dubydphistart = tan(initialangletotangent)/r_start,
-        phi=seq(from=0,to=final_phi,len=100)
+        phi=seq(from=0,to=final_phi,len=100),
+        include=TRUE
     )
   
   points(xy1,col='red',type='l')

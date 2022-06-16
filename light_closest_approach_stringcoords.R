@@ -80,7 +80,6 @@ cutoffmatrix  <- matrix(c(
 colnames(cutoffmatrix) <- c("cuts","vals")
 fmax <- approxfun(cutoffmatrix[,1],cutoffmatrix[,2])
 
-
 r_start <- seq(from=1.1,to=4,len=47)
 
 for(r in r_start){
