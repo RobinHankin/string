@@ -1,12 +1,13 @@
-## Identical to closest_approach2.R but plots a single string looping
-## round the black hole in green, showing the self-intersection.
+## Shows paths of light inextensible string near a black hole but
+## using string coordinates.
 
 ## This script runs standalone but is designed to be called from
 ## maker.R [cf Makefile], which creates the pdf file
-## "closest_approach2.pdf"
+## "closest_approach3_stringcoords.pdf"
 
 source("usefulfuncs.R") # defines stringpoints() and dseq()
-source("stringfuncs.R") # u1() and u2()  see schwarzschild repo
+source("stringfuncs.R") # defines u1() and u2() ; file stringfuncs.R
+                        # lives in the schwarzschild repo under R/
 
 domask <- TRUE
 
