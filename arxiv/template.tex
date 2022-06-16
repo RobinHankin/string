@@ -1,7 +1,6 @@
 \documentclass{article}
 
 \usepackage{arxiv}
-
 \usepackage[utf8]{inputenc} % allow utf-8 input
 \usepackage[T1]{fontenc}    % use 8-bit T1 fonts
 \usepackage{hyperref}       % hyperlinks
@@ -15,6 +14,8 @@
 \usepackage{graphicx}
 \usepackage{natbib}
 \usepackage{doi}
+\usepackage{caption}
+\usepackage{subcaption}
 \title{Proper radial distance as a coordinate in the Schwarzschild metric}
 
 % Here you can change the date presented in the paper title
@@ -70,7 +71,7 @@ The Schwarzschild metric is usually written
 
 \begin{equation}
   ds^2=-dt^2\left(1-\frac{2GM}{c^2r}\right)
-<  +\frac{dr^2}{\left(1-\frac{2GM}{c^2r}\right)} + r^2(\sin^2\theta
+  +\frac{dr^2}{\left(1-\frac{2GM}{c^2r}\right)} + r^2(\sin^2\theta
   d\phi^2 + d\theta^2)
 \end{equation}
 
@@ -106,11 +107,7 @@ The proper distance from a point at Schwarzschild coordinate $r$ would be
 
 \cite{hankin2021} shows that
 
-\citep{hankin2021} shows that
-
-\citet{hankin2021} shows that
-
-\cite{hankin2020}
+% \citep{hankin2021} \citet{hankin2021} 
 
 
 \begin{equation}
@@ -123,8 +120,42 @@ for $w\ll 1$, and
   \log(2) + \frac{1}{8}w^{-1} + O(w^{-2})
 \end{equation}
 
-for $w\gg 1$.
+for $w\gg 1$.  We can use this as a coordinate on the same footing as
+circumferential radius $r$.  The first thing to do would be to
+suppress $\theta,\phi$ coordinates and consider only $r,t$; see
+Figures~\ref{schwarzschild} and~\ref{eddington}.
 
+\begin{figure}%
+    \centering
+    \subfloat{{\includegraphics[width=7cm]{schwarzschild.pdf} }}%produced by the schwarzschild package
+    \subfloat{{\includegraphics[width=7cm]{schwarzschild_stringcoords.pdf} }}%
+    \caption{Spacetime near a black hole with $\theta,\phi$
+      suppressed.  Left, diagram in $r,t$ coordinates.  Right, same
+      spacetime but presented in $u_1,t$ coordinates: note absence of interior on right}
+    \label{schwarzschild}%
+\end{figure}
+
+\begin{figure}%
+    \centering
+    \subfloat{{\includegraphics[width=7cm]{eddington.pdf} }}%
+    \subfloat{{\includegraphics[width=7cm]{eddington_stringcoords.pdf} }}%
+    \caption{Spacetime near a black hole with $\theta,\phi$ suppressed
+      using Eddington-Finkelstein coordinates.  Left, diagram in $r,t$
+      coordinates.  Right, same spacetime but presented in $u_1,t$
+      coordinates: note absence of interior on right}
+    \label{eddington}%
+\end{figure}
+
+\begin{figure}%
+    \centering
+    \subfloat{{\includegraphics[width=7cm]{gullstrand.pdf} }}%
+    \subfloat{{\includegraphics[width=7cm]{gullstrand_stringcoords.pdf} }}%
+    \caption{Spacetime near a black hole with $\theta,\phi$ suppressed
+      using Gullstrand coordinates.  Left, diagram in $r,t$
+      coordinates.  Right, same spacetime but presented in $u_1,t$
+      coordinates: note absence of interior on right}
+    \label{gullstrand}%
+\end{figure}
 
 \bibliographystyle{unsrtnat}
 \bibliography{references}  
