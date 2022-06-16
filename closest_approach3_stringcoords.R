@@ -109,7 +109,8 @@ o <- stringpoints(y_start=extra ,initial_string_angle = 0,theta=tseq,give=TRUE)
 u <- u1(o[,2])
 theta <- o[,1]
 xy <- cbind(x=u*cos(theta),y=u*sin(theta))
-points(rbind(xy,jj),type='l',col="green",lwd=3)
+
+points(xy,type='l',col="green",lwd=3)
 xy[,2] <- -xy[,2]
 points(rbind(xy,jj),type='l',col="green",lwd=3)
 ## mask strings too far from the black hole:
