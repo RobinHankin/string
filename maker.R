@@ -2,12 +2,24 @@ pdf(file="closest_approach_nonselfintersecting.pdf")
 source("closest_approach.R")
 dev.off()
 
+pdf(file="closest_approach_nonselfintersecting_stringcoords.pdf")
+source("closest_approach_stringcoords.R")
+dev.off()
+
 pdf(file="closest_approach_selfintersecting.pdf")
 source("closest_approach2.R")
 dev.off()
 
+pdf(file="closest_approach_selfintersecting_stringcoords.pdf")
+source("closest_approach2_stringcoords.R")
+dev.off()
+
 pdf(file="closest_approach_selfintersecting_onegreen.pdf")
 source("closest_approach3.R")
+dev.off()
+
+pdf(file="closest_approach_selfintersecting_onegreen_strincoords.pdf")
+source("closest_approach3_stringcoords.R")
 dev.off()
 
 pdf(file="angle_at_r_equals_2.pdf")
