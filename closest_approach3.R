@@ -6,7 +6,7 @@
 ## "closest_approach2.pdf"
 
 source("usefulfuncs.R") # defines stringpoints() and dseq()
-
+source("stringfuncs.R") # u1() and u2()  see schwarzschild repo
 
 domask <- TRUE
 
@@ -93,7 +93,10 @@ for(i in seq_along(dist)){
   }
 
   tseq <- seq(from=0,to=f(dist[i]),len=100)
-  xy <- stringpoints(y_start=dist[i],initial_string_angle = 0,theta=tseq)
+  o <- stringpoints(y_start=dist[i],initial_string_angle = 0,theta=tseq,give=TRUE)
+  u <- u1(o[,2])
+  theta <- o[,1]
+  xy <- cbind(x=u*cos(theta),y=u*sin(theta))
   points(xy,type='l',col=stringcol,lwd=2)
   
 #  xy <- stringpoints(y_start=dist[i],initial_string_angle = 0, theta=-tseq)
@@ -112,4 +115,4 @@ points(rbind(xy,jj),type='l',col="green",lwd=3)
 if(domask){mask(7)}
 
 polargrid(rlab=6.5)
-event_horizon()
+
