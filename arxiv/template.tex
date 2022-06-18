@@ -120,10 +120,36 @@ for $w\ll 1$, and
   \log(2) + \frac{1}{8}w^{-1} + O(w^{-2})
 \end{equation}
 
-for $w\gg 1$.  We can use this as a coordinate on the same footing as
-circumferential radius $r$.  The first thing to do would be to
-suppress $\theta,\phi$ coordinates and consider only $r,t$; see
-Figures~\ref{schwarzschild} and~\ref{eddington}.
+for $w\gg 1$.
+
+\subsection{Equal areas}
+
+We might be interested in preserving areas.  In this case we would use
+a coordinate $u_2$, defined by
+
+\begin{equation}
+  \frac{u_2^2}{2}=\int\frac{r\,dr}{\sqrt{1-1/r}}
+\end{equation}
+
+giving $u_2=\sqrt{I-K}$ where $K$ is a constant of integration and
+
+\begin{equation}
+    I = r^2\sqrt{1-{1}/{r}}\left(1+\frac{3}{2r}\right)
+ + \frac{3}{8}\log\left(\frac{\sqrt{r}+\sqrt{r-1}}{\sqrt{r}-\sqrt{r-1}}\right)
+\end{equation}
+
+Similarly for volume, $u_3=(I-K)^{1/3}$ with 
+
+\begin{equation}
+    I = r^3\sqrt{1-{1}/{r}}\left(1+\frac{5}{4r} + \frac{15}{8r^2}\right)
++ \frac{5}{16}\log\left(\frac{\sqrt{r}+\sqrt{r-1}}{\sqrt{r}-\sqrt{r-1}}\right)
+\end{equation}
+\section{Results}
+
+We can use $u_1$ as a coordinate on the same footing as
+circumferential radius $r$.  First we suppress $\theta,\phi$
+coordinates and consider only $r,t$; see Figures~\ref{schwarzschild},
+\ref{eddington}, and ~\ref{gullstrand}.
 
 \begin{figure}%
     \centering
@@ -177,6 +203,14 @@ Figures~\ref{schwarzschild} and~\ref{eddington}.
     \label{light_closest_2}%
 \end{figure}
 
+It is also possible to plot null geodesics for light in an equatorial
+plane: figures~\ref{light_2} and \ref{light_closest_2}.  Light
+inextensible string is plotted, again for the equatorial case, in
+figures~\ref{closest_approach_nonself} and
+\ref{closest_approach_self}, for the nonself-intersecting and self
+intersecting cases respectively.
+
+
 \begin{figure}%
     \centering
     \subfloat{{\includegraphics[width=7cm]{closest_approach_nonselfintersecting.pdf} }}%
@@ -192,11 +226,16 @@ Figures~\ref{schwarzschild} and~\ref{eddington}.
     \centering
     \subfloat{{\includegraphics[width=7cm]{closest_approach_selfintersecting.pdf} }}%
     \subfloat{{\includegraphics[width=7cm]{closest_approach_selfintersecting_stringcoords.pdf} }}
-    \caption{Light inextensible string near a black hole, self intersecting case.  Left, diagram using $r,\phi$
-      coordinates.  Right, same spacetime but presented in $u_1,\phi$
-      coordinates: note absence of interior on right}
+    \caption{Light inextensible string near a black hole, self
+      intersecting case.  Left, diagram using $r,\phi$ coordinates.
+      Right, same spacetime but presented in $u_1,\phi$ coordinates:
+      note absence of interior on right}
     \label{closest_approach_self}%
 \end{figure}
+
+\section{Conclusions}
+
+
 
 \bibliographystyle{unsrtnat}
 \bibliography{references}  
