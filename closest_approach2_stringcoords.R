@@ -110,3 +110,4 @@ if(domask){mask(7)}
 
 polargrid(rlab=6.5)
 
+points(0,0)
