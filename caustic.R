@@ -11,10 +11,6 @@ source("usefulfuncs.R")
 `cot` <- function(x){1/tan(x)}
 `sec` <- function(x){1/cos(x)}
 
-## First plot the bounding circle:
-a <- seq(from=0,to=2*pi,len=100)  # 'a' for angle
-plot(sin(a),cos(a),asp=1,type='l',axes=FALSE,xlab='',ylab='')
-
 f <- function(a){## gives the Cartesian coords of the caustic as a function of 'a'
   x <- (
     2*sin(2*a) + 2*cos(2*a)*cot(3*a) - 3*cosec(3*a)^2*sin(2*a)
@@ -26,12 +22,15 @@ f <- function(a){## gives the Cartesian coords of the caustic as a function of '
   return(cbind(x,y))
 }
 
+
+## First plot the bounding circle:
+a <- seq(from=0,to=2*pi,len=100)  # 'a' for angle
+plot(sin(a),cos(a),asp=1,type='l',axes=FALSE,xlab='',ylab='')
+
+
 n <- 100
 maxangle <- pi/2
 a <- seq(from=maxangle/n,to=maxangle,len=n+1)
-
-## Now plot the caustic itself:
-points(f(a),type='l',col='red')
 
 ## Now rays from (0,-1) to the circumference of the circle at angle
 ## 'a' [interpreted as bearing]:
@@ -52,5 +51,9 @@ for(aa in a){
 
 ## Vertical line is indeterminate, has to be plotted explicitly:
 segments(0,-1,0,1,lwd=0.2)
+
+## Now plot the caustic itself:
+points(f(a),type='l',col='red')
+
 
 
