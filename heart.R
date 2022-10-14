@@ -1,4 +1,4 @@
-drawstring <- function(n=256,d=pi/(30 + 1/4),sleep=0.1){
+drawstring <- function(n=256,d=pi/(30 + 1/4),sleep=0.1, ...){
     theta <- rep(0,n)
     theta[1] <- 0    # start point
     theta[2] <- pi  # start point
@@ -27,7 +27,8 @@ drawstring <- function(n=256,d=pi/(30 + 1/4),sleep=0.1){
             x0=cos(theta[i  ]),
             y0=sin(theta[i  ]),
             x1=cos(theta[i+1]),
-            y1=sin(theta[i+1])
+            y1=sin(theta[i+1]),
+            ...
         )
         if(sleep>0){Sys.sleep(sleep)}
     }
