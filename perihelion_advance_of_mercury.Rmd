@@ -29,8 +29,9 @@ using numerical methods.
 
 ## Closed and non-closed orbits.
 
-Consider the following R idiom, in which `trajectory()` is used to
-directly simulate a geodesic in Schwarzschild space:
+Consider the following R idiom, in which `trajectory()` [defined in
+`usefulgeodesicfuncs.R`] is used to directly simulate a geodesic in
+Schwarzschild space:
 
 
 ```{r,label=geodesicsimulatorGR}
