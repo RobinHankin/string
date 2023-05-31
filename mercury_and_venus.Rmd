@@ -1,0 +1,89 @@
+---
+title: "Non-Euclidean space as revealed by proper distances from Mercury to Venus"
+author: "Robin Hankin"
+date: "2023-05-30"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Here I consider the difference between two ways to assess the distance
+between Mercury and Venus.  We use units in which the Schwarzschild
+radius is unity, converting to SI when needed.  Astronomically, the
+correct values are
+
+```{r}
+M <- 1.989e30 # mass of Sun in kg
+G <- 6.6743e-11 # G in SI
+sol <- 299792458 # speed of light
+(r <- 2*M*G/sol^2) # Schwarzschild radius of Sun in m
+(mercury <- 57909050e3/r) # semimajor axis
+(venus <- 108208000e3/r)
+```
+
+For simplicity, I will first consider Mercury and Venus to have an
+orbital radius of a notional $2\times 10^7$ and $4\times 10^7$
+respectively.  The Euclidean distance between the two is just $4\times
+10^7-2\times 10^7=2\times 10^7$ but the proper distance is given by
+
+$$
+\int_{r=2\times 10^7}^{4\times 10^7}\frac{dr}{\sqrt{1-1/r}}
+$$
+
+Mathematically this is easy.  Mathematica gives
+
+```
+In[27]:= Assuming[x>0,Integrate[1/Sqrt[1-1/r],{r,2*10^7,4*10^7}]]                                                                                                                     
+Out[27]= -2000 (Sqrt[99999995] - Sqrt[399999990]) - ArcSinh[Sqrt[19999999]] + ArcSinh[Sqrt[39999999]]
+```
+
+Numerically we see close agreement between Mathematica and R:
+
+```
+In[28]:= p = Assuming[x>0,Integrate[1/Sqrt[1-1/r],{r,2*10^7,4*10^7}]]                        
+In[29]:= (p - 2*10^7)//N
+Out[29]= 0.346574
+```
+
+```{r}
+(v <- integrate(function(r){1/sqrt(1-1/r)},2e7,4e7))
+v$value - 2e7
+```
+
+
+The discrepancy is in Schwarzschild radii.
+
+```{r}
+(v$value-2e7)*r
+```
+
+This gives us the discrepancy in meters.  We see a proper distance
+between the two planets of about a kilometer in excess of the
+Euclidean distance calculated on the basis of circumferential radius
+and flat space.  It's not that much harder to use the astronomically
+accurate values instead:
+
+```{r}
+diff <- (integrate(function(r){1/sqrt(1-1/r)},mercury,venus)$value - (venus-mercury))
+diff   # discrepancy in Schwarzschild radius
+diff*r  # in meters
+```
+
+Asymptotically we have
+
+$$
+\int_{r=w}^{wx}\frac{dr}{\sqrt{1-1/r}}=w(x-1)+\frac{\log(x)}{2} -w^{-1}\frac{3(1-x)}{8x}+{\mathcal O}\left(w^{-2}\right)
+$$
+(writing $w$ for Mercury's orbital radius).  Noting that $x\sim 1$, the first two terms are about 
+
+```{r}
+x <- venus/mercury
+log(x)/2
+3*(1-x)/(8*mercury*x)
+```
+
+showing that the zeroth order term is sufficient here, and also close
+agreement with the numerical integration using astronomical data given
+above.
