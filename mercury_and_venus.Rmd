@@ -74,7 +74,7 @@ diff*r  # in meters
 Asymptotically we have
 
 $$
-\int_{r=w}^{wx}\frac{dr}{\sqrt{1-1/r}}=w(x-1)+\frac{\log(x)}{2} -w^{-1}\frac{3(1-x)}{8x}+{\mathcal O}\left(w^{-2}\right)
+\int_{r=w}^{wx}\frac{dr}{\sqrt{1-1/r}}=\underbrace{w(x-1)}_{\mbox{Euclid}}+\frac{\log(x)}{2} -w^{-1}\frac{3(1-x)}{8x}+{\mathcal O}\left(w^{-2}\right)
 $$
 (writing $w$ for Mercury's orbital radius).  Noting that $x\sim 1$, the first two terms are about 
 
