@@ -84,9 +84,9 @@ string <- function(r0,lambda=0,angles=seq(from = 0, to = 0.5, by = 0.01)){
 ```
 
 
-```{r plotstrings}
+```{r plotstringsonepointtwo}
 
-
+dist <- 1.2
 lambda <- seq(from = -0.05, to = -1.7, by = -0.1)
 f <- approxfun(
     c(0,-0.1,-0.2,-0.5, -0.7, -1,  -1.4,     -1.6,-1.7),
@@ -102,16 +102,47 @@ th <- seq(from=0,to=2*pi,len=100)
 points(cos(th),sin(th),type='l')  # event horizon
 
 for(l in lambda){
-    points(string(r0=1.2,lambda=l,angles=seq(0,f(l),0.01)),type='l')
+    points(string(r0 = dist, lambda = l, angles = seq(0,f(l),0.01)), type = 'l')
 }
 
-segments(1.2,0,4,0)
+segments(dist,0,4,0)
 docolour <- function(lambda,...){
-    points(string(r0=1.2,lambda=lambda,angles=seq(0,f(lambda),0.01)), type='l', lwd=3, ...)
+    points(string(r0 = dist, lambda = lambda, angles=seq(0,f(lambda),0.01)), type='l', lwd=3, ...)
 }
-docolour(-0.05,col='blue')
-docolour(-0.7,col='green')
-docolour(-1.4,col='red')
+#docolour(-0.05,col='blue')
+#docolour(-0.7,col='green')
+#docolour(-1.4,col='red')
 points(1.2,0,pch=16)
+```
 
+
+```{r plotstringsonepointzerofour}
+
+dist <- 1.04
+lambda <- seq(from = 0, to = -1, by = -0.1)
+
+f <- approxfun(
+    c(0,-0.1,-0.2,-0.5, -0.7, -1,  -1.4,     -1.6,-1.7),
+    c(2.4,2.4, 2.1,1.5,   1.5, 0.5,  0.63, 0.3,0)
+)
+
+plot(lambda,f(lambda))
+
+size <- 2
+par(pty="s")
+plot(NA,type="n",asp=1,xlim=c(-size,size),ylim=c(-size,size))
+th <- seq(from=0,to=2*pi,len=100)
+points(cos(th),sin(th),type='l')  # event horizon
+
+for(l in lambda){
+    points(string(r0 = dist, lambda = l, angles = seq(0,f(l),0.01)), type = 'l')
+}
+
+segments(dist,0,4,0)
+docolour <- function(lambda,...){
+    points(string(r0 = dist, lambda = lambda, angles=seq(0,f(lambda),0.01)), type='l', lwd=3, ...)
+}
+docolour(0,col='red')
+docolour(-1,col='blue')
+points(dist,0,pch=16)
 ```
