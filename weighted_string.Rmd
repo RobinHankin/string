@@ -12,6 +12,39 @@ knitr::opts_chunk$set(echo = TRUE)
 library("deSolve")
 ```
 
+The light inextensible string functional was
+
+$$
+\int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-2M/r} + r^2\right)^\frac{1}{2}d\phi
+$$
+
+But now we use a Lagrange multiplier:
+
+$$
+\int_{p_1}^{p_2}\left[\left(\frac{\left(r'\right)^2}{1-2M/r} + r^2\right)^\frac{1}{2}
++\lambda\left(\frac{\left(r'\right)^2}{1-2M/r} + r^2\right)^\frac{1}{2}
+\left(1+\lambda(1-\sqrt{1-2M/r})\right)
+\right]d\phi
+$$
+
+that is, miminizing the potential energy subject to a (proper) length
+constraint.  Simplifying: 
+
+$$
+\int_{p_1}^{p_2}\left(\frac{\left(r'\right)^2}{1-2M/r} +
+r^2\right)^\frac{1}{2} \left(1+\lambda(1-\sqrt{1-2M/r})\right) d\phi
+$$
+
+
+
+
+```
+EulerEquations[ 
+  Sqrt[r[\[Phi]]^2 + 
+     r'[\[Phi]]^2/(1 - 2*M/r[\[Phi]])]*(1 + \[Lambda]*(1 - 
+        Sqrt[1 - 2*M/r[\[Phi]]])), r[\[Phi]], \[Phi]] // FullSimplify
+```
+
 Now define the  second derivative from Euler's equation:
 
 ```{r definerdashdash}
