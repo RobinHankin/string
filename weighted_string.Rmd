@@ -1,5 +1,20 @@
-library("deSolve")
+---
+title: "Heavy inextensible strings in the Schwarzschild geometry"
+author: "Robin Hankin"
+output: html_document
+---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library("deSolve")
+```
+
+Now define the  second derivative from Euler's equation:
+
+```{r definerdashdash}
 rdashdash <- function(r,rdash,lambda,M=1/2){
     x <- sqrt(1-2*M/r)
     return(
@@ -7,7 +22,10 @@ rdashdash <- function(r,rdash,lambda,M=1/2){
      2*r*(M^2*(-2+lambda*(-2+x)) + (-1+lambda*(-1+x))*rdash^2))/((-1+lambda*(-1+x))*r*(-2*M+r))
     )
 }
+```
 
+
+```{r useode}
 string <- function(r0,lambda=0,angles=seq(from = 0, to = 0.5, by = 0.01)){
 
     parameters <- c(lambda = lambda, M = 1/2)
@@ -30,6 +48,10 @@ string <- function(r0,lambda=0,angles=seq(from = 0, to = 0.5, by = 0.01)){
     
     return(cbind(r*cos(phi),r*sin(phi)))
 }
+```
+
+
+```{r plotstrings}
 
 size <- 5
 plot(c(-size,size),c(-size,size),type="n",asp=1)
@@ -39,3 +61,4 @@ points(string(r0=1.4,lambda= 0,angles=seq(0,2,0.01)),type='l')
 for(l in seq(from=-0.1,to=-1.4,by=-0.1)){
     points(string(r0=1.4,lambda=l,angles=seq(0,pi/2,0.01)),type='l')
 }
+```
