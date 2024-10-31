@@ -20,8 +20,10 @@ prletfig01.eps
 rinp-logo.eps
 rinp.sty
 
+
 # Cache for perihelion_advance_of_mercury.Rmd:
 *_files/
 *_cache/
+*.html
 
 ws-tpe.cls
