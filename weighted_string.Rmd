@@ -23,7 +23,7 @@ But now we use a Lagrange multiplier:
 $$
 \int_{p_1}^{p_2}\left[\left(\frac{\left(r'\right)^2}{1-2M/r} + r^2\right)^\frac{1}{2}
 +\lambda\left(\frac{\left(r'\right)^2}{1-2M/r} + r^2\right)^\frac{1}{2}
-\left(1+\lambda(1-\sqrt{1-2M/r})\right)
+\left(1-\sqrt{1-2M/r}\right)
 \right]d\phi
 $$
 
@@ -86,12 +86,32 @@ string <- function(r0,lambda=0,angles=seq(from = 0, to = 0.5, by = 0.01)){
 
 ```{r plotstrings}
 
-size <- 5
-plot(c(-size,size),c(-size,size),type="n",asp=1)
+
+lambda <- seq(from = -0.05, to = -1.7, by = -0.1)
+f <- approxfun(
+    c(0,-0.1,-0.2,-0.5, -0.7, -1,  -1.4,     -1.6,-1.7),
+    c(2.4,2.4, 2.1,1.5,   1.5, 1.1,  0.63, 0.3,0)
+)
+
+plot(lambda,f(lambda))
+
+size <- 2
+par(pty="s")
+plot(NA,type="n",asp=1,xlim=c(-size,size),ylim=c(-size,size))
 th <- seq(from=0,to=2*pi,len=100)
 points(cos(th),sin(th),type='l')  # event horizon
-points(string(r0=1.4,lambda= 0,angles=seq(0,2,0.01)),type='l')
-for(l in seq(from=-0.1,to=-1.4,by=-0.1)){
-    points(string(r0=1.4,lambda=l,angles=seq(0,pi/2,0.01)),type='l')
+
+for(l in lambda){
+    points(string(r0=1.2,lambda=l,angles=seq(0,f(l),0.01)),type='l')
 }
+
+segments(1.2,0,4,0)
+docolour <- function(lambda,...){
+    points(string(r0=1.2,lambda=lambda,angles=seq(0,f(lambda),0.01)), type='l', lwd=3, ...)
+}
+docolour(-0.05,col='blue')
+docolour(-0.7,col='green')
+docolour(-1.4,col='red')
+points(1.2,0,pch=16)
+
 ```
