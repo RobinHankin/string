@@ -8,11 +8,11 @@ rdashdash <- function(r,rdash,lambda,M=1/2){
     )
 }
 
-string <- function(lambda){
+string <- function(r0,lambda=0,angles=seq(from = 0, to = 0.5, by = 0.01)){
 
     parameters <- c(lambda = lambda, M = 1/2)
-    state <- c(r = 2, rdash = 0)
-    times <- seq(from = 0, to = 0.5, by = 0.01)
+    state <- c(r = r0, rdash = 0)
+    times <- angles
 
     Lorenz <- function(t, state, parameters){
         with(as.list(c(state, parameters)), {
@@ -31,8 +31,11 @@ string <- function(lambda){
     return(cbind(r*cos(phi),r*sin(phi)))
 }
 
-plot(c(-3,3),c(-3,3),type="n",asp=1)
+size <- 5
+plot(c(-size,size),c(-size,size),type="n",asp=1)
 th <- seq(from=0,to=2*pi,len=100)
 points(cos(th),sin(th),type='l')  # event horizon
-points(string(0)) 
-
+points(string(r0=1.4,lambda= 0,angles=seq(0,2,0.01)),type='l')
+for(l in seq(from=-0.1,to=-1.4,by=-0.1)){
+    points(string(r0=1.4,lambda=l,angles=seq(0,pi/2,0.01)),type='l')
+}
