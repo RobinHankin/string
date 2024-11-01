@@ -35,24 +35,40 @@ $$
 r^2\right)^\frac{1}{2} \left(1+\lambda(1-\sqrt{1-2M/r})\right) d\phi
 $$
 
-
+Mathematica can deal with this.  The idiom is:
 
 
 ```
+Needs["VariationalMethods`"]
 EulerEquations[ 
   Sqrt[r[\[Phi]]^2 + 
      r'[\[Phi]]^2/(1 - 2*M/r[\[Phi]])]*(1 + \[Lambda]*(1 - 
         Sqrt[1 - 2*M/r[\[Phi]]])), r[\[Phi]], \[Phi]] // FullSimplify
 ```
 
-Now define the  second derivative from Euler's equation:
+
+The above comments give a second-order ODE, which is analytically
+intractable.  However, we can proceeed by
+
+```
+Solve[%, r''[phi]] // FullSimplify
+```
+
+which gives an expression for $r''(\phi)$.  In R idiom, this is:
+
 
 ```{r definerdashdash}
 rdashdash <- function(r,rdash,lambda,M=1/2){
     x <- sqrt(1-2*M/r)
     return(
-    (M*(4+lambda*(4-3*x))*r^2 + (-1+lambda*(-1+x))*r^3 + M*(3 + lambda*(3-2*x))*rdash^2 +
-     2*r*(M^2*(-2+lambda*(-2+x)) + (-1+lambda*(-1+x))*rdash^2))/((-1+lambda*(-1+x))*r*(-2*M+r))
+    (
+        M*(4+lambda*(4-3*x))*r^2 +
+        (-1+lambda*(-1+x))*r^3 +
+        M*(3 + lambda*(3-2*x))*rdash^2 +
+        2*r*(M^2*(-2+lambda*(-2+x)) + (-1+lambda*(-1+x))*rdash^2)
+    ) / (
+        (-1+lambda*(-1+x))*r*(-2*M+r)
+    )
     )
 }
 ```
@@ -123,7 +139,7 @@ lambda <- seq(from = 0, to = -1, by = -0.1)
 
 f <- approxfun(
     c(0,-0.1,-0.2,-0.5, -0.7, -1,  -1.4,     -1.6,-1.7),
-    c(2.4,2.4, 2.1,1.5,   1.5, 0.5,  0.63, 0.3,0)
+    c(2.4,2.4, 2.1,1.5,   1.5, 0.9,  0.63, 0.3,0)
 )
 
 plot(lambda,f(lambda))
