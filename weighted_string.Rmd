@@ -54,20 +54,25 @@ intractable.  However, we can proceeed by
 Solve[%, r''[phi]] // FullSimplify
 ```
 
-which gives an expression for $r''(\phi)$.  In R idiom, this is:
+which gives an expression for $r''(\phi)$.  
+
+![Mathematica screenshot](mathematica_screenshot.png)
+
+
+In R idiom, this is:
 
 
 ```{r definerdashdash}
 rdashdash <- function(r,rdash,lambda,M=1/2){
-    x <- sqrt(1-2*M/r)
+    x <- sqrt(1 - 2*M/r)
     return(
     (
-        M*(4+lambda*(4-3*x))*r^2 +
-        (-1+lambda*(-1+x))*r^3 +
-        M*(3 + lambda*(3-2*x))*rdash^2 +
-        2*r*(M^2*(-2+lambda*(-2+x)) + (-1+lambda*(-1+x))*rdash^2)
+        M*(4 + lambda*(4 - 3*x))*r^2 +
+        (-1 + lambda*(-1 + x))*r^3 +
+        M*(3 + lambda*(3 - 2*x))*rdash^2 +
+        2*r*(M^2*(-2 + lambda*(-2 + x)) + (-1 + lambda*(-1 + x))*rdash^2)
     ) / (
-        (-1+lambda*(-1+x))*r*(-2*M+r)
+        (-1 + lambda*(-1 + x))*r*(-2*M + r)
     )
     )
 }
