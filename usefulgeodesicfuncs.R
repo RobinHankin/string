@@ -13,7 +13,7 @@ source("usefulfuncs.R")
         }
       rdotdot <- -dVdr/2
       phidot <- h/r^2
-      return(list(c(rdot,rdotdot,phidot)))
+      return(list(c(rdot, rdotdot, phidot)))
     })
 }
 
@@ -35,27 +35,27 @@ source("usefulfuncs.R")
 
   r   <- bh[,2]
   phi <- bh[,4]
-  xy <- cbind(x=r*cos(phi),y=r*sin(phi))
+  xy <- cbind(x=r*cos(phi), y=r*sin(phi))
   return(cbind(bh,xy))
 }
 
 ## Example use-cases
 if(FALSE){
 jj <- trajectory(30, 1/2, 3) # m=1/2 -> Schwarzschild radius = 1
-plot(jj$x,jj$y, asp=1, type='l', axes=FALSE, ylim=c(-30,30), xlab='', ylab='')
+plot(jj$x, jj$y, asp=1, type='l', axes=FALSE, ylim=c(-30, 30), xlab='', ylab='')
 polargrid(r=10*(1:3))
 event_horizon()
 
 
 jj <- trajectory(30, 1/2, 3, GR=FALSE)  # Newtonian approximation
-plot(jj$x,jj$y, asp=1, type='l', axes=FALSE, ylim=c(-30,30), xlab='', ylab='')
+plot(jj$x,jj$y, asp=1, type='l', axes=FALSE, ylim=c(-30, 30), xlab='', ylab='')
 polargrid(r=10*(1:3))
 event_horizon()
 
 
 source("mercury.R")
-jj <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0,to=15e17,len=1e6))
-plot(jj$x,jj$y, asp=1, type='l', axes=FALSE, xlab='', ylab='')
+jj <- trajectory(merc_perihelion, m=d, h=h, tau=seq(from=0, to=15e17, len=1e6))
+plot(jj$x, jj$y, asp=1, type='l', axes=FALSE, xlab='', ylab='')
 event_horizon()
 
 }
