@@ -4,13 +4,6 @@
 ## Rays of light emerge from the circumference of the circle, at the 6
 ## o'clock position, coordinates (0,-1).
 
-source("usefulfuncs.R")
-
-## Minor trig ratios (not implemented in base R, for some reason):
-`cosec` <- function(x){1/sin(x)}
-`cot` <- function(x){1/tan(x)}
-`sec` <- function(x){1/cos(x)}
-
 ## First plot the bounding circle:
 a <- seq(from=0, to=2*pi, len=100)  # 'a' for angle
 plot(sin(a), cos(a), asp=1, type='l', axes=FALSE, xlab='', ylab='')
