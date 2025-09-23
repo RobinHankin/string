@@ -1,6 +1,6 @@
 ## This function plots a coffee-cup caustic, or a cardioid.  It is
-## modelled on caustic2.R but various parameters can be set by sliders, courtesy of the
-"manipulate" package.
+## modelled on caustic2.R but various parameters can be set by
+## sliders, courtesy of the "manipulate" package.
 
 ## Rays of light emerge from the circumference of the circle, at the 6
 ## o'clock position, coordinates (0,-1).
